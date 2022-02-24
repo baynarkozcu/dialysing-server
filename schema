@@ -1,0 +1,70 @@
+
+
+
+User : 
+	ID
+	type [ "Admin", "User" ]
+	email
+	pass
+	nameSurn.
+	birthDate
+	phoneNum.
+	image
+	active
+	favorites
+	address{
+		
+	}
+
+															1	türkiye		istan	as diya
+															2	türkiye		istan	sa diya
+
+lastSearch :
+	ID
+	ref( userID )
+	city
+	date
+
+
+
+diyalizMerkez :
+	ID
+	country
+	city
+	diyalizMerkezAdı
+	services
+	point
+	enterpriseDate
+	inceleme
+	binaTipi
+	merkezTipi
+	sigortaDurum
+	calisan
+	cihazMarkalari
+	tatil
+	--Type
+
+
+
+appointments {
+	ID
+	ref ( diyalizMerkezID )
+	tedaviYontemi
+	seansSayısı
+	seansGünleri
+	checks
+	seansSaati
+}
+
+
+
+Blogs :
+	ID
+	title
+	content
+	footer
+	image
+	author
+
+
+

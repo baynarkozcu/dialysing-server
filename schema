@@ -1,32 +1,4 @@
 
-
-
-User : 
-	ID
-	type [ "Admin", "User" ]
-	email
-	pass
-	nameSurn.
-	birthDate
-	phoneNum.
-	image
-	active
-	favorites
-	address{
-		
-	}
-
-															1	türkiye		istan	as diya
-															2	türkiye		istan	sa diya
-
-lastSearch :
-	ID
-	ref( userID )
-	city
-	date
-
-
-
 diyalizMerkez :
 	ID
 	country
@@ -55,16 +27,6 @@ appointments {
 	checks
 	seansSaati
 }
-
-
-
-Blogs :
-	ID
-	title
-	content
-	footer
-	image
-	author
 
 
 

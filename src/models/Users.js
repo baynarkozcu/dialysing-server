@@ -3,16 +3,29 @@ const Mongoose = require("mongoose");
 const UserSchema = Mongoose.Schema(
   {
     nameSurname: String,
-    email: String,
+    email: {
+      type: String,
+      unique: [true, "Bu email adresi zaten kullanılıyor."],
+    },
     password: String,
-    phoneNumber: String,
+    phoneNumber: {
+      type: String,
+      unique: [true, "Bu telefon numarası zaten kayıtlıdır."],
+      
+    },
     birthDate: Date,
     profileImage: String,
-    isAdmin: Boolean,
-    emailConfirmed: Boolean,
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
+    emailConfirmed: {
+      type: Boolean,
+      default: false,
+    },
     favorites: {
       type: Mongoose.Types.ObjectId,
-      ref: "Advert",
+      ref: "Dialysis",
     },
     adress: {
       country: String,

@@ -2,6 +2,7 @@ const Service = require("../services/Users");
 
 const httpStatus = require("http-status");
 const AppError = require("../errors/AppError");
+const ErrorMessage = require("../scripts/utils/errorMessages");
 
 const { passwordToHash, generateAcessToken, generateRefreshToken } = require("../scripts/utils/helper");
 

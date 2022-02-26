@@ -27,17 +27,6 @@ class BlogController {
       });
   }
 
-  // find(req, res, next) {
-  //     Service.find(req.body)
-  //         .then((data) => {
-  //             if (!data) return next(new AppError("Görüntülemek İstediğiniz Veri Bulunamadı.", httpStatus.NOT_FOUND));
-  //             res.json(data);
-  //         })
-  //         .catch((err) => {
-  //             next(new AppError("Yapmak İstediğiniz İşlem Sırasında Hata Oluştu.", httpStatus.INTERNAL_SERVER_ERROR));
-  //         });
-  // }
-
   create(req, res, next) {
     Service?.create(req.body)
       .then((data) => {

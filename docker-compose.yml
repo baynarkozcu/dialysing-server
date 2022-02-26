@@ -1,6 +1,12 @@
 version : "3.1"
 services: 
+  dialysing-app:
+    container_name: dialysing-app
+    build: .
+    ports:
+      - "6000:6000"
   mongodb_dialysing: 
+    container_name: mongodb_dialysing
     image: mongo:latest
     restart: always
     ports:

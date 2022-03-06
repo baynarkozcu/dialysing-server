@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="p2ZW0wqYI4sTeMC3MY0A" name="Page-1">
-        <mxGraphModel dx="1876" dy="537" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1801" dy="412" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -74,7 +74,7 @@
                     <mxGeometry y="110" width="200" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="46" value="DIALYSIS-CENTER" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;strokeWidth=5;rounded=1;" parent="1" vertex="1">
-                    <mxGeometry x="-140" y="10" width="200" height="170" as="geometry">
+                    <mxGeometry x="-140" y="10" width="200" height="140" as="geometry">
                         <mxRectangle x="100" y="80" width="70" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
@@ -87,11 +87,8 @@
                 <mxCell id="49" value="DIALYSIS_CENTER_ID" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;rounded=1;" parent="46" vertex="1">
                     <mxGeometry y="110" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="55" value="........" style="text;strokeColor=#3700CC;fillColor=#6a00ff;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#ffffff;fontStyle=1;fontSize=20;rounded=1;" parent="46" vertex="1">
-                    <mxGeometry y="140" width="200" height="30" as="geometry"/>
-                </mxCell>
                 <mxCell id="50" value="APPOINTMENT" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#e3c800;fontColor=#FFFFFF;strokeColor=#B09500;strokeWidth=5;rounded=1;" parent="1" vertex="1">
-                    <mxGeometry x="80" y="10" width="200" height="170" as="geometry">
+                    <mxGeometry x="80" y="10" width="200" height="140" as="geometry">
                         <mxRectangle x="100" y="80" width="70" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
@@ -103,9 +100,6 @@
                 </mxCell>
                 <mxCell id="53" value="DIALYSIS_CENTER_ID" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;rounded=1;" parent="50" vertex="1">
                     <mxGeometry y="110" width="200" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="54" value="........" style="text;strokeColor=#B09500;fillColor=#e3c800;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#000000;fontStyle=1;fontSize=20;rounded=1;" parent="50" vertex="1">
-                    <mxGeometry y="140" width="200" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

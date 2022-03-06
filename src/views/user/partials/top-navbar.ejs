@@ -1,0 +1,78 @@
+    <!-- Top Navbar -->
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-expand-lg narbar-light">
+          <a class="navbar-brand logo" href="#"> Dialysing<span>.com</span> </a>
+          <a href="#" class="location"><img src="../user/img/icons/location-white.png" alt="Location White" /><span>İstanbul, Türkiye</span></a>
+          <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="mainNav" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item language-selection">
+                <img src="../user/img/flags/turkey.png" alt="Flags Turkey" />
+                <div class="tm-form-element tm-form-element-2">
+                  <select name="language" class="form-control tm-select" id="language">
+                    <option value="">Türkçe</option>
+                    <option value="1">Ingilizce</option>
+                    <option value="2">Almanca</option>
+                  </select>
+                </div>
+              </li>
+              <li class="nav-item question">
+                <img src="../user/img/icons/question.png" alt="Icons Question" />
+              </li>
+              <li class="nav-item buttons">
+                <a href="../user/clinic/clinic-index.html" class="nav-link btn-third">Merkezinizi Ekleyin</a>
+              </li>
+              <li class="nav-item buttons">
+                <a href="../user/register/register.html" class="nav-link btn-second">Kayıt Ol</a>
+              </li>
+              <li class="nav-item buttons">
+                <!-- Button trigger modal -->
+                <button type="button" class="nav-link btn-second" data-toggle="modal" data-target="#loginModal">Giriş Yap</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <img src="../user/img/icons/close.png" alt="Icon Close" />
+                        </button>
+                      </div>
+                      <form class="tm-form">
+                        <div class="form-title text-center">Giriş Yap</div>
+                        <div class="form-group">
+                          <label for="login-email">Email Adresi</label>
+                          <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp" placeholder="Email Adresiniz" />
+                        </div>
+                        <div class="form-group password">
+                          <label for="login-password">Şifrenizi Giriniz</label>
+                          <input type="password" class="form-control" id="login-password" placeholder="Şifreniz" />
+                          <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
+                        </div>
+                        <div class="links">
+                          <div class="form-group not-border checkbox">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                            <label class="form-check-label" for="flexCheckChecked"> Beni Hatırla </label>
+                          </div>
+                          <a href="#">Şifremi Unuttum</a>
+                        </div>
+                        <button type="submit" class="btn btn-second">Giriş Yap</button>
+                        <div class="link">Hesabınız ile birlikte,<a href="#"> Şartlar ve Koşullar ve Gizlilik Politikası & Kişisel Verilerin İşlenmesine</a> onay verilir.</div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item buttons">
+                <a href="/auth/logout" type="button" class="nav-link btn-second">Çıkış Yap</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dialysing.com</title>
+
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="../user/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../user/css/bootstrap.min.css" />
+    <!-- Bootstrap style -->
+    <link rel="stylesheet" type="text/css" href="../user/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../user/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../user/css/datepicker.css" />
+    <link rel="stylesheet" href="../user/css/style.css" />
+    <link rel="stylesheet" href="../user/css/register/register.css" />
+    <!-- Templatemo style -->
+</head>
+
+<body>
+    <div class="tm-main-content" id="register">
+        
+        
+<div class="tm-top-bar single tm-bg-background" id="tm-top-bar">
+  <!-- Top Navbar -->
+  <div class="container">
+    <div class="row">
+      <nav class="navbar navbar-expand-lg narbar-light">
+        <a class="navbar-brand logo" href="../user/index.html"> Dialysing<span>.com</span> </a>
+        <a href="#" class="location"><img src="../user/img/icons/location-white.png" alt="Location White" /><span>İstanbul, Türkiye</span></a>
+        <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="mainNav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item language-selection">
+              <img src="../user/img/flags/turkey.png" alt="Flags Turkey" />
+              <div class="tm-form-element tm-form-element-2">
+                <select name="language" class="form-control tm-select" id="language">
+                  <option value="">Türkçe</option>
+                  <option value="1">Ingilizce</option>
+                  <option value="2">Almanca</option>
+                </select>
+              </div>
+            </li>
+            <li class="nav-item question">
+              <img src="../user/img/icons/question.png" alt="Icons Question" />
+            </li>
+            <li class="nav-item buttons">
+              <a class="nav-link btn-third">Merkezinizi Ekleyin</a>
+            </li>
+            <li class="nav-item buttons">
+              <a class="nav-link btn-second">Kayıt Ol</a>
+            </li>
+            <li class="nav-item buttons">
+              <!-- Button trigger modal -->
+              <button type="button" class="nav-link btn-second" data-toggle="modal" data-target="#loginModal">Giriş Yap</button>
+
+              <!-- Login Model -->
+              <%- include("../partials/login-model") %> 
+
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+        <%- body %> 
+
+    </div>
+
+    <%- include('../partials/footer') %>
+
+    </div>
+
+    <!-- load JS files -->
+    <script src="../user/js/jquery-1.11.3.min.js"></script>
+    <script src="../user/js/popper.min.js"></script>
+    <script src="../user/js/bootstrap.min.js"></script>
+</body>
+
+</html>

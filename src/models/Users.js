@@ -8,10 +8,9 @@ const UserSchema = Mongoose.Schema(
       unique: [true, "Bu email adresi zaten kullanılıyor."],
     },
     password: String,
-    phoneNumber: {
+    phone: {
       type: String,
       unique: [true, "Bu telefon numarası zaten kayıtlıdır."],
-      
     },
     birthDate: Date,
     profileImage: String,

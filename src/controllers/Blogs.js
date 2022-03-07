@@ -62,11 +62,17 @@ class BlogController {
   //         });
   // }
 
- async index(req, res, next)  {
+  async index(req, res, next) {
     var blogs = await Service.index();
     res.render("user/pages/blogs", { layout: "user/layouts/blogs", blogs });
   }
 
+  singleBlog(req, res, next) {
+    var id = req.params.id;
+    Service.findById(id).then((data) => {
+      res.render("user/pages/single-blog", { layout: "user/layouts/blogs", blog: data });
+    });
+  }
 }
 
 module.exports = new BlogController();

@@ -4,6 +4,7 @@ const { authenticate, currentUser } = require("../middlewares/authentication");
 
 const Controller = require("../controllers/Blogs");
 
-router.get("/", Controller.index);
+router.get("/", authenticate, Controller.index);
+router.get("/:id", authenticate, Controller.singleBlog);
 
 module.exports = router;

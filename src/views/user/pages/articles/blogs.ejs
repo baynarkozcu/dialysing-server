@@ -1,7 +1,7 @@
     <div class="tm-main-content" id="top">
       <div class="tm-top-bar single mixed tm-bg-background" id="tm-top-bar">
 
-        <%- include("../partials/top-navbar")  %> 
+        <%- include("../../partials/top-navbar")  %> 
 
       </div>
       <div class="tm-section tm-bg-img min article-background" id="tm-section-1">
@@ -14,7 +14,7 @@
                 <form class="tm-search-form tm-section-pad-2">
                   <div class="form-group">
                     <input type="text" class="form-control individual-search" id="search" placeholder="Konu ara..." />
-                    <img src="../user/img/icons/search-dark.png" alt="Icon Search" class="search" />
+                    <img src="../../user/img/icons/search-dark.png" alt="Icon Search" class="search" />
                   </div>
                 </form>
               </div>
@@ -83,7 +83,7 @@
 
               <!-- TODO Blog List -->
               <% blogs.forEach(blog => { %>
-               <%- include("../partials/blog-card", { blog })  %> 
+               <%- include("../../partials/blog-card", { blog })  %> 
               <% }) %>
             
             </div>

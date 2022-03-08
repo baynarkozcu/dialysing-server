@@ -1,0 +1,688 @@
+<div class="tm-top-bar" id="tm-top-bar">
+    <%- include("../../partials/top-navbar") %>
+</div>
+
+<div class="tm-section tm-bg-img" id="tm-section-1">
+  <div class="ie-container-width-fix-2">
+    <div class="container ie-h-align-center-fix">
+      <div class="row">
+        <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix text-center tm-header-content">
+          <div class="tm-header-title">İstanbul Bölgesindeki Diyaliz Merkezleri</div>
+          <div class="tm-header-text">Tarihlerinizi girin ve aradığınız lokasyona en yakın diyaliz merkezini bulun</div>
+          <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
+            <div class="form-row tm-search-form-row">
+              <div class="form-group tm-form-element">
+                <img src="../user/img/icons/location.png" class="tm-form-element-icon" alt="Icon Location" />
+                <input name="city" type="text" class="form-control first-child" id="inputCity" placeholder="Lokasyon Girin" />
+              </div>
+              <div class="form-group tm-form-element">
+                <img src="../user/img/icons/calendar.png" class="tm-form-element-icon" alt="Icon Calendar" />
+                <input name="check-in" type="date" class="form-control date" id="inputCheckIn" placeholder="Diyaliz Tarihinizi Seçiniz" />
+                <img src="../user/img/icons/down.png" class="tm-form-element-icon-small icon-down dateicon" alt="Icon Down" />
+              </div>
+              <div class="form-group tm-form-element">
+                <button type="submit" class="btn btn-primary tm-btn-search"><img src="../user/img/icons/search.png" class="tm-form-element-icon-white" alt="Icon Search" />Diyaliz Bul</button>
+              </div>
+            </div>
+          </form>
+          <div class="text-center tm-color-white tm-header-properties">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-header-inner">
+              <img src="../user/img/icons/tick.png" alt="Icons Tick" />
+              <div class="tm-header-inner-text">Rezervasyon ücreti yok</div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-header-inner">
+              <img src="../user/img/icons/tick.png" alt="Icons Tick" />
+              <div class="tm-header-inner-text">Kredi kartı yok</div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-header-inner">
+              <img src="../user/img/icons/tick.png" alt="Icons Tick" />
+              <div class="tm-header-inner-text">Rezervasyon iptal kolaylığı</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="section-i" class="tm-p tm-pt-20 tm-pb-20">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+        <div class="tm-box-categories">
+          <div class="tm-categories-title">Filtreleme</div>
+          <form class="tm-form-small filter">
+            <div class="form-group">
+              <label for="distance" class="form-label">Aranılan lokasyona uzaklık</label>
+              <div id="distance" class="distance">
+                <output id="result">40</output>
+                <span> km uzaklık</span>
+              </div>
+
+              <input onchange="changeValue(this.value)" type="range" value="40" min="0" max="50" oninput="this.nextElementSibling.value = this.value" class="form-range" id="distance" />
+
+              <div class="total-distance">Total: 50</div>
+            </div>
+            <div class="tm-categories-subtitle">Merkez Ortalama Puanı</div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox49" checked />
+              <label class="form-check-label selected" for="filterCheckBox49"> Süper +9 </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox48" />
+              <label class="form-check-label selected" for="filterCheckBox48"> Çok İyi +7 </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox47" />
+              <label class="form-check-label selected" for="filterCheckBox47"> İyi +6 </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox46" />
+              <label class="form-check-label selected" for="filterCheckBox46"> Ortalama +5 </label>
+            </div>
+            <div class="tm-categories-subtitle">Diyaliz Tedavisi Tipi</div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox1" checked />
+              <label class="form-check-label selected" for="filterCheckBox1"> Hemodiyaliz </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox2" />
+              <label class="form-check-label selected" for="filterCheckBox2"> Hemodiyafiltrasyon </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox3" />
+              <label class="form-check-label selected" for="filterCheckBox3"> Merkezde Gece Hemodiyalizi </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox4" />
+              <label class="form-check-label selected" for="filterCheckBox4"> Ev Hemodiyalizi </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox5" />
+              <label class="form-check-label selected" for="filterCheckBox5"> Hemşireli Ev Hemodiyalizi </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox6" />
+              <label class="form-check-label selected" for="filterCheckBox6"> Periton Diyalizi </label>
+            </div>
+            <div class="tm-categories-subtitle">Seans İçi Hizmetler</div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox7" checked />
+              <label class="form-check-label selected" for="filterCheckBox7"> Seans İçi Yiyecek Sunumu </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox8" />
+              <label class="form-check-label selected" for="filterCheckBox8"> Ücretsiz Ulaşım Hizmeti </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox9" />
+              <label class="form-check-label selected" for="filterCheckBox9"> Kişiye Özel Tv Hizmeti </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox10" />
+              <label class="form-check-label selected" for="filterCheckBox10"> Ücretsiz Wifi Hizmeti </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox11" />
+              <label class="form-check-label selected" for="filterCheckBox11"> Tedavi Salonlarında Klima </label>
+            </div>
+            <div class="tm-categories-subtitle">Tesis İçi İmkanlar</div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox12" checked />
+              <label class="form-check-label selected" for="filterCheckBox12"> Tekerlekli Sandalye Kullanım </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox13" />
+              <label class="form-check-label selected" for="filterCheckBox13"> Tutunma Kollu Tuvalet </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox14" />
+              <label class="form-check-label selected" for="filterCheckBox14"> Giriş-Çıkış Alanlarında Klima </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox15" />
+              <label class="form-check-label selected" for="filterCheckBox15"> Hassas Tartı </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox16" />
+              <label class="form-check-label selected" for="filterCheckBox16"> Rampalı Hassas Tartı </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox17" />
+              <label class="form-check-label selected" for="filterCheckBox17"> Kişisel Eşyalar İçin Kilitli Dolap </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox18" />
+              <label class="form-check-label selected" for="filterCheckBox18"> Hasta Aracı Otoparkı </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox19" />
+              <label class="form-check-label selected" for="filterCheckBox19"> Ambulans Hizmeti </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox20" />
+              <label class="form-check-label selected" for="filterCheckBox20"> 7/24 Ulaşılabilirlik </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox21" />
+              <label class="form-check-label selected" for="filterCheckBox21"> İzole Hasta Odası </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox22" />
+              <label class="form-check-label selected" for="filterCheckBox22"> El Kumandalı Otomatik Yatak </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox23" />
+              <label class="form-check-label selected" for="filterCheckBox23"> Hava Filtreleme Cihazı </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox24" />
+              <label class="form-check-label selected" for="filterCheckBox24"> Hava Filtreleme Cihazı </label>
+            </div>
+            <div class="tm-categories-subtitle">Merkez Binası Tipi</div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox25" checked />
+              <label class="form-check-label selected" for="filterCheckBox25"> Müstakil Binalı Merkezler </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox26" />
+              <label class="form-check-label selected" for="filterCheckBox26"> Müstakil Binada Olmayan Merkezler </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox27" />
+              <label class="form-check-label selected" for="filterCheckBox27"> Hastane İçi Merkezler </label>
+            </div>
+            <div class="tm-categories-subtitle">Diyaliz Merkezleri</div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox28" checked />
+              <label class="form-check-label selected" for="filterCheckBox28"> Tüm Diyaliz Merkezleri </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox29" />
+              <label class="form-check-label selected" for="filterCheckBox29"> Özel Diyaliz Merkezleri </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox30" />
+              <label class="form-check-label selected" for="filterCheckBox30"> Kamu Diyaliz Merkezleri </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox31" />
+              <label class="form-check-label selected" for="filterCheckBox31"> Üniversite Diyaliz Merkezleri </label>
+            </div>
+            <div class="tm-categories-subtitle">Sigorta Durumu</div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox32" checked />
+              <label class="form-check-label selected" for="filterCheckBox32"> SSK Anlaşmalı </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox33" />
+              <label class="form-check-label selected" for="filterCheckBox33"> Banka Anlaşmalı </label>
+            </div>
+            <div class="tm-categories-subtitle">Sağlık Çalışanları</div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox34" checked />
+              <label class="form-check-label selected" for="filterCheckBox34"> Diyetisyen </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox35" />
+              <label class="form-check-label selected" for="filterCheckBox35"> Nefroloji </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox36" checked />
+              <label class="form-check-label selected" for="filterCheckBox36"> Profesörlü </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox37" />
+              <label class="form-check-label selected" for="filterCheckBox37"> Uzman Hekimli </label>
+            </div>
+            <div class="tm-categories-subtitle">Diyaliz Cihazı Markaları</div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox38" checked />
+              <label class="form-check-label selected" for="filterCheckBox38"> Fresenius </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox39" />
+              <label class="form-check-label selected" for="filterCheckBox39"> BBraun Dialog+ </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox40" checked />
+              <label class="form-check-label selected" for="filterCheckBox40"> Gambro </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox41" />
+              <label class="form-check-label selected" for="filterCheckBox41"> Nipro Surdial </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox42" checked />
+              <label class="form-check-label selected" for="filterCheckBox42"> Kawasumi </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox43" />
+              <label class="form-check-label selected" for="filterCheckBox43"> Toray </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox44" checked />
+              <label class="form-check-label selected" for="filterCheckBox44"> Baxter </label>
+            </div>
+            <div class="form-group not-border checkbox">
+              <input class="form-check-input" type="checkbox" value="" id="filterCheckBox45" />
+              <label class="form-check-label selected" for="filterCheckBox45"> Nikkiso </label>
+            </div>
+            <button class="btn btn-second wide small">Filtreleri Uygula</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-9 col-xl-9">
+        <div class="clinic-map tm-margin-b-1">
+          <div class="tm-section-title-2">İstanbul İlinde 4 Adet Diyaliz Merkezi Bulundu</div>
+          <div class="clinic-map-open">
+            <button class="btn-second" data-toggle="modal" data-target="#mapModal">Harita Üzerinde Göster</button>
+            <!-- Modal -->
+            <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                      <div class="clinic-center-box">
+                        <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+                        <div class="clinic-center-main-content">
+                          <div class="clinic-center-box-content">
+                            <div class="clinic-center-info">
+                              <div class="title">Türkmed Diyaliz Merkezi</div>
+                              <div class="text">Arama yaptığınız konumdan 5 km uzaklıkta.</div>
+                            </div>
+                          </div>
+                          <div class="clinic-center-box-content2">
+                            <div class="row">
+                              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                <div class="span-text">Kahvaltı Hizmeti</div>
+                                <div class="span-text">Yemek Hizmeti</div>
+                                <div class="span-text">Banka Anlaşmalı Merkez</div>
+                              </div>
+                              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                <div class="span-text">Ücretsiz Wifi</div>
+                                <div class="span-text">Tekerlekli Sandalyeye Uygun</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="clinic-center-box-content3">
+                            <div class="right">
+                              <button class="btn btn-second">Randevu Oluştur</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr />
+                      <div class="clinic-center-box">
+                        <img src="../user/img/clinic/centers/clinic-ix.png" alt="Clinic Center ix" class="clinic-img" />
+                        <div class="clinic-center-main-content">
+                          <div class="clinic-center-box-content">
+                            <div class="clinic-center-info">
+                              <div class="title">Bodrum Diyaliz Merkezi</div>
+                              <div class="text">Arama yaptığınız konumdan 5 km uzaklıkta.</div>
+                            </div>
+                          </div>
+                          <div class="clinic-center-box-content2">
+                            <div class="row">
+                              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                <div class="span-text">Kahvaltı Hizmeti</div>
+                                <div class="span-text">Yemek Hizmeti</div>
+                                <div class="span-text">Banka Anlaşmalı Merkez</div>
+                              </div>
+                              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                <div class="span-text">Ücretsiz Wifi</div>
+                                <div class="span-text">Tekerlekli Sandalyeye Uygun</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="clinic-center-box-content3">
+                            <div class="right">
+                              <button class="btn btn-second">Randevu Oluştur</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr />
+                      <div class="clinic-center-box">
+                        <img src="../user/img/clinic/centers/clinic-x.png" alt="Clinic Center x" class="clinic-img" />
+                        <div class="clinic-center-main-content">
+                          <div class="clinic-center-box-content">
+                            <div class="clinic-center-info">
+                              <div class="title">Milas Diyaliz Merkezi</div>
+                              <div class="text">Arama yaptığınız konumdan 5 km uzaklıkta.</div>
+                            </div>
+                          </div>
+                          <div class="clinic-center-box-content2">
+                            <div class="row">
+                              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                <div class="span-text">Kahvaltı Hizmeti</div>
+                                <div class="span-text">Yemek Hizmeti</div>
+                                <div class="span-text">Banka Anlaşmalı Merkez</div>
+                              </div>
+                              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                <div class="span-text">Ücretsiz Wifi</div>
+                                <div class="span-text">Tekerlekli Sandalyeye Uygun</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="clinic-center-box-content3">
+                            <div class="right">
+                              <button class="btn btn-second">Randevu Oluştur</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr />
+                      <div class="clinic-center-box">
+                        <img src="../user/img/clinic/centers/clinic-xi.png" alt="Clinic Center xi" class="clinic-img" />
+                        <div class="clinic-center-main-content">
+                          <div class="clinic-center-box-content">
+                            <div class="clinic-center-info">
+                              <div class="title">Karşıyaka Diyaliz Merkezi</div>
+                              <div class="text">Arama yaptığınız konumdan 5 km uzaklıkta.</div>
+                            </div>
+                          </div>
+                          <div class="clinic-center-box-content2">
+                            <div class="row">
+                              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                <div class="span-text">Kahvaltı Hizmeti</div>
+                                <div class="span-text">Yemek Hizmeti</div>
+                                <div class="span-text">Banka Anlaşmalı Merkez</div>
+                              </div>
+                              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                <div class="span-text">Ücretsiz Wifi</div>
+                                <div class="span-text">Tekerlekli Sandalyeye Uygun</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="clinic-center-box-content3">
+                            <div class="right">
+                              <button class="btn btn-second">Randevu Oluştur</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96400.5203923409!2d29.188889743052176!3d40.97017486526555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cad06bcdceeedd%3A0xc60a934d71edf37c!2sTurkmed%20Diyaliz%20Merkezi!5e0!3m2!1sen!2sde!4v1642511864286!5m2!1sen!2sde" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clinic-filter tm-margin-b-1">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+              <div class="btn-second">Bizim Seçtiklerimiz</div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+              <div class="btn-forth">Mesafeye Göre</div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+              <div class="btn-forth">Mesafeye Göre</div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+              <div class="btn-forth">Toplam Yorum Sayısı</div>
+            </div>
+          </div>
+        </div>
+        <div class="clinic-center-box">
+          <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+          <div class="clinic-center-main-content">
+            <div class="clinic-center-box-content">
+              <div class="clinic-center-info">
+                <div class="text">2015 Yılından Beri Hizmet Vermekte</div>
+                <div class="title">Türkmed Diyaliz Merkezi</div>
+                <div class="tm-display-flex">
+                  <div class="text">Arama yaptığınız konumdan 5 km uzaklıkta.</div>
+                  <div class="span-text">Öne Çıkan Merkez</div>
+                </div>
+              </div>
+              <div class="clinic-center-points">
+                <div class="clinic-center-point">
+                  <div class="point">
+                    <div class="title">Çok İyi</div>
+                    <div class="text">2500 inceleme</div>
+                  </div>
+                  <div class="circle">9.8</div>
+                </div>
+              </div>
+            </div>
+            <div class="clinic-center-box-content2">
+              <div class="services">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="span-text">Kahvaltı Hizmeti</div>
+                    <div class="span-text">Yemek Hizmeti</div>
+                    <div class="span-text">Banka Anlaşmalı Merkez</div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="span-text">Ücretsiz Wifi</div>
+                    <div class="span-text">Tekerlekli Sandalyeye Uygun</div>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <i class="fa fa-heart clicked"></i>
+                <div class="clinic-center-brands">
+                  <img src="../user/img/brands/JCI.png" alt="Brand JCI" />
+                  <img src="../user/img/brands/ISO.png" alt="Brand ISO" />
+                </div>
+              </div>
+            </div>
+            <div class="clinic-center-box-content3">
+              <div class="left">
+                <div class="attention"><img src="../user/img/clinic/icons/attention.png" alt="Icon Attention" />Seçtiğiniz tarihlerde son 2 adet uygun seans kalmıştır.</div>
+                <div class="users"><img src="../user/img/clinic/icons/3-User.png" alt="Icon 3-User" />Bu ay 15 kişi bu diyaliz merkezini inceledi</div>
+              </div>
+              <div class="right">
+                <button class="btn btn-second">Randevu Oluştur</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clinic-center-box">
+          <img src="../user/img/clinic/centers/clinic-ix.png" alt="Clinic Center ix" class="clinic-img" />
+          <div class="clinic-center-main-content">
+            <div class="clinic-center-box-content">
+              <div class="clinic-center-info">
+                <div class="text">2015 Yılından Beri Hizmet Vermekte</div>
+                <div class="title">Bodrum Diyaliz Merkezi</div>
+                <div class="tm-display-flex">
+                  <div class="text">Arama yaptığınız konumdan 3 km uzaklıkta.</div>
+                  <div class="span-text">Öne Çıkan Merkez</div>
+                </div>
+              </div>
+              <div class="clinic-center-points">
+                <div class="clinic-center-point">
+                  <div class="point">
+                    <div class="title">İyi</div>
+                    <div class="text">2256 inceleme</div>
+                  </div>
+                  <div class="circle">8.3</div>
+                </div>
+              </div>
+            </div>
+            <div class="clinic-center-box-content2">
+              <div class="services">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="span-text">Kahvaltı Hizmeti</div>
+                    <div class="span-text">Yemek Hizmeti</div>
+                    <div class="span-text">Banka Anlaşmalı Merkez</div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="span-text">Ücretsiz Wifi</div>
+                    <div class="span-text">Tekerlekli Sandalyeye Uygun</div>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <i class="fa fa-heart-o"></i>
+                <div class="clinic-center-brands">
+                  <img src="../user/img/brands/ISO.png" alt="Brand ISO" />
+                </div>
+              </div>
+            </div>
+            <div class="clinic-center-box-content3">
+              <div class="left">
+                <div class="attention"><img src="../user/img/clinic/icons/attention.png" alt="Icon Attention" />Seçtiğiniz tarihlerde son 2 adet uygun seans kalmıştır.</div>
+                <div class="users"><img src="../user/img/clinic/icons/3-User.png" alt="Icon 3-User" />Bu ay 15 kişi bu diyaliz merkezini inceledi</div>
+              </div>
+              <div class="right">
+                <button class="btn btn-second">Merkez Profiline Bak</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clinic-center-box">
+          <img src="../user/img/clinic/centers/clinic-x.png" alt="Clinic Center x" class="clinic-img" />
+          <div class="clinic-center-main-content">
+            <div class="clinic-center-box-content">
+              <div class="clinic-center-info">
+                <div class="text">2015 Yılından Beri Hizmet Vermekte</div>
+                <div class="title">Milas Diyaliz Merkezi</div>
+                <div class="tm-display-flex">
+                  <div class="text">Arama yaptığınız konumdan 3 km uzaklıkta.</div>
+                  <div class="span-text">Öne Çıkan Merkez</div>
+                </div>
+              </div>
+              <div class="clinic-center-points">
+                <div class="clinic-center-point">
+                  <div class="point">
+                    <div class="title">İyi</div>
+                    <div class="text">2256 inceleme</div>
+                  </div>
+                  <div class="circle">8.3</div>
+                </div>
+              </div>
+            </div>
+            <div class="clinic-center-box-content2">
+              <div class="services">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="span-text">Kahvaltı Hizmeti</div>
+                    <div class="span-text">Yemek Hizmeti</div>
+                    <div class="span-text">Banka Anlaşmalı Merkez</div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="span-text">Ücretsiz Wifi</div>
+                    <div class="span-text">Tekerlekli Sandalyeye Uygun</div>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <i class="fa fa-heart-o"></i>
+                <div class="clinic-center-brands">
+                  <img src="../user/img/brands/ISO.png" alt="Brand ISO" />
+                </div>
+              </div>
+            </div>
+            <div class="clinic-center-box-content3">
+              <div class="left">
+                <div class="attention"><img src="../user/img/clinic/icons/attention.png" alt="Icon Attention" />Seçtiğiniz tarihlerde son 2 adet uygun seans kalmıştır.</div>
+                <div class="users"><img src="../user/img/clinic/icons/3-User.png" alt="Icon 3-User" />Bu ay 15 kişi bu diyaliz merkezini inceledi</div>
+              </div>
+              <div class="right">
+                <button class="btn btn-second">Merkez Profiline Bak</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clinic-center-box">
+          <img src="../user/img/clinic/centers/clinic-xi.png" alt="Clinic Center xi" class="clinic-img" />
+          <div class="clinic-center-main-content">
+            <div class="clinic-center-box-content">
+              <div class="clinic-center-info">
+                <div class="text">2015 Yılından Beri Hizmet Vermekte</div>
+                <div class="title">Karşıyaka Diyaliz Merkezi</div>
+                <div class="tm-display-flex">
+                  <div class="text">Arama yaptığınız konumdan 3 km uzaklıkta.</div>
+                  <div class="span-text">Öne Çıkan Merkez</div>
+                </div>
+              </div>
+              <div class="clinic-center-points">
+                <div class="clinic-center-point">
+                  <div class="point">
+                    <div class="title">Ortalama</div>
+                    <div class="text">2256 inceleme</div>
+                  </div>
+                  <div class="circle">6.7</div>
+                </div>
+              </div>
+            </div>
+            <div class="clinic-center-box-content2">
+              <div class="services">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="span-text">Kahvaltı Hizmeti</div>
+                    <div class="span-text">Yemek Hizmeti</div>
+                    <div class="span-text">Banka Anlaşmalı Merkez</div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="span-text">Ücretsiz Wifi</div>
+                    <div class="span-text">Tekerlekli Sandalyeye Uygun</div>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <i class="fa fa-heart-o"></i>
+                <div class="clinic-center-brands">
+                  <img src="../user/img/brands/ISO.png" alt="Brand ISO" />
+                </div>
+              </div>
+            </div>
+            <div class="clinic-center-box-content3">
+              <div class="left">
+                <div class="attention"><img src="../user/img/clinic/icons/attention.png" alt="Icon Attention" />Seçtiğiniz tarihlerde son 2 adet uygun seans kalmıştır.</div>
+                <div class="users"><img src="../user/img/clinic/icons/3-User.png" alt="Icon 3-User" />Bu ay 15 kişi bu diyaliz merkezini inceledi</div>
+              </div>
+              <div class="right">
+                <button class="btn btn-second">Merkez Profiline Bak</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="tm-p d-flex justify-content-center">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="section-ii" class="tm-bg-dark-blue">
+  <div class="container tm-p-4">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3"></div>
+      <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="tm-text-white subscribe text-center">Son gelişmelerden haberdar olmak için abone olun.</div>
+        <div class="form-group bottom blue-input text-center">
+          <input name="check-in" type="text" class="form-control" id="inputCheckIn" placeholder="dialysing@demo.com.tr" />
+          <img src="../user/img/icons/arrow.png" alt="Icon Arrow" />
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3"></div>
+    </div>
+  </div>
+</div>

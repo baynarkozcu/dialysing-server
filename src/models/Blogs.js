@@ -6,6 +6,7 @@ const BlogSchema = Mongoose.Schema(
     content: String,
     image: String,
     author: String,
+    seflink: String,
   },
   { timestamps: true, versionKey: false }
 );

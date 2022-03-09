@@ -4,7 +4,7 @@ const config = require("./configs/");
 const loaders = require("./loaders");
 const path = require("path");
 
-const { AuthRouter, UserRouter, BlogRouter, HomeRouter } = require("./routers");
+const { AuthRouter, UserRouter, BlogRouter, HomeRouter, ClinicPanelRouter } = require("./routers");
 const errorHandler = require("./middlewares/errorHandler");
 
 const session = require("express-session");
@@ -72,6 +72,7 @@ app.listen(process.env.APP_PORT, () => {
 
   app.use("/auth", AuthRouter);
   app.use("/blogs", BlogRouter);
+  app.use("/panel", ClinicPanelRouter);
   app.use("/", HomeRouter);
 
   app.use((req, res, next) => {

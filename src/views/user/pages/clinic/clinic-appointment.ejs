@@ -143,29 +143,29 @@
         <form class="tm-form-wide custom">
           <div class="form-group">
             <label for="job-dropdown">Tedavi Yöntemi</label>
-            <div class="tm-color-shadow-2">Hemodiyaliz</div>
+            <div class="tm-color-shadow-2"><%- cookieValue.treatmentMethod %></div>
           </div>
           <div class="form-group">
             <label for="job-dropdown">Haftalık Seans Sayısı</label>
-            <div class="tm-color-shadow-2">2 Seans</div>
+            <div class="tm-color-shadow-2"><%- cookieValue.sessionsDayCount %> Seans</div>
           </div>
           <div class="form-group">
             <label for="job-dropdown">Tercih Edilen Tedavi Günleri</label>
-            <div class="tm-color-shadow-2">Pazartesi-Salı-Çarşamba</div>
+            <div class="tm-color-shadow-2"><%- cookieValue.sessionsDay %></div>
           </div>
           <div class="form-group clinic-check-dates">
             <div class="checkin">
               <label for="check-in">Check-in Tarihi</label>
-              <div class="tm-color-shadow-2">15 Kasım 2021</div>
+              <div class="tm-color-shadow-2"><%- cookieValue.checkInDate %></div>
             </div>
             <div class="checkout">
               <label for="check-out">Check-out Tarihi</label>
-              <div class="tm-color-shadow-2">18 Kasım 2021</div>
+              <div class="tm-color-shadow-2"><%- cookieValue.checkOutDate %></div>
             </div>
           </div>
           <div class="form-group tm-margin-t-1">
             <label for="job-dropdown">Tercih Edilen Seans</label>
-            <div class="tm-color-shadow-2">Merkezde Gece Seansı</div>
+            <div class="tm-color-shadow-2"><%- cookieValue.session %></div>
           </div>
         </form>
         <div class="tm-content small-content">
@@ -231,26 +231,27 @@
           <div class="clinic-form-title">Kişisel Bilgiler</div>
           <div class="clinic-form-inner-box">
             <div class="alert alert-primary" role="alert"><img src="../user/img/clinic/icons/error-circle.png" alt="Error Circle Icon" />Neredeyse bitti! Sadece * gerekli bilgilerinizi doldurun.</div>
-            <form class="tm-form-wide" action="/deneme" method="POST">
+            <form class="tm-form-wide" action="/clinic/new-clinic-appointment" method="POST">
               <div class="form-group">
-                <label for="name-surname">Ad Soyad <span class="mandatory">*</span></label>
-                <input type="text" class="form-control" id="name-surname" name="name-surname" placeholder="Adınız Soyadınız" />
+                <label for="nameSurname">Ad Soyad <span class="mandatory">*</span></label>
+                <input type="text" class="form-control" id="nameSurname" name="nameSurname" placeholder="Adınız Soyadınız" />
               </div>
               <div class="form-group">
                 <label for="email">Email Adresi <span class="mandatory">*</span></label>
                 <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email Adresiz" />
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="email">Email Adresinizi Onaylayın <span class="mandatory">*</span></label>
                 <input type="email" class="form-control" id="email-confirm" name="email-confirm" aria-describedby="emailHelp" placeholder="Email Adresiz" />
-              </div>
+              </div> -->
               <div class="form-group">
                 <label for="date">Doğum Tarihiniz <span class="mandatory">*</span></label>
                 <input type="date" class="form-control" id="birthdate" name="birthdate" placeholder="04.12.1994" />
               </div>
+              <!-- TODO BURASI KONTROL EDİLECEK -->
               <div class="form-group">
                 <label>Kim İçin Rezervasyon Almak İstiyorsunuz <span class="mandatory">*</span></label>
-                <div class="inline-checkboxes" name="oppointment-owner">
+                <div class="inline-checkboxes" name="appointment-owner">
                   <div class="form-group not-border checkbox">
                     <input class="form-check-input" type="checkbox" value="Kendim" id="flexCheckChecked11" />
                     <label class="form-check-label" for="flexCheckChecked11"> Kendim </label>
@@ -266,70 +267,67 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="name-surname2">Diyalize Girecek Kişinin Adı Soyadı* <span class="mandatory">*</span></label>
-                <input type="text" class="form-control" id="name-surname2" name="name-surname2" placeholder="Adınız Soyadınız" />
+                <label for="patientNameSurname">Diyalize Girecek Kişinin Adı Soyadı* <span class="mandatory">*</span></label>
+                <input type="text" class="form-control" id="patientNameSurname" name="patientNameSurname" placeholder="Adınız Soyadınız" />
               </div>
               <div class="form-group">
                 <label for="situation">Hepatit Marker Durumunuzu Belirtiniz* <span class="mandatory">*</span></label>
                 <input type="text" class="form-control" id="situation" name="situation" placeholder="Adınız Soyadınız" />
               </div>
+              <!-- TODO BURASI KONTROL EDİLECEK -->
               <div class="form-group">
                 <label>Diyalize Girecek Kişinin Sigorta Durumu <span class="mandatory">*</span></label>
-                <!-- TODO <div class="inline-checkboxes" name="oppointment-owner"></div> -->
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="SSK" id="flexCheckChecked1" />
-                  <label class="form-check-label" for="flexCheckChecked1"> SSK </label>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                  <label class="form-check-label" for="flexCheckChecked"> SSK </label>
                 </div>
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="Yeşilkart Sigortalısı" id="flexCheckChecked2" />
-                  <label class="form-check-label" for="flexCheckChecked2"> Yeşilkart Sigortalısı </label>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                  <label class="form-check-label" for="flexCheckChecked"> Yeşilkart Sigortalısı </label>
                 </div>
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="Banka Sigortalısı" id="flexCheckChecked3" />
-                  <label class="form-check-label" for="flexCheckChecked3"> Banka Sigortalısı </label>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                  <label class="form-check-label" for="flexCheckChecked"> Banka Sigortalısı </label>
                 </div>
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="Yurtdışı Sigortalısı" id="flexCheckChecked4" />
-                  <label class="form-check-label" for="flexCheckChecked4"> Yurtdışı Sigortalısı </label>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                  <label class="form-check-label" for="flexCheckChecked"> Yurtdışı Sigortalısı </label>
                 </div>
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="Özel Sigortalı" id="flexCheckChecked5" />
-                  <label class="form-check-label" for="flexCheckChecked5"> Özel Sigortalı </label>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                  <label class="form-check-label" for="flexCheckChecked"> Özel Sigortalı </label>
                 </div>
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="EHIC (Europan Health Insurance Card)" id="flexCheckChecked6" />
-                  <label class="form-check-label" for="flexCheckChecked6"> EHIC (Europan Health Insurance Card) </label>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                  <label class="form-check-label" for="flexCheckChecked"> EHIC (Europan Health Insurance Card) </label>
                 </div>
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="Global Health Insurance Card (GHIC)" id="flexCheckChecked7" />
-                  <label class="form-check-label" for="flexCheckChecked7"> Global Health Insurance Card (GHIC) </label>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                  <label class="form-check-label" for="flexCheckChecked"> Global Health Insurance Card (GHIC) </label>
                 </div>
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="Sigortam Yok/Kendim Ödeyeceğim" id="flexCheckChecked8" />
-                  <label class="form-check-label" for="flexCheckChecked8"> Sigortam Yok/Kendim Ödeyeceğim </label>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                  <label class="form-check-label" for="flexCheckChecked"> Sigortam Yok/Kendim Ödeyeceğim </label>
                 </div>
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="Diğer" id="flexCheckChecked9" />
-                  <label class="form-check-label" for="flexCheckChecked9"> Diğer </label>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                  <label class="form-check-label" for="flexCheckChecked"> Diğer </label>
                 </div>
               </div>
-              <div class="clinic-form-box">
-                <div class="clinic-form-title">Adres Bilgileri</div>
-                <div class="clinic-form-inner-box">
-                  <form class="tm-form-wide">
-                    <div class="form-group">
-                      <label for="address">Adresinizi Girin <span class="mandatory">*</span></label>
-                      <input type="text" class="form-control" id="address" name="address" placeholder="Adresinizi Girin" />
+                                  <div class="form-group">
+                      <label for="adressDetailText">Adresinizi Girin <span class="mandatory">*</span></label>
+                      <input type="text" class="form-control" id="adressDetailText" name="adressDetailText" placeholder="Adresinizi Girin" />
                     </div>
                     <div class="form-group">
                       <label for="job-dropdown">Şehir <span class="mandatory">*</span></label>
-                      <div class="dropdown">
-                        <button class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Şehir</button>
-                        <div class="dropdown-menu" name="city" aria-labelledby="job-dropdown">
-                          <a class="dropdown-item" href="#">İstanbul</a>
-                          <a class="dropdown-item" href="#">İzmir</a>
-                          <a class="dropdown-item" href="#">Ankara</a>
-                        </div>
+                      <div class="dropdown select">
+                        <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" name="city" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <option selected class="text-muted">Şehir Seçiniz</option>
+                          <option value="1">İstanbul</option>
+                          <option value="2">İzmir</option>
+                          <option value="3">Bursa</option>
+                          <option value="4">Gaziantep</option>
+                        </select>
                       </div>
                     </div>
                     <div class="row">
@@ -347,21 +345,13 @@
                       <input type="text" class="form-control" name="postcode" id="postcode" placeholder="Posta Kodu" />
                     </div>
                     <div class="form-group">
-                      <label for="tel">Telefon Numarası <span class="mandatory">*</span></label>
-                      <input type="tel" class="form-control" name="tel" id="tel" placeholder="Telefon Numarası" />
+                      <label for="phone">Telefon Numarası <span class="mandatory">*</span></label>
+                      <input type="tel" class="form-control" name="phone" id="phone" placeholder="Telefon Numarası" />
                     </div>
                     <div class="form-group">
                       <div class="warning">Tesisin randevunuzu onaylayabilmesi için gereklidir.</div>
                     </div>
-                  </form>
-                </div>
-              </div>
-                                    <!-- <button type="submit" class="btn-second">Randevuyu Tamamla</button> -->
-
-            <div class="tm-button-next left">
-              <button type="submit" class="btn-second">Devam Et</button>
-              <!-- <a href="/auth/activation" class="btn-second">Sonraki Adım</a> -->
-            </div>
+                    <button type="submit" class="btn btn-second">Randevu Oluştur</button>
             </form>
           </div>
         </div>

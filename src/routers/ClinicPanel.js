@@ -5,6 +5,8 @@ const { authenticate, currentUser } = require("../middlewares/authentication");
 const Controller = require('../controllers/ClinicPanel');
 
 router.get("/", authenticate, Controller.index);
+// router.get("/new-dialysis-center", authenticate, Controller.createDialysisCenter);
+router.post("/new-dialysis-center", authenticate, Controller.createDialysisCenter);
 // router.get("/clinic", Controller.clinicMain);
 // router.get("/clinic/clinic-list", Controller.clinicList);
 // router.get("/clinic/clinic-login", Controller.clinicLogin);

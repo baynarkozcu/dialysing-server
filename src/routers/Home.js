@@ -10,6 +10,8 @@ router.get("/clinic/clinic-list", Controller.clinicList);
 router.get("/clinic/clinic-login", Controller.clinicLogin);
 router.get("/clinic/address-correction", Controller.addressCorrection);
 router.get("/clinic/clinic-appointment", Controller.clinicAppointment);
+router.post("/clinic/clinic-appointment", Controller.viewAppointment);
+router.post("/clinic/new-clinic-appointment", Controller.createAppointment);
 router.get("/clinic/:id", Controller.singleClinic);
 router.get("/gfr-calculator", Controller.gfrCalculator);
 

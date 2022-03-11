@@ -3,6 +3,8 @@ const helmet = require("helmet");
 const config = require("./configs/");
 const loaders = require("./loaders");
 const path = require("path");
+var cookieParser = require("cookie-parser");
+
 
 const { AuthRouter, UserRouter, BlogRouter, HomeRouter, ClinicPanelRouter } = require("./routers");
 const errorHandler = require("./middlewares/errorHandler");
@@ -34,6 +36,8 @@ app.use(
     store: SessionStore,
   })
 );
+
+app.use(cookieParser());
 
 app.use(flash());
 

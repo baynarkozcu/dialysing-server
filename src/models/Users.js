@@ -22,10 +22,12 @@ const UserSchema = Mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    favorites: {
-      type: Mongoose.Types.ObjectId,
-      ref: "Dialysis",
-    },
+    favorites: [
+      {
+        type: Mongoose.Types.ObjectId,
+        ref: "Dialysis",
+      },
+    ],
     adress: {
       country: String,
       city: String,

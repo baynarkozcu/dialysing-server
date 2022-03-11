@@ -1,6 +1,4 @@
-<div class="tm-top-bar single tm-bg-background" id="tm-top-bar">
-    <%- include("../../partials/top-navbar")  %>
-</div>
+<div class="tm-top-bar single tm-bg-background" id="tm-top-bar"><%- include("../../partials/top-navbar") %></div>
 
 <div id="section-i" class="tm-p tm-pt-20">
   <div class="container">
@@ -196,49 +194,53 @@
             </div>
           </div>
         </div>
-        <form class="tm-form-wide custom">
+        <form class="tm-form-wide custom" action="/clinic/clinic-appointment" method="POST">
           <div class="form-group">
             <label for="job-dropdown">Tedavi Yöntemi</label>
             <div class="dropdown">
-              <button class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hemodiyaliz</button>
-              <div class="dropdown-menu" aria-labelledby="job-dropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+              <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown"  name="treatmentMethod" value="treatmentMethod" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option selected>Hemodiyaliz</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
             <label for="job-dropdown">Haftalık Seans Sayısı</label>
-            <div class="dropdown">
-              <button class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Haftalık Seans Sayınızı Seçiniz</button>
-              <div class="dropdown-menu" aria-labelledby="job-dropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+            <div class="dropdown select">
+              <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown"name="sessionsDayCount" value="sessionsDayCount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option selected>Haftalık Seans Sayınızı Seçiniz</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
             <label for="job-dropdown">Tercih Edilen Tedavi Günleri</label>
-            <div class="dropdown">
-              <button class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tercih Edilen Tedavi Günlerinizi Seçiniz</button>
-              <div class="dropdown-menu" aria-labelledby="job-dropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+            <div class="dropdown select">
+              <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" name="sessionsDay" value="sessionsDay" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option selected>Tercih Edilen Tedavi Günlerinizi Seçiniz</option>
+                <option value="Pazartesi">Pazartesi</option>
+                <option value="Salı">Salı</option>
+                <option value="Çarşamba">Çarşamba</option>
+                <option value="Perşembe">Perşembe</option>
+                <option value="Cuma">Cuma</option>
+                <option value="Cumartesi">Cumartesi</option>
+                <option value="Pazar">Pazar</option>
+              </select>
             </div>
           </div>
           <div class="form-group clinic-check-dates">
             <div class="checkin">
               <label for="check-in">Check-in Tarihi</label>
-              <input type="date" class="form-control" id="check-in" aria-describedby="emailHelp" placeholder="Check-in Tarihi" />
+              <input type="date" class="form-control" id="check-in" value="checkInDate" name="checkInDate" aria-describedby="emailHelp" placeholder="Check-in Tarihi" />
               <img src="../user/img/icons/dropdown-down-dark.png" alt="Icon Arrow" />
             </div>
             <div class="checkout">
               <label for="check-out">Check-out Tarihi</label>
-              <input type="date" class="form-control" id="check-out" aria-describedby="emailHelp" placeholder="Check-out Tarihi" />
+              <input type="date" class="form-control" id="check-out" value="checkOutDate" name="checkOutDate" aria-describedby="emailHelp" placeholder="Check-out Tarihi" />
               <img src="../user/img/icons/dropdown-down-dark.png" alt="Icon Arrow" />
             </div>
           </div>
@@ -248,17 +250,19 @@
           </div>
           <div class="form-group tm-margin-t-1">
             <label for="job-dropdown">Tercih Edilen Seans</label>
-            <div class="dropdown">
-              <button class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tercih Ettiğiniz Seansı Seçiniz</button>
-              <div class="dropdown-menu" aria-labelledby="job-dropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+            <div class="dropdown select">
+              <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" name="session" value="session" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option selected>Tercih Ettiğiniz Seansı Seçiniz</option>
+                <option value="10:00-12:00">10:00-12:00</option>
+                <option value="12:00-14:00">12:00-14:00</option>
+                <option value="14:00-16:00">14:00-16:00</option>
+                <option value="16:00-18:00">16:00-18:00</option>
+                <option value="18:00-20:00">18:00-20:00</option>
+              </select>
             </div>
           </div>
           <div class="alert small"><img src="../user/img/clinic/icons/error-circle-red.png" alt="Error Circle Red Icon" />Randevu oluşturabilmek için check-in tarihi girmeniz gerekmektedir.</div>
-          <button class="btn-second">Randevu Oluştur</button>
+          <button type="submit" class="btn-second">Randevu Oluştur</button>
           <button class="btn-forth">Favorilerine Ekle</button>
         </form>
         <div class="alert alert-danger alert-custom tm-margin-t-1" role="alert"><img src="../user/img/clinic/icons/error-circle-red.png" alt="Error Circle Red Icon" />Seçtiğiniz tarihlerde son 2 adet uygun seans kalmıştır.</div>

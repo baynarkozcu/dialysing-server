@@ -21,3 +21,10 @@
         <strong><%- error %> %> </strong>
     </div>
 <% }) %>
+
+
+<%- errors.forEach(error => { %>
+    <div class="alert alert-danger alert-dismissable fade show" role="alert">
+        <strong><%- error %> %> </strong>
+    </div>
+<% }) %> 

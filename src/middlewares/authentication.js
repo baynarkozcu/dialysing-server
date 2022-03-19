@@ -6,7 +6,7 @@ const authenticate = (req, res, next) => {
   } else {
     const htmlMessage = new HtmlMessage("Lütfen Giriş Yapınız.", "danger");
     req.flash("authorizationErrors", htmlMessage);
-    res.redirect("/auth/register");
+    res.redirect("/register");
   }
 };
 

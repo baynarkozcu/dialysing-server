@@ -25,7 +25,7 @@ const UserSchema = Mongoose.Schema(
     favorites: [
       {
         type: Mongoose.Types.ObjectId,
-        ref: "Dialysis",
+        ref: "DialysisCenter",
       },
     ],
     adress: {
@@ -34,6 +34,12 @@ const UserSchema = Mongoose.Schema(
       adressDetailText: String,
       zipCode: String,
     },
+    appointments: [
+      {
+        type: Mongoose.Types.ObjectId,
+        ref: "Appointment",
+      },
+    ],
   },
   { timestamps: true, versionKey: false }
 );

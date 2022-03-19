@@ -6,7 +6,7 @@ const path = require("path");
 var cookieParser = require("cookie-parser");
 
 
-const { AuthRouter, UserRouter, BlogRouter, HomeRouter, ClinicPanelRouter } = require("./routers");
+const { HomeRouter, ClinicPanelRouter } = require("./routers");
 const errorHandler = require("./middlewares/errorHandler");
 
 const session = require("express-session");
@@ -25,6 +25,9 @@ const SessionStore = new MongoDbStore({
   collection: "sessions",
 });
 
+app.use(helmet());
+app.use(cookieParser());
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -37,7 +40,7 @@ app.use(
   })
 );
 
-app.use(cookieParser());
+
 
 app.use(flash());
 
@@ -62,7 +65,7 @@ app.use(passport.session());
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(helmet());
+
 
 // Template Engine
 const ejs = require("ejs");
@@ -73,11 +76,8 @@ app.set("views", path.resolve(__dirname, "./views"));
 
 app.listen(process.env.APP_PORT, () => {
   console.log(`Server listening on port ${process.env.APP_PORT}`);
-
-  app.use("/auth", AuthRouter);
-  app.use("/blogs", BlogRouter);
-  app.use("/panel", ClinicPanelRouter);
   app.use("/", HomeRouter);
+  app.use("/panel", ClinicPanelRouter);
 
   app.use((req, res, next) => {
     const error = new Error("Aradığınız sayfa bulunamadı");

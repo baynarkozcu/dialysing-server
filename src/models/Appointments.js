@@ -3,10 +3,7 @@ const Mongoose = require("mongoose");
 const AppointmentSchema = Mongoose.Schema(
   {
     nameSurname: String,
-    email: {
-      type: String,
-      unique: [true, "Bu email adresi zaten kullanılıyor."],
-    },
+    email: String,
     phone: String,
     birthDate: Date,
     patientNameSurname: String,
@@ -29,6 +26,10 @@ const AppointmentSchema = Mongoose.Schema(
     //   ref: "DialysisCenter",
     // },
     dialysisCenter: String,
+    active: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true, versionKey: false }
 );

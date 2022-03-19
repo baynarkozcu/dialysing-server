@@ -234,11 +234,11 @@
             <form class="tm-form-wide" action="/clinic/new-clinic-appointment" method="POST">
               <div class="form-group">
                 <label for="nameSurname">Ad Soyad <span class="mandatory">*</span></label>
-                <input type="text" class="form-control" id="nameSurname" name="nameSurname" placeholder="Adınız Soyadınız" />
+                <input type="text" disabled class="form-control" id="nameSurname" name="nameSurname" value="<%- user.nameSurname  %> " />
               </div>
               <div class="form-group">
                 <label for="email">Email Adresi <span class="mandatory">*</span></label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email Adresiz" />
+                <input type="email" disabled class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<%- user.email  %> " />
               </div>
               <!-- <div class="form-group">
                 <label for="email">Email Adresinizi Onaylayın <span class="mandatory">*</span></label>
@@ -246,7 +246,7 @@
               </div> -->
               <div class="form-group">
                 <label for="date">Doğum Tarihiniz <span class="mandatory">*</span></label>
-                <input type="date" class="form-control" id="birthdate" name="birthdate" placeholder="04.12.1994" />
+                <input type="text" disabled class="form-control" id="birthdate" name="birthdate" value="<%- birthDate  %> " />
               </div>
               <!-- TODO BURASI KONTROL EDİLECEK -->
               <div class="form-group">
@@ -341,12 +341,12 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="postcode">Posta Kodu <span class="mandatory">*</span></label>
-                      <input type="text" class="form-control" name="postcode" id="postcode" placeholder="Posta Kodu" />
+                      <label for="zipCode">Posta Kodu <span class="mandatory">*</span></label>
+                      <input type="text" class="form-control" name="zipCode" id="zipCode" placeholder="Posta Kodu" />
                     </div>
                     <div class="form-group">
                       <label for="phone">Telefon Numarası <span class="mandatory">*</span></label>
-                      <input type="tel" class="form-control" name="phone" id="phone" placeholder="Telefon Numarası" />
+                      <input type="tel" disabled class="form-control" name="phone" id="phone" value="+90 <%- user.phone  %> " />
                     </div>
                     <div class="form-group">
                       <div class="warning">Tesisin randevunuzu onaylayabilmesi için gereklidir.</div>

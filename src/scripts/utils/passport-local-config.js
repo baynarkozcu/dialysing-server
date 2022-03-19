@@ -10,7 +10,6 @@ module.exports = (passport) => {
 
   passport.use(
     new LocalStrategy(options, async (email, password, done) => {
-      console.log("Deneme");
       try {
         const user = await User.findOne({ email: email });
         if (!user) {
@@ -25,7 +24,6 @@ module.exports = (passport) => {
         if (user.password !== password) {
           return done(null, false, { message: "Girdiğiniz Şifre Yanlış." });
         } else {
-          console.log("Başarılı");
           return done(null, user);
         }
       } catch (error) {

@@ -1,0 +1,32 @@
+ /* <!--=======FOOTER=====--> */
+ .footer {
+    color: #fff;
+  }
+  .footer h5 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .footer a {
+    color: #fff;
+  }
+  .footer a:hover {
+    color: #fff;
+  }
+  .social img {
+    width: 30px;
+    margin-right: 8px;
+  }
+  .input-group img {
+    padding: 0px;
+    margin: 0px;
+    width: 30px;
+  }
+  .input-group button {
+    margin: 0px;
+    padding: 0px;
+    background-color: aliceblue;
+  }
+  footer {
+    background-color: #28353e;
+  }

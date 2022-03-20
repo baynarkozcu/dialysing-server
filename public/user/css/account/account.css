@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lato&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Roboto&display=swap');
 nav {
     font-size: 14px;
     background-color: #28353e;
@@ -49,8 +50,7 @@ nav {
 }
 .bi {
     color: #fff;
-}
-
+} 
 footer {
     font-size: 15px;
     font-family: 'Gilroy', sans-serif; 
@@ -101,10 +101,11 @@ main h3 {
     color: #058f0c !important;
 }
 label{
-    font-size: 18px !important;
+    font-size: 14px !important;
     margin-bottom: 0px;
     font-weight: 600; 
-    color: #28353e !important;
+    color: #055f8f !important;
+    font-family: 'Lato', sans-serif; 
 }
 .btn-register {
     border-radius: 10px !important;
@@ -119,12 +120,25 @@ label{
     background-color: #055f8f;
     font-size: 14px !important;
 }
+.background {
+  border: 2px solid #055f8f1e !important;
+  box-shadow: 0px 0px 15px 0px rgba(82, 63, 105, 0.1);
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(82, 63, 105, 0.1);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(82, 63, 105, 0.1);
+  -ms-box-shadow: 0px 0px 15px 0px rgba(82, 63, 105, 0.1);
+}
+.h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600 !important; 
+  font-size: 28px !important;
+}
 #account p{
  font-size: 15px;
 }
 #account input{
     font-size: 12px;
-    padding: 5px !important;
+    padding: 10px !important;
+    margin-top: 0px;
 }
 #account i{
     color: #055f8f;
@@ -168,6 +182,7 @@ body{
     -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
     -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
 }
+
 .card {
     position: relative;
     display: flex;
@@ -183,6 +198,7 @@ body{
 .card .card-header.no-border {
     border: 0;
 }
+
 .card .card-header {
     background: none;
     padding: 0 0.9375rem;
@@ -191,6 +207,7 @@ body{
     align-items: center;
     min-height: 50px;
 }
+
 .card-header:first-child {
     border-radius: calc(8px - 1px) calc(8px - 1px) 0 0;
 }
@@ -205,21 +222,21 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #edf1fc;
+  background-color: #fdfcdc;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-day {
-  color: #4e73e5;
+  color: #f4d35e;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1;
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-month {
-  color: #4e73e5;
+  color: #f4d35e;
   line-height: 1;
   font-size: 1rem;
   text-transform: uppercase;
@@ -305,21 +322,21 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: floralwhite;
+  background-color: #e4232328;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-warning .widget-49-date-day {
-  color: #FFC868;
+  color: #e42323;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1;
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-warning .widget-49-date-month {
-  color: #FFC868;
+  color: #e42323;
   line-height: 1;
   font-size: 1rem;
   text-transform: uppercase;
@@ -428,13 +445,41 @@ body{
 .widget-49 .widget-49-title-wrapper .widget-49-meeting-info {
   display: flex;
   flex-direction: column;
-  margin-left: 1rem;
+  padding-left: .7rem;
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-pro-title {
   color: #28353e;
   font-size: 17px;
   font-weight: 700;
+}
+
+.widget-49-pro-pass{
+  color: #e42323;
+  font-size: 12px; 
+  text-align: end; 
+}
+
+.widget-49-pro-wait{
+  color: #f7b801; 
+  font-size: 12px; 
+  text-align: end; 
+}
+
+.widget-49 .widget-49-pro-wait i {
+  color: #f7b801; 
+  font-size: 12px; 
+  text-align: end; 
+}
+.widget-49-pro-select{
+  color: #68CBD7; 
+  font-size: 12px; 
+  text-align: end; 
+}
+.widget-49 .widget-49-pro-select i{
+  color: #68CBD7; 
+  font-size: 13px; 
+  text-align: end; 
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-meeting-time {
@@ -452,11 +497,11 @@ body{
   display: list-item;
   color: #727686;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 7px;
+  padding-top: 7px;
 }
 
 .widget-49 .widget-49-meeting-points .widget-49-meeting-item span {
-  margin-left: .5rem;
+  padding-left: .5rem;
 }
 
 .widget-49 .widget-49-meeting-points .widget-49-meeting-item-1 {
@@ -469,7 +514,7 @@ body{
   }
   
   .widget-49 .widget-49-meeting-points .widget-49-meeting-item-1 span {
-    margin-left: .5rem;
+    padding-left: .5rem;
   }
 
 .widget-49 .widget-49-meeting-action {
@@ -478,4 +523,13 @@ body{
 
 .widget-49 .widget-49-meeting-action a {
   text-transform: uppercase;
+}
+.widget-49 i {
+  color: #e42323;
+  font-size: 15px;
+}
+.widget-49 .spinner-border {
+  color: #4e73e5; 
+  width: 18px;
+  height: 18px;
 }

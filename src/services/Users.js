@@ -6,11 +6,11 @@ class Users extends BaseService {
     super(BaseModal);
   }
 
-  index(where) {
-    return this.BaseModal?.find(where || {}).populate({
+  findById(userID) {
+    return this.BaseModal?.findById(userID).populate({
       path: "appointments",
       select: "email phone situation insurance checkInDate treatmentMethod session dialysisCenter patientNameSurname active",
-    });;
+    });
   }
 }
 

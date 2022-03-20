@@ -1,6 +1,6 @@
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("../../models/Users");
-const { passwordToHash } = require("./helper");
+const { passwordToHash, hashToPassword } = require("./helper");
 
 module.exports = (passport) => {
   const options = {
@@ -16,12 +16,11 @@ module.exports = (passport) => {
           return done(null, false, { message: "Böyle bir Email Adresi Bulunamadı.." });
         }
         //TODO Email Onay Yapılırsa Aşağıdaki Kontroller Yapılacak...
-        // if (user && user.emailConfirmation == false) {
-        //     return done(null, false, { message: "Lütfen Email Adresinize Gönderilen Onay Mailine Tıklayın" });
-        // }
-        password = passwordToHash(password);
+        if (user && user.emailConfirmed == false) {
+          return done(null, false, { message: "Lütfen Email Adresinize Gönderilen Onay Mailine Tıklayın" });
+        }
 
-        if (user.password !== password) {
+        if (hashToPassword(user.password) !== password) {
           return done(null, false, { message: "Girdiğiniz Şifre Yanlış." });
         } else {
           return done(null, user);

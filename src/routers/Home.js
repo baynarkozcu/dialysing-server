@@ -15,7 +15,7 @@ router.get("/clinic", Controller.clinicMain);
 //* CLINIC LIST - CLINIC PAGE - APPOINTMENT PAGES
 router.get("/clinic/clinic-list", Controller.clinicList);
 router.get("/clinic/all", Controller.allView);
-router.get("/clinic/clinic-appointment", Controller.clinicAppointment);
+router.get("/clinic/appointment", Controller.clinicAppointment);
 router.post("/clinic/clinic-appointment", Controller.viewAppointment);
 router.post("/clinic/new-clinic-appointment", Controller.createAppointment);
 router.get("/clinic/:id", Controller.singleClinic);
@@ -31,12 +31,13 @@ router.get("/blogs/:id", Controller.singleBlog);
 router.get("/gfr-calculator", Controller.gfrCalculator);
 
 //* Authentication - USER
-router.get("/user", authenticate, Controller.user);
+router.get("/user", Controller.user);
+router.get("/user/verify", Controller.verify);
 router.post("/user/update", authenticate, validate(updateValidator), Controller.userProfileUpdate);
 router.get("/register", currentUser, Controller.registerView);
 router.post("/register", validate(createValidator), Controller.register);
 router.post("/login", currentUser, validate(loginValidator), Controller.login);
 router.get("/logout", authenticate, Controller.logout);
-router.get("/verify/:token", Controller.verify);
+
 
 module.exports = router;

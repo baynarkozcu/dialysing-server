@@ -149,7 +149,7 @@ class HomeController {
           const message = ErrorMessage.printMessage(err);
           if (message != undefined) {
             console.log("User", req.user);
-            return res.render("user/pages/user", { layout: "user/layouts/user", user:req.user, errors: message });
+            return res.render("user/pages/user", { layout: "user/layouts/user", user: req.user, errors: message });
           } else {
             return res.render("user/pages/user", { layout: "user/layouts/user", user: req.user, errors: "Güncelleme Sırasında Hata Oluştu." });
           }
@@ -162,6 +162,8 @@ class HomeController {
   }
 
   async register(req, res, next) {
+    console.log("Body :", req.body);
+    console.log("Cookies :", req.cookies);
     const enterPassword = req.body.password;
     if (req.errors) {
       const htmlMessage = new HtmlMessage(req.errors, "danger");
@@ -257,6 +259,7 @@ class HomeController {
   }
 
   verify(req, res, next) {
+    console.log("Buradaa", req.query.token);
     const token = req.query.token;
     if (token) {
       try {
@@ -265,15 +268,20 @@ class HomeController {
             req.flash("validationErrors", [{ msg: "Geçersiz Token. Lütfen Yeniden Kayıt Olun.." }]);
             res.redirect("/register");
           } else {
-            const userID = decoded.id;
-            const result = await UserService.update(userID, { emailConfirmed: true });
-            if (result) {
-              req.flash("validationErrors", [{ msg: "Emailiniz Onaylanmıştır.", result: "success" }]);
-              res.redirect("/register");
-            } else {
-              req.flash("validationErrors", [{ msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." }]);
-              res.redirect("/register");
-            }
+            //TODO DEVAM EDECEK...
+            console.log("Burada 2");
+            req.flash("validationErrors", [{ msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." }]);
+            res.redirect("/register");
+            // const userID = decoded.id;
+            // const result = await UserService.update(userID, { emailConfirmed: true });
+            // if (result) {
+            //   console.log("Burada 3");
+            //   req.flash("validationErrors", [{ msg: "Emailiniz Onaylanmıştır.", result: "success" }]);
+            //   res.redirect("/register");
+            // } else {
+            //   req.flash("validationErrors", [{ msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." }]);
+            //   res.redirect("/register");
+            // }
           }
         });
       } catch (error) {

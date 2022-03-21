@@ -1,0 +1,93 @@
+<div class="tm-top-bar single tm-bg-background" id="tm-top-bar">
+  <!-- Top Navbar -->
+  <div class="container">
+    <div class="row">
+      <nav class="navbar navbar-expand-lg narbar-light">
+        <a class="navbar-brand logo" href="../index.html"> Dialysing<span>.com</span> </a>
+        <a href="#" class="location mx-1"><i class="bi bi-geo-alt-fill" type="button" class="btn btn-outline-white mx-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i> <span id="location"></span></a>
+        <!-- Location Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body select">
+                <!-- ülke -->
+                <div class="row">
+                  <div class="col-md-6 col-xs-6">
+                    <p><b>Ülkenizi Seçin</b></p>
+                  </div>
+                  <div class="col-md-6 col-xs-6 mb-3">
+                    <select id="country" class="form-control">
+                      <option value="">-- Ülke --</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- end country row -->
+
+                <!-- Şehir -->
+                <div class="row">
+                  <div class="col-md-6 col-xs-6">
+                    <p><b>Şehrinizi Seçin</b></p>
+                  </div>
+                  <div class="col-md-6 col-xs-6 mb-3">
+                    <select id="region" class="form-control">
+                      <option value="">-- İl --</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- end şehir row -->
+
+                <!-- ilçe -->
+                <div class="row">
+                  <div class="col-md-6 col-xs-6">
+                    <p><b>İlçenizi Seçin</b></p>
+                  </div>
+                  <div class="col-md-6 col-xs-6 mb-3">
+                    <select id="city" class="form-control">
+                      <option value="">-- İlçe --</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- end ilçe row -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ekle</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="mainNav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item language-selection">
+              <img src="../user/img/flags/turkey.png" alt="Flags Turkey" />
+              <div class="tm-form-element tm-form-element-2">
+                <select name="language" class="form-control tm-select" id="language">
+                  <option value="">Türkçe</option>
+                  <option value="1">Ingilizce</option>
+                  <option value="2">Almanca</option>
+                </select>
+              </div>
+            </li>
+            <li class="nav-item question">
+              <img src="../user/img/icons/question.png" alt="Icons Question" />
+            </li>
+            <li class="nav-item buttons">
+              <a href="./addCenterMainPage.html" class="nav-link btn-third">Merkezinizi Ekleyin</a>
+            </li>
+            <li class="nav-item buttons">
+              <a href="../register/register.html" class="nav-link btn-second">Kayıt Ol</a>
+            </li>
+            <li class="nav-item buttons">
+              <a href="./clinic-login.html" class="nav-link btn-second">Giriş Yap</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

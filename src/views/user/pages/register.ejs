@@ -1,14 +1,18 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="../user/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="../user/slick/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="../user/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="../user/slick/slick-theme.css" />
   <link rel="stylesheet" type="text/css" href="../user/css/datepicker.css" />
   <link rel="stylesheet" href="../user/css/style.css" />
   <link rel="stylesheet" href="../user/css/register/register.css" />
   <link rel="stylesheet" href="../user/css/footer.css" />
 </head>
 
+
+
 <div class="tm-main-content" id="register">
   <%- include("../partials/top-navbar-dark") %>
+  
+<% if (locals.validationErrors != null) { %> <%- include('../partials/error-message') %> <% } %>
 
   <div id="section-i" class="tm-p tm-pt-20 tm-pb-20">
     <div class="container">
@@ -32,27 +36,27 @@
           <div class="card-register px-0 pt-4 pb-0 mt-3 mb-3">
             <div class="title">Kayıt Ol</div>
             <div class="sub-menu">Zaten üye misiniz? <a href="">Giriş Yapın</a></div>
-            <form class="tm-form-wide">
+            <form class="tm-form-wide" action="/register" method="POST">
               <div class="form-group">
                 <label for="name">Adınız Soyadınız</label>
-                <input type="text" class="form-control" id="name" placeholder="Adınız Soyadınız" />
+                <input type="text" class="form-control" id="nameSurname" name="nameSurname" placeholder="Adınız Soyadınız" />
               </div>
               <div class="form-group">
                 <label for="birthdate">Doğum Tarihiniz</label>
-                <input type="date" class="form-control" id="birthdate" placeholder="Doğum Tarihiniz" />
+                <input type="date" class="form-control" id="birthDate" name="birthDate" placeholder="Doğum Tarihiniz" />
               </div>
               <div class="form-group">
                 <label for="email">Email Adresiniz</label>
-                <input type="email" class="form-control" id="email" placeholder="Email Adresiniz" />
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Adresiniz" />
               </div>
               <div class="form-group password">
                 <label for="login-password">Şifrenizi Giriniz</label>
-                <input type="password" class="form-control" id="login-password" placeholder="Şifreniz" />
+                <input type="password" class="form-control" id="password" name="password" placeholder="Şifreniz" />
                 <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
               </div>
               <div class="form-group">
                 <label for="tel">Telefon Numaranız</label>
-                <input type="tel" class="form-control" id="tel" placeholder="Telefon Numaranız" />
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefon Numaranız" />
               </div>
               <div class="form-box">
                 <div class="form-group not-border checkbox">
@@ -65,7 +69,7 @@
                 </div>
               </div>
               <div class="tm-button-next left">
-                <a href="./register-activation.html" class="btn-second">Sonraki Adım</a>
+                <button type="submit" class="btn-second">Sonraki Adım</button>
               </div>
             </form>
           </div>

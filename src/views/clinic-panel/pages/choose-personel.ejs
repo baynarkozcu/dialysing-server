@@ -1,0 +1,105 @@
+<div class="tm-main-content" id="top">
+
+  <%- include("../partials/navbar") %>
+
+  <!--======= FOLLOW BAR =====-->
+  <div id="section-i" class="tm-p tm-pt-20">
+    <div class="container">
+      <div class="tm-steps">
+        <div class="tm-step active">
+          Kişisel Bilgiler
+          <div class="tm-s-steps">
+            <div class="tm-s-step active"></div>
+            <div class="tm-s-step"></div>
+            <div class="tm-s-step"></div>
+            <div class="tm-s-step"></div>
+            <div class="tm-s-step"></div>
+          </div>
+        </div>
+        <div class="tm-step">Merkez Detayları</div>
+        <div class="tm-step">Önizleme</div>
+      </div>
+    </div>
+  </div>
+
+  <!--======= PERSONEL INFORMATION =====-->
+  <div id="section-ii" class="tm-margin-3">
+    <div class="container">
+      <div class="tm-section-title tm-clinic-title">Kişisel Bilgileriniz</div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <form class="tm-form-wide">
+            <div class="form-group">
+              <label for="name-surname">Ad Soyad</label>
+              <input type="text" class="form-control" id="name-surname" placeholder="Adınız Soyadınız" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Adresi</label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email Adresiz" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Cep Telefonu</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Cep Telefonunuz" />
+            </div>
+            <div class="form-group">
+              <label for="job-dropdown">Görevinizi Seçiniz</label>
+              <div class="dropdown select">
+                <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <option selected>Göreviniz</option>
+                  <option value="1">Başhekim</option>
+                  <option value="2">Doktor</option>
+                  <option value="3">Hemşire</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group password">
+              <label for="login-password">Şifrenizi Giriniz</label>
+              <input type="password" class="form-control" id="login-password" placeholder="Şifreniz" />
+              <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
+            </div>
+          </form>
+        </div>
+
+        <!--======= WARNING CARD =====-->
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+          <div class="tm-box-info">
+            <div class="tm-box-top">
+              <img src="../user/img/clinic/attention.png" alt="Attention Icon" />
+              <div class="tm-box-title">Bilgilerimi girerken nelere dikkat etmeliyim?</div>
+            </div>
+            <div class="tm-box-bottom">
+              <div>Kişisel bilgilerinizi eksiksiz ve doğru girdiğinizden lütfen emin olun. Merkezin size ait olduğunu doğrulayabilmemiz için bu bilgilerin eksiksiz ve doğru girilmesi gerekmektedir.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--======= ERROR MESSAGE =====-->
+  <div id="section-iii" class="tm-p tm-pb-20">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-button-next">
+          <a href="#" class="btn-forth"><img src="../user/img/icons/left-arrow.png" alt="Icon Left" /></a>
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn-second" data-toggle="modal" data-target="#exampleModalCenter">Sonraki Adım</button>
+
+          <!-- Modal -->
+          <div class="modal fade error-modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <img src="../user/img/icons/error.png" alt="Error Icon" />
+                <p>Bu merkez daha önceden kayıt edilmiş bunun bir hata olduğunu düşünüyorsan hemen şirket bilgilerini doğrulat</p>
+                <button href="./clinic-choose-center.html" class="btn-second">Kayıt Oluştur</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../partials/footer") %>
+</div>

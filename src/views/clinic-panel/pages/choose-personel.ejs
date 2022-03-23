@@ -28,23 +28,23 @@
       <div class="tm-section-title tm-clinic-title">Kişisel Bilgileriniz</div>
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-          <form class="tm-form-wide">
+          <form class="tm-form-wide" action="/panel/choose-center" method="POST">
             <div class="form-group">
               <label for="name-surname">Ad Soyad</label>
-              <input type="text" class="form-control" id="name-surname" placeholder="Adınız Soyadınız" />
+              <input type="text" class="form-control" id="nameSurname" value="GELECEK" placeholder="Adınız Soyadınız" />
             </div>
             <div class="form-group">
               <label for="email">Email Adresi</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email Adresiz" />
+              <input type="email" class="form-control" id="email" value="GELECEK" aria-describedby="emailHelp" placeholder="Email Adresiz" />
             </div>
             <div class="form-group">
               <label for="phone">Cep Telefonu</label>
-              <input type="tel" class="form-control" id="phone" placeholder="Cep Telefonunuz" />
+              <input type="tel" class="form-control" id="phone" value="GELECEK" placeholder="Cep Telefonunuz" />
             </div>
             <div class="form-group">
               <label for="job-dropdown">Görevinizi Seçiniz</label>
               <div class="dropdown select">
-                <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" name="job" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <option selected>Göreviniz</option>
                   <option value="1">Başhekim</option>
                   <option value="2">Doktor</option>
@@ -52,11 +52,11 @@
                 </select>
               </div>
             </div>
-            <div class="form-group password">
+            <!-- <div class="form-group password">
               <label for="login-password">Şifrenizi Giriniz</label>
               <input type="password" class="form-control" id="login-password" placeholder="Şifreniz" />
               <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
-            </div>
+            </div> -->
           </form>
         </div>
 
@@ -84,7 +84,7 @@
           <a href="#" class="btn-forth"><img src="../user/img/icons/left-arrow.png" alt="Icon Left" /></a>
 
           <!-- Button trigger modal -->
-          <button type="button" class="btn-second" data-toggle="modal" data-target="#exampleModalCenter">Sonraki Adım</button>
+          <a type="submit"class="btn-second" >Sonraki Adım</a>
 
           <!-- Modal -->
           <div class="modal fade error-modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

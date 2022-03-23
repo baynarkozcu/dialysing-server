@@ -1,11 +1,16 @@
 const DialysisCenterService = require("../services/DialysisCenters");
 
 class HomeController {
+  loginView(req, res) {
+    res.render("clinic-panel/pages/clinic-login", { layout: "clinic-panel/layouts/index" });
+  }
+
   choosePersonel(req, res) {
     res.render("clinic-panel/pages/choose-personel", { layout: "clinic-panel/layouts/index" });
   }
 
   chooseCenter(req, res) {
+    console.log("choose center", req.body);
     res.render("clinic-panel/pages/choose-center", { layout: "clinic-panel/layouts/index" });
   }
 
@@ -16,7 +21,7 @@ class HomeController {
   chooseAddress(req, res) {
     res.render("clinic-panel/pages/choose-address", { layout: "clinic-panel/layouts/index" });
   }
-  
+
   addressCorrection(req, res) {
     res.render("clinic-panel/pages/address-correction", { layout: "clinic-panel/layouts/index" });
   }

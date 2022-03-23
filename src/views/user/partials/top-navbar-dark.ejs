@@ -95,15 +95,15 @@
                         <img src="../user/img/icons/close.png" alt="Icon Close" />
                       </button>
                     </div>
-                    <form class="tm-form">
+                    <form class="tm-form" action="/login" method="POST">
                       <div class="form-title text-center">Giriş Yap</div>
                       <div class="form-group">
                         <label for="login-email">Email Adresi</label>
-                        <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp" placeholder="Email Adresiniz" />
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Email Adresiniz" />
                       </div>
                       <div class="form-group password">
                         <label for="login-password">Şifrenizi Giriniz</label>
-                        <input type="password" class="form-control" id="login-password" placeholder="Şifreniz" />
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Şifreniz" />
                         <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
                       </div>
                       <div class="links">

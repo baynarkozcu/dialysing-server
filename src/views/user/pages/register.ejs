@@ -39,24 +39,24 @@
             <form class="tm-form-wide" action="/register" method="POST">
               <div class="form-group">
                 <label for="name">Adınız Soyadınız</label>
-                <input type="text" class="form-control" id="nameSurname" name="nameSurname" placeholder="Adınız Soyadınız" />
+                <input type="text" class="form-control" id="nameSurname" name="nameSurname" value="<%- typeof nameSurname != 'undefined' ? nameSurname : '' %>" placeholder="Adınız Soyadınız" />
               </div>
               <div class="form-group">
                 <label for="birthdate">Doğum Tarihiniz</label>
-                <input type="date" class="form-control" id="birthDate" name="birthDate" placeholder="Doğum Tarihiniz" />
+                <input type="date" class="form-control" id="birthDate" name="birthDate" value="<%- typeof birthDate != 'undefined' ? birthDate : '' %>" placeholder="Doğum Tarihiniz" />
               </div>
               <div class="form-group">
                 <label for="email">Email Adresiniz</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email Adresiniz" />
+                <input type="email" class="form-control" id="email" name="email" value="<%- typeof email != 'undefined' ? email : '' %>" placeholder="Email Adresiniz" />
               </div>
               <div class="form-group password">
                 <label for="login-password">Şifrenizi Giriniz</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Şifreniz" />
+                <input type="password" class="form-control" id="password" name="password" value="<%- typeof password != 'undefined' ? password : '' %>" placeholder="Şifreniz" />
                 <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
               </div>
               <div class="form-group">
                 <label for="tel">Telefon Numaranız</label>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefon Numaranız" />
+                <input type="tel" class="form-control" id="phone" name="phone" value="<%- typeof phone != 'undefined' ? phone : '' %>" placeholder="Telefon Numaranız" />
               </div>
               <div class="form-box">
                 <div class="form-group not-border checkbox">

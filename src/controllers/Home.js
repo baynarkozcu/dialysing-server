@@ -267,21 +267,15 @@ class HomeController {
           if (e) {
             req.flash("validationErrors", [{ msg: "Geçersiz Token. Lütfen Yeniden Kayıt Olun.." }]);
             res.redirect("/register");
-          } else {
-            //TODO DEVAM EDECEK...
-            console.log("Burada 2");
-            req.flash("validationErrors", [{ msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." }]);
-            res.redirect("/register");
-            // const userID = decoded.id;
-            // const result = await UserService.update(userID, { emailConfirmed: true });
-            // if (result) {
-            //   console.log("Burada 3");
-            //   req.flash("validationErrors", [{ msg: "Emailiniz Onaylanmıştır.", result: "success" }]);
-            //   res.redirect("/register");
-            // } else {
-            //   req.flash("validationErrors", [{ msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." }]);
-            //   res.redirect("/register");
-            // }
+          } else {            const userID = decoded.id;
+            const result = await UserService.update(userID, { emailConfirmed: true });
+            if (result) {
+              req.flash("validationErrors", [{ msg: "Emailiniz Onaylanmıştır.", result: "success" }]);
+              res.redirect("/register");
+            } else {
+              req.flash("validationErrors", [{ msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." }]);
+              res.redirect("/register");
+            }
           }
         });
       } catch (error) {

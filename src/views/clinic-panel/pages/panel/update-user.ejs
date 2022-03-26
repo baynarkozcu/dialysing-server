@@ -1,0 +1,66 @@
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div id="section-i" class="tm-p">
+      <div class="row">
+        <div class="tm-section-title">Kullanıcı Güncelleme</div>
+        <div class="admin-inner-text">Panelinizin kontrolü için yeni kullanıcılar ekleyebilir, yetkilerini özelleştirebilirsiniz.</div>
+        <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7">
+          <div class="tm-form-wide">
+            <div class="clinic-form-title">Ekibiniz</div>
+            <div class="user-profiles">
+              <div class="user-profile">
+                <div class="user-image">
+                  <img src="../clinic-panel/images/profiles/ayhan.png" alt="Ayhan Image" />
+                </div>
+                <div class="user-info">
+                  <div class="user-name">Ayhan Fırat Fındıkoğlu</div>
+                  <div class="user-role">Yönetici</div>
+                </div>
+              </div>
+            </div>
+            <div class="tm-margin-t-2">
+              <div class="form-group radio">
+                <label class="container"
+                  >Yönetici
+                  <input type="radio" checked="checked" name="radio" />
+                  <span class="checkmark"></span>
+                  <div class="info">Merkezin admin sayfasının tamamını kontrol edebilir. Rezervasyon görüntüleyebilir ve onaylayabilir, fiyatları düzenleyebilir, sorulara yanıt verebilir. İstatistikleri görüntüleyebilir.</div>
+                </label>
+                <label class="container unselected"
+                  >Baş Hemşire
+                  <input type="radio" name="radio" />
+                  <span class="checkmark"></span>
+                  <div class="info">Hasta rezervasyonlarını görüntüleyebilir ve onaylayabilir, mesajları görüntüleyebilir ve yanıtlayabilir.</div>
+                </label>
+                <label class="container unselected"
+                  >Hasta Kabul
+                  <input type="radio" name="radio" />
+                  <span class="checkmark"></span>
+                  <div class="info">Müsaitlik durumunu kontrol edebilir, rezervasyonları görüntüleyebilir ve onaylayabilir</div>
+                </label>
+              </div>
+            </div>
+            <div class="button-add-user">
+              <button type="submit" class="btn-second">Değişiklikleri Kaydet</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  <div id="suggestion">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="suggestion-button">
+            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png" alt="Icon Suggestion" />Öneriler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../../partials/footer") %>
+  <!-- partial -->
+</div>

@@ -3,3 +3,4 @@
 // module.exports.BlogRouter = require("./Blogs");
 module.exports.HomeRouter = require("./Home");
 module.exports.ClinicPanelRouter = require("./ClinicPanel");
+module.exports.TestRouter = require("./Test");

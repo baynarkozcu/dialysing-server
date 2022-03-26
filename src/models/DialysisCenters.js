@@ -11,13 +11,15 @@ const DialysisCenterSchema = Mongoose.Schema(
     },
     companyInformation: {
       companyName: String,
-      companyAddress: String,
+      bio: String,
+      photo: [String],
       taxNumber: String,
       taxOffice: String,
     },
     adress: {
       country: String,
       city: String,
+      district: String,
       adressDetailText: String,
       zipCode: String,
     },

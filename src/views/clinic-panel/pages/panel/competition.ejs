@@ -1,0 +1,101 @@
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div id="section-i" class="tm-p">
+      <div class="row">
+        <div class="tm-section-title">Rekabet Analizi</div>
+        <div class="admin-inner-text">Tüm dünyadan dilediğiniz diyaliz merkezlerini ve rekabet karşılaştırması amacıyla ekleyebilirsiniz. Bu şekilde kendi hinterlandınızdaki diğer kliniklere göre performansınızı değerlendirebilirsiniz. Ayrıca dialysing.com’dan rekabet gücünüzü arttırmak için öneriler alabilirsiniz.</div>
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          <form class="tm-form-wide competition">
+            <div class="warning">Lütfen merkezinizin performansı ile karşılaştırmak istediğiniz merkezleri seçiniz</div>
+            <div class="form-box add">
+              <div class="form-group">
+                <input type="text" class="form-control" id="others" placeholder="Eklemek istediğiniz merkezi arayın" />
+              </div>
+              <button type="button" class="add-clinic">+Ekle</button>
+            </div>
+            <div class="tm-section-title blue">Rakipleriniz</div>
+            <div class="form-box">
+              <div class="form-group not-border checkbox">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                <label class="form-check-label selected" for="flexCheckChecked"> Kantarcı Diyaliz Merkezi </label>
+              </div>
+              <div class="form-group not-border checkbox">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <label class="form-check-label" for="flexCheckChecked"> Fındıkoğlu Diyaliz Merkezi </label>
+              </div>
+              <div class="form-group not-border checkbox">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <label class="form-check-label" for="flexCheckChecked"> Bodrum Diyaliz Merkezi </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="compare">
+                  <div class="name">Rakiplerinizin Ortalama Analizleri</div>
+                  <div class="statistics-box">
+                    <div class="admin-single-box">
+                      <div class="admin-single-title">Ortalama Aylık Hasta Sayısı</div>
+                      <div class="total">45</div>
+                    </div>
+                    <div class="admin-single-box">
+                      <div class="admin-single-title">İptal Olan Randevu Oranı</div>
+                      <div class="total">%10</div>
+                    </div>
+                    <div class="admin-single-box">
+                      <div class="admin-single-title">Toplam Tedavi Edilen Hasta</div>
+                      <div class="total">325</div>
+                    </div>
+                    <div class="admin-single-box">
+                      <div class="admin-single-title">Olumlu Yorum Oranı</div>
+                      <div class="total">%99</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="compare">
+                  <div class="name">Türkmed Diyaliz Merkezi</div>
+                  <div class="statistics-box">
+                    <div class="admin-single-box">
+                      <div class="admin-single-title">Ortalama Aylık Hasta Sayısı</div>
+                      <div class="total">45</div>
+                    </div>
+                    <div class="admin-single-box">
+                      <div class="admin-single-title">İptal Olan Randevu Oranı</div>
+                      <div class="total">%10</div>
+                    </div>
+                    <div class="admin-single-box">
+                      <div class="admin-single-title">Toplam Tedavi Edilen Hasta</div>
+                      <div class="total">325</div>
+                    </div>
+                    <div class="admin-single-box">
+                      <div class="admin-single-title">Olumlu Yorum Oranı</div>
+                      <div class="total">%99</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <canvas id="myChart" style="width: 100%; max-width: 600px"></canvas>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- content-wrapper ends -->
+  <div id="suggestion">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="suggestion-button">
+            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png" alt="Icon Suggestion" />Öneriler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../../partials/footer") %>
+  <!-- partial -->
+</div>

@@ -31007,7 +31007,14 @@ select.form-control {
     width: 66%;
   }
 }
-
+.tabbar a {
+  color: #212121; 
+  font-size: 16px;
+  font-weight: 600;
+}
+.tabbar a .active{
+  background-color: #000 !important;
+}
 @media (min-width: 992px) {
   .sidebar-icon-only .navbar .navbar-brand-wrapper {
     width: 70px;
@@ -32992,3 +32999,6 @@ td.selected-dates.last {
   display: flex;
   justify-content: center;
 }
+
+
+

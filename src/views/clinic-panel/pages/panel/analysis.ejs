@@ -1,0 +1,117 @@
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div id="section-i" class="tm-p">
+      <div class="row">
+        <div class="tm-section-title">Analizler</div>
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          <form class="tm-form-wide">
+            <div class="tm-section-title blue">Puanlarınız</div>
+            <div class="tm-process">
+              <div class="tm-process-bar-content">
+                <div>
+                  <div class="tm-space-between">
+                    <div class="tm-process-title">Merkez Sayfası Puanı</div>
+                    <div class="tm-process-subtitle">%60</div>
+                  </div>
+                  <div class="tm-process-pers"></div>
+                </div>
+                <div class="tm-process-bar width-60 blue"></div>
+                <div class="tm-process-pers-av">Bölge Ort. %90</div>
+                <div class="tm-process-text tm-space-between small-text">
+                  <div>Merkez puanı %100 olan merkezlerin %30’luk bir oran ile daha fazla randevu aldığı gözlemlenmiştir.</div>
+                  <a href="#">Merkez puanı sayfasına git</a>
+                </div>
+              </div>
+            </div>
+            <div class="tm-section-title blue tm-margin-t-2">Dialysing.com’da ki 12 Aylık Performansınız</div>
+            <div class="statistics-box">
+              <div class="admin-single-box">
+                <div class="admin-single-title">Ortalama Aylık Hasta Sayısı</div>
+                <div class="total">45</div>
+                <div class="average">Bölge Ort. 30</div>
+              </div>
+              <div class="admin-single-box">
+                <div class="admin-single-title">İptal Olan Randevu Oranı</div>
+                <div class="total">%10</div>
+                <div class="average">Bölge Ort. %20</div>
+              </div>
+              <div class="admin-single-box">
+                <div class="admin-single-title">Toplam Tedavi Edilen Hasta</div>
+                <div class="total">325</div>
+                <div class="average">Bölge Ort. 140</div>
+              </div>
+              <div class="admin-single-box">
+                <div class="admin-single-title">Hasta Puan Ortalamanı</div>
+                <div class="total">%99</div>
+                <div class="average">Bölge Ort. %85</div>
+              </div>
+            </div>
+            <div class="tm-section-title blue tm-margin-t-2">Dialysing.com’daki Son 30 Günlük Arama Performansınız</div>
+            <div class="statistics-box">
+              <div class="admin-single-box">
+                <div class="admin-single-title">Arama Sonuçlarında Görüntülenme</div>
+                <div class="total">425</div>
+                <div class="average">%1.24 kadarı merkezini görüntüledi</div>
+              </div>
+              <div class="admin-single-box">
+                <div class="admin-single-title">Tesis Sayfası Görüntülenmesi</div>
+                <div class="total">765</div>
+                <div class="average">%4 kadarı randevu oluşturdu</div>
+              </div>
+              <div class="admin-single-box">
+                <div class="admin-single-title">Oluşturulan Randevu</div>
+                <div class="total">325</div>
+                <div class="average">Bölge Ort. 140</div>
+              </div>
+            </div>
+            <div>
+              <canvas id="statisticChart" class="line-graph" style="width: 100%; max-width: 100%"></canvas>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  <div id="suggestion">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="suggestion-button">
+            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png" alt="Icon Suggestion" />Öneriler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+    var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [
+          {
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "rgba(0,0,255,1.0)",
+            borderColor: "rgba(0,0,255,0.1)",
+            data: yValues,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 6, max: 16 } }],
+        },
+      },
+    });
+  </script>
+
+  <%- include("../../partials/footer") %>
+  <!-- partial -->
+</div>

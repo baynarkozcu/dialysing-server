@@ -1,0 +1,112 @@
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div id="section-i" class="tm-p">
+      <div class="row">
+        <div class="tm-section-title">Kullanıcı Ekleme</div>
+        <div class="admin-inner-text">Panelinizin kontrolü için yeni kullanıcılar ekleyebilir, yetkilerini özelleştirebilirsiniz.</div>
+        <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
+          <div class="tm-form-wide mobile">
+            <div class="clinic-form-title">Ekibiniz</div>
+            <div class="user-profiles">
+              <div class="user-profile">
+                <div class="user-image">
+                  <a href="./update-user.html"><img src="../clinic-panel/images/profiles/ayhan.png" alt="Ayhan Image" /></a>
+                </div>
+                <div class="user-info">
+                  <div class="user-name">Ayhan Fırat Fındıkoğlu</div>
+                  <div class="user-role">Yönetici</div>
+                </div>
+              </div>
+              <hr />
+              <div class="user-profile">
+                <div class="user-image">
+                  <a href="./update-user.html"><img src="../clinic-panel/images/profiles/wade.png" alt="Wade Image" /></a>
+                </div>
+                <div class="user-info">
+                  <div class="user-name">Wade Warren</div>
+                  <div class="user-role">Hasta Kabul</div>
+                </div>
+              </div>
+            </div>
+            <div class="tm-margin-t-2">
+              <button type="submit" class="btn-second">Yeni Kullanıcı Ekleyin</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7">
+          <form class="tm-form-wide">
+            <div class="clinic-form-title">Yeni Kullanıcı Ekleyin</div>
+            <div class="form-group">
+              <label for="email">Yeni Kullanıcı Ekleyin</label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Eklemek istediğiniz kullanıcının email adresini giriniz" />
+            </div>
+            <div class="admin-inner-text">Eklediğiniz kullanıcı bu mail adresi ile giriş yapacaktır. Mail adresinin doğru olduğundan emin olunuz.</div>
+            <div class="form-group">
+              <label for="email-repeat">Alternatif Mail Adresinizi Giriniz</label>
+              <input type="email" class="form-control" id="email-repeat" aria-describedby="emailHelp" placeholder="Email Adresiniz" />
+            </div>
+            <div class="form-group">
+              <label for="name-surname">Yeni Kullanıcı Adı Soyadı</label>
+              <input type="text" class="form-control" id="name-surname" placeholder="Ekleyeceğiniz kullanıcının adını ve soyadını giriniz" />
+            </div>
+            <div class="form-group password">
+              <label for="new-password">Yeni Kullanıcı Şifresi</label>
+              <input type="password" class="form-control" id="new-password" placeholder="Yeni Şifreniz" />
+              <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
+            </div>
+            <div class="form-group password">
+              <label for="repeat-password">Yeni Kullanıcı Şifresi Tekrar</label>
+              <input type="password" class="form-control" id="repeat-password" placeholder="Yeni Şifreniz" />
+              <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
+            </div>
+            <div class="form-group">
+              <label for="center">Merkezi Seçin</label>
+              <input type="text" class="form-control" id="center" placeholder="Kullanıcıyı eklemek istediğiniz merkezi seçin" />
+            </div>
+            <div class="admin-inner-text">Eklediğiniz kullanıcı seçtiğiniz merkez üzerinde yetki sahibi olacaktır.</div>
+            <div class="clinic-form-title">Yetki Seçiniz</div>
+            <div class="form-group radio">
+              <label class="container"
+                >Yönetici
+                <input type="radio" checked="checked" name="radio" />
+                <span class="checkmark"></span>
+                <div class="info">Merkezin admin sayfasının tamamını kontrol edebilir. Rezervasyon görüntüleyebilir ve onaylayabilir, fiyatları düzenleyebilir, sorulara yanıt verebilir. İstatistikleri görüntüleyebilir.</div>
+              </label>
+              <label class="container unselected"
+                >Baş Hemşire
+                <input type="radio" name="radio" />
+                <span class="checkmark"></span>
+                <div class="info">Hasta rezervasyonlarını görüntüleyebilir ve onaylayabilir, mesajları görüntüleyebilir ve yanıtlayabilir.</div>
+              </label>
+              <label class="container unselected"
+                >Hasta Kabul
+                <input type="radio" name="radio" />
+                <span class="checkmark"></span>
+                <div class="info">Müsaitlik durumunu kontrol edebilir, rezervasyonları görüntüleyebilir ve onaylayabilir</div>
+              </label>
+            </div>
+            <div class="button-add-user">
+              <button type="submit" class="btn-second">Kullanıcıyı Ekle</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  <div id="suggestion">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="suggestion-button">
+            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png" alt="Icon Suggestion" />Öneriler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../../partials/footer")  %> 
+
+  <!-- partial -->
+</div>

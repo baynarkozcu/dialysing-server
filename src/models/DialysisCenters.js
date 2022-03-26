@@ -2,6 +2,7 @@ const Mongoose = require("mongoose");
 
 const DialysisCenterSchema = Mongoose.Schema(
   {
+    number: Number,
     personalInformation: {
       nameSurname: String,
       email: String,
@@ -24,6 +25,7 @@ const DialysisCenterSchema = Mongoose.Schema(
       zipCode: String,
     },
     contactInformation: {
+      email: String,
       phone: String,
       whatsapp: String,
       website: String,
@@ -53,7 +55,11 @@ const DialysisCenterSchema = Mongoose.Schema(
       employeeNameSurname: String,
       job: String,
       academicEducation: String,
-    }]
+    }],
+    isActive: {
+      type: Boolean,
+      default: true
+    }
   },
   { timestamps: true, versionKey: false }
 );

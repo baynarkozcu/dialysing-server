@@ -7,14 +7,15 @@ const Controller = require('../controllers/ClinicPanel');
 router.get("/login", Controller.loginView);
 router.get("/choose-personel", Controller.choosePersonel);
 router.get("/choose-center", Controller.chooseCenter);
-router.get("/company-information", Controller.companyInformation);
-router.get("/choose-address", Controller.chooseAddress);
-router.get("/address-correction", Controller.addressCorrection);
+router.post("/company-information", Controller.companyInformation);
+router.post("/choose-address", Controller.chooseAddress);
+router.post("/address-correction", Controller.addressCorrection);
 router.get("/clinic-detail", Controller.clinicDetail);
-router.get("/clinic-services", Controller.clinicServices);
-router.get("/payment-option", Controller.paymentOption);
-router.get("/doctors", Controller.doctors);
+router.post("/clinic-services", Controller.clinicServices);
+router.post("/payment-option", Controller.paymentOption);
+router.post("/doctors", Controller.doctors);
 router.get("/clinic-summary", Controller.clinicSummary);
+router.get("/clinic-save", Controller.clinicSave);
 
 //PANEL
 router.get("/add-new-clinic", Controller.addNewClinic);

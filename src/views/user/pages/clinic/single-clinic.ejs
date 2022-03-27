@@ -222,24 +222,24 @@
                                 </div>
                             </div>
                         </div> 
-                        <form class="tm-form-wide custom">
+                        <form class="tm-form-wide custom" action="/clinic/clinic-appointment" method="POST">
                             <div class="form-group">
                                 <label for="job-dropdown">Tedavi Yöntemi</label>
                                 <div class="dropdown select">
-                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <option selected>Hemodiyaliz</option>
-                                        <option value="1">Hemodiyafiltrasyon</option>
-                                        <option value="2">Merkezde Gece Hemodiyalizi</option>
-                                        <option value="3">Ev Hemodiyalizi</option>
-                                        <option value="4">Hemşireli Ev Hemodiyalizi</option>
-                                        <option value="5">Periton Diyalizi</option>
+                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="treatmentMethod" name="treatmentMethod" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <option selected value="Hemodiyaliz">Hemodiyaliz</option>
+                                        <option value="Hemodiyafiltrasyon">Hemodiyafiltrasyon</option>
+                                        <option value="Merkezde Gece Hemodiyalizi">Merkezde Gece Hemodiyalizi</option>
+                                        <option value="Ev Hemodiyalizi">Ev Hemodiyalizi</option>
+                                        <option value="Hemşireli Ev Hemodiyalizi">Hemşireli Ev Hemodiyalizi</option>
+                                        <option value="Periton Diyalizi">Periton Diyalizi</option>
                                     </select> 
                                 </div> 
                             </div>
                             <div class="form-group">
                                 <label for="job-dropdown">Haftalık Seans Sayısı</label>
                                 <div class="dropdown select">
-                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="sessionsDayCount" name="sessionsDayCount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <option selected>Haftalık Seans Sayınızı Seçiniz</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -250,7 +250,7 @@
                             <div class="form-group">
                                 <label for="job-dropdown">Tercih Edilen Tedavi Günleri</label>
                                 <div class="dropdown select">
-                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="sessionsDay" name="sessionsDay"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <option selected>Tercih Edilen Tedavi Günlerinizi Seçiniz</option>
                                         <option value="1">Pazartesi</option>
                                         <option value="2">Salı</option>
@@ -265,11 +265,11 @@
                             <div class="form-group clinic-check-dates">
                                 <div class="checkin">
                                     <label for="check-in">Check-in Tarihi</label>
-                                    <input type="date" placeholder="Check-in Tarihi" id="check-in" aria-describedby="emailHelp" class="form-control bi bi-chevron-down">
+                                    <input type="date" placeholder="Check-in Tarihi"  id="checkInDate" name="checkInDate"  aria-describedby="emailHelp" class="form-control bi bi-chevron-down">
                                 </div>
                                 <div class="checkout">
                                     <label for="check-out">Check-out Tarihi</label>
-                                    <input type="date" class="form-control  bi bi-chevron-down" id="check-out" aria-describedby="emailHelp" placeholder="Check-out Tarihi">
+                                    <input type="date" class="form-control  bi bi-chevron-down" id="checkOutDate" name="checkOutDate" aria-describedby="emailHelp" placeholder="Check-out Tarihi">
                                 </div>
                               </div>
                             <div class="form-group not-border checkbox">
@@ -281,7 +281,7 @@
                             <div class="form-group tm-margin-t-1">
                                 <label for="job-dropdown">Tercih Edilen Seans</label>
                                 <div class="dropdown select">
-                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                        
+                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="session" name="session" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                        
                                         <option selected>Tercih Ettiğiniz Seansı Seçiniz</option>
                                         <option value="1">Sabah</option>
                                         <option value="2">Öğle</option>
@@ -297,7 +297,7 @@
                                   </svg>
                                 Randevu oluşturabilmek için check-in tarihi girmeniz gerekmektedir.
                             </div>
-                            <button class="btn-second">Randevu Oluştur</button>
+                            <button type="submit" class="btn-second">Randevu Oluştur</button>
                             <button class="btn-forth">Favorilerine Ekle</button>
                         </form>
                         <div class="alert alert-danger alert-custom tm-margin-t-1" role="alert">

@@ -1,6 +1,7 @@
 const AppointmentService = require("../services/Appointments");
 const UserService = require("../services/Users");
 const BlogService = require("../services/Blogs");
+const DialysisCenterService = require("../services/DialysisCenters");
 
 const passport = require("passport");
 require("../scripts/utils/passport-local-config")(passport);
@@ -22,12 +23,12 @@ class HomeController {
   }
 
   singleClinic(req, res, next) {
-    console.log(req.body);
     res.render("user/pages/clinic/single-clinic", { layout: "user/layouts/clinic-main" });
   }
 
   viewAppointment(req, res, next) {
     //! TODO Cookies Kaydedilmiyor Sayfa Refresh Edildikten Sonra Kaydediliyor.
+
     res.cookie("treatmentMethod", req.body.treatmentMethod);
     res.cookie("sessionsDayCount", req.body.sessionsDayCount);
     res.cookie("sessionsDay", req.body.sessionsDay);
@@ -35,6 +36,7 @@ class HomeController {
     res.cookie("checkOutDate", req.body.checkOutDate);
     res.cookie("checkInDate", req.body.checkInDate);
 
+    
     const birthDate = ("0" + req.user.birthDate.getDate()).slice(-2) + "." + ("0" + (req.user.birthDate.getMonth() + 1)).slice(-2) + "." + req.user.birthDate.getFullYear();
     const user = req.user;
     const cookieValue = req.cookies;
@@ -93,7 +95,21 @@ class HomeController {
   }
 
   clinicList(req, res, next) {
-    res.render("user/pages/clinic/clinic-list", { layout: "user/layouts/clinic-main" });
+    const query = {
+      //'address.city': "İstanbul",
+    };
+
+    DialysisCenterService.index(query)
+      .then((list) => {
+        res.render("user/pages/clinic/clinic-list", { layout: "user/layouts/clinic-main", list });
+      })
+      .catch((err) => {
+        console.log("Error", err);
+        res.redirect("/");
+      });
+
+    
+
     // console.log("Body :",req.body);
     // if (req.body.city != undefined) {
     //   console.log("City Boş");
@@ -267,7 +283,8 @@ class HomeController {
           if (e) {
             req.flash("validationErrors", [{ msg: "Geçersiz Token. Lütfen Yeniden Kayıt Olun.." }]);
             res.redirect("/register");
-          } else {            const userID = decoded.id;
+          } else {
+            const userID = decoded.id;
             const result = await UserService.update(userID, { emailConfirmed: true });
             if (result) {
               req.flash("validationErrors", [{ msg: "Emailiniz Onaylanmıştır.", result: "success" }]);

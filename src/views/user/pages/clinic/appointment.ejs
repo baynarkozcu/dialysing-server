@@ -149,29 +149,29 @@
         <form class="tm-form-wide custom">
           <div class="form-group">
             <label for="job-dropdown">Tedavi Yöntemi</label>
-            <div class="tm-color-shadow-2">Hemodiyaliz</div>
+            <div class="tm-color-shadow-2"><%- cookieValue.treatmentMethod  %> </div>
           </div>
           <div class="form-group">
             <label for="job-dropdown">Haftalık Seans Sayısı</label>
-            <div class="tm-color-shadow-2">2 Seans</div>
+            <div class="tm-color-shadow-2"><%- cookieValue.sessionsDayCount  %>  Seans</div>
           </div>
           <div class="form-group">
             <label for="job-dropdown">Tercih Edilen Tedavi Günleri</label>
-            <div class="tm-color-shadow-2">Pazartesi-Salı-Çarşamba</div>
+            <div class="tm-color-shadow-2"><%- cookieValue.sessionsDay  %> </div>
           </div>
           <div class="form-group clinic-check-dates">
             <div class="checkin">
               <label for="check-in">Check-in Tarihi</label>
-              <div class="tm-color-shadow-2">15 Kasım 2021</div>
+              <div class="tm-color-shadow-2"><%- cookieValue.checkInDate  %> </div>
             </div>
             <div class="checkout">
               <label for="check-out">Check-out Tarihi</label>
-              <div class="tm-color-shadow-2">18 Kasım 2021</div>
+              <div class="tm-color-shadow-2"><%- cookieValue.checkOutDate %> </div>
             </div>
           </div>
           <div class="form-group tm-margin-t-1">
             <label for="job-dropdown">Tercih Edilen Seans</label>
-            <div class="tm-color-shadow-2">Merkezde Gece Seansı</div>
+            <div class="tm-color-shadow-2"><%- cookieValue.session  %> </div>
           </div>
         </form>
         <div class="tm-content small-content">
@@ -237,25 +237,25 @@
           <div class="clinic-form-title">Kişisel Bilgiler</div>
           <div class="clinic-form-inner-box">
             <div class="alert alert-primary" role="alert"><img src="../user/img/clinic/icons/error-circle.png" alt="Error Circle Icon" />Neredeyse bitti! Sadece * gerekli bilgilerinizi doldurun.</div>
-            <form class="tm-form-wide">
+            <form class="tm-form-wide" action="/clinic/new-clinic-appointment" method="POST">
               <div class="form-group">
                 <label for="name-surname">Ad Soyad <span class="mandatory">*</span></label>
-                <input type="text" name="nameSurname" class="form-control" id="name-surname" placeholder="Adınız Soyadınız" />
+                <input type="text" disabled name="nameSurname" class="form-control" id="name-surname" value="<%- user.nameSurname  %> "/>
               </div>
               <div class="form-group">
                 <label for="email">Email Adresi <span class="mandatory">*</span></label>
-                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email Adresiniz" />
+                <input type="email" name="email" disabled class="form-control" id="email" aria-describedby="emailHelp" value="<%- user.email  %> " />
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="email">Email Adresinizi Onaylayın <span class="mandatory">*</span></label>
                 <input type="email" name="email" class="form-control" id="email-confirm" aria-describedby="emailHelp" placeholder="Email Adresiniz" />
-              </div>
+              </div> -->
               <div class="form-group">
                 <label for="date">Doğum Tarihiniz <span class="mandatory">*</span></label>
-                <input type="date" name="birthDate" class="form-control" id="birthdate" placeholder="04.12.1994" />
+                <input type="text" name="birthDate" disabled class="form-control" id="birthDate" value="<%- birthDate %> "  />
               </div>
 
-              <div class="form-group">
+              <div class="form-group" id="kimIcın" name="kimIcın">
                 <label>Kim İçin Rezervasyon Almak İstiyorsunuz <span class="mandatory">*</span></label>
                 <div class="d-flex">
                   <div class="inline-checkboxes">
@@ -282,7 +282,7 @@
                 <label for="situation">Hepatit Marker Durumunuzu Belirtiniz <span class="mandatory"> *</span></label>
                 <input type="text" name="situation" class="form-control" id="situation" placeholder="Hepatit Marker Durumunuz" />
               </div>
-              <div class="form-group">
+              <div class="form-group" name="insurance">
                 <label>Diyalize Girecek Kişinin Sigorta Durumu <span class="mandatory">*</span></label>
                 <div class="form-group not-border checkbox form-check">
                   <input type="radio" name="radios insurance" class="form-check-input" id="exampleRadio1" />
@@ -328,25 +328,19 @@
               </div>
               <div class="form-group">
                 <label for="job-dropdown">Şehir<span class="mandatory">*</span></label>
-                <input type="text" name="city" class="form-control" id="address" placeholder="Adresinizi Girin" />
+                <input type="text" name="city" class="form-control" id="address" placeholder="İl" />
               </div>
-              <div class="row">
-                <div class="col-6 form-group">
+                <div class="form-group">
                   <label for="district">İlçe <span class="mandatory">*</span></label>
                   <input type="text" name="district" class="form-control" id="district" placeholder="İlçe" />
                 </div>
-                <div class="col-6 form-group">
-                  <label for="street">Mahalle <span class="mandatory">*</span></label>
-                  <input type="text" name="street" class="form-control" id="street" placeholder="Mahalle" />
-                </div>
-              </div>
               <div class="form-group">
                 <label for="postcode">Posta Kodu <span class="mandatory">*</span></label>
-                <input type="text" name="zipCode" class="form-control" id="postcode" placeholder="Posta Kodu" />
+                <input type="text" name="zipCode" class="form-control" id="zipCode" placeholder="Posta Kodu" />
               </div>
               <div class="form-group">
                 <label for="tel">Telefon Numarası <span class="mandatory">*</span></label>
-                <input type="tel" name="phone" class="form-control" id="tel" placeholder="Telefon Numarası" />
+                <input type="tel" name="phone" class="form-control" id="phone" placeholder="Telefon Numarası" />
               </div>
               <div class="form-group">
                 <div class="warning">Tesisin randevunuzu onaylayabilmesi için gereklidir.</div>
@@ -354,12 +348,12 @@
               <div class="clinic-form-title mb-2">Özel İstekleriniz</div>
               <div class="clinic-form-text">Özel istekler garanti edilemez, ancak merkez ihtiyaçlarınızı karşılamak için elinden geleni yapacaktır. Rezervasyonunuz tamamlandıktan sonra da her zaman özel talepte bulunabilirsiniz.</div>
               <div class="clinic-form-inner-box wide">
-                <div class="form-group">
+                <div class="form-group" id="desc" name="desc">
                   <textarea class="form-control" id="message" rows="5" placeholder="Merkezinde ki sessiz odalardan birisinde tedavimi görmek istiyorum. Migren sorunum olduğu için yüksek sesli ortamlarda problem yaşamaktayım bu konuda bana yardımcı olabilir misiniz?"></textarea>
                 </div>
               </div>
               <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-button-next">
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><a href="#" class="btn-second">Randevuyu Tamamla</a></button>
+                <button type="submit" class="btn btn-second" >Randevuyu Tamamla</button>
                 <!-- Button trigger modal -->
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

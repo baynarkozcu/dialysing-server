@@ -27,78 +27,78 @@
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <div class="tm-section-title tm-clinic-title">Tedavi İmkanları</div>
-          <form class="tm-form-wide">
+          <form class="tm-form-wide" action="/panel/payment-option" method="POST">
             <div class="form-box">
               <div class="title">Diyaliz Tedavi Tipleri</div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                <label class="form-check-label selected" for="flexCheckChecked"> Hemodiyaliz </label>
+                <input class="form-check-input" type="checkbox" value="Hemodiyaliz" name="dialysisType" id="dialysisType" checked />
+                <label class="form-check-label selected" for="dialysisType"> Hemodiyaliz </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Hemodiyafiltrasyon </label>
+                <input class="form-check-input" type="checkbox" value="Hemodiyafiltrasyon" name="dialysisType" id="dialysisType" />
+                <label class="form-check-label" for="dialysisType"> Hemodiyafiltrasyon </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Merkezde Gece Hemodiyalizi </label>
+                <input class="form-check-input" type="checkbox" value="Merkezde Gece Hemodiyalizi" name="dialysisType" id="dialysisType" />
+                <label class="form-check-label" for="dialysisType"> Merkezde Gece Hemodiyalizi </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Ev Hemodiyalizi </label>
+                <input class="form-check-input" type="checkbox" value="Ev Hemodiyalizi" name="dialysisType" id="dialysisType" />
+                <label class="form-check-label" for="dialysisType"> Ev Hemodiyalizi </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Hemşireli Ev Hemodiyalizi </label>
+                <input class="form-check-input" type="checkbox" value="Hemşireli Ev Hemodiyalizi" name="dialysisType" id="dialysisType" />
+                <label class="form-check-label" for="dialysisType"> Hemşireli Ev Hemodiyalizi </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Periton Diyalizi </label>
+                <input class="form-check-input" type="checkbox" value="Periton Diyalizi" name="dialysisType" id="dialysisType" />
+                <label class="form-check-label" for="dialysisType"> Periton Diyalizi </label>
               </div>
             </div>
             <div class="form-box">
               <div class="title">Seans İçi Hizmetler</div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                <label class="form-check-label selected" for="flexCheckChecked"> Seans İçi Yiyecek Sunumu </label>
+                <input class="form-check-input" type="checkbox" value="Seans İçi Yiyecek Sunumu" name="inSessionService" id="inSessionService" checked />
+                <label class="form-check-label selected" for="inSessionService"> Seans İçi Yiyecek Sunumu </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Ücretsiz Ulaşım Hizmeti </label>
+                <input class="form-check-input" type="checkbox" value="Ücretsiz Ulaşım Hizmeti" name="inSessionService"  id="inSessionService" />
+                <label class="form-check-label" for="inSessionService"> Ücretsiz Ulaşım Hizmeti </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Kişiye Özel Tv Hizmeti </label>
+                <input class="form-check-input" type="checkbox" value="Kişiye Özel Tv Hizmeti" name="inSessionService"  id="inSessionService" />
+                <label class="form-check-label" for="inSessionService"> Kişiye Özel Tv Hizmeti </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Ücretsiz Wifi Hizmeti </label>
+                <input class="form-check-input" type="checkbox" value="Ücretsiz Wifi Hizmeti" name="inSessionService"  id="inSessionService" />
+                <label class="form-check-label" for="inSessionService"> Ücretsiz Wifi Hizmeti </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Tedavi Salonlarında Klima </label>
+                <input class="form-check-input" type="checkbox" value="Tedavi Salonlarında Klima" name="inSessionService"  id="inSessionService" />
+                <label class="form-check-label" for="inSessionService"> Tedavi Salonlarında Klima </label>
               </div>
             </div>
             <div class="form-box">
               <div class="title">Konuşulan Diller (Personel)</div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                <label class="form-check-label selected" for="flexCheckChecked"> Türkçe </label>
+                <input class="form-check-input" type="checkbox" value="Türkçe" name="languages" id="languages" checked />
+                <label class="form-check-label selected" for="languages"> Türkçe </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> İngilizce </label>
+                <input class="form-check-input" type="checkbox" value="İngilizce" name="languages" id="languages" />
+                <label class="form-check-label" for="languages"> İngilizce </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Rusça </label>
+                <input class="form-check-input" type="checkbox" value="Rusça" name="languages" id="languages" />
+                <label class="form-check-label" for="languages"> Rusça </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Arapça </label>
+                <input class="form-check-input" type="checkbox" value="Arapça" name="languages" id="languages" />
+                <label class="form-check-label" for="languages"> Arapça </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> İspanyolca </label>
+                <input class="form-check-input" type="checkbox" value="İspanyolca" name="languages" id="languages" />
+                <label class="form-check-label" for="languages"> İspanyolca </label>
               </div>
               <div>
                 <a href="#" class="tm-link">Farklı bir dil eklemek için tıklayın</a>
@@ -107,12 +107,12 @@
             <div class="form-box">
               <div class="title">Tercüman Hizmeti</div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                <label class="form-check-label selected" for="flexCheckChecked"> Ücretli </label>
+                <input class="form-check-input" type="checkbox" value="Ücretli" name="interpreterPrice" id="interpreterPrice" checked />
+                <label class="form-check-label selected" for="interpreterPrice"> Ücretli </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Ücretsiz </label>
+                <input class="form-check-input" type="checkbox" value="Ücretsiz" name="interpreterPrice" id="interpreterPrice" />
+                <label class="form-check-label" for="interpreterPrice"> Ücretsiz </label>
               </div>
             </div>
             <div class="tm-button-next left">
@@ -122,7 +122,7 @@
                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
                   </svg></button
               ></a>
-              <a href="./clinic-payment-option.html"><button type="submit" class="btn btn-secondary mx-2">Sonraki Adım</button></a>
+              <button type="submit" class="btn btn-secondary mx-2">Sonraki Adım</button>
             </div>
           </form>
         </div>

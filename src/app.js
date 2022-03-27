@@ -16,7 +16,7 @@ const passport = require("passport");
 config();
 loaders();
 
-const app = express();
+
 
 const MongoDbStore = require("connect-mongodb-session")(session);
 
@@ -24,6 +24,8 @@ const SessionStore = new MongoDbStore({
   uri: `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
   collection: "sessions",
 });
+
+const app = express();
 
 app.use(helmet());
 app.use(cookieParser());

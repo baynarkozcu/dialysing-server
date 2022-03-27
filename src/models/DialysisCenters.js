@@ -34,7 +34,7 @@ const DialysisCenterSchema = Mongoose.Schema(
     centerDetails: {
       buildType: String,
       centerType: String,
-      parkingType: String,
+      parkingType: [String],
       centerServices: [String],
     },
     services: {
@@ -45,7 +45,7 @@ const DialysisCenterSchema = Mongoose.Schema(
     },
     Payment: {
       paymentTypes: [String],
-      abroadPatientS: {
+      abroadPatients: {
         type: Boolean,
         default: false
       },

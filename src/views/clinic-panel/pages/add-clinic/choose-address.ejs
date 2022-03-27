@@ -29,43 +29,43 @@
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <div class="tm-section-title">Adres Bilgileri</div>
-          <form class="tm-form-wide">
+          <form class="tm-form-wide" action="/panel/address-correction" method="POST">
             <div class="form-group">
               <label for="country-name">Ülke</label>
-              <input type="text" class="form-control" id="country-name" placeholder="Ülke" />
+              <input type="text" class="form-control" name="country" id="country" value="<%- center.adress.country || ""  %>" placeholder="Ülke" />
             </div>
             <div class="form-group">
               <label for="city-name">İl</label>
-              <input type="text" class="form-control" id="city-name" placeholder="İl" />
+              <input type="text" class="form-control" name="city" id="city" value="<%- center.adress.city || ""  %>" placeholder="İl" />
             </div>
             <div class="form-group">
               <label for="address">Adres</label>
-              <input type="text" class="form-control" id="address" placeholder="Adres" />
+              <input type="text" class="form-control" name="adressDetailText" id="address" value="<%- center.adress.adressDetailText || ""  %>" placeholder="Adres" />
             </div>
             <div class="form-group">
               <label for="tax-center-number">Posta Kodu</label>
-              <input type="number" class="form-control" id="tax-center-number" placeholder="Posta Kodu" />
+              <input type="number" class="form-control" name="zipCode" id="zipCode" value="<%- center.adress.zipCode || ""  %>" placeholder="Posta Kodu" />
             </div>
-          </form>
+          
         </div>
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <div class="tm-section-title">İletişim Bilgileri</div>
-          <form class="tm-form-wide">
+          
             <div class="form-group">
               <label for="center-phone">Merkez Telefonu</label>
-              <input type="tel" class="form-control" id="center-phone" placeholder="Merkez Telefonu" />
+              <input type="tel" class="form-control" id="phone" name="phone" value="<%- center.contactInformation.phone || ""  %>" placeholder="Merkez Telefonu" />
             </div>
             <div class="form-group">
               <label for="whatsapp-address">Merkez Whatsapp No</label>
-              <input type="tel" class="form-control" id="whatsapp-phone" placeholder="Merkez Whatsapp No" />
+              <input type="tel" class="form-control" id="whatsapp" name="whatsapp" value="<%- center.contactInformation.whatsapp || ""  %>" placeholder="Merkez Whatsapp No" />
             </div>
             <div class="form-group">
               <label for="website">Websitesi</label>
-              <input type="text" class="form-control" id="website" placeholder="Websitesi" />
+              <input type="text" class="form-control" id="website" name="website" value="<%- center.contactInformation.website || ""  %>" placeholder="Websitesi" />
             </div>
             <div class="form-group">
               <label for="center-about">Merkeziniz Hakkında</label>
-              <textarea class="form-control" id="center-about" rows="3" placeholder="Hakkında"></textarea>
+              <textarea class="form-control" id="bio" rows="3" name="bio" placeholder="<%- center.companyInformation.bio || "Hakkında" %>"></textarea>
             </div>
             <div class="tm-text-info">Merkezin sizin olduğunu doğrulayabilmemiz için bu bilgilerin doğru ve eksiksiz girildiğinden emin olun.</div>
             <div class="tm-button-next left">
@@ -75,7 +75,7 @@
                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
                   </svg></button
               ></a>
-              <a href="./clinic-payment-option.html"><button type="submit" class="btn btn-secondary mx-2">Sonraki Adım</button></a>
+              <button type="submit" class="btn btn-secondary mx-2">Sonraki Adım</button>
             </div>
           </form>
         </div>

@@ -10,19 +10,68 @@ class HomeController {
   }
 
   chooseCenter(req, res) {
-    console.log("choose center", req.body);
-    res.render("clinic-panel/pages/add-clinic/choose-center", { layout: "clinic-panel/layouts/index" });
+    //TODO Diyaliz Merkez Adı Dinamik Olarak Alınacak...
+    const city = "özel";
+
+    DialysisCenterService.index({ "companyInformation.companyName": { $regex: city, $options: "i" } })
+      .limit(5)
+      .then((centers) => {
+        res.render("clinic-panel/pages/add-clinic/choose-center", { layout: "clinic-panel/layouts/index", list: centers || [] });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı :", err);
+      });
   }
 
   companyInformation(req, res) {
-    res.render("clinic-panel/pages/add-clinic/company-information", { layout: "clinic-panel/layouts/index" });
+    DialysisCenterService.findById(req.body.companyId)
+      .then((center) => {
+        if (center) {
+          res.cookie("selectedDialysingCenter", center);
+          res.render("clinic-panel/pages/add-clinic/company-information", { layout: "clinic-panel/layouts/index", center });
+        } else {
+          res.render("clinic-panel/pages/add-clinic/company-information", { layout: "clinic-panel/layouts/index" });
+        }
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı :", err);
+      });
   }
 
   chooseAddress(req, res) {
-    res.render("clinic-panel/pages/add-clinic/choose-address", { layout: "clinic-panel/layouts/index" });
+    const dialysingCenter = req.cookies.selectedDialysingCenter;
+    res.clearCookie("selectedDialysingCenter");
+
+    dialysingCenter.companyInformation.companyName = req.body.companyName;
+    dialysingCenter.adress.addressDetailText = req.body.addressDetailText;
+    dialysingCenter.companyInformation.taxNumber = req.body.taxNumber;
+    dialysingCenter.companyInformation.taxOffice = req.body.taxOffice;
+
+    res.cookie("selectedDialysingCenter", dialysingCenter);
+
+    if (req.cookies.selectedDialysingCenter) {
+      res.render("clinic-panel/pages/add-clinic/choose-address", { layout: "clinic-panel/layouts/index", center: req.cookies.selectedDialysingCenter });
+    } else {
+      res.render("clinic-panel/pages/add-clinic/choose-address", { layout: "clinic-panel/layouts/index" });
+    }
   }
 
   addressCorrection(req, res) {
+    const dialysingCenter = req.cookies.selectedDialysingCenter;
+    res.clearCookie("selectedDialysingCenter");
+
+    dialysingCenter.adress.country = req.body.country;
+    dialysingCenter.adress.city = req.body.city;
+    dialysingCenter.adress.addressDetailText = req.body.addressDetailText;
+    dialysingCenter.adress.zipCode = req.body.zipCode;
+
+    dialysingCenter.contactInformation.phone = req.body.phone;
+    dialysingCenter.contactInformation.whatsapp = req.body.whatsapp;
+    dialysingCenter.contactInformation.website = req.body.website;
+    dialysingCenter.companyInformation.bio = req.body.bio;
+
+    res.cookie("selectedDialysingCenter", dialysingCenter);
+
     res.render("clinic-panel/pages/add-clinic/address-correction", { layout: "clinic-panel/layouts/index" });
   }
 
@@ -31,19 +80,57 @@ class HomeController {
   }
 
   clinicServices(req, res) {
+    const dialysingCenter = req.cookies.selectedDialysingCenter;
+    res.clearCookie("selectedDialysingCenter");
+
+    dialysingCenter.centerDetails.buildType = req.body.buildType;
+    dialysingCenter.centerDetails.centerType = req.body.centerType;
+    dialysingCenter.centerDetails.parkingType = req.body.parkingType;
+    dialysingCenter.centerDetails.centerServices = req.body.centerServices;
+
+    res.cookie("selectedDialysingCenter", dialysingCenter);
+
     res.render("clinic-panel/pages/add-clinic/clinic-services", { layout: "clinic-panel/layouts/index" });
   }
 
   paymentOption(req, res) {
+    const dialysingCenter = req.cookies.selectedDialysingCenter;
+    res.clearCookie("selectedDialysingCenter");
+
+    dialysingCenter.services.dialysisType = req.body.dialysisType;
+    dialysingCenter.services.inSessionService = req.body.inSessionService;
+    dialysingCenter.services.languages = req.body.languages;
+    dialysingCenter.services.interpreterPrice = req.body.interpreterPrice;
+
+    res.cookie("selectedDialysingCenter", dialysingCenter);
+
     res.render("clinic-panel/pages/add-clinic/payment-option", { layout: "clinic-panel/layouts/index" });
   }
 
   doctors(req, res) {
+    const dialysingCenter = req.cookies.selectedDialysingCenter;
+    res.clearCookie("selectedDialysingCenter");
+
+    dialysingCenter.Payment.paymentTypes = req.body.paymentTypes;
+    dialysingCenter.Payment.abroadPatientPaymentTypes = req.body.abroadPatientPaymentTypes;
+
+    res.cookie("selectedDialysingCenter", dialysingCenter);
+
     res.render("clinic-panel/pages/add-clinic/doctors", { layout: "clinic-panel/layouts/index" });
   }
 
   clinicSummary(req, res) {
     res.render("clinic-panel/pages/add-clinic/clinic-summary", { layout: "clinic-panel/layouts/index" });
+  }
+
+  clinicSave(req, res) {
+    const dialysingCenter = req.cookies.selectedDialysingCenter;
+    DialysisCenterService.update(dialysingCenter._id, dialysingCenter).then((center) => {
+      res.clearCookie("selectedDialysingCenter");
+      res.redirect("/");
+    }).catch((err) => {
+      console.log("Hata Çıktı :", err);
+    })
   }
   // index(req, res, next) {
   //   res.render("clinic-panel/pages/add-clinic/index", { layout: "clinic-panel/layouts/main" });

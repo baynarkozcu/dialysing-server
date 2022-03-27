@@ -3,7 +3,7 @@ const validate = require("../middlewares/validator");
 const { authenticate, currentUser } = require("../middlewares/authentication");
 const { createValidator, updateValidator, loginValidator } = require("../validations/Users");
 
-// const idChecker = require("../middlewares/idChecker");
+ const idChecker = require("../middlewares/idChecker");
 
 const Controller = require("../controllers/Home");
 
@@ -13,20 +13,17 @@ router.get("/", authenticate, Controller.index);
 router.get("/clinic", Controller.clinicMain);
 
 //* CLINIC LIST - CLINIC PAGE - APPOINTMENT PAGES
+
 router.get("/clinic/clinic-list", Controller.clinicList);
 router.get("/clinic/all", Controller.allView);
-router.get("/clinic/appointment", Controller.clinicAppointment);
-router.post("/clinic/clinic-appointment", Controller.viewAppointment);
+router.get("/clinic/appointment", authenticate, Controller.clinicAppointment);
+router.post("/clinic/clinic-appointment", authenticate, Controller.viewAppointment);
 router.post("/clinic/new-clinic-appointment", Controller.createAppointment);
-router.get("/clinic/:id", Controller.singleClinic);
+router.get("/clinic/:id", idChecker(), Controller.singleClinic);
 
 //* BLOG LIST - BLOG PAGE
 router.get("/blogs", Controller.allBlogs);
 router.get("/blogs/:id", Controller.singleBlog);
-
-//! TODO BURASI KLİNİK PANEL İÇİN
-//! router.get("/clinic/clinic-login", Controller.clinicLogin);
-//! router.get("/clinic/address-correction", Controller.addressCorrection);
 
 router.get("/gfr-calculator", Controller.gfrCalculator);
 

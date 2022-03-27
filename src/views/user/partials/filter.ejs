@@ -1,0 +1,224 @@
+<div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+  <div class="tm-box-categories">
+    <div class="tm-categories-title">Filtreleme</div>
+    <form class="tm-form-small filter">
+      <div class="form-group">
+        <label for="distance" class="form-label">Aranılan lokasyona uzaklık</label>
+        <div id="distance" class="distance">
+          <output id="result">40</output>
+          <span> km uzaklık</span>
+        </div>
+
+        <input onchange="changeValue(this.value)" type="range" value="40" min="0" max="50" oninput="this.nextElementSibling.value = this.value" class="form-range" id="distance" />
+
+        <div class="total-distance">Total: 50</div>
+      </div>
+      <div class="tm-categories-subtitle">Merkez Ortalama Puanı</div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox49" checked />
+        <label class="form-check-label selected" for="filterCheckBox49"> Süper +9 </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox48" />
+        <label class="form-check-label selected" for="filterCheckBox48"> Çok İyi +7 </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox47" />
+        <label class="form-check-label selected" for="filterCheckBox47"> İyi +6 </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox46" />
+        <label class="form-check-label selected" for="filterCheckBox46"> Ortalama +5 </label>
+      </div>
+      <div class="tm-categories-subtitle">Diyaliz Tedavisi Tipi</div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox1" checked />
+        <label class="form-check-label selected" for="filterCheckBox1"> Hemodiyaliz </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox2" />
+        <label class="form-check-label selected" for="filterCheckBox2"> Hemodiyafiltrasyon </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox3" />
+        <label class="form-check-label selected" for="filterCheckBox3"> Merkezde Gece Hemodiyalizi </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox4" />
+        <label class="form-check-label selected" for="filterCheckBox4"> Ev Hemodiyalizi </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox5" />
+        <label class="form-check-label selected" for="filterCheckBox5"> Hemşireli Ev Hemodiyalizi </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox6" />
+        <label class="form-check-label selected" for="filterCheckBox6"> Periton Diyalizi </label>
+      </div>
+      <div class="tm-categories-subtitle">Seans İçi Hizmetler</div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox7" checked />
+        <label class="form-check-label selected" for="filterCheckBox7"> Seans İçi Yiyecek Sunumu </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox8" />
+        <label class="form-check-label selected" for="filterCheckBox8"> Ücretsiz Ulaşım Hizmeti </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox9" />
+        <label class="form-check-label selected" for="filterCheckBox9"> Kişiye Özel Tv Hizmeti </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox10" />
+        <label class="form-check-label selected" for="filterCheckBox10"> Ücretsiz Wifi Hizmeti </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox11" />
+        <label class="form-check-label selected" for="filterCheckBox11"> Tedavi Salonlarında Klima </label>
+      </div>
+      <div class="tm-categories-subtitle">Tesis İçi İmkanlar</div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox12" checked />
+        <label class="form-check-label selected" for="filterCheckBox12"> Tekerlekli Sandalye Kullanım </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox13" />
+        <label class="form-check-label selected" for="filterCheckBox13"> Tutunma Kollu Tuvalet </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox14" />
+        <label class="form-check-label selected" for="filterCheckBox14"> Giriş-Çıkış Alanlarında Klima </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox15" />
+        <label class="form-check-label selected" for="filterCheckBox15"> Hassas Tartı </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox16" />
+        <label class="form-check-label selected" for="filterCheckBox16"> Rampalı Hassas Tartı </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox17" />
+        <label class="form-check-label selected" for="filterCheckBox17"> Kişisel Eşyalar İçin Kilitli Dolap </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox18" />
+        <label class="form-check-label selected" for="filterCheckBox18"> Hasta Aracı Otoparkı </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox19" />
+        <label class="form-check-label selected" for="filterCheckBox19"> Ambulans Hizmeti </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox20" />
+        <label class="form-check-label selected" for="filterCheckBox20"> 7/24 Ulaşılabilirlik </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox21" />
+        <label class="form-check-label selected" for="filterCheckBox21"> İzole Hasta Odası </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox22" />
+        <label class="form-check-label selected" for="filterCheckBox22"> El Kumandalı Otomatik Yatak </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox23" />
+        <label class="form-check-label selected" for="filterCheckBox23"> Hava Filtreleme Cihazı </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox24" />
+        <label class="form-check-label selected" for="filterCheckBox24"> Hava Filtreleme Cihazı </label>
+      </div>
+      <div class="tm-categories-subtitle">Merkez Binası Tipi</div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox25" checked />
+        <label class="form-check-label selected" for="filterCheckBox25"> Müstakil Binalı Merkezler </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox26" />
+        <label class="form-check-label selected" for="filterCheckBox26"> Müstakil Binada Olmayan Merkezler </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox27" />
+        <label class="form-check-label selected" for="filterCheckBox27"> Hastane İçi Merkezler </label>
+      </div>
+      <div class="tm-categories-subtitle">Diyaliz Merkezleri</div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox28" checked />
+        <label class="form-check-label selected" for="filterCheckBox28"> Tüm Diyaliz Merkezleri </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox29" />
+        <label class="form-check-label selected" for="filterCheckBox29"> Özel Diyaliz Merkezleri </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox30" />
+        <label class="form-check-label selected" for="filterCheckBox30"> Kamu Diyaliz Merkezleri </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox31" />
+        <label class="form-check-label selected" for="filterCheckBox31"> Üniversite Diyaliz Merkezleri </label>
+      </div>
+      <div class="tm-categories-subtitle">Sigorta Durumu</div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox32" checked />
+        <label class="form-check-label selected" for="filterCheckBox32"> SSK Anlaşmalı </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox33" />
+        <label class="form-check-label selected" for="filterCheckBox33"> Banka Anlaşmalı </label>
+      </div>
+      <div class="tm-categories-subtitle">Sağlık Çalışanları</div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox34" checked />
+        <label class="form-check-label selected" for="filterCheckBox34"> Diyetisyen </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox35" />
+        <label class="form-check-label selected" for="filterCheckBox35"> Nefroloji </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox36" checked />
+        <label class="form-check-label selected" for="filterCheckBox36"> Profesörlü </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox37" />
+        <label class="form-check-label selected" for="filterCheckBox37"> Uzman Hekimli </label>
+      </div>
+      <div class="tm-categories-subtitle">Diyaliz Cihazı Markaları</div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox38" checked />
+        <label class="form-check-label selected" for="filterCheckBox38"> Fresenius </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox39" />
+        <label class="form-check-label selected" for="filterCheckBox39"> BBraun Dialog+ </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox40" checked />
+        <label class="form-check-label selected" for="filterCheckBox40"> Gambro </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox41" />
+        <label class="form-check-label selected" for="filterCheckBox41"> Nipro Surdial </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox42" checked />
+        <label class="form-check-label selected" for="filterCheckBox42"> Kawasumi </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox43" />
+        <label class="form-check-label selected" for="filterCheckBox43"> Toray </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox44" checked />
+        <label class="form-check-label selected" for="filterCheckBox44"> Baxter </label>
+      </div>
+      <div class="form-group not-border checkbox">
+        <input class="form-check-input" type="checkbox" value="" id="filterCheckBox45" />
+        <label class="form-check-label selected" for="filterCheckBox45"> Nikkiso </label>
+      </div>
+      <button class="btn btn-second wide small">Filtreleri Uygula</button>
+    </form>
+  </div>
+</div>

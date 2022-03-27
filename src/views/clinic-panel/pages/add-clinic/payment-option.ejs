@@ -27,52 +27,52 @@
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <div class="tm-section-title tm-clinic-title">Ödeme İmkanları</div>
-          <form class="tm-form-wide">
+          <form class="tm-form-wide" action="/panel/doctors" method="POST">
             <div class="form-box">
               <div class="title">Yurtiçi Hastalar İçin</div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                <label class="form-check-label selected" for="flexCheckChecked"> SGK Anlaşması İle </label>
+                <input class="form-check-input" type="checkbox" value="SGK Anlaşması İle" name="paymentTypes" id="paymentTypes" />
+                <label class="form-check-label selected" for="paymentTypes"> SGK Anlaşması İle </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Banka Sosyal Sigortalı Anlaşması </label>
+                <input class="form-check-input" type="checkbox" value="Banka Sosyal Sigortalı Anlaşması" name="paymentTypes" id="paymentTypes" />
+                <label class="form-check-label" for="paymentTypes"> Banka Sosyal Sigortalı Anlaşması </label>
               </div>
               <div class="inner-checkbox">
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                  <label class="form-check-label selected" for="flexCheckChecked"> Garanti Bankası </label>
+                  <input class="form-check-input" type="checkbox" value="Garanti Bankası" name="paymentTypes" id="paymentTypes" />
+                  <label class="form-check-label selected" for="paymentTypes"> Garanti Bankası </label>
                 </div>
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                  <label class="form-check-label selected" for="flexCheckChecked"> Ziraat Bankası </label>
+                  <input class="form-check-input" type="checkbox" value="Ziraat Bankası" name="paymentTypes" id="paymentTypes" />
+                  <label class="form-check-label selected" for="paymentTypes"> Ziraat Bankası </label>
                 </div>
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                  <label class="form-check-label selected" for="flexCheckChecked"> Akbank </label>
+                  <input class="form-check-input" type="checkbox" value="Akbank" name="paymentTypes" id="paymentTypes" />
+                  <label class="form-check-label selected" for="paymentTypes"> Akbank </label>
                 </div>
                 <div class="form-group not-border checkbox">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                  <label class="form-check-label selected" for="flexCheckChecked"> Yapıkredi </label>
+                  <input class="form-check-input" type="checkbox" value="Yapıkredi" name="paymentTypes" id="paymentTypes" />
+                  <label class="form-check-label selected" for="paymentTypes"> Yapıkredi </label>
                 </div>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Yeşilkart Sigortası Anlaşması </label>
+                <input class="form-check-input" type="checkbox" value="Yeşilkart Sigortası Anlaşması" name="paymentTypes" id="paymentTypes" />
+                <label class="form-check-label" for="paymentTypes"> Yeşilkart Sigortası Anlaşması </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Özel Sağlık Sigortası İle </label>
+                <input class="form-check-input" type="checkbox" value="Özel Sağlık Sigortası İle" name="paymentTypes" id="paymentTypes" />
+                <label class="form-check-label" for="paymentTypes"> Özel Sağlık Sigortası İle </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Diğer </label>
+                <input class="form-check-input" type="checkbox" value="Diğer" name="paymentTypes" id="paymentTypes" />
+                <label class="form-check-label" for="paymentTypes"> Diğer </label>
               </div>
-              <div class="form-group explanation">
+              <!-- <div class="form-group explanation">
                 <input type="text" class="form-control" id="explanation1" placeholder="Açıklayınız" />
-              </div>
+              </div> -->
             </div>
-            <div class="form-box">
+            <!-- <div class="form-box">
               <div class="title">Diyaliz Merkeziniz</div>
               <div class="form-group not-border checkbox">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
@@ -86,35 +86,35 @@
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
                 <label class="form-check-label" for="flexCheckChecked"> Üniversite Diyaliz Merkezi </label>
               </div>
-            </div>
+            </div> -->
             <div class="form-box">
               <div class="title">Yurtdışı Hastalar İçin</div>
               <div class="form-group not-border checkbox">
                 <div class="tm-font-small tm-font-semibold">Merkezinizi yurtdışından gelecek tatil diyalizi rezervasyon taleplerine açmak ister misiniz?</div>
                 <label class="tm-switch tm-margin-b-0">
-                  <input type="checkbox" checked />
+                  <input type="checkbox" id="abroadPatients" name="abroadPatients" />
                   <span class="tm-slider tm-round"></span>
                 </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                <label class="form-check-label selected" for="flexCheckChecked"> Yurtdışı Sigortasından Direk Tahsilat </label>
+                <input class="form-check-input" type="checkbox" value="Yurtdışı Sigortasından Direk Tahsilat" name="abroadPatientPaymentTypes" id="abroadPatientPaymentTypes" checked />
+                <label class="form-check-label selected" for="abroadPatientPaymentTypes"> Yurtdışı Sigortasından Direk Tahsilat </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Kredi Kartı İle Tahsilat </label>
+                <input class="form-check-input" type="checkbox" value="Kredi Kartı İle Tahsilat" name="abroadPatientPaymentTypes" id="abroadPatientPaymentTypes" />
+                <label class="form-check-label" for="abroadPatientPaymentTypes"> Kredi Kartı İle Tahsilat </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Nakit Olarak Seans Sonrası Tahsilat </label>
+                <input class="form-check-input" type="checkbox" value="Nakit Olarak Seans Sonrası Tahsilat" name="abroadPatientPaymentTypes" id="abroadPatientPaymentTypes" />
+                <label class="form-check-label" for="abroadPatientPaymentTypes"> Nakit Olarak Seans Sonrası Tahsilat </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Diğer </label>
+                <input class="form-check-input" type="checkbox" value="Diğer" name="abroadPatientPaymentTypes" id="abroadPatientPaymentTypes" />
+                <label class="form-check-label" for="abroadPatientPaymentTypes"> Diğer </label>
               </div>
-              <div class="form-group explanation">
+              <!-- <div class="form-group explanation">
                 <input type="text" class="form-control" id="explanation2" placeholder="Açıklayınız" />
-              </div>
+              </div> -->
             </div>
             <div class="tm-button-next left">
               <a href="./clinic-details.html"
@@ -123,7 +123,7 @@
                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
                   </svg></button
               ></a>
-              <a href="./clinic-payment-option.html"><button type="submit" class="btn btn-secondary mx-2">Sonraki Adım</button></a>
+              <button type="submit" class="btn btn-secondary mx-2">Sonraki Adım</button>
             </div>
           </form>
         </div>

@@ -8,7 +8,6 @@ const DialysisCenterSchema = Mongoose.Schema(
       email: String,
       phone: String,
       job: String,
-      password: String
     },
     companyInformation: {
       companyName: String,

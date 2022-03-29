@@ -25,7 +25,7 @@
       <div class="tm-section-title tm-clinic-title">Kişisel Bilgileriniz</div>
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-          <form class="tm-form-wide" action="/panel/choose-center" method="GET">
+          <form class="tm-form-wide" action="/panel/choose-center" method="POST">
             <div class="form-group">
               <label for="name-surname">Ad Soyad</label>
               <input type="text" class="form-control" id="nameSurname" name="nameSurname" value="GELECEK" placeholder="Adınız Soyadınız" />
@@ -41,7 +41,7 @@
             <div class="form-group">
               <label for="job-dropdown">Görevinizi Seçiniz</label>
               <div class="dropdown select">
-                <select class="btn btn-dropdown dropdown-toggle" type="button" id="job" name="job" name="job" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <select class="btn btn-dropdown dropdown-toggle" type="button" id="job" name="job" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <option selected>Göreviniz</option>
                   <option value="1">Başhekim</option>
                   <option value="2">Doktor</option>

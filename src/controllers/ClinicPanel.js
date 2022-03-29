@@ -5,22 +5,49 @@ class HomeController {
     res.render("clinic-panel/pages/clinic-login", { layout: "clinic-panel/layouts/index" });
   }
 
+  registerView(req, res) {
+    res.render("clinic-panel/pages/clinic-register", { layout: "clinic-panel/layouts/index" });
+  }
+
+  activationView(req, res) {
+    res.render("clinic-panel/pages/clinic-activation", { layout: "clinic-panel/layouts/index" });
+  }
+
   choosePersonel(req, res) {
     res.render("clinic-panel/pages/add-clinic/choose-personel", { layout: "clinic-panel/layouts/index" });
   }
 
   chooseCenter(req, res) {
-    //TODO Diyaliz Merkez Adı Dinamik Olarak Alınacak...
-    const city = "özel";
+    const dialysingCenter = req.cookies.selectedDialysingCenter;
+    if (dialysingCenter != undefined) {
+      res.clearCookie("selectedDialysingCenter");
 
-    DialysisCenterService.index({ "companyInformation.companyName": { $regex: city, $options: "i" } })
-      .limit(5)
+      dialysingCenter.personalInformation.nameSurname = req.body.nameSurname;
+      dialysingCenter.personalInformation.email = req.body.email;
+      dialysingCenter.personalInformation.phone = req.body.phone;
+      dialysingCenter.personalInformation.job = req.body.job;
+      res.cookie("selectedDialysingCenter", dialysingCenter);
+    }
+    res.render("clinic-panel/pages/add-clinic/choose-center", { layout: "clinic-panel/layouts/index", list: undefined });
+  }
+
+  chooseCenterView(req, res) {
+    res.render("clinic-panel/pages/add-clinic/choose-center", { layout: "clinic-panel/layouts/index", list: undefined, center: req.cookies.selectedDialysingCenter });
+  }
+
+  getClinicList(req, res) {
+    DialysisCenterService.index({ "companyInformation.companyName": { $regex: req.body.companyName, $options: "i" } })
       .then((centers) => {
+        console.log("centers :", centers);
         res.render("clinic-panel/pages/add-clinic/choose-center", { layout: "clinic-panel/layouts/index", list: centers || [] });
       })
       .catch((err) => {
         console.log("Hata Çıktı :", err);
       });
+  }
+
+  companyInformationView(req, res) {
+    res.render("clinic-panel/pages/add-clinic/company-information", { layout: "clinic-panel/layouts/index", center: req.cookies.selectedDialysingCenter });
   }
 
   companyInformation(req, res) {
@@ -36,6 +63,10 @@ class HomeController {
       .catch((err) => {
         console.log("Hata Çıktı :", err);
       });
+  }
+
+  chooseAddressView(req, res) {
+    res.render("clinic-panel/pages/add-clinic/choose-address", { layout: "clinic-panel/layouts/index", center: req.cookies.selectedDialysingCenter });
   }
 
   chooseAddress(req, res) {
@@ -54,6 +85,10 @@ class HomeController {
     } else {
       res.render("clinic-panel/pages/add-clinic/choose-address", { layout: "clinic-panel/layouts/index" });
     }
+  }
+
+  addressCorrectionView(req, res) {
+    res.render("clinic-panel/pages/add-clinic/address-correction", { layout: "clinic-panel/layouts/index" });
   }
 
   addressCorrection(req, res) {
@@ -109,7 +144,7 @@ class HomeController {
 
   doctors(req, res) {
     const dialysingCenter = req.cookies.selectedDialysingCenter;
-    res.clearCookie("selectedDialysingCenter");
+    //res.clearCookie("selectedDialysingCenter");
 
     dialysingCenter.Payment.paymentTypes = req.body.paymentTypes;
     dialysingCenter.Payment.abroadPatientPaymentTypes = req.body.abroadPatientPaymentTypes;
@@ -125,12 +160,14 @@ class HomeController {
 
   clinicSave(req, res) {
     const dialysingCenter = req.cookies.selectedDialysingCenter;
-    DialysisCenterService.update(dialysingCenter._id, dialysingCenter).then((center) => {
-      res.clearCookie("selectedDialysingCenter");
-      res.redirect("/");
-    }).catch((err) => {
-      console.log("Hata Çıktı :", err);
-    })
+    DialysisCenterService.update(dialysingCenter._id, dialysingCenter)
+      .then((center) => {
+        res.clearCookie("selectedDialysingCenter");
+        res.redirect("/");
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı :", err);
+      });
   }
   // index(req, res, next) {
   //   res.render("clinic-panel/pages/add-clinic/index", { layout: "clinic-panel/layouts/main" });

@@ -5,11 +5,26 @@ const { authenticate, currentUser } = require("../middlewares/authentication");
 const Controller = require('../controllers/ClinicPanel');
 
 router.get("/login", Controller.loginView);
+router.get("/register", Controller.registerView);
+router.get("/activation", Controller.activationView);
+
+
 router.get("/choose-personel", Controller.choosePersonel);
-router.get("/choose-center", Controller.chooseCenter);
+
+router.get("/choose-center-view", Controller.chooseCenterView);
+router.post("/choose-center", Controller.chooseCenter);
+router.post("/choose-center-get-clinic-list", Controller.getClinicList);
+
+router.get("/company-information", Controller.companyInformationView);
 router.post("/company-information", Controller.companyInformation);
+
+router.get("/choose-address", Controller.chooseAddressView);
 router.post("/choose-address", Controller.chooseAddress);
+
+router.get("/address-correction", Controller.addressCorrectionView);
 router.post("/address-correction", Controller.addressCorrection);
+
+
 router.get("/clinic-detail", Controller.clinicDetail);
 router.post("/clinic-services", Controller.clinicServices);
 router.post("/payment-option", Controller.paymentOption);

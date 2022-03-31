@@ -28,28 +28,28 @@
                         </ul> <!-- fieldsets -->
                         <div class="card-register px-0 pt-4 pb-0 mt-3 mb-3">
                             <div class="title">Kayıt Ol</div>
-                            <div class="sub-menu">Zaten üye misiniz? <a href="">Giriş Yapın</a></div>
-                            <form class="tm-form-wide">
+                            <div class="sub-menu">Zaten üye misiniz? <a href="/panel/login">Giriş Yapın</a></div>
+                            <form class="tm-form-wide" action="/panel/register" method="POST">
                                 <div class="form-group">
                                     <label for="name">Adınız Soyadınız</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Adınız Soyadınız">
+                                    <input type="text" class="form-control" id="nameSurname" name="nameSurname" placeholder="Adınız Soyadınız">
                                 </div>
                                 <div class="form-group">
                                     <label for="birthdate">Doğum Tarihiniz</label>
-                                    <input type="date" class="form-control" id="birthdate" placeholder="Doğum Tarihiniz">
+                                    <input type="date" class="form-control" id="birthDate" name="birthDate"  placeholder="Doğum Tarihiniz">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email Adresiniz</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email Adresiniz">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Adresiniz">
                                 </div>
                                 <div class="form-group password">
                                     <label for="login-password">Şifrenizi Giriniz</label>
-                                    <input type="password" class="form-control" id="login-password" placeholder="Şifreniz">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Şifreniz">
                                     <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
                                 </div>
                                 <div class="form-group">
                                     <label for="tel">Telefon Numaranız</label>
-                                    <input type="tel" class="form-control" id="tel" placeholder="Telefon Numaranız">
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefon Numaranız">
                                 </div>
                                 <div class="form-box">
                                     <div class="form-group not-border checkbox">
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                                 <div class="tm-button-next left">
-                                    <a href="./register-activation.html" class="btn-second">Sonraki Adım</a>
+                                    <button type="submit" class="btn-second">Sonraki Adım</buttonhref=>
                                 </div>
                             </form>
                         </div>

@@ -1,16 +1,163 @@
+const AppointmentService = require("../services/Appointments");
+const UserService = require("../services/Users");
+const BlogService = require("../services/Blogs");
+
+const passport = require("passport");
+require("../scripts/utils/panel-passport-local-config")(passport);
+
+const { passwordToHash, hashToPassword } = require("../scripts/utils/helper");
+const ErrorMessage = require("../scripts/utils/errorMessages");
+const HtmlMessage = require("../scripts/utils/htmlMessages");
+
+const jwt = require("jsonwebtoken");
+const mailer = require("nodemailer");
+
 const DialysisCenterService = require("../services/DialysisCenters");
 
 class HomeController {
+  index(req, res, next) {
+    console.log("User: ", req.user);
+    res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel" });
+  }
+
   loginView(req, res) {
     res.render("clinic-panel/pages/clinic-login", { layout: "clinic-panel/layouts/index" });
+  }
+
+  login(req, res, next) {
+    req.flash("email", req.body.email);
+    req.flash("password", req.body.password);
+    if (req.errors) {
+      const htmlMessage = new HtmlMessage(req.errors, "danger");
+      req.flash("validationErrors", htmlMessage);
+      return res.redirect("/panel/register");
+    } else {
+      passport.authenticate("local", {
+        successRedirect: "/panel",
+        failureRedirect: "/panel/login",
+        failureFlash: true,
+      })(req, res, next);
+    }
+  }
+
+  logout(req, res, next) {
+    req.logout();
+    req.session.destroy((error) => {
+      res.clearCookie("connect.sid");
+      res.render("clinic-panel/pages/clinic-login", { layout: "clinic-panel/layouts/index" });
+    });
   }
 
   registerView(req, res) {
     res.render("clinic-panel/pages/clinic-register", { layout: "clinic-panel/layouts/index" });
   }
 
-  activationView(req, res) {
-    res.render("clinic-panel/pages/clinic-activation", { layout: "clinic-panel/layouts/index" });
+  async register(req, res, next) {
+    console.log("1");
+    const enterPassword = req.body.password;
+    if (req.errors) {
+      console.log("2");
+      const htmlMessage = new HtmlMessage(req.errors, "danger");
+      req.flash("validationErrors", htmlMessage);
+      req.flash("nameSurname", req.body.nameSurname);
+      req.flash("email", req.body.email);
+      req.flash("phone", req.body.phone);
+      req.flash("password", enterPassword);
+      req.flash("birthDate", req.body.birthDate);
+      return res.redirect("/panel/login");
+    } else {
+      try {
+        console.log("3");
+        req.body.password = passwordToHash(enterPassword);
+        req.body.birthDate = new Date(req.body.birthDate);
+        req.body.isAdmin = true;
+
+        const data = await UserService.create(req.body);
+        const token = jwt.sign(
+          {
+            id: data._id,
+            email: data.email,
+          },
+          process.env.CONFIRM_SECRET,
+          { expiresIn: "1d" }
+        );
+
+        console.log("4");
+        const verifyURL = process.env.MAIL_VERIFY_URL + "panel/activation?token=" + token;
+        let transporter = mailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASSWORD,
+          },
+        });
+        console.log("5");
+        await transporter.sendMail(
+          {
+            from: "@Dialysing <info@dialysing.com",
+            to: data.email,
+            subject: "Emailinizi Onaylayınız.",
+            text: "Emailinizi Onaylamak için Linke Tıklayın " + verifyURL,
+          },
+          (error) => {
+            if (error) {
+              console.log("Send Mail Error: " + error);
+            }
+            transporter.close();
+          }
+        );
+        console.log("6");
+        return res.render("clinic-panel/pages/clinic-activation", { layout: "clinic-panel/layouts/index" });
+      } catch (err) {
+        console.log("Hata Çıktı :", err);
+        const message = ErrorMessage.printMessage(err);
+        if (message != undefined) {
+          const htmlMessage = new HtmlMessage(message, "danger");
+          req.flash("validationErrors", htmlMessage);
+          req.flash("nameSurname", req.body.nameSurname);
+          req.flash("email", req.body.email);
+          req.flash("phone", req.body.phone);
+          req.flash("password", enterPassword);
+          return res.redirect("/panel/login");
+        }
+        const htmlMessage = new HtmlMessage("Kayıt İşlemi Sırasında Hata Oluştu.", "danger");
+        req.flash("validationErrors", htmlMessage);
+        req.flash("nameSurname", req.body.nameSurname);
+        req.flash("email", req.body.email);
+        req.flash("phone", req.body.phone);
+        req.flash("password", enterPassword);
+        return res.redirect("/panel/login");
+      }
+    }
+  }
+
+  activation(req, res) {
+        console.log("Buradaa", req.query.token);
+        const token = req.query.token;
+        if (token) {
+          try {
+            jwt.verify(token, process.env.CONFIRM_SECRET, async (e, decoded) => {
+              if (e) {
+                req.flash("validationErrors", [{ msg: "Geçersiz Token. Lütfen Yeniden Kayıt Olun.." }]);
+                res.redirect("/panel/login");
+              } else {
+                const userID = decoded.id;
+                const result = await UserService.update(userID, { emailConfirmed: true });
+                if (result) {
+                  req.flash("validationErrors", [{ msg: "Emailiniz Onaylanmıştır.", result: "success" }]);
+                  res.redirect("/panel/login");
+                } else {
+                  req.flash("validationErrors", [{ msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." }]);
+                  res.redirect("/panel/login");
+                }
+              }
+            });
+          } catch (error) {
+            console.log("authController verify Error" + error);
+          }
+        } else {
+          console.log("Token is NULL");
+        }
   }
 
   choosePersonel(req, res) {
@@ -231,10 +378,6 @@ class HomeController {
 
   evaluation(req, res, next) {
     res.render("clinic-panel/pages/panel/evaluation", { layout: "clinic-panel/layouts/panel" });
-  }
-
-  index(req, res, next) {
-    res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel" });
   }
 
   messageOptions(req, res, next) {

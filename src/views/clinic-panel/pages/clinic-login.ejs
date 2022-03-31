@@ -10,19 +10,19 @@
             <div class="container">
                 <div class="row top">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
-                        <form class="tm-form">
+                        <form class="tm-form" action="/panel/login" method="POST">
                             <div class="form-title text-center">Giriş Yap</div>
                             <div class="form-group">
                               <label for="login-email">Email Adresi</label>
-                              <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp" placeholder="Email Adresiniz">
+                              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email Adresiniz">
                             </div>
                             <div class="form-group password">
                               <label for="login-password">Şifrenizi Giriniz</label>
-                              <input type="password" class="form-control" id="login-password" placeholder="Şifreniz">
+                              <input type="password" class="form-control" id="password" name="password" placeholder="Şifreniz">
                               <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
                             </div>
                             <button type="submit" class="btn btn-second">Giriş Yap</button>
-                            <div class="link">Üyeliğiniz Yok Mu?<a href="./clinic-choose-personal.html"> Kayıt Ol</a></div>
+                            <div class="link">Üyeliğiniz Yok Mu?<a href="/panel/register"> Kayıt Ol</a></div>
                           </form>
                     </div>
                 </div>

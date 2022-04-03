@@ -82,12 +82,19 @@
               <li class="nav-item buttons">
                 <a href="./clinic" key="addCenter" class="nav-link btn-third">Merkezinizi Ekleyin</a>
               </li>
+              <% if (!user) { %>
               <li class="nav-item buttons">
                 <a href="./register/register.html" key="register" class="nav-link btn-second">Kayıt Ol</a>
               </li>
+              <% } %>
               <li class="nav-item buttons">
                 <!-- Button trigger modal -->
+                <% if (!user) { %>
                 <button type="button" key="login" class="nav-link btn-second" data-toggle="modal" data-target="#loginModal">Giriş Yap</button>
+                <% } %>
+                <% if (user) { %>
+                 <a href="/logout" class="nav-link btn-second">Çıkış Yap</a>
+                <% } %>
 
                 <!-- Modal -->
                 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -98,15 +105,15 @@
                           <img src="../user/img/icons/close.png" alt="Icon Close" />
                         </button>
                       </div>
-                      <form class="tm-form">
+                      <form class="tm-form" action="/login" method="POST">
                         <div key="login" class="form-title text-center">Giriş Yap</div>
                         <div class="form-group">
                           <label key="emailAddress" for="login-email">Email Adresi</label>
-                          <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp" placeholder="Email Adresiniz" />
+                          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email Adresiniz" />
                         </div>
                         <div class="form-group password">
                           <label key="password" for="login-password">Şifrenizi Giriniz</label>
-                          <input type="password" class="form-control" id="login-password" placeholder="Şifreniz" />
+                          <input type="password" class="form-control" id="password" name="password" placeholder="Şifreniz" />
                           <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
                         </div>
                         <div class="links">
@@ -138,11 +145,11 @@
             <div key="centerFindSearch" class="tm-header-title">Aradığınız diyaliz merkezini bulun</div>
             <div key="centerEasy" class="tm-header-text">Diyaliz merkezi bulmanın en hızlı ve en kolay yolu</div>
 
-            <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
+            <form action="/clinic/clinic-list" method="GET" class="tm-search-form tm-section-pad-2">
               <div class="form-row tm-search-form-row">
                 <div class="form-group tm-form-element location-main">
                   <img src="../user/img/icons/location.png" class="tm-form-element-icon" alt="Icon Location" />
-                  <input name="city" type="text" class="form-control first-child" id="inputCity" placeholder="Lokasyon Girin" />
+                  <input name="city" type="text" class="form-control first-child" id="city" name="city" placeholder="Lokasyon Girin" />
                 </div>
                 <div class="form-group tm-form-element date">
                   <img src="../user/img/icons/calendar.png" class="tm-form-element-icon" alt="Icon Calendar" />
@@ -164,7 +171,7 @@
                   <h6 class="text-white"><img src="../user/img/icons/tick.png" class="img-fluid mx-1" alt="location" /><span key="creditCard"> Kredi kartı yok</span></h6>
                 </div>
                 <div class="col col-lg-4 text-center">
-                  <h6 class="text-white"><img src="./img/icons/tick.png" class="img-fluid mx-1" alt="location" /> <span key="cancelEasy"> Rezervasyon iptal kolaylığı</span></h6>
+                  <h6 class="text-white"><img src="../user/img/icons/tick.png" class="img-fluid mx-1" alt="location" /> <span key="cancelEasy"> Rezervasyon iptal kolaylığı</span></h6>
                 </div>
               </div>
             </div>

@@ -3,7 +3,7 @@ const UserService = require("../services/Users");
 const BlogService = require("../services/Blogs");
 
 const passport = require("passport");
-require("../scripts/utils/panel-passport-local-config")(passport);
+const a = require("../scripts/utils/passport-local-config")(passport);
 
 const { passwordToHash, hashToPassword } = require("../scripts/utils/helper");
 const ErrorMessage = require("../scripts/utils/errorMessages");
@@ -14,7 +14,7 @@ const mailer = require("nodemailer");
 
 const DialysisCenterService = require("../services/DialysisCenters");
 
-class HomeController {
+class ClinicPanelController {
   index(req, res, next) {
     console.log("User: ", req.user);
     res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel" });
@@ -32,6 +32,7 @@ class HomeController {
       req.flash("validationErrors", htmlMessage);
       return res.redirect("/panel/register");
     } else {
+      console.log("Buradaaa de");
       passport.authenticate("local", {
         successRedirect: "/panel",
         failureRedirect: "/panel/login",
@@ -429,4 +430,4 @@ class HomeController {
   }
 }
 
-module.exports = new HomeController();
+module.exports = new ClinicPanelController();

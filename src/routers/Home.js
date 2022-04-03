@@ -7,7 +7,7 @@ const { createValidator, updateValidator, loginValidator } = require("../validat
 
 const Controller = require("../controllers/Home");
 
-router.get("/", authenticate, Controller.index);
+router.get("/",  Controller.index);
 
 //* CLINIC PANEL INDEX
 router.get("/clinic", Controller.clinicMain);

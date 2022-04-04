@@ -19,7 +19,6 @@ class HomeController {
     res.render("user/pages/index", { layout: "user/layouts/index", user });
   }
   clinicMain(req, res, next) {
-    console.log("Burada");
     res.render("user/pages/clinic/clinic-main", { layout: "user/layouts/clinic-main" });
   }
 
@@ -49,8 +48,7 @@ class HomeController {
   }
 
   createAppointment(req, res, next) {
-    console.log("Body :", req.body);
-    console.log("Cookies :", req.cookies);
+
 
     var appointment = {
       nameSurname: req.user.nameSurname,
@@ -95,7 +93,6 @@ class HomeController {
   }
 
   clinicList(req, res, next) {
-    console.log("Body :", req.body);
     const query = {
       "adress.city": req.query.city,
     };

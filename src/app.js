@@ -27,7 +27,11 @@ const SessionStore = new MongoDbStore({
 
 const app = express();
 
-app.use(helmet());
+// app.use(
+//   helmet({
+//     contentSecurityPolicy: false,
+//   })
+// );
 app.use(cookieParser());
 
 app.use(

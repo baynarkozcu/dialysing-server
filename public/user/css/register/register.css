@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Khula&family=Lato&family=Montserrat&family=Roboto&display=swap");
 .tm-top-bar {
   position: unset;
 }
@@ -14,16 +15,13 @@ select.list-dt {
   padding: 2px 5px 3px 5px;
   margin: 2px;
 }
-
 select.list-dt:focus {
   border-bottom: 2px solid skyblue;
 }
-
 #section-i .row {
   align-items: center;
   justify-content: center;
 }
-
 .card-register {
   border: none;
   border-radius: 0.5rem;
@@ -31,7 +29,6 @@ select.list-dt:focus {
   padding: 2rem;
   position: inherit;
 }
-
 .fs-title {
   font-size: 25px;
   color: #2c3e50;
@@ -133,4 +130,21 @@ p {
     width: 20px;
     height: 20px;
   }
+}
+/*registerform*/
+input#nameSurname.form-control, input#email.form-control, input#birthDate.form-control, input#password.form-control, input#phone.form-control {
+  font-size: 14px;
+} 
+label {
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+}
+.error-handling {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  color: rgba(255, 0, 0, 0.671);
+  text-align: start;
+  margin-bottom: 20px;
+  margin-top: 10px; 
 }

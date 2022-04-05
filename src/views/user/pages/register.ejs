@@ -12,7 +12,7 @@
 <div class="tm-main-content" id="register">
   <%- include("../partials/top-navbar-dark") %>
   
-<% if (locals.validationErrors != null) { %> <%- include('../partials/error-message') %> <% } %>
+<!-- <% if (locals.validationErrors != null) { %> <%- include('../partials/error-message') %> <% } %> -->
 
   <div id="section-i" class="tm-p tm-pt-20 tm-pb-20">
     <div class="container">
@@ -36,7 +36,10 @@
           <div class="card-register px-0 pt-4 pb-0 mt-3 mb-3">
             <div class="title">Kayıt Ol</div>
             <div class="sub-menu">Zaten üye misiniz? <a href="">Giriş Yapın</a></div>
-            <form class="tm-form-wide" action="/register" method="POST">
+            <form class="tm-form-wide" action="/register" method="POST"> 
+              <div class="error-handling">
+                <% if (locals.validationErrors != null) { %> <%- include('../partials/error-message') %> <% } %>
+                </div>
               <div class="form-group">
                 <label for="name">Adınız Soyadınız</label>
                 <input type="text" class="form-control" id="nameSurname" name="nameSurname" value="<%- typeof nameSurname != 'undefined' ? nameSurname : '' %>" placeholder="Adınız Soyadınız" />

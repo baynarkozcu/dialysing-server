@@ -14,6 +14,8 @@ router.get("/register", clinicCurrentUser, Controller.registerView);
 router.post("/register", clinicCurrentUser, Controller.register);
 router.get("/activation", clinicCurrentUser, Controller.activation);
 
+//PANEL
+router.group("/", clinicAuthenticate, (router) => {
 router.get("/choose-personel", Controller.choosePersonel);
 
 router.get("/choose-center-view", Controller.chooseCenterView);
@@ -36,8 +38,6 @@ router.post("/doctors", Controller.doctors);
 router.get("/clinic-summary", Controller.clinicSummary);
 router.get("/clinic-save", Controller.clinicSave);
 
-//PANEL
-router.group("/", clinicAuthenticate, (router) => {
   router.get("/add-new-clinic", Controller.addNewClinic);
   router.get("/add-user", Controller.addUser);
   router.get("/analysis", Controller.analysis);

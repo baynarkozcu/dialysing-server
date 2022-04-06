@@ -28,20 +28,20 @@
           <form class="tm-form-wide" action="/panel/choose-center" method="POST">
             <div class="form-group">
               <label for="name-surname">Ad Soyad</label>
-              <input type="text" class="form-control" id="nameSurname" name="nameSurname" value="GELECEK" placeholder="Adınız Soyadınız" />
+              <input type="text" class="form-control" id="nameSurname" name="nameSurname" value="<%- user.nameSurname || '' %>" placeholder="Adınız Soyadınız" />
             </div>
             <div class="form-group">
               <label for="email">Email Adresi</label>
-              <input type="email" class="form-control" id="email" name="email" value="GELECEK" aria-describedby="emailHelp" placeholder="Email Adresiz" />
+              <input type="email" class="form-control" id="email" name="email" value="<%- user.email || '' %>" aria-describedby="email" placeholder="Email Adresiz" />
             </div>
             <div class="form-group">
               <label for="phone">Cep Telefonu</label>
-              <input type="tel" class="form-control" id="phone" name="phone" value="GELECEK" placeholder="Cep Telefonunuz" />
+              <input type="tel" class="form-control" id="phone" name="phone" value="<%- user.phone || '' %>" placeholder="Cep Telefonunuz" />
             </div>
             <div class="form-group">
               <label for="job-dropdown">Görevinizi Seçiniz</label>
               <div class="dropdown select">
-                <select class="btn btn-dropdown dropdown-toggle" type="button" id="job" name="job" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <select class="btn btn-dropdown dropdown-toggle" type="button" id="job" name="job" value="<%- user.job || '' %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <option selected>Göreviniz</option>
                   <option value="1">Başhekim</option>
                   <option value="2">Doktor</option>

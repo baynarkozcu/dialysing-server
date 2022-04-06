@@ -6,9 +6,12 @@ class DialysisCenters extends BaseService {
     super(BaseModal);
   }
 
-  async groupBy(field) {
-    return await BaseModal.aggregate([{ $group: { _id: "$adress." + field, count: { $sum: 1 } } }]);
+  async groupBy(fieldOne, fieldTwo) {
+    return await BaseModal.aggregate([{ $group: { _id: { country: fieldOne, city: fieldTwo }, count: { $sum: 1 } } }]);
   }
 }
 
-module.exports = new DialysisCenters(); 
+module.exports = new DialysisCenters();
+
+//! Match Kullanımı
+//! return await BaseModal.aggregate([{ $match: { "adress.country": "Ukraine" } }, { $project: { _id: 1 } }]);

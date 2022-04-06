@@ -107,8 +107,8 @@ class HomeController {
   }
 
   async allView(req, res, next) {
-    const countries = await DialysisCenterService.groupBy("country");
-    const cities = await DialysisCenterService.groupBy("city");
+    const countries = await DialysisCenterService.groupBy("$adress.country");
+    const cities = await DialysisCenterService.groupBy("$adress.country", "$adress.city");
 
     res.render("user/pages/clinic/all-view", { layout: "user/layouts/clinic-main", countries, cities });
   }

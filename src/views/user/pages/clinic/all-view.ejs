@@ -17,16 +17,16 @@
       <div class="accordion mb-3" id="country">
         <div class="accordion-item">
           <h2 class="accordion-header" id="countryOne">
-            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><img src="../user/img/flags/turkey.png" width="35" height="25" alt="Flag Turkey" class="mb-1" /> <%- country._id  %>  <span class="mx-3"><%- country.count  %>  Diyaliz Merkezi</span> <i class="bi bi-chevron-down"></i></button>
+            <button type="button" data-bs-toggle="collapse" data-bs-target="#<%-country._id.country %>" aria-expanded="true" aria-controls="<%-country._id.country %>"><img src="../user/img/flags/turkey.png" width="35" height="25" alt="Flag Turkey" class="mb-1" /> <%- country._id.country %> <span class="mx-3"><%- country._id.count %> Diyaliz Merkezi</span> <i class="bi bi-chevron-down"></i></button>
           </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="countryOne" data-bs-parent="#countryOne">
+          <div id="<%-country._id.country %>" class="accordion-collapse collapse show" aria-labelledby="countryOne" data-bs-parent="#countryOne">
             <div class="accordion-body">
               <div class="row justify-content-center">
                 <div class="col-lg col-md-4 col-sm-6">
                   <div class="row">
-                    <% cities.forEach(city => { %>
-                    <p class="city"> <a href="/clinic/clinic-list?city=<%- city._id  %>"><%- city._id  %></a> <span>(<%- city.count  %> )</span></p>
-                    <% }) %>
+                    <% cities.forEach(city => { %> <% if (country._id.country == city._id.country) { %>
+                    <p class="city"><a href="/clinic/clinic-list?city=<%- city._id.city  %>"><%- city._id.city %></a> <span>( <%- city.count %> )</span></p>
+                    <% } %> <% }) %>
                   </div>
                 </div>
               </div>

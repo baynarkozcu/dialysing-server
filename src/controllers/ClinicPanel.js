@@ -162,7 +162,8 @@ class ClinicPanelController {
   }
 
   choosePersonel(req, res) {
-    res.render("clinic-panel/pages/add-clinic/choose-personel", { layout: "clinic-panel/layouts/index" });
+    const user = req.user;
+    res.render("clinic-panel/pages/add-clinic/choose-personel", { layout: "clinic-panel/layouts/index", user });
   }
 
   chooseCenter(req, res) {
@@ -184,9 +185,9 @@ class ClinicPanelController {
   }
 
   getClinicList(req, res) {
-    DialysisCenterService.index({ "companyInformation.companyName": { $regex: req.body.companyName, $options: "i" } })
+    console.log("getClinicList");
+    DialysisCenterService.indexTop10({ "companyInformation.companyName": { $regex: req.body.companyName, $options: "i" } })
       .then((centers) => {
-        console.log("centers :", centers);
         res.render("clinic-panel/pages/add-clinic/choose-center", { layout: "clinic-panel/layouts/index", list: centers || [] });
       })
       .catch((err) => {

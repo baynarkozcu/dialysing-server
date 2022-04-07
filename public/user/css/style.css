@@ -417,6 +417,11 @@ p {
   font-style: normal;
   font-weight: normal;
 } 
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Khula', sans-serif;
+}
 .logo span {
   color: #19a2f2;
 }
@@ -1790,6 +1795,8 @@ footer .copyright {
 @media screen and (max-width: 991px) {
   .navbar-toggler {
     color: #19a2f2;
+    font-size: 15px;
+    margin: 0px 20px 20px 0px;
   }
   .tm-bg-background {
     display: block;
@@ -1816,15 +1823,12 @@ footer .copyright {
     box-shadow: 0px 0px 7px 0px rgba(214, 214, 214, 1);
     background-color: #28353e;
     z-index: 99;
-  }
-/* 
-  /* .navbar .navbar-nav {
-    align-items: center;
-  } */
+  } 
 
   .navbar .logo {
-    font-size: 20px;
-    margin-right: 0;
+    font-size: 25px;
+    margin-right: 20px 0px 0px 0px;
+    font-family: 'Khula', sans-serif;
   }
 
   /* .navbar a {

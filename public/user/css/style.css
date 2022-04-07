@@ -845,28 +845,43 @@ p {
   margin-left: 1rem;
   font-size: 1.1rem;
 }
-
 .tm-header-title {
   color: #ffffff;
-  font-size: 28px !important; 
-  padding: 0.5rem 0;
+  font-size: 30px !important;  
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
 }
-
 .tm-header-title.blue {
   color: #19a2f2;
 }
-
+.capatalize h6 {
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+}
+input#city.form-control.first-child{
+  padding: 10px 10px 10px 55px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+input#inputCheckIn.form-control.date{
+  padding: 10px 10px 10px 55px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+button.btn.btn-outline-primary{
+  padding: 20px 20px 20px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
 .tm-header-text {
   color: #ffffff;
-  font-size: 18px !important;
-  padding-bottom: .8rem;
+  font-size: 20px !important; 
   font-weight: 400;
+  font-family: 'Lato', sans-serif; 
 }
-
 .tm-header-content {
   margin-top: 5rem;
 }
-
 .tm-form-element {
   position: relative;
 }
@@ -2386,7 +2401,7 @@ footer .copyright {
   text-decoration: none !important;
 }
 .capatalize img {
-  width: 40px;
+  width: 30px;
 }
 /* location */
 .select .form-control {

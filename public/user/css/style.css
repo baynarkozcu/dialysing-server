@@ -730,12 +730,12 @@ p {
   border-color: #055f8f;
   border-radius: 8px;
   cursor: pointer;
-  color: #ffffff;
-  font-weight: 500;
+  color: #ffffff; 
   padding: 0.5rem 1rem;
   text-align: center;
   border: 2px solid #055f8f; 
   text-decoration: none !important;
+  font-size: 12px;
 }
 
 .btn-second.wide {
@@ -773,11 +773,10 @@ p {
   border: 2px solid #ffffff;
   border-radius: 8px;
   cursor: pointer;
-  color: #ffffff;
-  font-weight: 500;
+  color: #ffffff; 
   padding: 0.5rem 1rem;
-  text-align: center;
-  font-weight: 600;
+  text-align: center; 
+  font-size: 12px;   
 }
 
 .btn-forth {
@@ -2398,8 +2397,11 @@ footer .copyright {
 .select-lang button{ 
   background-color: rgba(0, 0, 0, 0) !important;
   border: none !important;
+  font-size: 12px;
 } 
-
+.select-lang {   
+  font-size: 12px;
+} 
 .dropdown-menu {
   background-color: rgba(0, 0, 0, 0);
   border: none;

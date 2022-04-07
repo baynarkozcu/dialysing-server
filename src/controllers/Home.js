@@ -112,7 +112,6 @@ class HomeController {
 
     res.render("user/pages/clinic/all-view", { layout: "user/layouts/clinic-main", countries, cities });
   }
-
   clinicLogin(req, res, next) {
     res.render("user/pages/clinic/clinic-login", { layout: "user/layouts/clinic-main" });
   }

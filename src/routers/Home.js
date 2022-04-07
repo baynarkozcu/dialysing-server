@@ -13,7 +13,6 @@ router.get("/",  Controller.index);
 router.get("/clinic", Controller.clinicMain);
 
 //* CLINIC LIST - CLINIC PAGE - APPOINTMENT PAGES
-
 router.get("/clinic/clinic-list", Controller.clinicList);
 router.get("/clinic/all", Controller.allView);
 router.get("/clinic/appointment", authenticate, Controller.clinicAppointment);

@@ -40,6 +40,13 @@ const UserSchema = Mongoose.Schema(
         ref: "Appointment",
       },
     ],
+    centerList: [
+      {
+        type: Mongoose.Types.ObjectId,
+        ref: "DialysisCenter",
+      },
+    ],
+    priceCount: Number,
   },
   { timestamps: true, versionKey: false }
 );

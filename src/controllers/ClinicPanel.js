@@ -1,6 +1,7 @@
 const AppointmentService = require("../services/Appointments");
 const UserService = require("../services/Users");
 const BlogService = require("../services/Blogs");
+const DialysisCenterService = require("../services/DialysisCenters");
 
 const passport = require("passport");
 const a = require("../scripts/utils/passport-local-config")(passport);
@@ -12,12 +13,26 @@ const HtmlMessage = require("../scripts/utils/htmlMessages");
 const jwt = require("jsonwebtoken");
 const mailer = require("nodemailer");
 
-const DialysisCenterService = require("../services/DialysisCenters");
 
 class ClinicPanelController {
-  index(req, res, next) {
-    console.log("User: ", req.user);
-    res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel" });
+  async index(req, res, next) {
+    const center = req.query.clinic;
+
+    if (center) {
+      DialysisCenterService.findById(center)
+        .then((center) => {
+          res.cookie("clinic", center);
+          return res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+        })
+        .catch((err) => {
+          console.log(err);
+          return res.redirect("/panel");
+        });
+    } else {
+      await res.cookie("clinic", req.user.centerList[0]);
+      return res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel", user: req.user, center: req.user.centerList[0] });
+    }
+    
   }
 
   loginView(req, res) {
@@ -32,7 +47,6 @@ class ClinicPanelController {
       req.flash("validationErrors", htmlMessage);
       return res.redirect("/panel/register");
     } else {
-      console.log("Buradaaa de");
       passport.authenticate("local", {
         successRedirect: "/panel",
         failureRedirect: "/panel/login",
@@ -54,10 +68,8 @@ class ClinicPanelController {
   }
 
   async register(req, res, next) {
-    console.log("1");
     const enterPassword = req.body.password;
     if (req.errors) {
-      console.log("2");
       const htmlMessage = new HtmlMessage(req.errors, "danger");
       req.flash("validationErrors", htmlMessage);
       req.flash("nameSurname", req.body.nameSurname);
@@ -68,7 +80,6 @@ class ClinicPanelController {
       return res.redirect("/panel/login");
     } else {
       try {
-        console.log("3");
         req.body.password = passwordToHash(enterPassword);
         req.body.birthDate = new Date(req.body.birthDate);
         req.body.isAdmin = true;
@@ -83,7 +94,6 @@ class ClinicPanelController {
           { expiresIn: "1d" }
         );
 
-        console.log("4");
         const verifyURL = process.env.MAIL_VERIFY_URL + "panel/activation?token=" + token;
         let transporter = mailer.createTransport({
           service: "gmail",
@@ -92,7 +102,6 @@ class ClinicPanelController {
             pass: process.env.GMAIL_PASSWORD,
           },
         });
-        console.log("5");
         await transporter.sendMail(
           {
             from: "@Dialysing <info@dialysing.com",
@@ -107,7 +116,6 @@ class ClinicPanelController {
             transporter.close();
           }
         );
-        console.log("6");
         return res.render("clinic-panel/pages/clinic-activation", { layout: "clinic-panel/layouts/index" });
       } catch (err) {
         console.log("Hata Çıktı :", err);
@@ -133,32 +141,32 @@ class ClinicPanelController {
   }
 
   activation(req, res) {
-        console.log("Buradaa", req.query.token);
-        const token = req.query.token;
-        if (token) {
-          try {
-            jwt.verify(token, process.env.CONFIRM_SECRET, async (e, decoded) => {
-              if (e) {
-                req.flash("validationErrors", [{ msg: "Geçersiz Token. Lütfen Yeniden Kayıt Olun.." }]);
-                res.redirect("/panel/login");
-              } else {
-                const userID = decoded.id;
-                const result = await UserService.update(userID, { emailConfirmed: true });
-                if (result) {
-                  req.flash("validationErrors", [{ msg: "Emailiniz Onaylanmıştır.", result: "success" }]);
-                  res.redirect("/panel/login");
-                } else {
-                  req.flash("validationErrors", [{ msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." }]);
-                  res.redirect("/panel/login");
-                }
-              }
-            });
-          } catch (error) {
-            console.log("authController verify Error" + error);
+    console.log("Buradaa", req.query.token);
+    const token = req.query.token;
+    if (token) {
+      try {
+        jwt.verify(token, process.env.CONFIRM_SECRET, async (e, decoded) => {
+          if (e) {
+            req.flash("validationErrors", [{ msg: "Geçersiz Token. Lütfen Yeniden Kayıt Olun.." }]);
+            res.redirect("/panel/login");
+          } else {
+            const userID = decoded.id;
+            const result = await UserService.update(userID, { emailConfirmed: true });
+            if (result) {
+              req.flash("validationErrors", [{ msg: "Emailiniz Onaylanmıştır.", result: "success" }]);
+              res.redirect("/panel/login");
+            } else {
+              req.flash("validationErrors", [{ msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." }]);
+              res.redirect("/panel/login");
+            }
           }
-        } else {
-          console.log("Token is NULL");
-        }
+        });
+      } catch (error) {
+        console.log("authController verify Error" + error);
+      }
+    } else {
+      console.log("Token is NULL");
+    }
   }
 
   choosePersonel(req, res) {
@@ -240,7 +248,7 @@ class ClinicPanelController {
     res.render("clinic-panel/pages/add-clinic/address-correction", { layout: "clinic-panel/layouts/index" });
   }
 
-  addressCorrection(req, res) {
+  async addressCorrection(req, res) {
     const dialysingCenter = req.cookies.selectedDialysingCenter;
     res.clearCookie("selectedDialysingCenter");
 
@@ -254,7 +262,7 @@ class ClinicPanelController {
     dialysingCenter.contactInformation.website = req.body.website;
     dialysingCenter.companyInformation.bio = req.body.bio;
 
-    res.cookie("selectedDialysingCenter", dialysingCenter);
+    await res.cookie("selectedDialysingCenter", dialysingCenter);
 
     res.render("clinic-panel/pages/add-clinic/address-correction", { layout: "clinic-panel/layouts/index" });
   }
@@ -309,10 +317,18 @@ class ClinicPanelController {
 
   clinicSave(req, res) {
     const dialysingCenter = req.cookies.selectedDialysingCenter;
+    dialysingCenter.personalInformation = req.user;
     DialysisCenterService.update(dialysingCenter._id, dialysingCenter)
       .then((center) => {
-        res.clearCookie("selectedDialysingCenter");
-        res.redirect("/");
+        req.user.centerList.push(center._id);
+        UserService.update(req.user._id, req.user)
+          .then((user) => {
+            res.clearCookie("selectedDialysingCenter");
+            res.redirect("/panel");
+          })
+          .catch((error) => {
+            console.log("Hata Çıktı :", error);
+          });
       })
       .catch((err) => {
         console.log("Hata Çıktı :", err);
@@ -395,7 +411,8 @@ class ClinicPanelController {
   }
 
   promotions(req, res, next) {
-    res.render("clinic-panel/pages/panel/promotions", { layout: "clinic-panel/layouts/panel" });
+    var center = req.cookies.center;
+    res.render("clinic-panel/pages/panel/promotions", { layout: "clinic-panel/layouts/panel", user: req.user, center});
   }
 
   propertiesAndServices(req, res, next) {

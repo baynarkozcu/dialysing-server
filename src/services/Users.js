@@ -12,6 +12,7 @@ class Users extends BaseService {
       select: "email phone situation insurance checkInDate treatmentMethod session dialysisCenter patientNameSurname active",
     });
   }
+
 }
 
 module.exports = new Users();

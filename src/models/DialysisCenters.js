@@ -58,7 +58,13 @@ const DialysisCenterSchema = Mongoose.Schema(
     isActive: {
       type: Boolean,
       default: true
-    }
+    },
+    token: [{
+      packageName: String,
+      price: Number,
+      startDate: Date,
+      endDate: Date,
+    }],
   },
   { timestamps: true, versionKey: false }
 );

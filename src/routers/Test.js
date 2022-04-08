@@ -6,9 +6,10 @@ const model = require("../models/DialysisCenters");
 
 router.get("/", (req, res) => {
   
-    console.log("Sayı :", Math.floor(Math.random() * 100));
+  console.log("Sayı :", Math.floor(Math.random() * 100));
+  
 
-  res.render("test", { layout: "clinic-panel/layouts/panel" });
+  res.render("test", { layout: "clinic-panel/layouts/deneme" });
 });
 
 router.post("/uploadfile", (req, res) => {
@@ -23,8 +24,8 @@ router.post("/uploadfile", (req, res) => {
   });
 
 
-  for (let index = 0; index < 10; index++) {
-    var randomCount = Math.floor(Math.random() * 22);
+  for (let index = 0; index < 50; index++) {
+    var randomCount = Math.floor(Math.random() * 100);
 
     const dialysisCenter = {
       number: result.deneme[randomCount].number,

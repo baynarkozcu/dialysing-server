@@ -3,6 +3,9 @@ require("express-router-group");
 const { clinicAuthenticate, clinicCurrentUser } = require("../middlewares/authentication");
 // const idChecker = require("../middlewares/idChecker");
 
+
+//! TODO ADMIN KONTROLÜ YAPILACAK....
+
 const Controller = require("../controllers/ClinicPanel");
 
 router.get("/", clinicAuthenticate, Controller.index);

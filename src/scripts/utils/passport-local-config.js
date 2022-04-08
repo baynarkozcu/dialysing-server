@@ -12,6 +12,7 @@ module.exports = (passport) => {
     new LocalStrategy(options, async (email, password, done) => {
       try {
         const user = await User.findOne({ email: email });
+        console.log("User SADASD", user);
         if (!user) {
           return done(null, false, { message: "Böyle bir Email Adresi Bulunamadı.." });
         }
@@ -38,6 +39,6 @@ module.exports = (passport) => {
   passport.deserializeUser((id, done) => {
     User.findById(id, (err, user) => {
       done(err, user);
-    });
+    }).populate("centerList");
   });
 };

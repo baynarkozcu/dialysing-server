@@ -15,10 +15,10 @@ router.get("/clinic", Controller.clinicMain);
 //* CLINIC LIST - CLINIC PAGE - APPOINTMENT PAGES
 router.get("/clinic/clinic-list", Controller.clinicList);
 router.get("/clinic/all", Controller.allView);
-router.get("/clinic/appointment", authenticate, Controller.clinicAppointment);
+// router.get("/clinic/appointment", authenticate, Controller.clinicAppointment);
 router.post("/clinic/clinic-appointment", authenticate, Controller.viewAppointment);
 router.post("/clinic/new-clinic-appointment", Controller.createAppointment);
-router.get("/clinic/:id", idChecker(), Controller.singleClinic);
+router.get("/clinic/:id", Controller.singleClinic);
 
 //* BLOG LIST - BLOG PAGE
 router.get("/blogs", Controller.allBlogs);

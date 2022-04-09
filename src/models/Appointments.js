@@ -21,11 +21,11 @@ const AppointmentSchema = Mongoose.Schema(
     treatmentMethod: String,
     sessionsDay: [String],
     session: String,
-    // dialysisCenter: {
-    //   type: Mongoose.Types.ObjectId,
-    //   ref: "DialysisCenter",
-    // },
-    dialysisCenter: String,
+    dialysisCenter: {
+      type: Mongoose.Types.ObjectId,
+      ref: "DialysisCenter",
+    },
+    note: String,
     active: {
       type: Boolean,
       default: false,

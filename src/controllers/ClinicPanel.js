@@ -344,9 +344,6 @@ class ClinicPanelController {
         console.log("Hata Çıktı :", err);
       });
   }
-  // index(req, res, next) {
-  //   res.render("clinic-panel/pages/add-clinic/index", { layout: "clinic-panel/layouts/main" });
-  // }
 
   // createDialysisCenter(req, res, next) {
   //   DialysisCenterService.create(req.body).then(data => {
@@ -369,7 +366,8 @@ class ClinicPanelController {
   }
 
   answerWaitingRezervations(req, res, next) {
-    res.render("clinic-panel/pages/panel/answer-waiting-rezervations", { layout: "clinic-panel/layouts/panel" });
+    var center = req.cookies.clinic;
+    res.render("clinic-panel/pages/panel/answer-waiting-rezervations", { layout: "clinic-panel/layouts/panel", user: req.user, center });
   }
 
   calender(req, res, next) {
@@ -470,9 +468,9 @@ class ClinicPanelController {
   }
 
   async visibility(req, res, next) {
-        var center = req.cookies.clinic;
+    var center = req.cookies.clinic;
     const promotions = await Promotions.find({});
-    res.render("clinic-panel/pages/panel/visibility", { layout: "clinic-panel/layouts/panel", user: req.user, center, });
+    res.render("clinic-panel/pages/panel/visibility", { layout: "clinic-panel/layouts/panel", user: req.user, center });
   }
 
   whatClosest(req, res, next) {

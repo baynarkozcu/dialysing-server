@@ -44,7 +44,9 @@ router.get("/clinic-save", Controller.clinicSave);
   router.get("/add-new-clinic", Controller.addNewClinic);
   router.get("/add-user", Controller.addUser);
   router.get("/analysis", Controller.analysis);
+
   router.get("/answer-waiting-rezervations", Controller.answerWaitingRezervations);
+  
   router.get("/calender", Controller.calender);
   router.get("/canceled-rezervations", Controller.canceledRezervations);
   router.get("/change-password", Controller.changePassword);

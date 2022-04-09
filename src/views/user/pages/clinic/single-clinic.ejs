@@ -10,14 +10,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-8 col-lg-7 col-xl-7">
-                        <div class="tm-section-title">Türkmed Diyaliz Merkezi</div> 
+                        <div class="tm-section-title"><%- center.companyInformation.companyName  %> </div> 
                           <div class="d-flex center-address">
-                            <div class="flex-grow-1"><p class="tm-color-shadow"><i class="bi bi-geo-alt-fill"></i> Cevizli, 44, Çifteler Cd., 34865 Kartal/İstanbul</p></div>
-                            <div class="flex-shrink-1 center-call"><p><i class="bi bi-telephone-fill"></i> Merkezi Ara</p></div>
+                            <div class="flex-grow-1"><p class="tm-color-shadow"><i class="bi bi-geo-alt-fill"></i> <%- center.adress.adressDetailText  %> </p></div>
+                            <div class="flex-shrink-1 center-call"><a href="tel:<%-center.contactInformation.phone %>"><p><i class="bi bi-telephone-fill"></i> Merkezi Ara</p></a></div>
                           </div>
                           
                         <div class="row">
-                            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 clinic-images">
+                            <img src="<%- center.companyInformation.photo[0]  %> " alt="<%- center.companyInformation.companyName  %> ">
+                            <!-- <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 clinic-images">
                                 <img src="../user/img/clinic/centers/clinic-i.png" class="left-first"
                                     alt="Clinic Center i" />
                                 <img src="../user/img/clinic/centers/clinic-ii.png" class="left-second"
@@ -25,10 +26,10 @@
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 clinic-images">
                                 <img src="../user/img/clinic/centers/clinic-iii.png" class="right" alt="Clinic Center iii" />
-                            </div>
+                            </div> -->
                         </div> 
 
-                        <div class="row align-items-start mt-3">
+                        <!-- <div class="row align-items-start mt-3">
                           <div class="col">
                             <img src="../user/img/clinic/centers/clinic-iv.png" width="100%" height="100%" alt="Clinic Center iv" />
                           </div>
@@ -44,7 +45,7 @@
                           <div class="col">
                             <img src="../user/img/clinic/centers/clinic-viii.png" width="100%" height="100%" alt="Clinic Center iv" />
                           </div>
-                        </div> 
+                        </div>  -->
 
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -71,9 +72,9 @@
                     </div>
                     <div class="col-sm-12 col-md-8 col-lg-5 col-xl-5">
                         <div class="clinic-map-open with-form">
-                            <button type="button" class="btn-second" data-bs-toggle="modal" data-bs-target="#mapModal" data-toggle="modal" data-target="#mapModal">Harita Üzerinde Göster</button>
-                            <!-- Modal -->
-                            <div class="modal fade p-5" id="mapModal" aria-labelledby="mapModalLabel" tabindex="-1" role="dialog" aria-hidden="true">
+                            <!-- <button type="button" class="btn-second" data-bs-toggle="modal" data-bs-target="#mapModal" data-toggle="modal" data-target="#mapModal">Harita Üzerinde Göster</button> -->
+                            
+                            <!-- <div class="modal fade p-5" id="mapModal" aria-labelledby="mapModalLabel" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">  
                                         <div class="row">
@@ -220,7 +221,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div> 
                         <form class="tm-form-wide custom" action="/clinic/clinic-appointment" method="POST">
                             <div class="form-group">
@@ -252,13 +253,13 @@
                                 <div class="dropdown select">
                                     <select class="btn btn-dropdown dropdown-toggle" type="button" id="sessionsDay" name="sessionsDay"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <option selected>Tercih Edilen Tedavi Günlerinizi Seçiniz</option>
-                                        <option value="1">Pazartesi</option>
-                                        <option value="2">Salı</option>
-                                        <option value="3">Çarşamba</option> 
-                                        <option value="4">Perşembe</option>
-                                        <option value="5">Cuma</option>
-                                        <option value="6">Cumartesi</option>
-                                        <option value="7">Pazar</option>
+                                        <option value="Pazartesi">Pazartesi</option>
+                                        <option value="Salı">Salı</option>
+                                        <option value="Çarşamba">Çarşamba</option> 
+                                        <option value="Perşembe">Perşembe</option>
+                                        <option value="Cuma">Cuma</option>
+                                        <option value="Cumartesi">Cumartesi</option>
+                                        <option value="Pazar">Pazar</option>
                                     </select> 
                                 </div>
                             </div>
@@ -283,10 +284,10 @@
                                 <div class="dropdown select">
                                     <select class="btn btn-dropdown dropdown-toggle" type="button" id="session" name="session" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                        
                                         <option selected>Tercih Ettiğiniz Seansı Seçiniz</option>
-                                        <option value="1">Sabah</option>
-                                        <option value="2">Öğle</option>
-                                        <option value="3">Akşam</option>
-                                        <option value="4">Gece</option>
+                                        <option value="Sabah">Sabah</option>
+                                        <option value="Öğle">Öğle</option>
+                                        <option value="Akşam">Akşam</option>
+                                        <option value="Gece">Gece</option>
                                     </select> 
                                 </div>
                             </div>
@@ -298,6 +299,7 @@
                                 Randevu oluşturabilmek için check-in tarihi girmeniz gerekmektedir.
                             </div>
                             <button type="submit" class="btn-second">Randevu Oluştur</button>
+                            <input type="hidden" name="centerId" value="<%- center._id  %>">
                             <button class="btn-forth">Favorilerine Ekle</button>
                         </form>
                         <div class="alert alert-danger alert-custom tm-margin-t-1" role="alert">

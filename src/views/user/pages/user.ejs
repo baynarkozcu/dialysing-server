@@ -1,0 +1,121 @@
+
+
+
+<main class="container my-5">
+  <div class="row">
+    <div class="col-lg-7">
+      <h3 class="pb-1 fst-italic pb-2 h3">Görüntülenen Randevularınız</h3>
+      <div class="row">
+
+        <% user.appointments.forEach(appointment => { %>
+                 <div class="card card-margin">
+          <div class="card-body pt-0">
+            <div class="widget-49">
+              <p class="float-end widget-49-pro-wait"><i class="bi bi-hourglass-split"></i> Randevunuz onay bekliyor.</p>
+              <div class="widget-49-title-wrapper mt-3">
+                <div class="widget-49-date-primary">
+                  <span class="widget-49-date-day">09</span>
+                  <span class="widget-49-date-month">apr</span>
+                </div>
+                <div class="widget-49-meeting-info">
+                  <span class="widget-49-pro-title"><%- appointment.patientNameSurname  %> </span>
+                  <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
+                </div>
+              </div>
+              <ul class="widget-49-meeting-points">
+                <li class="widget-49-meeting-item-1"><span><%- appointment.treatmentMethod  %> </span></li>
+                <li class="widget-49-meeting-item"><span><%- appointment.email  %> </span></li>
+                <li class="widget-49-meeting-item"><span><%- appointment.phone  %> </span></li>
+                <li class="widget-49-meeting-item"><span><%- appointment.adress.adressDetailText  %> </span></li>
+                <li class="widget-49-meeting-item"><span><%- appointment.insurance  %> </span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+
+        <!-- <div class="card card-margin col-12">
+          <div class="card-body pt-0">
+            <div class="widget-49">
+              <p class="float-end widget-49-pro-pass"><i class="bi bi-exclamation-triangle-fill"></i> Bu randevunuzun tarihi geçmiştir.</p>
+              <div class="widget-49-title-wrapper mt-3">
+                <div class="widget-49-date-warning">
+                  <span class="widget-49-date-day">13</span>
+                  <span class="widget-49-date-month">apr</span>
+                </div>
+                <div class="widget-49-meeting-info">
+                  <span class="widget-49-pro-title">Busra Ceval</span>
+                  <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
+                </div>
+              </div>
+              <ul class="widget-49-meeting-points">
+                <li class="widget-49-meeting-item-1"><span>Hemodiyaliz</span></li>
+                <li class="widget-49-meeting-item"><span>ayhanf@gmail.com</span></li>
+                <li class="widget-49-meeting-item"><span>+90 539 960 13 93</span></li>
+                <li class="widget-49-meeting-item"><span>USA, New York, 21. Street</span></li>
+                <li class="widget-49-meeting-item"><span>Yeşil Kart Sigortalı</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-margin">
+          <div class="card-body pt-0">
+            <div class="widget-49">
+              <p class="float-end widget-49-pro-select"><i class="bi bi-clipboard-check-fill"></i> Randevunuz onaylandı.</p>
+              <div class="widget-49-title-wrapper mt-3">
+                <div class="widget-49-date-success">
+                  <span class="widget-49-date-day">22</span>
+                  <span class="widget-49-date-month">apr</span>
+                </div>
+                <div class="widget-49-meeting-info">
+                  <span class="widget-49-pro-title">Fırat Fındıkoğlu</span>
+                  <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
+                </div>
+              </div>
+              <ul class="widget-49-meeting-points">
+                <li class="widget-49-meeting-item-1"><span>Hemodiyaliz</span></li>
+                <li class="widget-49-meeting-item"><span>ayhanf@gmail.com</span></li>
+                <li class="widget-49-meeting-item"><span>+90 539 960 13 93</span></li>
+                <li class="widget-49-meeting-item"><span>USA, New York, 21. Street</span></li>
+                <li class="widget-49-meeting-item"><span>Yeşil Kart Sigortalı</span></li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+    <div class="col-lg-5" id="account">
+      <div class="position-sticky" style="top: 2rem">
+        <div class="p-4 mb-4 background rounded">
+          <h3 class="mb-4 h3">Hesap Ayarları</h3>
+          <form>
+            <div class="mb-3">
+              <label for="formControlInput1" class="form-label">Adınız</label>
+              <input type="text" class="form-control" id="formControlInput1" placeholder="Busra" />
+            </div>
+            <div class="mb-3">
+              <label for="formControlInput1" class="form-label">Soyadınız</label>
+              <input type="text" class="form-control" id="formControlInput1" placeholder="Ceval" />
+            </div>
+            <div class="mb-3">
+              <label for="formControlInput1" class="form-label">Email Adresiniz</label>
+              <input type="email" class="form-control" id="formControlInput1" placeholder="ayhanf@gmail.com" />
+            </div>
+            <div class="mb-3">
+              <label for="formControlInput1" class="form-label">Telefon Numaranız</label>
+              <input type="text" class="form-control" id="formControlInput1" placeholder="+90 539 960 13 93" />
+            </div>
+            <div class="mb-3">
+              <label for="formControlInput1" class="form-label">Şifre</label>
+              <input type="password" class="form-control" id="formControlInput1" placeholder="*******" />
+            </div>
+            <button href="#" class="nav-link btn-register mt-2">Değişiklikleri Kaydet</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+

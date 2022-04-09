@@ -3,6 +3,11 @@ const UserService = require("../services/Users");
 const BlogService = require("../services/Blogs");
 const DialysisCenterService = require("../services/DialysisCenters");
 
+const adad = require("../models/DialysisCenters");
+
+const mongoose = require("mongoose");
+
+
 const passport2 = require("passport");
 require("../scripts/utils/passport-local-config")(passport2);
 
@@ -23,39 +28,48 @@ class HomeController {
   }
 
   singleClinic(req, res, next) {
-    res.render("user/pages/clinic/single-clinic", { layout: "user/layouts/clinic-main" });
+    const id = req.params.id;
+    DialysisCenterService.findById(id)
+      .then((center) => {
+        res.render("user/pages/clinic/single-clinic", { layout: "user/layouts/clinic-main", center });
+      })
+      .catch((err) => {
+        console.log("Error", err);
+      });
   }
 
-  viewAppointment(req, res, next) {
-    //! TODO Cookies Kaydedilmiyor Sayfa Refresh Edildikten Sonra Kaydediliyor.
+  async viewAppointment(req, res, next) {
 
-    res.cookie("treatmentMethod", req.body.treatmentMethod);
-    res.cookie("sessionsDayCount", req.body.sessionsDayCount);
-    res.cookie("sessionsDay", req.body.sessionsDay);
-    res.cookie("session", req.body.session);
-    res.cookie("checkOutDate", req.body.checkOutDate);
-    res.cookie("checkInDate", req.body.checkInDate);
+    res.cookie("tmpAppointment", req.body);
 
     const birthDate = ("0" + req.user.birthDate.getDate()).slice(-2) + "." + ("0" + (req.user.birthDate.getMonth() + 1)).slice(-2) + "." + req.user.birthDate.getFullYear();
     const user = req.user;
-    const cookieValue = req.cookies;
+    
+    DialysisCenterService.findById(req.body.centerId)
+      .then((center) => {
+        res.render("user/pages/clinic/appointment", { layout: "user/layouts/clinic-main", cookieValue: req.body, user, birthDate, center });
+      })
+      .catch((err) => {
+        console.log("Error", err);
+      });
 
-    res.render("user/pages/clinic/appointment", { layout: "user/layouts/clinic-main", cookieValue, user, birthDate });
   }
 
-  clinicAppointment(req, res, next) {
-    res.render("user/pages/clinic/appointment", { layout: "user/layouts/clinic-main" });
-  }
+  // clinicAppointment(req, res, next) {
+  //   res.render("user/pages/clinic/appointment", { layout: "user/layouts/clinic-main" });
+  // }
 
   createAppointment(req, res, next) {
-    var appointment = {
+
+
+    const appointment = {
       nameSurname: req.user.nameSurname,
       email: req.user.email,
       phone: req.user.phone,
       birthDate: req.user.birthDate,
-      patientNameSurname: req.body.patientNameSurname,
-      situation: req.body.situation,
-      insurance: "SSK",
+      patientNameSurname: req.cookies.tmpAppointment.patientNameSurname,
+      situation: req.cookies.tmpAppointment.situation,
+      insurance: req.body.insurance,
       adress: {
         city: req.body.city,
         district: req.body.district,
@@ -63,18 +77,20 @@ class HomeController {
         adressDetailText: req.body.adressDetailText,
         zipCode: req.body.zipCode,
       },
-      checkInDate: req.cookies.checkInDate,
-      checkOutDate: req.cookies.checkOutDate,
-      treatmentMethod: req.cookies.treatmentMethod,
-      sessionsDay: req.cookies.sessionsDay,
-      session: req.cookies.session,
-      dialysisCenter: "Türkmed Diyaliz Merkezi",
+      checkInDate: req.cookies.tmpAppointment.checkInDate,
+      checkOutDate: req.cookies.tmpAppointment.checkOutDate,
+      treatmentMethod: req.cookies.tmpAppointment.treatmentMethod,
+      sessionsDay: req.cookies.tmpAppointment.sessionsDay,
+      session: req.cookies.tmpAppointment.session,
+      dialysisCenter: req.cookies.tmpAppointment.centerId,
+      note: req.body.note,
     };
     AppointmentService.create(appointment)
       .then((data) => {
         req.user.appointments.push(data._id);
         UserService.update(req.user._id, { appointments: req.user.appointments })
           .then((data) => {
+            res.clearCookie("tmpAppointment");
             res.redirect("/user");
           })
           .catch((err) => {
@@ -127,6 +143,7 @@ class HomeController {
       .then((user) => {
         user.password = hashToPassword(user.password);
         user.appointments = user.appointments.sort().reverse();
+        console.log("Appointments: " + user.appointments);
         res.render("user/pages/user", { layout: "user/layouts/user", user, errors: null });
       })
       .catch((err) => {

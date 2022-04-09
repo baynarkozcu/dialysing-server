@@ -48,8 +48,6 @@ class HomeController {
   }
 
   createAppointment(req, res, next) {
-
-
     var appointment = {
       nameSurname: req.user.nameSurname,
       email: req.user.email,
@@ -93,17 +91,21 @@ class HomeController {
   }
 
   clinicList(req, res, next) {
-    const query = {
-      "adress.city": req.query.city,
-    };
-    DialysisCenterService.index(query)
-      .then((list) => {
-        res.render("user/pages/clinic/clinic-list", { layout: "user/layouts/clinic-main", list });
-      })
-      .catch((err) => {
-        console.log("Error", err);
-        res.redirect("/");
-      });
+    if (req.query.city) {
+      const query = {
+        "adress.city": req.query.city,
+      };
+      DialysisCenterService.index(query)
+        .then((list) => {
+          return res.render("user/pages/clinic/clinic-list", { layout: "user/layouts/clinic-main", list });
+        })
+        .catch((err) => {
+          console.log("Error", err);
+          return res.redirect("/");
+        });
+    } else {
+      return res.redirect("/clinic/all");
+    }
   }
 
   async allView(req, res, next) {
@@ -306,7 +308,7 @@ class HomeController {
 
   singleBlog(req, res, next) {
     var seflink = req.params.seflink;
-    BlogService.find({ "seflink": seflink }).then((blog) => {
+    BlogService.find({ seflink: seflink }).then((blog) => {
       res.render("user/pages/blogs/blog", { layout: "user/layouts/blog", blog });
     });
   }

@@ -8,7 +8,7 @@ const PromotionService = require("../models/Promotions");
 const { randMovie, randCountry, randNumber } = require("@ngneat/falso");
 
 router.get("/", (req, res) => {
-  console.log("Sayı :", Math.floor(Math.random() * 100));
+
 
   res.render("test", { layout: "clinic-panel/layouts/deneme" });
 });
@@ -23,6 +23,7 @@ router.post("/uploadfile", (req, res) => {
       "*": "{{columnHeader}}",
     },
   });
+
 
   for (let index = 0; index < 50; index++) {
     var randomCount = Math.floor(Math.random() * 100);

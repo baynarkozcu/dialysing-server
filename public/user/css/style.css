@@ -417,6 +417,11 @@ p {
   font-style: normal;
   font-weight: normal;
 } 
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Khula', sans-serif;
+}
 .logo span {
   color: #19a2f2;
 }
@@ -725,12 +730,12 @@ p {
   border-color: #055f8f;
   border-radius: 8px;
   cursor: pointer;
-  color: #ffffff;
-  font-weight: 500;
+  color: #ffffff; 
   padding: 0.5rem 1rem;
   text-align: center;
   border: 2px solid #055f8f; 
   text-decoration: none !important;
+  font-size: 12px;
 }
 
 .btn-second.wide {
@@ -768,11 +773,10 @@ p {
   border: 2px solid #ffffff;
   border-radius: 8px;
   cursor: pointer;
-  color: #ffffff;
-  font-weight: 500;
+  color: #ffffff; 
   padding: 0.5rem 1rem;
-  text-align: center;
-  font-weight: 600;
+  text-align: center; 
+  font-size: 12px;   
 }
 
 .btn-forth {
@@ -841,28 +845,43 @@ p {
   margin-left: 1rem;
   font-size: 1.1rem;
 }
-
 .tm-header-title {
   color: #ffffff;
-  font-size: 28px !important; 
-  padding: 0.5rem 0;
+  font-size: 30px !important;  
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
 }
-
 .tm-header-title.blue {
   color: #19a2f2;
 }
-
+.capatalize h6 {
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+}
+input#city.form-control.first-child{
+  padding: 10px 10px 10px 55px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+input#inputCheckIn.form-control.date{
+  padding: 10px 10px 10px 55px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+button.btn.btn-outline-primary{
+  padding: 20px 20px 20px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
 .tm-header-text {
   color: #ffffff;
-  font-size: 18px !important;
-  padding-bottom: .8rem;
+  font-size: 20px !important; 
   font-weight: 400;
+  font-family: 'Lato', sans-serif; 
 }
-
 .tm-header-content {
   margin-top: 5rem;
 }
-
 .tm-form-element {
   position: relative;
 }
@@ -1004,11 +1023,9 @@ select.form-control {
 .tm-section-title {
   color: #28353e;
   font-size: 24px;
-  font-weight: 700;
-  /* line-height: 50px; */
-  /* width: 100%; */
-  /* border-bottom: 1px solid rgba(0, 0, 0, 0.09); */
+  font-weight: 700; 
   margin-bottom: 1rem;
+  font-family: 'Lato', sans-serif;
 }
 .tm-section-title-2 {
   font-size: 20px;
@@ -1027,11 +1044,14 @@ select.form-control {
   font-size: 16px;
   margin-bottom: 1.5rem;
   line-height: 30px;
+  font-family: 'Lato', sans-serif;
 }
 
 .tm-text-white {
   font-size: 16px;
-  color: #ffffff;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  line-height: 2rem;
 }
 
 .tm-text-white.subscribe {
@@ -1145,7 +1165,8 @@ select.form-control {
 .tm-box-title {
   color: #ffffff;
   font-weight: bold;
-  font-size: 24px; 
+  font-size: 25px; 
+  font-family: 'Lato', sans-serif;
 }
 .tm-box-title a{
   text-decoration: none;
@@ -1163,6 +1184,7 @@ select.form-control {
   color: #28353e;
   opacity: 0.4;
   height: 155px;
+  font-family: 'Lato', sans-serif;
 }
 
 .tm-box-with-content .tm-profile {
@@ -1174,25 +1196,23 @@ select.form-control {
 .tm-box-with-content .tm-personal-info {
   padding-left: 1rem;
 }
-
 .tm-box-with-content .tm-name {
   color: #28353e;
+  font-family: 'Lato', sans-serif;
 }
-
 .tm-box-with-content .tm-city {
   color: #000000;
   opacity: 0.3;
 }
-
 .tm-box-with-content img {
   width: 50px;
   height: 50px;
 }
-
 .tm-box-text {
   color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
 }
-
 .tm-box-small {
   width: 100%;
   height: 120px;
@@ -1538,7 +1558,11 @@ select.form-control {
 .tm-form-small input[type="date" i] {
   font-size: 12px;
 }
-
+.point {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 16px; 
+}
 .tm-form-small input[type="date"]::-webkit-inner-spin-button,
 .tm-form-small input[type="date"]::-webkit-calendar-picker-indicator {
   background: transparent;
@@ -1751,9 +1775,10 @@ select.form-control {
   font-size: 13px;
   text-align: right;
 }
-/* footer {
+footer {
   font-size: 14px;
-} */
+  font-family: 'Lato', sans-serif;
+}
 
 /* footer .top {
   align-items: baseline;
@@ -1790,6 +1815,8 @@ footer .copyright {
 @media screen and (max-width: 991px) {
   .navbar-toggler {
     color: #19a2f2;
+    font-size: 15px;
+    margin: 0px 20px 20px 0px;
   }
   .tm-bg-background {
     display: block;
@@ -1816,15 +1843,12 @@ footer .copyright {
     box-shadow: 0px 0px 7px 0px rgba(214, 214, 214, 1);
     background-color: #28353e;
     z-index: 99;
-  }
-/* 
-  /* .navbar .navbar-nav {
-    align-items: center;
-  } */
+  } 
 
   .navbar .logo {
-    font-size: 20px;
-    margin-right: 0;
+    font-size: 25px;
+    margin-right: 20px 0px 0px 0px;
+    font-family: 'Khula', sans-serif;
   }
 
   /* .navbar a {
@@ -2383,7 +2407,7 @@ footer .copyright {
   text-decoration: none !important;
 }
 .capatalize img {
-  width: 40px;
+  width: 30px;
 }
 /* location */
 .select .form-control {
@@ -2394,8 +2418,11 @@ footer .copyright {
 .select-lang button{ 
   background-color: rgba(0, 0, 0, 0) !important;
   border: none !important;
+  font-size: 12px;
 } 
-
+.select-lang {   
+  font-size: 12px;
+} 
 .dropdown-menu {
   background-color: rgba(0, 0, 0, 0);
   border: none;

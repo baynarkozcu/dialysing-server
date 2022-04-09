@@ -2,6 +2,7 @@ const AppointmentService = require("../services/Appointments");
 const UserService = require("../services/Users");
 const BlogService = require("../services/Blogs");
 const DialysisCenterService = require("../services/DialysisCenters");
+const Promotions = require("../models/Promotions");
 
 const passport = require("passport");
 const a = require("../scripts/utils/passport-local-config")(passport);
@@ -12,7 +13,6 @@ const HtmlMessage = require("../scripts/utils/htmlMessages");
 
 const jwt = require("jsonwebtoken");
 const mailer = require("nodemailer");
-
 
 class ClinicPanelController {
   async index(req, res, next) {
@@ -32,7 +32,6 @@ class ClinicPanelController {
       await res.cookie("clinic", req.user.centerList[0]);
       return res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel", user: req.user, center: req.user.centerList[0] });
     }
-    
   }
 
   loginView(req, res) {
@@ -47,11 +46,22 @@ class ClinicPanelController {
       req.flash("validationErrors", htmlMessage);
       return res.redirect("/panel/register");
     } else {
-      passport.authenticate("local", {
-        successRedirect: "/panel",
-        failureRedirect: "/panel/login",
-        failureFlash: true,
-      })(req, res, next);
+      UserService.find({ email: req.body.email, isAdmin: true })
+        .then((user) => {
+          console.log(user);
+          if (user) {
+            passport.authenticate("local", {
+              successRedirect: "/panel",
+              failureRedirect: "/panel/login",
+              failureFlash: true,
+            })(req, res, next);
+          } else {
+            res.redirect("/panel/login");
+          }
+        })
+        .catch((err) => {
+          console.log("Hata :", err);
+        });
     }
   }
 
@@ -410,9 +420,29 @@ class ClinicPanelController {
     res.render("clinic-panel/pages/panel/payment-options", { layout: "clinic-panel/layouts/panel" });
   }
 
-  promotions(req, res, next) {
-    var center = req.cookies.center;
-    res.render("clinic-panel/pages/panel/promotions", { layout: "clinic-panel/layouts/panel", user: req.user, center});
+  async promotions(req, res, next) {
+    var center = req.cookies.clinic;
+    const promotions = await Promotions.find({});
+
+    res.render("clinic-panel/pages/panel/promotions", { layout: "clinic-panel/layouts/panel", user: req.user, center, promotions });
+  }
+
+  buyPromotions(req, res, next) {
+    const id = req.params.id;
+
+    DialysisCenterService.update(req.cookies.clinic._id, { $push: { promotions: id } })
+      .then(() => {
+        UserService.update(req.user._id, { priceCount: req.user.priceCount - 10 })
+          .then(() => {
+            res.redirect("/panel/promotions");
+          })
+          .catch((err) => {
+            console.log("Hata Çıktı :", err);
+          });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı :", err);
+      });
   }
 
   propertiesAndServices(req, res, next) {
@@ -439,8 +469,10 @@ class ClinicPanelController {
     res.render("clinic-panel/pages/panel/upload-image", { layout: "clinic-panel/layouts/panel" });
   }
 
-  visibility(req, res, next) {
-    res.render("clinic-panel/pages/panel/visibility", { layout: "clinic-panel/layouts/panel" });
+  async visibility(req, res, next) {
+        var center = req.cookies.clinic;
+    const promotions = await Promotions.find({});
+    res.render("clinic-panel/pages/panel/visibility", { layout: "clinic-panel/layouts/panel", user: req.user, center, });
   }
 
   whatClosest(req, res, next) {

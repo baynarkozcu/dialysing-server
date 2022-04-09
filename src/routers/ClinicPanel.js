@@ -57,14 +57,19 @@ router.get("/clinic-save", Controller.clinicSave);
   router.get("/message-options", Controller.messageOptions);
   router.get("/oncoming-rezervations", Controller.oncomingRezervations);
   router.get("/payment-options", Controller.paymentOptions);
+
   router.get("/promotions", Controller.promotions);
+  router.get("/buy-promotions/:id", Controller.buyPromotions);
+  
   router.get("/properties-and-services", Controller.propertiesAndServices);
   router.get("/questions-answered", Controller.questionsAnswered);
   router.get("/questions-new", Controller.questionsNew);
   router.get("/rezervation-messages", Controller.rezervationMessages);
   router.get("/update-user", Controller.updateUser);
   router.get("/upload-image", Controller.uploadImage);
+
   router.get("/visibility", Controller.visibility);
+  
   router.get("/what-closest", Controller.whatClosest);
 });
 

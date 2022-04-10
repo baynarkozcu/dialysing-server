@@ -29,7 +29,8 @@ router.get("/gfr-calculator", Controller.gfrCalculator);
 //* Authentication - USER
 router.get("/user", Controller.user);
 router.get("/user/verify", Controller.verify);
-router.post("/user/update", authenticate, validate(updateValidator), Controller.userProfileUpdate);
+// router.post("/user/update", authenticate, validate(updateValidator), Controller.userProfileUpdate);
+router.post("/user/update", authenticate, Controller.userProfileUpdate);
 router.get("/register", currentUser, Controller.registerView);
 router.post("/register", validate(createValidator), Controller.register);
 router.post("/login", currentUser, validate(loginValidator), Controller.login);

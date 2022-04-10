@@ -1,33 +1,36 @@
-
-
-
 <main class="container my-5">
   <div class="row">
     <div class="col-lg-7">
       <h3 class="pb-1 fst-italic pb-2 h3">Görüntülenen Randevularınız</h3>
       <div class="row">
-
         <% user.appointments.forEach(appointment => { %>
-                 <div class="card card-margin">
+        <div class="card card-margin">
           <div class="card-body pt-0">
             <div class="widget-49">
+              <% if (appointment.isCancelled) { %>
+              <p class="float-end widget-49-pro-pass"><i class="bi bi-exclamation-triangle-fill"></i> Bu randevunuz iptal edilmiştir.</p>
+              <% }else{ %> <% if (appointment.isActive) { %>
+              <p class="float-end widget-49-pro-select"><i class="bi bi-clipboard-check-fill"></i> Randevunuz onaylandı.</p>
+              <% } else { %>
               <p class="float-end widget-49-pro-wait"><i class="bi bi-hourglass-split"></i> Randevunuz onay bekliyor.</p>
+              <% } %> <% } %>
+
               <div class="widget-49-title-wrapper mt-3">
                 <div class="widget-49-date-primary">
-                  <span class="widget-49-date-day">09</span>
-                  <span class="widget-49-date-month">apr</span>
+                  <span class="widget-49-date-day"><%- appointment.checkInDate.getDate() %> </span>
+                  <span class="widget-49-date-month"><%- appointment.checkInDate.toLocaleString('default', { month: 'long' }); %> </span>
                 </div>
                 <div class="widget-49-meeting-info">
-                  <span class="widget-49-pro-title"><%- appointment.patientNameSurname  %> </span>
-                  <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
+                  <span class="widget-49-pro-title"><%- appointment.patientNameSurname %> </span>
+                  <span class="widget-49-meeting-time"><%- appointment.session %> </span>
                 </div>
               </div>
               <ul class="widget-49-meeting-points">
-                <li class="widget-49-meeting-item-1"><span><%- appointment.treatmentMethod  %> </span></li>
-                <li class="widget-49-meeting-item"><span><%- appointment.email  %> </span></li>
-                <li class="widget-49-meeting-item"><span><%- appointment.phone  %> </span></li>
-                <li class="widget-49-meeting-item"><span><%- appointment.adress.adressDetailText  %> </span></li>
-                <li class="widget-49-meeting-item"><span><%- appointment.insurance  %> </span></li>
+                <li class="widget-49-meeting-item-1"><span><%- appointment.treatmentMethod %> </span></li>
+                <li class="widget-49-meeting-item"><span><%- appointment.email %> </span></li>
+                <li class="widget-49-meeting-item"><span><%- appointment.phone %> </span></li>
+                <li class="widget-49-meeting-item"><span><%- appointment.adress.adressDetailText %> </span></li>
+                <li class="widget-49-meeting-item"><span><%- appointment.insurance %> </span></li>
               </ul>
             </div>
           </div>
@@ -83,33 +86,28 @@
             </div>
           </div>
         </div> -->
-
       </div>
     </div>
     <div class="col-lg-5" id="account">
       <div class="position-sticky" style="top: 2rem">
         <div class="p-4 mb-4 background rounded">
           <h3 class="mb-4 h3">Hesap Ayarları</h3>
-          <form>
+          <form action="/user/update" method="POST">
             <div class="mb-3">
-              <label for="formControlInput1" class="form-label">Adınız</label>
-              <input type="text" class="form-control" id="formControlInput1" placeholder="Busra" />
+              <label for="nameSurname" class="form-label">Adınız</label>
+              <input type="text" class="form-control" id="nameSurname" name="nameSurname" value="<%- user.nameSurname ?? '' %>" placeholder="Adınız" required />
             </div>
             <div class="mb-3">
-              <label for="formControlInput1" class="form-label">Soyadınız</label>
-              <input type="text" class="form-control" id="formControlInput1" placeholder="Ceval" />
+              <label for="email" class="form-label">Email Adresiniz</label>
+              <input type="email" class="form-control" id="email" name="email" value="<%- user.email ?? ''  %>" placeholder="Email Adresiniz" required />
             </div>
             <div class="mb-3">
-              <label for="formControlInput1" class="form-label">Email Adresiniz</label>
-              <input type="email" class="form-control" id="formControlInput1" placeholder="ayhanf@gmail.com" />
+              <label for="phone" class="form-label">Telefon Numaranız</label>
+              <input type="text" class="form-control" id="phone" name="phone" value="<%- user.phone ?? ''  %>" placeholder="Telefon Numaranız" required />
             </div>
             <div class="mb-3">
-              <label for="formControlInput1" class="form-label">Telefon Numaranız</label>
-              <input type="text" class="form-control" id="formControlInput1" placeholder="+90 539 960 13 93" />
-            </div>
-            <div class="mb-3">
-              <label for="formControlInput1" class="form-label">Şifre</label>
-              <input type="password" class="form-control" id="formControlInput1" placeholder="*******" />
+              <label for="password" class="form-label">Şifreniz</label>
+              <input type="password" class="form-control" id="password" name="password" value="<%- user.password ?? ''  %>" placeholder="Şifreniz" />
             </div>
             <button href="#" class="nav-link btn-register mt-2">Değişiklikleri Kaydet</button>
           </form>
@@ -118,4 +116,3 @@
     </div>
   </div>
 </main>
-

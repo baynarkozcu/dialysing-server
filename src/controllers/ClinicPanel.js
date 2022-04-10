@@ -367,15 +367,65 @@ class ClinicPanelController {
 
   answerWaitingRezervations(req, res, next) {
     var center = req.cookies.clinic;
-    res.render("clinic-panel/pages/panel/answer-waiting-rezervations", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+
+    AppointmentService.index({ dialysisCenter: center._id, isActive: false, isCancelled: false })
+      .then((appointments) => {
+        res.render("clinic-panel/pages/panel/answer-waiting-rezervations", { layout: "clinic-panel/layouts/panel", user: req.user, center, appointments });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı :", err);
+      });
+  }
+
+  acceptAppointment(req, res, next) {
+    var appointmentId = req.params.id;
+    AppointmentService.update(appointmentId, { isActive: true })
+      .then((appointment) => {
+        res.redirect("/panel/answer-waiting-rezervations");
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı :", err);
+      });
+  }
+
+  oncomingRezervations(req, res, next) {
+    var center = req.cookies.clinic;
+
+    AppointmentService.index({ dialysisCenter: center._id, isActive: true, isCancelled: false, checkInDate: { $gte: new Date() } })
+      .then((appointments) => {
+        res.render("clinic-panel/pages/panel/oncoming-rezervations", { layout: "clinic-panel/layouts/panel", user: req.user, center, appointments });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı :", err);
+      });
+  }
+
+  completedRezervations(req, res, next) {
+    var center = req.cookies.clinic;
+
+    AppointmentService.index({ dialysisCenter: center._id, isActive: true, checkInDate: { $lte: new Date() } })
+      .then((appointments) => {
+        res.render("clinic-panel/pages/panel/completed-rezervations", { layout: "clinic-panel/layouts/panel", user: req.user, center, appointments });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı :", err);
+      });
+  }
+
+  canceledRezervations(req, res, next) {
+    var center = req.cookies.clinic;
+
+    AppointmentService.index({ dialysisCenter: center._id, isCancelled: true })
+      .then((appointments) => {
+        res.render("clinic-panel/pages/panel/canceled-rezervations", { layout: "clinic-panel/layouts/panel", user: req.user, center, appointments });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı :", err);
+      });
   }
 
   calender(req, res, next) {
     res.render("clinic-panel/pages/panel/calender", { layout: "clinic-panel/layouts/panel" });
-  }
-
-  canceledRezervations(req, res, next) {
-    res.render("clinic-panel/pages/panel/canceled-rezervations", { layout: "clinic-panel/layouts/panel" });
   }
 
   changePassword(req, res, next) {
@@ -388,10 +438,6 @@ class ClinicPanelController {
 
   competition(req, res, next) {
     res.render("clinic-panel/pages/panel/competition", { layout: "clinic-panel/layouts/panel" });
-  }
-
-  completedRezervations(req, res, next) {
-    res.render("clinic-panel/pages/panel/completed-rezervations", { layout: "clinic-panel/layouts/panel" });
   }
 
   contact(req, res, next) {
@@ -408,10 +454,6 @@ class ClinicPanelController {
 
   messageOptions(req, res, next) {
     res.render("clinic-panel/pages/panel/message-options", { layout: "clinic-panel/layouts/panel" });
-  }
-
-  oncomingRezervations(req, res, next) {
-    res.render("clinic-panel/pages/panel/oncoming-rezervations", { layout: "clinic-panel/layouts/panel" });
   }
 
   paymentOptions(req, res, next) {

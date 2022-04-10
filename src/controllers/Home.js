@@ -61,14 +61,13 @@ class HomeController {
 
   createAppointment(req, res, next) {
 
-
     const appointment = {
       nameSurname: req.user.nameSurname,
       email: req.user.email,
       phone: req.user.phone,
       birthDate: req.user.birthDate,
-      patientNameSurname: req.cookies.tmpAppointment.patientNameSurname,
-      situation: req.cookies.tmpAppointment.situation,
+      patientNameSurname: req.body.patientNameSurname,
+      situation: req.body.situation,
       insurance: req.body.insurance,
       adress: {
         city: req.body.city,
@@ -142,8 +141,7 @@ class HomeController {
     UserService.findById(req.user._id)
       .then((user) => {
         user.password = hashToPassword(user.password);
-        user.appointments = user.appointments.sort().reverse();
-        console.log("Appointments: " + user.appointments);
+        user.appointments = user.appointments.reverse();
         res.render("user/pages/user", { layout: "user/layouts/user", user, errors: null });
       })
       .catch((err) => {
@@ -156,7 +154,7 @@ class HomeController {
       UserService.findById(req.user._id)
         .then((user) => {
           user.password = hashToPassword(user.password);
-          user.appointments = user.appointments.sort().reverse();
+          user.appointments = user.appointments.reverse();
           return res.render("user/pages/user", { layout: "user/layouts/user", user, errors: req.errors });
         })
         .catch((err) => {

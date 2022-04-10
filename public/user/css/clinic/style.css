@@ -1145,11 +1145,13 @@ select.form-control {
   font-size: 16px;
   margin-bottom: 1.5rem;
   line-height: 30px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .tm-text-white {
   font-size: 16px;
   color: #ffffff;
+  font-family: 'Lato', sans-serif;
 }
 
 .tm-text-white.subscribe {
@@ -1650,12 +1652,14 @@ input#tel.form-control {
   font-weight: 400;
   font-size: 24px;
   line-height: 30px;
+  font-family: 'Lato', sans-serif;
 } 
 .circle-content .clinic-prop {
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
   opacity: 0.5;
+  font-family: 'Lato', sans-serif;
 } 
 .alert-danger {
   color: #C61232; 

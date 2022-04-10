@@ -23,7 +23,9 @@
 .tm-main-background  .tm-header-content {
   margin-top: 0;
 }
-
+.tm-header-content a {
+  text-decoration: none;
+}
 .nav-item.question {
   color: #ffffff;
   display: flex;
@@ -773,7 +775,7 @@ a.clinic-images div {
   .btn-second {
     margin-top: 30px;  
     width: 100% !important;
-  }
+  } 
   .clinic-header button {
   align-items: center;
   text-align: center;

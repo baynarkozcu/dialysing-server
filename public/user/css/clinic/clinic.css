@@ -40,37 +40,19 @@
   top: 30%;
   width: 80%;
 }
-
-<<<<<<< HEAD
-.clinic-header .inner-content .tm-header-title {
-  font-size: 28px;
-  font-weight: 500;
-=======
 .clinic-header .tm-header-title {
   font-size: 25px;
->>>>>>> main
   font-family: 'Lato', sans-serif;
   line-height: 3rem;
 }
-
-<<<<<<< HEAD
-.clinic-header .inner-content .tm-header-text {
-  font-size: 15px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  line-height: 1.5rem;
-=======
 .clinic-header .tm-header-text {
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   line-height: 2rem;
->>>>>>> main
 }
-
 .clinic-header .inner-content .tm-header-bottom {
   margin: 1rem 0;
 }
-
 .clinic-header .inner-content .tm-header-bottom .btn-second {
   padding-left: 5rem;
   padding-right: 5rem;

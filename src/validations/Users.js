@@ -37,14 +37,14 @@ const updateValidator = Joi.object({
     "string.max": "Ad Soyad Alanı 50 Karakterden Büyük Olamaz.",
     "any.required": "Ad Soyad Alanı Boş Olamaz.",
   }),
-  phone: Joi.string()
-    .required()
-    .pattern(/^[0-9]{10}$/)
-    .messages({
-      "string.empty": "Telefon Numarası Alanı Boş Olamaz.",
-      "string.pattern.base": "Telefon Numarası 10 Haneli Olmalıdır.",
-      "any.required": "Telefon Numarası Alanı Boş Olamaz.",
-    }),
+  // phone: Joi.string()
+  //   .required()
+  //   .pattern(/^[0-9]{10}$/)
+  //   .messages({
+  //     "string.empty": "Telefon Numarası Alanı Boş Olamaz.",
+  //     "string.pattern.base": "Telefon Numarası 10 Haneli Olmalıdır.",
+  //     "any.required": "Telefon Numarası Alanı Boş Olamaz.",
+  //   }),
   email: Joi.string().required().email().messages({
     "string.empty": "Email Alanı Boş Olamaz.",
     "string.email": "Geçerli Bir Email Adresi Giriniz.",

@@ -28,7 +28,7 @@ const DialysisCenterSchema = Mongoose.Schema(
       phone: String,
       whatsapp: String,
       website: String,
-      details: String
+      details: String,
     },
     centerDetails: {
       buildType: String,
@@ -46,25 +46,31 @@ const DialysisCenterSchema = Mongoose.Schema(
       paymentTypes: [String],
       abroadPatients: {
         type: Boolean,
-        default: false
+        default: false,
       },
       abroadPatientPaymentTypes: [String],
     },
-    centerEmployees: [{
-      employeeNameSurname: String,
-      job: String,
-      academicEducation: String,
-    }],
+    centerEmployees: [
+      {
+        employeeNameSurname: String,
+        job: String,
+        academicEducation: String,
+      },
+    ],
     isActive: {
       type: Boolean,
-      default: true
+      default: true,
     },
-    token: [{
-      packageName: String,
-      price: Number,
-      startDate: Date,
-      endDate: Date,
-    }],
+    // token: [{
+    //   packageName: String,
+    //   price: Number,
+    //   startDate: Date,
+    //   endDate: Date,
+    // }],
+    promotions: [{
+        type: Mongoose.Types.ObjectId,
+        ref: "Promotions",
+      }],
   },
   { timestamps: true, versionKey: false }
 );

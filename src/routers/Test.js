@@ -3,11 +3,12 @@ const router = require("express").Router();
 const excelToJson = require("convert-excel-to-json");
 
 const model = require("../models/DialysisCenters");
+const PromotionService = require("../models/Promotions");
+
+const { randMovie, randCountry, randNumber } = require("@ngneat/falso");
 
 router.get("/", (req, res) => {
-  
-  console.log("Sayı :", Math.floor(Math.random() * 100));
-  
+
 
   res.render("test", { layout: "clinic-panel/layouts/deneme" });
 });
@@ -24,7 +25,11 @@ router.post("/uploadfile", (req, res) => {
   });
 
 
+<<<<<<< HEAD
  for (let index = 0; index < 25; index++) {
+=======
+  for (let index = 0; index < 25; index++) {
+>>>>>>> main
     var randomCount = Math.floor(Math.random() * 100);
 
     const dialysisCenter = {
@@ -56,6 +61,24 @@ router.post("/uploadfile", (req, res) => {
         console.log("success");
         res.redirect("/test");
       })
+      .catch((err) => {
+        console.log("Hata Çıktı :", err);
+      });
+  }
+});
+
+router.post("/save-promotions", (req, res) => {
+  for (let index = 0; index < 20; index++) {
+    const promotion = {
+      title: randMovie(),
+      viewer: "250 - 500 Kişi",
+      token: 10,
+      area: randCountry(),
+      dateRange: "10 Ağustos - 28 Ağustos",
+    };
+    new PromotionService(promotion)
+      .save()
+      .then(() => {})
       .catch((err) => {
         console.log("Hata Çıktı :", err);
       });

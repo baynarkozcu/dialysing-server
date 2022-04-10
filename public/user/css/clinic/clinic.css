@@ -79,14 +79,22 @@
 .clinic-content {
   margin: 1rem 0;
 }
-
 .clinic-content .clinic-icon {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 0.5rem;
 }
-
+.clinic-text-description {
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+  font-size: 13px;
+  line-height: 1.5rem;
+}
+.tm-section-title {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2.5rem;
+}
 .clinic-content .clinic-icon .clinic-image {
   width: 7%;
   display: flex;

@@ -6,7 +6,8 @@ const DialysisCenterSchema = Mongoose.Schema(
     personalInformation: {
       nameSurname: String,
       email: String,
-      phone: String,
+      alternativeEmail: String,
+      alternativePhone: String,
       job: String,
     },
     companyInformation: {
@@ -16,16 +17,18 @@ const DialysisCenterSchema = Mongoose.Schema(
       taxNumber: String,
       taxOffice: String,
     },
-    adress: {
+    address: {
       country: String,
       city: String,
       district: String,
-      adressDetailText: String,
+      addressDetailText: String,
       zipCode: String,
     },
     contactInformation: {
       email: String,
+      alternativeEmail: String,
       phone: String,
+      alternativePhone: String,
       whatsapp: String,
       website: String,
       details: String,
@@ -57,6 +60,16 @@ const DialysisCenterSchema = Mongoose.Schema(
         academicEducation: String,
       },
     ],
+    centerEveluation: [
+      {
+        userId: {
+          type: Mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+        evaluationMessage: String,
+        evaluationDate: Date,
+      }
+    ],
     isActive: {
       type: Boolean,
       default: true,
@@ -67,10 +80,12 @@ const DialysisCenterSchema = Mongoose.Schema(
     //   startDate: Date,
     //   endDate: Date,
     // }],
-    promotions: [{
+    promotions: [
+      {
         type: Mongoose.Types.ObjectId,
         ref: "Promotions",
-      }],
+      },
+    ],
   },
   { timestamps: true, versionKey: false }
 );

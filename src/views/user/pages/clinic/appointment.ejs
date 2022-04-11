@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="../user/css/footer.css" />
 </head>
 
-<%- include("../../partials/navbar")  %> 
+<%- include("../../partials/navbar") %>
 
 <div id="section-i" class="tm-p my-5 py-5">
   <div class="container">
@@ -149,29 +149,29 @@
         <form class="tm-form-wide custom">
           <div class="form-group">
             <label for="job-dropdown">Tedavi Yöntemi</label>
-            <div class="tm-color-shadow-2"><%- cookieValue.treatmentMethod  %> </div>
+            <div class="tm-color-shadow-2"><%- cookieValue.treatmentMethod %></div>
           </div>
           <div class="form-group">
             <label for="job-dropdown">Haftalık Seans Sayısı</label>
-            <div class="tm-color-shadow-2"><%- cookieValue.sessionsDayCount  %>  Seans</div>
+            <div class="tm-color-shadow-2"><%- cookieValue.sessionsDayCount %> Seans</div>
           </div>
           <div class="form-group">
             <label for="job-dropdown">Tercih Edilen Tedavi Günleri</label>
-            <div class="tm-color-shadow-2"><%- cookieValue.sessionsDay  %> </div>
+            <div class="tm-color-shadow-2"><%- cookieValue.sessionsDay %></div>
           </div>
           <div class="form-group clinic-check-dates">
             <div class="checkin">
               <label for="check-in">Check-in Tarihi</label>
-              <div class="tm-color-shadow-2"><%- cookieValue.checkInDate  %> </div>
+              <div class="tm-color-shadow-2"><%- cookieValue.checkInDate %></div>
             </div>
             <div class="checkout">
               <label for="check-out">Check-out Tarihi</label>
-              <div class="tm-color-shadow-2"><%- cookieValue.checkOutDate %> </div>
+              <div class="tm-color-shadow-2"><%- cookieValue.checkOutDate %></div>
             </div>
           </div>
           <div class="form-group tm-margin-t-1">
             <label for="job-dropdown">Tercih Edilen Seans</label>
-            <div class="tm-color-shadow-2"><%- cookieValue.session  %> </div>
+            <div class="tm-color-shadow-2"><%- cookieValue.session %></div>
           </div>
         </form>
         <div class="tm-content small-content">
@@ -212,10 +212,8 @@
           <img src="../user/img/clinic/centers/clinic-iii.png" class="clinic-center" alt="Clinic Center iii" />
           <div class="clinic-center-box-content">
             <div class="clinic-center-info">
-              <div class="title mb-2"><%- center.companyInformation.companyName  %> </div>
-              <div class="text">
-                <%- center.adress.adressDetailText  %> 
-              </div>
+              <div class="title mb-2"><%- center.companyInformation.companyName %></div>
+              <div class="text"><%- center.address.addressDetailText %></div>
             </div>
             <div class="clinic-center-points">
               <div class="clinic-center-point">
@@ -239,7 +237,7 @@
             <form class="tm-form-wide" action="/clinic/new-clinic-appointment" method="POST">
               <div class="form-group">
                 <label for="name-surname">Ad Soyad <span class="mandatory">*</span></label>
-                <input type="text" disabled name="nameSurname" class="form-control" id="name-surname" value="<%- user.nameSurname  %> "/>
+                <input type="text" disabled name="nameSurname" class="form-control" id="name-surname" value="<%- user.nameSurname  %> " />
               </div>
               <div class="form-group">
                 <label for="email">Email Adresi <span class="mandatory">*</span></label>
@@ -251,7 +249,7 @@
               </div> -->
               <div class="form-group">
                 <label for="date">Doğum Tarihiniz <span class="mandatory">*</span></label>
-                <input type="text" name="birthDate" disabled class="form-control" id="birthDate" value="<%- birthDate %> "  />
+                <input type="text" name="birthDate" disabled class="form-control" id="birthDate" value="<%- birthDate %> " />
               </div>
 
               <div class="form-group" id="kimIcın" name="kimIcın">
@@ -324,16 +322,16 @@
               <div class="clinic-form-title my-4 mb-3">Adres Bilgileri</div>
               <div class="form-group">
                 <label for="address">Adresinizi Girin <span class="mandatory">*</span></label>
-                <input type="text" name="adressDetailText" class="form-control" id="address" placeholder="Adresinizi Girin" />
+                <input type="text" name="addressDetailText" class="form-control" id="address" placeholder="Adresinizi Girin" />
               </div>
               <div class="form-group">
                 <label for="job-dropdown">Şehir<span class="mandatory">*</span></label>
                 <input type="text" name="city" class="form-control" id="address" placeholder="İl" />
               </div>
-                <div class="form-group">
-                  <label for="district">İlçe <span class="mandatory">*</span></label>
-                  <input type="text" name="district" class="form-control" id="district" placeholder="İlçe" />
-                </div>
+              <div class="form-group">
+                <label for="district">İlçe <span class="mandatory">*</span></label>
+                <input type="text" name="district" class="form-control" id="district" placeholder="İlçe" />
+              </div>
               <div class="form-group">
                 <label for="postcode">Posta Kodu <span class="mandatory">*</span></label>
                 <input type="text" name="zipCode" class="form-control" id="zipCode" placeholder="Posta Kodu" />
@@ -348,12 +346,12 @@
               <div class="clinic-form-title mb-2">Özel İstekleriniz</div>
               <div class="clinic-form-text">Özel istekler garanti edilemez, ancak merkez ihtiyaçlarınızı karşılamak için elinden geleni yapacaktır. Rezervasyonunuz tamamlandıktan sonra da her zaman özel talepte bulunabilirsiniz.</div>
               <div class="clinic-form-inner-box wide">
-                <div class="form-group" id="desc" >
+                <div class="form-group" id="desc">
                   <textarea class="form-control" id="note" rows="5" name="note" placeholder="Merkezinde ki sessiz odalardan birisinde tedavimi görmek istiyorum. Migren sorunum olduğu için yüksek sesli ortamlarda problem yaşamaktayım bu konuda bana yardımcı olabilir misiniz?"></textarea>
                 </div>
               </div>
               <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-button-next">
-                <button type="submit" class="btn btn-second" >Randevuyu Tamamla</button>
+                <button type="submit" class="btn btn-second">Randevuyu Tamamla</button>
                 <!-- Button trigger modal -->
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -409,4 +407,4 @@
   </div>
 </div>
 
-<%- include("../../partials/footer")  %> 
+<%- include("../../partials/footer") %>

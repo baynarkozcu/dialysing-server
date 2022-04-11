@@ -18,32 +18,32 @@
             </div>
 
             <% appointments.forEach(appointment => { %>
-                         <div class="accordion accordion-flush" id="rezervationMessage1">
+            <div class="accordion accordion-flush" id="rezervationMessage1">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                     <div class="tm-space-between tm-width-100">
                       <div>
-                        <div class="admin-box-title"><%- appointment.patientNameSurname  %> </div>
+                        <div class="admin-box-title"><%- appointment.patientNameSurname %></div>
                         <div class="tm-space-between tm-flex-align-baseline mobile">
-                          <div class="admin-box-text"><%- appointment.treatmentMethod  %> </div>
+                          <div class="admin-box-text"><%- appointment.treatmentMethod %></div>
                           <div class="admin-box-text">
                             <table class="mobile-table">
                               <tr>
-                                <th><span><%- appointment.email  %> </span></th>
-                                <th><span><%- appointment.phone  %> </span></th>
+                                <th><span><%- appointment.email %> </span></th>
+                                <th><span><%- appointment.phone %> </span></th>
                               </tr>
                               <tr>
-                                <td><span><%- appointment.adress.adressDetailText  %></span></td>
-                                <td><span><%- appointment.insurance  %></span></td>
+                                <td><span><%- appointment.address.addressDetailText %></span></td>
+                                <td><span><%- appointment.insurance %></span></td>
                               </tr>
                             </table>
                           </div>
                         </div>
                       </div>
                       <div class="right">
-                        <div class="admin-box-text"><%- appointment.checkInDate.toJSON().slice(0,10)  %> </div>
-                        <div class="admin-box-text"><%- appointment.situation  %> </div>
+                        <div class="admin-box-text"><%- appointment.checkInDate.toJSON().slice(0,10) %></div>
+                        <div class="admin-box-text"><%- appointment.situation %></div>
                       </div>
                     </div>
                   </button>
@@ -87,7 +87,7 @@
               </div>
             </div>
             <% }) %>
-            
+
             <!-- <div class="accordion accordion-flush" id="rezervationMessage2">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">

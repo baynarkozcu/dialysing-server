@@ -9,11 +9,11 @@ const AppointmentSchema = Mongoose.Schema(
     patientNameSurname: String,
     situation: String,
     insurance: String,
-    adress: {
+    address: {
       city: String,
       district: String,
       street: String,
-      adressDetailText: String,
+      addressDetailText: String,
       zipCode: String,
     },
     checkInDate: Date,
@@ -33,7 +33,7 @@ const AppointmentSchema = Mongoose.Schema(
     isCancelled: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   { timestamps: true, versionKey: false }
 );

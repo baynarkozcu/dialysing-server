@@ -7,7 +7,6 @@ const adad = require("../models/DialysisCenters");
 
 const mongoose = require("mongoose");
 
-
 const passport2 = require("passport");
 require("../scripts/utils/passport-local-config")(passport2);
 
@@ -39,12 +38,11 @@ class HomeController {
   }
 
   async viewAppointment(req, res, next) {
-
     res.cookie("tmpAppointment", req.body);
 
     const birthDate = ("0" + req.user.birthDate.getDate()).slice(-2) + "." + ("0" + (req.user.birthDate.getMonth() + 1)).slice(-2) + "." + req.user.birthDate.getFullYear();
     const user = req.user;
-    
+
     DialysisCenterService.findById(req.body.centerId)
       .then((center) => {
         res.render("user/pages/clinic/appointment", { layout: "user/layouts/clinic-main", cookieValue: req.body, user, birthDate, center });
@@ -52,7 +50,6 @@ class HomeController {
       .catch((err) => {
         console.log("Error", err);
       });
-
   }
 
   // clinicAppointment(req, res, next) {
@@ -60,7 +57,6 @@ class HomeController {
   // }
 
   createAppointment(req, res, next) {
-
     const appointment = {
       nameSurname: req.user.nameSurname,
       email: req.user.email,
@@ -69,11 +65,11 @@ class HomeController {
       patientNameSurname: req.body.patientNameSurname,
       situation: req.body.situation,
       insurance: req.body.insurance,
-      adress: {
+      address: {
         city: req.body.city,
         district: req.body.district,
         street: req.body.street,
-        adressDetailText: req.body.adressDetailText,
+        addressDetailText: req.body.addressDetailText,
         zipCode: req.body.zipCode,
       },
       checkInDate: req.cookies.tmpAppointment.checkInDate,
@@ -108,7 +104,7 @@ class HomeController {
   clinicList(req, res, next) {
     if (req.query.city) {
       const query = {
-        "adress.city": req.query.city,
+        "address.city": req.query.city,
       };
       DialysisCenterService.index(query)
         .then((list) => {
@@ -124,8 +120,8 @@ class HomeController {
   }
 
   async allView(req, res, next) {
-    const countries = await DialysisCenterService.groupBy("$adress.country");
-    const cities = await DialysisCenterService.groupBy("$adress.country", "$adress.city");
+    const countries = await DialysisCenterService.groupBy("$address.country");
+    const cities = await DialysisCenterService.groupBy("$address.country", "$address.city");
 
     res.render("user/pages/clinic/all-view", { layout: "user/layouts/clinic-main", countries, cities });
   }

@@ -62,12 +62,14 @@
                 <button class="button-delete">Değerlendirmeyi Sayfaya Sabitle<img src="../clinic-panel/images/icons/pin.png" alt="Icon Pin" /></button>
               </div>
             </div>
-            <hr class="question-hr" />
+
+            <% center.centerEveluation.forEach(eveluation => { %>
+                         <hr class="question-hr" />
             <div class="form-box questions evaluation">
               <div class="questions-content">
                 <div class="question">
-                  <div class="tm-color-second tm-font-semibold">Neslihan Çelik<span>İzmir, Konak</span></div>
-                  <div class="tm-color-dark tm-margin-t-1">“Tatilimizi sağlıklı bir şekilde geçirmemizi sağladıkları için dialysing.com ailesine sonsuz teşekkürler, daima kullanacağımız bir sistem oldu ve bizlerden tam puan aldı. Diyaliz hastalarına tavsiye etmekten asla tereddüt etmeyeceğiz”.</div>
+                  <div class="tm-color-second tm-font-semibold">Neslihan Çelik</div>
+                  <div class="tm-color-dark tm-margin-t-1"><%- eveluation.evaluationMessage  %> </div>
                 </div>
               </div>
               <div class="questions-content">
@@ -75,7 +77,9 @@
                 <button class="button-delete">Değerlendirmeyi Sayfaya Sabitle<img src="../clinic-panel/images/icons/pin.png" alt="Icon Pin" /></button>
               </div>
             </div>
-            <hr class="question-hr" />
+            <% }) %>
+
+            <!-- <hr class="question-hr" />
             <div class="form-box questions evaluation">
               <div class="questions-content">
                 <div class="question">
@@ -87,7 +91,7 @@
                 <button class="button-delete">Değerlendirmeyi Kaldır<img src="../clinic-panel/images/icons/delete.png" alt="Icon Delete" /></button>
                 <button class="button-delete">Değerlendirmeyi Sayfaya Sabitle<img src="../clinic-panel/images/icons/pin.png" alt="Icon Pin" /></button>
               </div>
-            </div>
+            </div> -->
           </form>
         </div>
       </div>

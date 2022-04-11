@@ -42,42 +42,24 @@
   top: 30%;
   width: 80%;
 }
-<<<<<<< HEAD
+
 .clinic-header .tm-header-title {
   font-size: 25px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 3rem;
 }
-=======
 
-<<<<<<< HEAD
 .clinic-header .tm-header-title {
   font-size: 25px;
-=======
-.clinic-header .inner-content .tm-header-title {
-  font-size: 28px;
   font-weight: 500;
->>>>>>> 2bb7e40c5052f8b097b5de417164e538e7575057
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 3rem;
 }
 
-<<<<<<< HEAD
->>>>>>> main
 .clinic-header .tm-header-text {
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   line-height: 2rem;
-<<<<<<< HEAD
-=======
-=======
-.clinic-header .inner-content .tm-header-text {
-  font-size: 15px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  line-height: 1.5rem;
->>>>>>> 2bb7e40c5052f8b097b5de417164e538e7575057
->>>>>>> main
 }
 .clinic-header .inner-content .tm-header-bottom {
   margin: 1rem 0;

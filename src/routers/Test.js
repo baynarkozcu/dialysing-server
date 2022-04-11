@@ -24,12 +24,7 @@ router.post("/uploadfile", (req, res) => {
     },
   });
 
-
-<<<<<<< HEAD
  for (let index = 0; index < 25; index++) {
-=======
-  for (let index = 0; index < 25; index++) {
->>>>>>> main
     var randomCount = Math.floor(Math.random() * 100);
 
     const dialysisCenter = {

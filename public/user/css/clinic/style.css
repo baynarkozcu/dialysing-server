@@ -844,7 +844,8 @@ p {
 }
 .select select {
   border: rgba(0, 0, 0, 0.205) solid .5px !important;
-} 
+  font-size: 14px; 
+}  
 .btn-dropdown {
   width: 100%;
   display: block;
@@ -1031,10 +1032,15 @@ input#check-out.form-control {
   font-family: 'Montserrat', sans-serif;
   color: #28353e7e;
 } 
+input#companyName.form-control {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  color: #28353e7e;
+} 
 input#check-out.form-control::before{ 
   color: #28353e; 
   margin-right: 10px;
-  }
+}
 select.form-control {
   color: #ffffff;
   font-size: unset;
@@ -1571,6 +1577,21 @@ input#email.form-control {
   padding: 15px;
   font-family: 'Montserrat', sans-serif;
 }
+select#job.btn.btn-dropdown.dropdown.btn-dropdown.dropdown-toggle {
+  font-size: 12px;
+  padding: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+input#nameSurname.form-control {
+  font-size: 14px;
+  padding: 15px;
+  font-family: 'Montserrat', sans-serif;
+} 
+input#phone.form-control {
+  font-size: 14px;
+  padding: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
 input#email-confirm.form-control {
   font-size: 14px;
   padding: 15px;
@@ -1628,6 +1649,61 @@ input#tel.form-control {
   font-size: 14px;
   padding: 15px;
   font-family: 'Montserrat', sans-serif;
+}
+/*input*/
+input#check-in.form-control {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #28353e7e;
+}
+input#login-email.form-control {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #28353e7e;
+  padding: 13px;
+}
+div.dropdown.select {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #28353e7e;
+}
+input#check-in.form-control::before {
+  color: #28353e;
+  margin-right: 10px;
+}
+input#check-out.form-control {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #28353e7e;
+}
+input#check-out.form-control::before {
+  color: #28353e;
+  margin-right: 10px;
+}
+input#company-name.form-control {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #28353e7e;
+}
+input#company-address.form-control {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #28353e7e;
+}
+input#tax-number.form-control {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #28353e7e;
+}
+input#tax-center-number.form-control {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #28353e7e;
+}
+input#center-name.form-control {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #28353e7e;
 }
 /*kişiselbilgiler*/
 .clinic-form-text {

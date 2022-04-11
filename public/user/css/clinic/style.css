@@ -1023,6 +1023,11 @@ input#check-in.form-control {
   font-family: 'Montserrat', sans-serif;
   color: #28353e7e;
 }
+input#password.form-control {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  color: #28353e7e;
+}
 input#check-in.form-control::before{ 
 color: #28353e; 
 margin-right: 10px;

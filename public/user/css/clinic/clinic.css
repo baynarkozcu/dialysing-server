@@ -23,7 +23,9 @@
 .tm-main-background  .tm-header-content {
   margin-top: 0;
 }
-
+.tm-header-content a {
+  text-decoration: none;
+}
 .nav-item.question {
   color: #ffffff;
   display: flex;
@@ -41,36 +43,27 @@
   width: 80%;
 }
 
-<<<<<<< HEAD
 .clinic-header .tm-header-title {
   font-size: 25px;
-=======
-.clinic-header .inner-content .tm-header-title {
-  font-size: 28px;
-  font-weight: 500;
->>>>>>> 2bb7e40c5052f8b097b5de417164e538e7575057
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 3rem;
 }
 
-<<<<<<< HEAD
+.clinic-header .tm-header-title {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 3rem;
+}
+
 .clinic-header .tm-header-text {
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   line-height: 2rem;
-=======
-.clinic-header .inner-content .tm-header-text {
-  font-size: 15px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  line-height: 1.5rem;
->>>>>>> 2bb7e40c5052f8b097b5de417164e538e7575057
 }
-
 .clinic-header .inner-content .tm-header-bottom {
   margin: 1rem 0;
 }
-
 .clinic-header .inner-content .tm-header-bottom .btn-second {
   padding-left: 5rem;
   padding-right: 5rem;
@@ -97,20 +90,37 @@
 .clinic-content {
   margin: 1rem 0;
 }
-
 .clinic-content .clinic-icon {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 0.5rem;
 }
-
+.clinic-text-description {
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.5rem;
+}
+.tm-section-title {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2.5rem;
+}
 .clinic-content .clinic-icon .clinic-image {
   width: 7%;
   display: flex;
   align-items: center;
 }
-
+.accordion-header button {
+  font-size: 14px !important;
+  color: #28353E; 
+  font-family: 'Montserrat', sans-serif;
+}
+.accordion-body {
+  font-size: 13px;
+  color: #28353E; 
+  font-family: 'Montserrat', sans-serif;
+  line-height: 2rem;
+}
 .clinic-content .clinic-icon .clinic-text {
   width: 93%;
 }
@@ -136,12 +146,15 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 2rem !important;
 }
 
 .tm-clinic-box .tm-clinic-box-content .tm-clinic-box-text {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .tm-steps {
@@ -771,7 +784,7 @@ a.clinic-images div {
   .btn-second {
     margin-top: 30px;  
     width: 100% !important;
-  }
+  } 
   .clinic-header button {
   align-items: center;
   text-align: center;

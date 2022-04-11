@@ -1,14 +1,18 @@
  /* <!--=======FOOTER=====--> */
  .footer {
     color: #fff;
+    font-family: 'Montserrat', sans-serif;
   }
   .footer h5 {
     color: #fff;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
   }
   .footer a {
     color: #fff;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
   }
   .footer a:hover {
     color: #fff;
@@ -29,4 +33,13 @@
   }
   footer {
     background-color: #28353e;
+  }
+  .footerTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.5rem;
+  }
+  .logo-footer {
+    font-size: 25px !important;
+    font-weight: 800;
   }

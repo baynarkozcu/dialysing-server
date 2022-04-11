@@ -1,26 +1,26 @@
 <div class="tm-main-content" id="top">
-  <!--======= FOLLOW BAR =====-->
-  <div id="section-i" class="tm-p tm-pt-20">
-    <div class="container">
-      <div class="tm-steps">
-        <div class="tm-step active">
-          Kişisel Bilgiler
-          <div class="tm-s-steps">
-            <div class="tm-s-step active"></div>
-            <div class="tm-s-step"></div>
-            <div class="tm-s-step"></div>
-            <div class="tm-s-step"></div>
-            <div class="tm-s-step"></div>
+
+      <!--======= FOLLOW BAR =====-->
+    <div id="section-i" class="tm-p tm-pt-20 mt-5">
+      <div class="container">
+        <div class="tm-steps">
+          <div class="tm-step active"> Kişisel Bilgiler
+            <div class="tm-s-steps">
+              <div class="tm-s-step active"></div>
+              <div class="tm-s-step"></div>
+              <div class="tm-s-step"></div>
+              <div class="tm-s-step"></div>
+              <div class="tm-s-step"></div>
+            </div>
           </div>
+          <div class="tm-step"> Merkez Detayları </div>
+          <div class="tm-step"> Önizleme </div>
         </div>
-        <div class="tm-step">Merkez Detayları</div>
-        <div class="tm-step">Önizleme</div>
       </div>
     </div>
-  </div>
 
   <!--======= PERSONEL INFORMATION =====-->
-  <div id="section-ii" class="tm-margin-3">
+  <div id="section-ii" class="tm-margin-3 py-5 my-5">
     <div class="container">
       <div class="tm-section-title tm-clinic-title">Kişisel Bilgileriniz</div>
       <div class="row">
@@ -41,7 +41,7 @@
             <div class="form-group">
               <label for="job-dropdown">Görevinizi Seçiniz</label>
               <div class="dropdown select">
-                <select class="btn btn-dropdown dropdown-toggle" type="button" id="job" name="job" value="<%- user.job || '' %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <select class="btn p-3 btn-dropdown dropdown-toggle" type="button" id="job" name="job" value="<%- user.job || '' %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <option selected>Göreviniz</option>
                   <option value="1">Başhekim</option>
                   <option value="2">Doktor</option>
@@ -62,11 +62,13 @@
         </div>
 
         <!--======= WARNING CARD =====-->
-        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+        <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
           <div class="tm-box-info">
             <div class="tm-box-top">
-              <img src="../user/img/clinic/attention.png" alt="Attention Icon" />
+              <div class="col d-flex align-items-start">
+                <div class="me-1"><img src="../user/img/clinic/attention.png" alt="Attention Icon" /></div>
               <div class="tm-box-title">Bilgilerimi girerken nelere dikkat etmeliyim?</div>
+            </div>
             </div>
             <div class="tm-box-bottom">
               <div>Kişisel bilgilerinizi eksiksiz ve doğru girdiğinizden lütfen emin olun. Merkezin size ait olduğunu doğrulayabilmemiz için bu bilgilerin eksiksiz ve doğru girilmesi gerekmektedir.</div>

@@ -181,7 +181,15 @@ class ClinicPanelController {
 
   choosePersonel(req, res) {
     const user = req.user;
-    res.render("clinic-panel/pages/add-clinic/choose-personel", { layout: "clinic-panel/layouts/index", user });
+    if (user.isAdmin) {
+      res.render("clinic-panel/pages/add-clinic/choose-personel", { layout: "clinic-panel/layouts/index", user });
+    } else {
+      req.logout();
+      req.session.destroy((error) => {
+        res.clearCookie("connect.sid");
+        res.render("clinic-panel/pages/clinic-login", { layout: "clinic-panel/layouts/index" });
+      });
+    }
   }
 
   chooseCenter(req, res) {
@@ -241,7 +249,7 @@ class ClinicPanelController {
     res.clearCookie("selectedDialysingCenter");
 
     dialysingCenter.companyInformation.companyName = req.body.companyName;
-    dialysingCenter.adress.addressDetailText = req.body.addressDetailText;
+    dialysingCenter.address.addressDetailText = req.body.addressDetailText;
     dialysingCenter.companyInformation.taxNumber = req.body.taxNumber;
     dialysingCenter.companyInformation.taxOffice = req.body.taxOffice;
 
@@ -262,10 +270,10 @@ class ClinicPanelController {
     const dialysingCenter = req.cookies.selectedDialysingCenter;
     res.clearCookie("selectedDialysingCenter");
 
-    dialysingCenter.adress.country = req.body.country;
-    dialysingCenter.adress.city = req.body.city;
-    dialysingCenter.adress.addressDetailText = req.body.addressDetailText;
-    dialysingCenter.adress.zipCode = req.body.zipCode;
+    dialysingCenter.address.country = req.body.country;
+    dialysingCenter.address.city = req.body.city;
+    dialysingCenter.address.addressDetailText = req.body.addressDetailText;
+    dialysingCenter.address.zipCode = req.body.zipCode;
 
     dialysingCenter.contactInformation.phone = req.body.phone;
     dialysingCenter.contactInformation.whatsapp = req.body.whatsapp;
@@ -353,14 +361,6 @@ class ClinicPanelController {
   //   })
   // }
 
-  addNewClinic(req, res, next) {
-    res.render("clinic-panel/pages/panel/add-new-clinic", { layout: "clinic-panel/layouts/panel" });
-  }
-
-  addUser(req, res, next) {
-    res.render("clinic-panel/pages/panel/add-user", { layout: "clinic-panel/layouts/panel" });
-  }
-
   analysis(req, res, next) {
     res.render("clinic-panel/pages/panel/analysis", { layout: "clinic-panel/layouts/panel" });
   }
@@ -425,11 +425,74 @@ class ClinicPanelController {
   }
 
   calender(req, res, next) {
-    res.render("clinic-panel/pages/panel/calender", { layout: "clinic-panel/layouts/panel" });
+    var center = req.cookies.clinic;
+    res.render("clinic-panel/pages/panel/calender", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+  }
+
+  changePasswordView(req, res, next) {
+    var center = req.cookies.clinic;
+    res.render("clinic-panel/pages/panel/change-password", { layout: "clinic-panel/layouts/panel", user: req.user, center });
   }
 
   changePassword(req, res, next) {
-    res.render("clinic-panel/pages/panel/change-password", { layout: "clinic-panel/layouts/panel" });
+    var center = req.cookies.clinic;
+    if (req.body.oldPassword == hashToPassword(req.user.password)) {
+      if (req.body.newPassword == req.body.repeatPassword) {
+        UserService.update(req.user._id, { password: passwordToHash(req.body.newPassword) })
+          .then((user) => {
+            console.log("İşlem Başarılı");
+            res.redirect("/panel/change-password");
+          })
+          .catch((err) => {
+            console.log("Hata Çıktı :", err);
+          });
+      } else {
+        res.render("clinic-panel/pages/panel/change-password", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+        console.log("Şifreler Uyuşmuyor");
+      }
+    } else {
+      console.log("Eski şifre Yanlış");
+      res.render("clinic-panel/pages/panel/change-password", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+    }
+  }
+
+  contact(req, res, next) {
+    var center = req.cookies.clinic;
+    res.render("clinic-panel/pages/panel/contact", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+  }
+
+  saveContact(req, res, next) {
+    var center = req.cookies.clinic;
+
+    center.contactInformation.phone = req.body.phone;
+    center.contactInformation.alternativePhone = req.body.alternativePhone;
+    center.contactInformation.email = req.body.email;
+    center.contactInformation.alternativeEmail = req.body.alternativeEmail;
+    center.contactInformation.website = req.body.website;
+    center.address.addressDetailText = req.body.addressDetailText;
+
+    console.log("Center :", center);
+
+    DialysisCenterService.update(center._id, center)
+      .then((center) => {
+        res.cookie("clinic", center);
+        res.redirect("/panel/contact");
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı :", err);
+      });
+  }
+
+  addNewClinic(req, res, next) {
+    var center = req.cookies.clinic;
+
+    res.render("clinic-panel/pages/panel/add-new-clinic", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+  }
+
+  addUser(req, res, next) {
+    var center = req.cookies.clinic;
+
+    res.render("clinic-panel/pages/panel/add-user", { layout: "clinic-panel/layouts/panel", user: req.user, center });
   }
 
   clinicPoint(req, res, next) {
@@ -438,18 +501,6 @@ class ClinicPanelController {
 
   competition(req, res, next) {
     res.render("clinic-panel/pages/panel/competition", { layout: "clinic-panel/layouts/panel" });
-  }
-
-  contact(req, res, next) {
-    res.render("clinic-panel/pages/panel/contact", { layout: "clinic-panel/layouts/panel" });
-  }
-
-  messages(req, res, next) {
-    res.render("clinic-panel/pages/panel/messages", { layout: "clinic-panel/layouts/panel" });
-  }
-
-  evaluation(req, res, next) {
-    res.render("clinic-panel/pages/panel/evaluation", { layout: "clinic-panel/layouts/panel" });
   }
 
   messageOptions(req, res, next) {
@@ -489,16 +540,29 @@ class ClinicPanelController {
     res.render("clinic-panel/pages/panel/properties-and-services", { layout: "clinic-panel/layouts/panel" });
   }
 
-  questionsAnswered(req, res, next) {
-    res.render("clinic-panel/pages/panel/questions-answered", { layout: "clinic-panel/layouts/panel" });
-  }
-
   questionsNew(req, res, next) {
     res.render("clinic-panel/pages/panel/questions-new", { layout: "clinic-panel/layouts/panel" });
   }
 
   rezervationMessages(req, res, next) {
-    res.render("clinic-panel/pages/panel/rezervation-messages", { layout: "clinic-panel/layouts/panel" });
+    var center = req.cookies.clinic;
+    res.render("clinic-panel/pages/panel/rezervation-messages", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+  }
+
+  messages(req, res, next) {
+    var center = req.cookies.clinic;
+    res.render("clinic-panel/pages/panel/messages", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+  }
+
+  questionsAnswered(req, res, next) {
+    var center = req.cookies.clinic;
+    res.render("clinic-panel/pages/panel/questions-answered", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+  }
+
+  evaluation(req, res, next) {
+    //TODO DEVAM EDECEK...
+    var center = req.cookies.clinic;
+    res.render("clinic-panel/pages/panel/evaluation", { layout: "clinic-panel/layouts/panel", user: req.user, center });
   }
 
   updateUser(req, res, next) {

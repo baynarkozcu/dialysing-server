@@ -9,10 +9,9 @@ class Users extends BaseService {
   findById(userID) {
     return this.BaseModal?.findById(userID).populate({
       path: "appointments",
-      select: "email phone situation insurance checkInDate treatmentMethod session dialysisCenter patientNameSurname isActive isCancelled adress",
+      select: "email phone situation insurance checkInDate treatmentMethod session dialysisCenter patientNameSurname isActive isCancelled address",
     });
   }
-
 }
 
 module.exports = new Users();

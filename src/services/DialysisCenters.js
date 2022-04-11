@@ -14,4 +14,4 @@ class DialysisCenters extends BaseService {
 module.exports = new DialysisCenters();
 
 //! Match Kullanımı
-//! return await BaseModal.aggregate([{ $match: { "adress.country": "Ukraine" } }, { $project: { _id: 1 } }]);
+//! return await BaseModal.aggregate([{ $match: { "address.country": "Ukraine" } }, { $project: { _id: 1 } }]);

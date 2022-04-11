@@ -28,10 +28,10 @@ const UserSchema = Mongoose.Schema(
         ref: "DialysisCenter",
       },
     ],
-    adress: {
+    address: {
       country: String,
       city: String,
-      adressDetailText: String,
+      addressDetailText: String,
       zipCode: String,
     },
     appointments: [
@@ -53,6 +53,5 @@ const UserSchema = Mongoose.Schema(
 
 // TODO Soft Delete EKLEMEK ICIN...
 // UserSchema.plugin(mongoose_delete, { overrideMethods: ["find"], deletedAt: true });
-
 
 module.exports = Mongoose.model("User", UserSchema);

@@ -5,12 +5,14 @@
         <div class="tm-section-title">Yeni Tesis Ekle</div>
         <div class="admin-inner-text">Bu sayfada kayıtlı olan merkezlerinizi görüntüleyebilir ve yeni merkez ekleyebilirsiniz.</div>
         <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7">
-          <div class="clinic-center-box">
-            <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img admin" />
+
+          <% user.centerList.forEach(center => { %>
+                     <div class="clinic-center-box">
+            <img src="<%- center.companyInformation.photo[0]  %> " alt="Clinic Center iii" class="clinic-img admin" />
             <div class="clinic-center-main-content">
               <div class="clinic-center-box-content">
                 <div class="clinic-center-info">
-                  <div class="title">Türkmed Diyaliz Merkezi</div>
+                  <div class="title"><%- center.companyInformation.companyName  %> </div>
                   <div class="tm-display-flex">
                     <div class="text">Arama yaptığınız konumdan 5 km uzaklıkta.</div>
                     <div class="most">Öne Çıkan Merkez</div>
@@ -32,8 +34,10 @@
               </div>
             </div>
           </div>
+          <% }) %>
+
           <div>
-            <button class="btn btn-second">Yeni Merkez Ekle</button>
+            <a href="/panel/choose-personel" class="btn btn-second">Yeni Merkez Ekle</a>
           </div>
         </div>
       </div>

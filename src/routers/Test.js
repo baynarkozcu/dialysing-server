@@ -8,8 +8,6 @@ const PromotionService = require("../models/Promotions");
 const { randMovie, randCountry, randNumber } = require("@ngneat/falso");
 
 router.get("/", (req, res) => {
-
-
   res.render("test", { layout: "clinic-panel/layouts/deneme" });
 });
 
@@ -24,7 +22,6 @@ router.post("/uploadfile", (req, res) => {
     },
   });
 
-
   for (let index = 0; index < 50; index++) {
     var randomCount = Math.floor(Math.random() * 100);
 
@@ -35,11 +32,11 @@ router.post("/uploadfile", (req, res) => {
         //bio: result.deneme[randomCount].bio,
         photo: result.deneme[randomCount].photo,
       },
-      adress: {
+      address: {
         country: result.deneme[randomCount].country,
         city: result.deneme[randomCount].city,
         //district: result.deneme[randomCount].district,
-        adressDetailText: result.deneme[randomCount].adressDetailText,
+        addressDetailText: result.deneme[randomCount].addressDetailText,
         //zipCode: result.deneme[randomCount].zipCode,
       },
       contactInformation: {

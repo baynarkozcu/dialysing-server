@@ -9,6 +9,7 @@ const Controller = require("../controllers/ClinicPanel");
 
 router.get("/", clinicAuthenticate, Controller.index);
 
+// AUTHENTICATION
 router.get("/login", clinicCurrentUser, Controller.loginView);
 router.post("/login", clinicCurrentUser, Controller.login);
 router.get("/logout", clinicAuthenticate, Controller.logout);
@@ -40,23 +41,25 @@ router.group("/", clinicAuthenticate, (router) => {
   router.get("/clinic-summary", Controller.clinicSummary);
   router.get("/clinic-save", Controller.clinicSave);
 
-  router.get("/add-new-clinic", Controller.addNewClinic);
-  router.get("/add-user", Controller.addUser);
   router.get("/analysis", Controller.analysis);
 
   router.get("/answer-waiting-rezervations", Controller.answerWaitingRezervations);
   router.get("/accept-appointment/:id", Controller.acceptAppointment);
   router.get("/oncoming-rezervations", Controller.oncomingRezervations);
   router.get("/completed-rezervations", Controller.completedRezervations);
+  router.get("/canceled-rezervations", Controller.canceledRezervations);
 
   router.get("/calender", Controller.calender);
-  router.get("/canceled-rezervations", Controller.canceledRezervations);
-  router.get("/change-password", Controller.changePassword);
+
+  router.get("/change-password", Controller.changePasswordView);
+  router.post("/change-password", Controller.changePassword);
+  router.get("/contact", Controller.contact);
+  router.post("/contact", Controller.saveContact);
+  router.get("/add-new-clinic", Controller.addNewClinic);
+  router.get("/add-user", Controller.addUser);
+
   router.get("/clinic-point", Controller.clinicPoint);
   router.get("/competition", Controller.competition);
-  router.get("/contact", Controller.contact);
-  router.get("/messages", Controller.messages);
-  router.get("/evaluation", Controller.evaluation);
   router.get("/message-options", Controller.messageOptions);
   router.get("/payment-options", Controller.paymentOptions);
 
@@ -64,9 +67,13 @@ router.group("/", clinicAuthenticate, (router) => {
   router.get("/buy-promotions/:id", Controller.buyPromotions);
 
   router.get("/properties-and-services", Controller.propertiesAndServices);
-  router.get("/questions-answered", Controller.questionsAnswered);
   router.get("/questions-new", Controller.questionsNew);
+
   router.get("/rezervation-messages", Controller.rezervationMessages);
+  router.get("/messages", Controller.messages);
+  router.get("/questions-answered", Controller.questionsAnswered);
+  router.get("/evaluation", Controller.evaluation);
+
   router.get("/update-user", Controller.updateUser);
   router.get("/upload-image", Controller.uploadImage);
 

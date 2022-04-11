@@ -23,7 +23,9 @@
 .tm-main-background  .tm-header-content {
   margin-top: 0;
 }
-
+.tm-header-content a {
+  text-decoration: none;
+}
 .nav-item.question {
   color: #ffffff;
   display: flex;
@@ -41,36 +43,46 @@
   width: 80%;
 }
 
-.clinic-header .inner-content .tm-header-title {
-  font-size: 28px;
-  font-weight: 500;
-  font-family: 'Lato', sans-serif;
+.clinic-header .tm-header-title {
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
   line-height: 3rem;
 }
 
-.clinic-header .inner-content .tm-header-text {
-  font-size: 15px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  line-height: 1.5rem;
+.clinic-header .tm-header-title {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 3rem;
 }
 
+.clinic-header .tm-header-text {
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 2rem;
+}
 .clinic-header .inner-content .tm-header-bottom {
   margin: 1rem 0;
 }
-
 .clinic-header .inner-content .tm-header-bottom .btn-second {
   padding-left: 5rem;
   padding-right: 5rem;
 }
-
+/*clinic img*/
 .clinic-header .clinic-img {
   position: relative;
-  top: 2%;
-  right: 200%;
+  /* top: 2%; */
+  right: 50%; 
   width: initial;
+  margin: 0;
+  padding: 0;
 }
-
+.banner img {
+  width: 450px;
+  height: 450px;
+  margin: 0px;
+  padding: 0px;
+}
 .clinic-header .btn-second {
   width: 400px;
 }
@@ -78,20 +90,37 @@
 .clinic-content {
   margin: 1rem 0;
 }
-
 .clinic-content .clinic-icon {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 0.5rem;
 }
-
+.clinic-text-description {
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.5rem;
+}
+.tm-section-title {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2.5rem;
+}
 .clinic-content .clinic-icon .clinic-image {
   width: 7%;
   display: flex;
   align-items: center;
 }
-
+.accordion-header button {
+  font-size: 14px !important;
+  color: #28353E; 
+  font-family: 'Montserrat', sans-serif;
+}
+.accordion-body {
+  font-size: 13px;
+  color: #28353E; 
+  font-family: 'Montserrat', sans-serif;
+  line-height: 2rem;
+}
 .clinic-content .clinic-icon .clinic-text {
   width: 93%;
 }
@@ -117,12 +146,15 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 2rem !important;
 }
 
 .tm-clinic-box .tm-clinic-box-content .tm-clinic-box-text {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .tm-steps {
@@ -738,18 +770,31 @@ a.clinic-images div {
   height: 50px;
 }
 @media screen and (max-width: 991px) {
-  .clinic-header .inner-content .tm-header-title {
-    font-size: 24px;
+  .clinic-header .tm-header-title {
+    font-size: 28px;
+    margin-top: 60px;
+    text-align: center;
   }
-  .clinic-header .inner-content .tm-header-text {
+  .clinic-header .tm-header-text {
     font-size: 18px;
+    margin-top: 30px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
   }
-
+  .btn-second {
+    margin-top: 30px;  
+    width: 100% !important;
+  } 
+  .clinic-header button {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex; 
+}
   .clinic-header .clinic-img {
     width: 100%;
     height: 100%;
-    top: 20%;
-    right: 0;
+    /* top: 20%; */  
   }
 
   .tm-clinic-box img {
@@ -850,4 +895,7 @@ a.clinic-images div {
   .clinic-form-inner-box {
     width: 100%;
   }
+} 
+.link a {
+  text-decoration: none;
 }

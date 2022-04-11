@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 
 router.post("/uploadfile", (req, res) => {
   const result = excelToJson({
-    sourceFile: "C:/Projects/dialysing-server/public/uploads/test2.xlsx",
+    sourceFile: "C:/Projects/dialysing-server/public/uploads/test.xlsx",
     header: {
       rows: 1,
     },
@@ -22,29 +22,30 @@ router.post("/uploadfile", (req, res) => {
     },
   });
 
-  for (let index = 0; index < 50; index++) {
+ for (let index = 0; index < 25; index++) {
+
     var randomCount = Math.floor(Math.random() * 100);
 
     const dialysisCenter = {
-      number: result.deneme[randomCount].number,
+      // number: result.deneme[randomCount].number,
       companyInformation: {
         companyName: result.deneme[randomCount].companyName,
-        //bio: result.deneme[randomCount].bio,
+        bio: result.deneme[randomCount].bio,
         photo: result.deneme[randomCount].photo,
       },
       address: {
         country: result.deneme[randomCount].country,
         city: result.deneme[randomCount].city,
-        //district: result.deneme[randomCount].district,
-        addressDetailText: result.deneme[randomCount].addressDetailText,
-        //zipCode: result.deneme[randomCount].zipCode,
+        district: result.deneme[randomCount].district,
+        adressDetailText: result.deneme[randomCount].adressDetailText,
+        zipCode: result.deneme[randomCount].zipCode,
       },
       contactInformation: {
         email: result.deneme[randomCount].email,
         phone: result.deneme[randomCount].phone,
       },
       centerDetails: {
-        //centerType: result.deneme[randomCount].centerType,
+        centerType: result.deneme[randomCount].centerType,
       },
     };
 

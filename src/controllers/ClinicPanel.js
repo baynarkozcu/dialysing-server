@@ -199,7 +199,7 @@ class ClinicPanelController {
   chooseCenter(req, res) {
     const dialysingCenter = req.cookies.selectedDialysingCenter;
     if (dialysingCenter != undefined) {
-      res.clearCookie("selectedDialysingCenter");
+    
 
       dialysingCenter.personalInformation.nameSurname = req.body.nameSurname;
       dialysingCenter.personalInformation.email = req.body.email;
@@ -250,7 +250,6 @@ class ClinicPanelController {
 
   chooseAddress(req, res) {
     const dialysingCenter = req.cookies.selectedDialysingCenter;
-    res.clearCookie("selectedDialysingCenter");
 
     dialysingCenter.companyInformation.companyName = req.body.companyName;
     dialysingCenter.address.addressDetailText = req.body.addressDetailText;
@@ -272,7 +271,6 @@ class ClinicPanelController {
 
   async addressCorrection(req, res) {
     const dialysingCenter = req.cookies.selectedDialysingCenter;
-    res.clearCookie("selectedDialysingCenter");
 
     dialysingCenter.address.country = req.body.country;
     dialysingCenter.address.city = req.body.city;
@@ -295,7 +293,6 @@ class ClinicPanelController {
 
   clinicServices(req, res) {
     const dialysingCenter = req.cookies.selectedDialysingCenter;
-    res.clearCookie("selectedDialysingCenter");
 
     dialysingCenter.centerDetails.buildType = req.body.buildType;
     dialysingCenter.centerDetails.centerType = req.body.centerType;
@@ -309,7 +306,6 @@ class ClinicPanelController {
 
   paymentOption(req, res) {
     const dialysingCenter = req.cookies.selectedDialysingCenter;
-    res.clearCookie("selectedDialysingCenter");
 
     dialysingCenter.services.dialysisType = req.body.dialysisType;
     dialysingCenter.services.inSessionService = req.body.inSessionService;

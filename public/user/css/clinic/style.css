@@ -921,9 +921,10 @@ margin-bottom: 10px;
 
 .tm-header-title {
   color: #ffffff;
-  font-size: 40px;
+  font-size: 28px;
   font-weight: 600;
   padding: 0.5rem 0;
+  font-family: 'Lato', sans-serif !important;
 }
 
 .tm-header-title.blue {
@@ -2130,7 +2131,6 @@ footer a {
   .btn-dropdown.small {
     font-size: 11px;
   }
-
   video {
     top: 25%;
     left: 0;
@@ -2158,12 +2158,6 @@ footer a {
   }
   .error-modal .modal-content {
     width: 100%;
-  }
-  .tm-header-title {
-    font-size: 24px;
-  }
-  .tm-header-text {
-    font-size: 20px;
   }
   .tm-btn-search {
     height: auto;
@@ -2582,4 +2576,4 @@ footer a {
 .users {
   font-size: 12px;
   font-family: 'Lato', sans-serif;  
-} 
+}  

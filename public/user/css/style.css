@@ -579,24 +579,7 @@ p {
   display: flex;
   height: 100%;
   align-items: center;
-}
-
-/* .tm-bg-background {
-  background-color: #28353e;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 700px;
-} */
+} 
 
 .form-group {
   position: relative;
@@ -847,10 +830,172 @@ p {
 }
 .tm-header-title {
   color: #ffffff;
-  font-size: 30px !important;  
-  font-family: 'Lato', sans-serif;
-  font-weight: 600;
+  font-size: 25px !important;  
+  font-family: 'Lato', sans-serif !important; 
 }
+@media screen and (max-width: 767px) {
+  .tm-search-form .tm-form-element {
+    width: 50%;
+    max-width: 235px;
+  }
+
+  .tm-media-container,
+  .tm-media-title-container {
+    max-width: 320px;
+    margin-right: auto;
+  }
+
+  .tm-media-title-container {
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
+
+  .tm-media-1 {
+    flex-direction: column;
+    max-width: 280px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tm-media-body-1 {
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .tm-bg-video {
+    padding-top: 255px;
+  }
+  .overlay {
+    height: 255px;
+  }
+  .tm-search-form .form-control.individual-search {
+    width: -webkit-fill-available;
+  }
+
+  .col.spe {
+    flex-basis: auto;
+  }
+
+  .tm-box-info {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 524px) {
+  .tm-search-form .tm-form-element-100 {
+    width: 100%;
+    max-width: none;
+  }
+
+  .tm-search-form .tm-form-element-50 {
+    width: 50%;
+  }
+  .capatalize h6 {
+    font-size: 12px !important;
+    font-family: 'Lato', sans-serif;
+  } 
+  .tm-header-content .tm-header-text {
+    color: #ffffff;
+    font-size: 13px !important; 
+    font-family: 'Lato', sans-serif; 
+  }
+  .tm-header-content .tm-header-title {
+    color: #ffffff;
+    font-size: 18px !important; 
+    font-family: 'Lato', sans-serif; 
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .tm-section-pad-2 {
+    padding: 20px 25px;
+  }
+  .capatalize h6 {
+    font-size: 12px !important;
+    font-family: 'Lato', sans-serif;
+  } 
+  .tm-header-content .tm-header-title {
+    color: #ffffff;
+    font-size: 18px !important; 
+    font-family: 'Lato', sans-serif; 
+  }
+  .tm-header-content .tm-header-text {
+    color: #ffffff;
+    font-size: 13px !important; 
+    font-family: 'Lato', sans-serif; 
+    
+  }
+  .form-control {
+    border-radius: 32px;
+  }
+
+  .tm-search-form .tm-form-element {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tm-fx-col-xs {
+    flex-direction: column;
+  }
+  .tm-section-pad {
+    padding: 25px 15px;
+  }
+}
+
+/* IE Fixes */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  .ie-h-align-center-fix {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .ie-10-ml-auto {
+    float: right;
+  }
+  .tm-media-body,
+  .tm-media-body > * {
+    width: 100%;
+  }
+  .tm-media-body-1,
+  .tm-media-body-1 > * {
+    width: 100%;
+  }
+  .tm-media-1 > * {
+    flex: 1 1 auto;
+  }
+}
+
+@media all and (max-width: 1199px) and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
+  .ie-container-width-fix {
+    width: 960px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .ie-container-width-fix-2 {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 560px) and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
+  .ie-container-width-fix {
+    max-width: 530px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+} 
+
 .tm-header-title.blue {
   color: #19a2f2;
 }
@@ -875,8 +1020,7 @@ button.btn.btn-outline-primary{
 }
 .tm-header-text {
   color: #ffffff;
-  font-size: 20px !important; 
-  font-weight: 400;
+  font-size: 15px !important; 
   font-family: 'Lato', sans-serif; 
 }
 .tm-header-content {
@@ -1925,13 +2069,7 @@ footer .copyright {
   } */
   .error-modal .modal-content {
     width: 100%;
-  }
-  .tm-header-title {
-    font-size: 24px;
-  }
-  .tm-header-text {
-    font-size: 18px;
-  }
+  } 
   .tm-btn-search {
     height: auto;
   }

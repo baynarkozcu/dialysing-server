@@ -108,7 +108,7 @@ class HomeController {
       };
       DialysisCenterService.index(query)
         .then((list) => {
-          return res.render("user/pages/clinic/clinic-list", { layout: "user/layouts/clinic-main", list });
+          return res.render("user/pages/clinic/clinic-list", { layout: "user/layouts/clinic-main", list, user: req.user });
         })
         .catch((err) => {
           console.log("Error", err);
@@ -123,7 +123,7 @@ class HomeController {
     const countries = await DialysisCenterService.groupBy("$address.country");
     const cities = await DialysisCenterService.groupBy("$address.country", "$address.city");
 
-    res.render("user/pages/clinic/all-view", { layout: "user/layouts/clinic-main", countries, cities });
+    res.render("user/pages/clinic/all-view", { layout: "user/layouts/clinic-main", countries, cities, user: req.user });
   }
   clinicLogin(req, res, next) {
     res.render("user/pages/clinic/clinic-login", { layout: "user/layouts/clinic-main" });

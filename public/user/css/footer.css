@@ -41,5 +41,12 @@
   }
   .logo-footer {
     font-size: 25px !important;
-    font-weight: 800;
+    font-weight: 700;
+    text-decoration: none; 
+    font-family: 'Khula', sans-serif;
+  }
+  .logo-footer span {
+    text-decoration: none; 
+    color: #19a2f2;
+    font-family: 'Khula', sans-serif;
   }

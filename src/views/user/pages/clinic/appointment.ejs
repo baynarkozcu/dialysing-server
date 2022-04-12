@@ -212,7 +212,7 @@
           <img src="../user/img/clinic/centers/clinic-iii.png" class="clinic-center" alt="Clinic Center iii" />
           <div class="clinic-center-box-content">
             <div class="clinic-center-info">
-              <div class="title mb-2"><%- center.companyInformation.companyName %></div>
+              <div class="title pr-5 mb-2"><%- center.companyInformation.companyName %></div>
               <div class="text"><%- center.address.addressDetailText %></div>
             </div>
             <div class="clinic-center-points">
@@ -233,7 +233,8 @@
         <div class="clinic-form-box">
           <div class="clinic-form-title">Kişisel Bilgiler</div>
           <div class="clinic-form-inner-box">
-            <div class="alert alert-primary" role="alert"><img src="../user/img/clinic/icons/error-circle.png" alt="Error Circle Icon" />Neredeyse bitti! Sadece * gerekli bilgilerinizi doldurun.</div>
+            <div class="alert alert-primary" role="alert">
+              <img src="../user/img/clinic/icons/error-circle.png" alt="Error Circle Icon" />Neredeyse bitti! Sadece * gerekli bilgilerinizi doldurun.</div>
             <form class="tm-form-wide" action="/clinic/new-clinic-appointment" method="POST">
               <div class="form-group">
                 <label for="name-surname">Ad Soyad <span class="mandatory">*</span></label>
@@ -242,11 +243,7 @@
               <div class="form-group">
                 <label for="email">Email Adresi <span class="mandatory">*</span></label>
                 <input type="email" name="email" disabled class="form-control" id="email" aria-describedby="emailHelp" value="<%- user.email  %> " />
-              </div>
-              <!-- <div class="form-group">
-                <label for="email">Email Adresinizi Onaylayın <span class="mandatory">*</span></label>
-                <input type="email" name="email" class="form-control" id="email-confirm" aria-describedby="emailHelp" placeholder="Email Adresiniz" />
-              </div> -->
+              </div> 
               <div class="form-group">
                 <label for="date">Doğum Tarihiniz <span class="mandatory">*</span></label>
                 <input type="text" name="birthDate" disabled class="form-control" id="birthDate" value="<%- birthDate %> " />
@@ -341,7 +338,7 @@
                 <input type="tel" name="phone" class="form-control" id="phone" placeholder="Telefon Numarası" />
               </div>
               <div class="form-group">
-                <div class="warning">Tesisin randevunuzu onaylayabilmesi için gereklidir.</div>
+                <div class="warning mb-3">Tesisin randevunuzu onaylayabilmesi için gereklidir.</div>
               </div>
               <div class="clinic-form-title mb-2">Özel İstekleriniz</div>
               <div class="clinic-form-text">Özel istekler garanti edilemez, ancak merkez ihtiyaçlarınızı karşılamak için elinden geleni yapacaktır. Rezervasyonunuz tamamlandıktan sonra da her zaman özel talepte bulunabilirsiniz.</div>
@@ -390,21 +387,20 @@
   </div>
 </div>
 
-<!--======= NEWSLETTER =====-->
-<div id="section-xi" class="tm-bg-dark-blue">
-  <div class="container tm-p-4">
-    <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-        <div class="tm-text-white mb-3">Son gelişmelerden ve diyaliz fırsatlarından haberdar olabilmek için mail listemize abone olabilirsiniz.</div>
+    <!--======= NEWSLETTER =====-->
+    <div id="section-xi" class="tm-bg-dark-blue">
+      <div class="container tm-p-4 d-flex align-items-center justify-content-center">
+          <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7 mt-2">
+          <div class="row"> 
+                  <div class="tm-text-white mb-3 text-center newsletter">Son gelişmelerden ve diyaliz fırsatlarından haberdar olabilmek
+                      için mail listemize abone olabilirsiniz.</div>                        
+                  <div class="form-group bottom blue-input">
+                      <input name="check-in" type="text" class="form-control form-control-md" id="inputCheckIn" placeholder="dialysing@demo.com.tr" />
+                      <img src="../user/img/icons/arrow.png" class="mt-0" alt="Icon Arrow" />
+                      </div>
+                  </div> 
+              </div>
+          </div>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-2">
-        <div class="form-group bottom blue-input text-center">
-          <input name="check-in" type="text" class="form-control" id="inputCheckIn" placeholder="dialysing@demo.com.tr" />
-          <img src="../user/img/icons/arrow.png" class="mt-0" alt="Icon Arrow" />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <%- include("../../partials/footer") %>

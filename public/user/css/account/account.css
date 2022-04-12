@@ -532,3 +532,16 @@ body{
   width: 18px;
   height: 18px;
 }
+#account h3 {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 35px !important;
+}
+#account label {
+  font-family: 'Lato', sans-serif !important; 
+}
+#account input {
+  padding: 15px; 
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  border-radius: 10px;
+}

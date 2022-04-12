@@ -1070,3 +1070,47 @@ input#checkOutDate.form-control.bi.bi-chevron-down {
   font-size: 13px;
   padding: 10px;
 }
+hr {
+  background-color: #28353e38;
+}
+.clinic-center-info .title {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 22px !important;
+  line-height: 2.3rem;
+}
+.clinic-center-info .text {
+  font-family: 'Lato', sans-serif !important;
+}
+.point {
+  font-family: 'Lato', sans-serif !important;
+}
+.circle { 
+  border-radius: 50% !important;
+  padding: 20px !important;
+}
+.circle .puan {
+  font-family: 'Lato', sans-serif !important;
+}
+.clinic-form-title {
+  font-family: 'Lato', sans-serif !important;
+}
+.clinic-form-inner-box label {
+  font-family: 'Lato', sans-serif !important;
+}
+.clinic-form-inner-box input {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  padding: 10px !important;
+}
+.alert {
+  font-size: 12px !important;
+}
+.clinic-form-text {
+  font-family: 'Montserrat', sans-serif !important; 
+  line-height: 1.6rem; 
+  color: #28353ecb;
+}
+textarea#note.form-control {
+  font-family: 'Montserrat', sans-serif !important; 
+  font-size: 13px !important;
+}

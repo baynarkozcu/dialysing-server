@@ -18,19 +18,23 @@ class ClinicPanelController {
   async index(req, res, next) {
     const center = req.query.clinic;
 
-    if (center) {
-      DialysisCenterService.findById(center)
-        .then((center) => {
-          res.cookie("clinic", center);
-          return res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel", user: req.user, center });
-        })
-        .catch((err) => {
-          console.log(err);
-          return res.redirect("/panel");
-        });
+    if (req.user.centerList.length > 0) {
+      if (center) {
+        DialysisCenterService.findById(center)
+          .then((center) => {
+            res.cookie("clinic", center);
+            return res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+          })
+          .catch((err) => {
+            console.log(err);
+            return res.redirect("/panel");
+          });
+      } else {
+        await res.cookie("clinic", req.user.centerList[0]);
+        return res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel", user: req.user, center: req.user.centerList[0] });
+      }
     } else {
-      await res.cookie("clinic", req.user.centerList[0]);
-      return res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel", user: req.user, center: req.user.centerList[0] });
+      res.redirect("/panel/choose-personel");
     }
   }
 

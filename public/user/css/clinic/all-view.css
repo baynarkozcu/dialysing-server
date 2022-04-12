@@ -49,7 +49,6 @@ nav {
 .bi {
     color: #fff;
 }
-
 footer {
     font-size: 15px;
     font-family: 'Gilroy', sans-serif; 
@@ -82,7 +81,7 @@ main h3 {
     color: #055f8f;
 }
 .accordion-button {
-    font-size: 15px !important;
+    font-size: 12px !important;
     font-weight: 700;
 }
 .history {
@@ -100,7 +99,7 @@ main h3 {
     color: #058f0c !important;
 }
 label{
-    font-size: 18px !important;
+    font-size: 15px !important;
     margin-bottom: 0px;
     font-weight: 600; 
     color: #28353e !important;
@@ -118,7 +117,7 @@ label{
     background-color: #055f8f;
     font-size: 14px !important;
 }
-#account p{
+#account p {
  font-size: 15px;
 }
 #account input{
@@ -152,13 +151,15 @@ label{
 }
 #country-main {
     background-color: #F5F9FC;
+    padding: 60px !important;
 }
 #country button {
     border: none;
     background-color: #F5F9FC;
-    font-size: 25px;
+    font-size: 20px;
     color: #28353E !important;
     font-family: 'Lato', sans-serif !important;
+    font-weight: 600;
 }
 #country span {
     border: none;
@@ -181,16 +182,27 @@ label{
 .title h1 {
     color: #28353e !important;
     font-family: 'Lato', sans-serif !important; 
-    font-weight: 500;
+    font-weight: 600;
     font-size: 30px;
+    line-height: 3rem;
 }
 .title p {
-    color: #28353e52 !important;
-    font-family: 'Lato', sans-serif !important; 
-    font-size: 18px;
+    color: #28353e67 !important; 
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif !important;
 } 
 .city {
     color: #025C90;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600; 
+}
+.city a {
+    text-decoration: none;
+    font-family: 'Lato', sans-serif !important; 
+    color: #025C90; 
+}
+.countryOne button {
+    font-size: 25px;
+    color: #28353E !important;
+    font-family: 'Lato', sans-serif !important;
 }

@@ -108,7 +108,7 @@ class HomeController {
       };
       DialysisCenterService.index(query)
         .then((list) => {
-          return res.render("user/pages/clinic/clinic-list", { layout: "user/layouts/clinic-main", list });
+          return res.render("user/pages/clinic/clinic-list", { layout: "user/layouts/clinic-main", list, user: req.user });
         })
         .catch((err) => {
           console.log("Error", err);

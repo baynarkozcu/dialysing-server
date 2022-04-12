@@ -77,13 +77,19 @@
             <li class="nav-item buttons mt-2 mb-3">
               <a href="/clinic" key="addCenter" class="nav-link btn-third">Merkezinizi Ekleyin</a>
             </li>
-           
+           <% if (!user) { %>
             <li class="nav-item buttons mt-2 mb-3">
               <a href="/register" key="register" class="nav-link btn-second">Kayıt Ol</a>
-            </li> 
+            </li>
+           <% } %> 
             <li class="nav-item buttons mt-2 mb-3">
               <!-- Button trigger modal --> 
+            <% if (!user) { %>
               <button type="button" key="login" class="nav-link btn-second" data-toggle="modal" data-target="#loginModal">Giriş Yap</button>
+            <% } %>
+            <% if (user) { %>
+              <a href="/logout" class="nav-link btn-second">Çıkış Yap</a>
+            <% } %>            
               <!-- Modal -->
               <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">

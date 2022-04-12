@@ -899,3 +899,174 @@ a.clinic-images div {
 .link a {
   text-decoration: none;
 }
+/*2. Secment*/
+.covid {
+  font-family: "Khula", sans-serif;
+  font-size: 14px;
+  color: #28353e;
+  line-height: 1.5rem;
+}
+.covid a {
+  font-family: "Khula", sans-serif;
+  text-decoration: none;
+  color: #055f8f;
+  font-size: 13px;
+  font-weight: 600;
+}
+/*section i*/
+.center-address { 
+  font-family: 'Montserrat', sans-serif;
+}
+.center-address i {
+  color: #19a2f2; 
+}
+.center-call p {
+  color: #28353E;
+  font-weight: bolder; 
+}
+.center-call a {
+  text-decoration: none;
+}
+.clinic {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 25px;
+}
+.sub-image img{
+  border-radius: 8px;
+}
+.tm-color-pale {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.8rem;
+  font-size: 16px; 
+}
+.tm-section-title-2 {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 28px !important;
+  color: #28353E;
+  font-weight: 700 !important;
+}
+.tm-color-dark {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 15px !important;
+}
+.tm-color-shadow-2 {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 2rem;
+  padding-top: 0px !important;
+  margin-top: 0px !important;
+  font-size: 13px !important;
+}
+.employe {
+  font-family: 'Montserrat', sans-serif !important;
+  line-height: 2rem;
+  padding-top: 0px !important;
+  margin-top: 0px !important;
+  font-size: 13px !important;
+  color: #000 !important;
+}
+.type {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 16px !important;
+  color: #28353E;
+  font-weight: 700 !important;  
+}
+.tm-section-title {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 24px;
+}
+.tm-section-title i {
+  color: gold;
+  font-size: 13px;
+}
+.tm-section-title span {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 13px;
+}
+.tm-process-text {
+  font-family: 'Lato', sans-serif !important;
+}
+.tm-process-pers {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600;
+}
+.tm-profile-title {
+  font-family: 'Lato', sans-serif !important;
+}
+.tm-profile-text {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 11px;
+}
+.tm-profile-comment {
+  font-family: 'Montserrat', sans-serif !important;
+}
+.language {
+  font-family: 'Montserrat', sans-serif !important;
+  line-height: 1.6rem;
+}
+.clinic-questions-text {
+  font-family: 'Montserrat', sans-serif !important;
+}
+.clinic-questions-title {
+  line-height: 1.6rem;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 15px;
+}
+.clinic-title {
+  font-family: 'Lato', sans-serif !important;
+}
+.clinic-center-name {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  color: #28353e8e !important;
+}
+.clinic-center-km {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+}
+.card .tm-box-title {
+  font-family: 'Lato', sans-serif !important;
+}
+.card .tm-box-text {
+  font-family: 'Montserrat', sans-serif !important;
+}
+.newsletter {
+  font-family: 'Montserrat', sans-serif !important; 
+}
+.tm-form-wide label {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 14px;
+}
+.select {
+  font-family: 'Montserrat', sans-serif !important;
+}
+select#treatmentMethod.btn.btn-dropdown.dropdown-toggle {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px 0px 10px 10px;
+}
+select#sessionsDayCount.btn.btn-dropdown.dropdown-toggle {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+select#sessionsDay.btn.btn-dropdown.dropdown-toggle {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+select#session.btn.btn-dropdown.dropdown-toggle {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#checkInDate.form-control.bi.bi-chevron-down {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#checkOutDate.form-control.bi.bi-chevron-down {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}

@@ -10,47 +10,46 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-8 col-lg-7 col-xl-7">
-                        <div class="tm-section-title"><%- center.companyInformation.companyName  %> </div> 
+                        <div class="tm-section-title clinic"><%- center.companyInformation.companyName  %> </div> 
                           <div class="d-flex center-address">
-                            <div class="flex-grow-1"><p class="tm-color-shadow"><i class="bi bi-geo-alt-fill"></i> <%- center.address.addressDetailText  %> </p></div>
+                            <div class="flex-grow-1">
+                                <p class="tm-color-shadow "><i class="bi bi-geo-alt-fill"></i> <%- center.address.addressDetailText  %> </p></div>
                             <div class="flex-shrink-1 center-call"><a href="tel:<%-center.contactInformation.phone %>"><p><i class="bi bi-telephone-fill"></i> Merkezi Ara</p></a></div>
                           </div>
                           
-                        <div class="row">
-                            <img src="<%- center.companyInformation.photo[0]  %> " alt="<%- center.companyInformation.companyName  %> ">
-                            <!-- <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 clinic-images">
-                                <img src="../user/img/clinic/centers/clinic-i.png" class="left-first"
-                                    alt="Clinic Center i" />
-                                <img src="../user/img/clinic/centers/clinic-ii.png" class="left-second"
-                                    alt="Clinic Center ii" />
+                        <div class="row"> 
+                            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 clinic-images">
+                                <img src="<%- center.companyInformation.photo[0]  %> " class="left-first"
+                                    alt="<%- center.companyInformation.companyName  %>" />
+                                <img src="<%- center.companyInformation.photo[0]  %> " class="left-second"
+                                    alt="<%- center.companyInformation.companyName  %>" />
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 clinic-images">
-                                <img src="../user/img/clinic/centers/clinic-iii.png" class="right" alt="Clinic Center iii" />
-                            </div> -->
+                                <img src="<%- center.companyInformation.photo[0]  %> " class="right" alt="<%- center.companyInformation.companyName  %>" />
+                            </div>
+                        </div> 
+                        <div class="sub-image row align-items-start mt-3">
+                          <div class="col">
+                            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+                          </div>
+                          <div class="col">
+                            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+                          </div>
+                          <div class="col">
+                            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+                          </div>
+                          <div class="col">
+                            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+                          </div>
+                          <div class="col">
+                            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+                          </div>
                         </div> 
 
-                        <!-- <div class="row align-items-start mt-3">
-                          <div class="col">
-                            <img src="../user/img/clinic/centers/clinic-iv.png" width="100%" height="100%" alt="Clinic Center iv" />
-                          </div>
-                          <div class="col">
-                            <img src="../user/img/clinic/centers/clinic-v.png" width="100%" height="100%" alt="Clinic Center iv" />
-                          </div>
-                          <div class="col">
-                            <img src="../user/img/clinic/centers/clinic-vi.png" width="100%" height="100%" alt="Clinic Center iv" />
-                          </div>
-                          <div class="col">
-                            <img src="../user/img/clinic/centers/clinic-vii.png" width="100%" height="100%" alt="Clinic Center iv" />
-                          </div>
-                          <div class="col">
-                            <img src="../user/img/clinic/centers/clinic-viii.png" width="100%" height="100%" alt="Clinic Center iv" />
-                          </div>
-                        </div>  -->
-
                         <div class="row">
-                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 px-3">
                                 <div class="tm-content">
-                                    <img src="../user/img/clinic/icons/virus.png" width="20%" height="20%" alt="Icon Virus" />
+                                    <img src="../user/img/clinic/icons/virus.png" width="15%" height="20%" alt="Icon Virus" />
                                     <div class="covid"> Bu diyaliz merkezinde tüm Covid 19 kapsamında gerekli olan önemler
                                         alınmıştır. Sağlık ve hijyen konularında ekstra özen gösterilmektedir. <a href="">Merkez içinde alınan covid önlemlerini görmek için tıklayın.</a> </div>
                                 </div>
@@ -59,8 +58,8 @@
 
                         <div class="row my-4 mb-5">
                             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                <div class="tm-section-title">Türkmed Diyaliz Merkezi Hakkında</div>
-                                <div class="tm-color-pale">
+                                <div class="tm-section-title px-2">Türkmed Diyaliz Merkezi Hakkında</div>
+                                <div class="tm-color-pale px-2">
                                     Quis arcu congue est sit mi in netus egestas blandit fringilla vivamus vel
                                     scelerisque fames duis id magnis sed mollis duis sem sollicitudin faucibus quis
                                     aliquam at fermentum gravida molestie volutpat nunc enim proin fermentum, nibh urna
@@ -69,7 +68,10 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
+                    
                     <div class="col-sm-12 col-md-8 col-lg-5 col-xl-5">
                         <div class="clinic-map-open with-form">
                             <!-- <button type="button" class="btn-second" data-bs-toggle="modal" data-bs-target="#mapModal" data-toggle="modal" data-target="#mapModal">Harita Üzerinde Göster</button> -->
@@ -321,14 +323,14 @@
                     </div>
                 </div>
                 <div class="row tm-margin-b-30">
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 ">
+                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
                         <div class="tm-color-dark tm-f-600 tm-margin-b-10">Kabul Edilen Sigortalar</div>
                         <div>
                             <div class="tm-color-shadow-2">Özel Sağlık Sigortalı Merkez</div>
                             <div class="tm-color-shadow-2">Banka Anlaşmalı Merkez</div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
                         <div class="tm-color-dark tm-f-600 tm-margin-b-10">Seans İçi Hizmetler</div>
                         <div>
                             <div class="tm-color-shadow-2">Kahvaltı Hizmeti</div>
@@ -336,13 +338,13 @@
                             <div class="tm-color-shadow-2">Ücretsiz Wifi</div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-4">
                         <div class="tm-color-dark tm-f-600 tm-margin-b-10">Merkez Binası Tipi</div>
                         <div>
                             <div class="tm-color-shadow-2">Müstakil Binalı Merkez</div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
                         <div class="tm-color-dark tm-f-600 tm-margin-b-10">Tesis İçi İmkanlar</div>
                         <div>
                             <div class="tm-color-shadow-2">Tekerlekli Sandalye Kullanımına Uygun</div>
@@ -351,7 +353,7 @@
                     </div>
                 </div>
                 <div class="row tm-margin-b-30">
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 ">
+                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3 ">
                         <div class="tm-color-dark tm-f-600 tm-margin-b-10">Seans Saatleri</div>
                         <div>
                             <div class="tm-color-shadow-2">Sabah Seansı: 08:00-12:00</div>
@@ -360,7 +362,7 @@
                             <div class="tm-color-shadow-2">Gece Seansı: 21:30-00:30</div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
                         <div class="tm-color-dark tm-f-600 tm-margin-b-10">Diyaliz Cihazları</div>
                         <div>
                             <div class="tm-color-shadow-2">Fresenius</div>
@@ -369,7 +371,7 @@
                             <div class="tm-color-shadow-2">Nikkiso</div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
                         <div class="tm-color-dark tm-f-600 tm-margin-b-10">Sigorta </div>
                         <div>
                             <div class="tm-color-shadow-2">SSK Anlaşmalı</div>
@@ -378,7 +380,7 @@
                     </div>
                 </div>
                 <div class="row tm-margin-b-30">
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3">
                         <div class="tm-color-dark tm-f-600 tm-margin-b-10">Diyaliz Merkezi Sağlık Çalışanları</div>
                         <div>
                             <div class="tm-color-shadow-2"><span class="tm-color-dark employe">Nefroloji Uzmanı:</span> Prof.
@@ -649,7 +651,7 @@
             </div>
         </div>
 
-        <div id="section-v" class="tm-margin-5">
+        <div id="section-v" class="tm-margin-5 px-3">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -657,7 +659,7 @@
                         <div class="tm-color-pale tm-margin-b-20">Bulunduğunuz şehri keşfetmek daima iyi bir tercihtir.
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 px-3">
                         <div>
                             <div class="clinic-centers-title">
                                 <div class="clinic-icon"><img src="../user/img/clinic/icons/hospital.png"
@@ -898,10 +900,10 @@
 
     <!--======= NEWSLETTER =====-->
     <div id="section-xi" class="tm-bg-dark-blue">
-        <div class="container tm-p-4">
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
+        <div class="container tm-p-4 d-flex align-items-center justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7 mt-2">
             <div class="row"> 
-                    <div class="tm-text-white mb-3 text-center">Son gelişmelerden ve diyaliz fırsatlarından haberdar olabilmek
+                    <div class="tm-text-white mb-3 text-center newsletter">Son gelişmelerden ve diyaliz fırsatlarından haberdar olabilmek
                         için mail listemize abone olabilirsiniz.</div>                        
                     <div class="form-group bottom blue-input">
                         <input name="check-in" type="text" class="form-control form-control-md" id="inputCheckIn" placeholder="dialysing@demo.com.tr" />

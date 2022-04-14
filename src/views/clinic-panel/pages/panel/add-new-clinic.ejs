@@ -2,12 +2,14 @@
   <div class="content-wrapper">
     <div id="section-i" class="tm-p">
       <div class="row">
-        <div class="tm-section-title">Yeni Tesis Ekle</div>
+        <div class="tm-section-title">Yenİ Tesİs Ekle</div>
         <div class="admin-inner-text">Bu sayfada kayıtlı olan merkezlerinizi görüntüleyebilir ve yeni merkez ekleyebilirsiniz.</div>
+        <div class="add-center">
+          <a href="/panel/choose-personel" class="btn btn-second">Yeni Merkez Ekle</a>
+        </div>
         <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7">
-
           <% user.centerList.forEach(center => { %>
-                     <div class="clinic-center-box">
+                     <div class="clinic-center-box mt-5">
             <img src="<%- center.companyInformation.photo[0]  %> " alt="Clinic Center iii" class="clinic-img admin" />
             <div class="clinic-center-main-content">
               <div class="clinic-center-box-content">
@@ -35,10 +37,6 @@
             </div>
           </div>
           <% }) %>
-
-          <div>
-            <a href="/panel/choose-personel" class="btn btn-second">Yeni Merkez Ekle</a>
-          </div>
         </div>
       </div>
     </div>

@@ -340,3 +340,24 @@ input#explanation1.form-control {
   font-family: "Montserrat", sans-serif ;
   padding: 10px;
 }
+.clinic-center-box-content2 .span-text{
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.2rem;
+}
+.most{
+  font-size: 12px;
+  font-family: "Lato", sans-serif; 
+}
+.clinic-center-info .title {
+  font-family: "Lato", sans-serif;
+  font-size: 18px; 
+  margin-top: 15px;
+}
+.add-center a {
+  border: 2px #025c90 solid;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  color: #025c90;
+}

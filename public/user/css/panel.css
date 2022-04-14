@@ -361,3 +361,13 @@ input#explanation1.form-control {
   font-family: "Lato", sans-serif;
   color: #025c90;
 }
+.add-user input {
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif ;
+  padding: 10px;
+}
+.add-user .info {
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.3rem; 
+}

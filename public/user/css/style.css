@@ -382,12 +382,12 @@ input:checked + .tm-slider:before {
 .tm-article-pad {
   padding: 28px;
 }
-.tm-sidebar-pad {
+/* .tm-sidebar-pad {
   padding: 15px 20px;
-}
-.tm-sidebar-pad-2 {
+} */
+/* .tm-sidebar-pad-2 {
   padding: 21px 20px;
-}
+} */
 .tm-pad {
   padding: 20px;
 }
@@ -1438,7 +1438,7 @@ select.form-control {
   font-size: 0.75rem;
 }
 
-.tm-sidebar-title {
+/* .tm-sidebar-title {
   font-size: 1.3rem;
   margin-bottom: 5px;
 }
@@ -1447,7 +1447,7 @@ select.form-control {
   font-size: 1.2rem;
   letter-spacing: 1px;
   margin-bottom: 0;
-}
+} */
 
 .tm-recommended-item .tm-bg-gray {
   transition: all 0.3s ease;

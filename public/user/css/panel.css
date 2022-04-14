@@ -104,3 +104,15 @@
   margin-top: 5px;
   line-height: 1.5rem;
 }
+#sidebar{
+    font-family: 'Lato', sans-serif; 
+}
+#sidebar a:visited{
+  color: #fff;
+}
+#sidebar a:hover{
+  color: #28353e;
+}
+#sidebar a:active {
+  color: #19a2f2 !important;
+}

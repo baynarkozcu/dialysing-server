@@ -142,3 +142,23 @@
 .btn-second {
   font-family: "Lato", sans-serif; 
 }
+.title {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: bold; 
+}
+.text {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 5px !important;
+  font-size: 13px;
+  line-height: 1.5rem;
+  color: #28353e !important;
+  font-weight: 600;
+}
+.checkbox .tm-font-semibold {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  color: #28353e7a !important;
+  line-height: 1.2rem;
+  margin-top: 5px;
+}

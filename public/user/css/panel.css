@@ -258,3 +258,16 @@ input#others.form-control {
   border: 2px solid #28353eb6 !important;
   padding: 10px;
 }
+.visibilty .tm-section-title {
+  text-transform: capitalize;
+}
+.dropdown-custom select { 
+  width: 42% !important;
+  padding: 8px 5px 8px 20px !important;
+  margin: 0 !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px !important;
+}
+.token-number {
+  font-size: 15px !important;
+}

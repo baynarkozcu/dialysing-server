@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Khula&family=Lato&family=Montserrat&family=Roboto&display=swap");
+.index-company .tm-section-title { 
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #28353e;
+  margin-bottom: 10px;
+}
+.index-company .icon{ 
+  font-size: 10px !important;
+  color: #19a2f2;
+  width: 20px;
+}
+.index-company .tm-color-shadow { 
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+.index-company .tm-color-dark { 
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px !important;
+  color: #28353e !important;
+  font-weight: bold;
+}
+.index-company .clinic-image {
+  border-radius: 10px;
+}
+@media screen and (max-width: 992px) {
+  .index-company .clinic-image {
+    background-color: blue;
+    height: 400px;
+    width: auto;
+    margin-right: 20px;
+  }
+} 
+@media screen and (max-width: 600px) {
+  .index-company {
+    background-color: none;
+  }
+}
+.index-company .admin-box {
+  margin: 10px;
+  padding: 20px 20px 20px 20px;
+}
+.index-company .admin-box-title{ 
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+.index-company .admin-box-title span { 
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+.index-company .admin-box-text {
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+.index-company .tm-process-title { 
+  font-family: 'Lato', sans-serif;
+}
+.index-company .tm-process-subtitle{ 
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+.index-company .tm-process-pers-av { 
+  font-family: 'Montserrat', sans-serif;
+  color: #000 !important;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.index-company .tm-process-text { 
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  line-height: 1.2rem;
+  color: #28353e !important;
+}
+.index-company .tm-process-link { 
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+}
+.index-company .admin-single-box {
+  margin: 0px;
+  padding: 0px;
+}
+.index-company .admin-single-title{ 
+  font-family: 'Lato', sans-serif;
+  font-size: 11px; 
+}
+.index-company .total {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 14px !important;
+}
+.index-company .average {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 10px !important;
+}
+.index-company .admin-text {
+  font-family: 'Montserrat', sans-serif;
+  color: #000 !important;
+  font-size: 12px;
+  margin-top: 5px;
+  line-height: 1.5rem;
+}

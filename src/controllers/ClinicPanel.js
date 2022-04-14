@@ -362,7 +362,7 @@ class ClinicPanelController {
   // }
 
   analysis(req, res, next) {
-    res.render("clinic-panel/pages/panel/analysis", { layout: "clinic-panel/layouts/panel" });
+    res.render("clinic-panel/pages/panel/analysis", { layout: "clinic-panel/layouts/panel", user: req.user  });
   }
 
   answerWaitingRezervations(req, res, next) {
@@ -496,19 +496,19 @@ class ClinicPanelController {
   }
 
   clinicPoint(req, res, next) {
-    res.render("clinic-panel/pages/panel/clinic-point", { layout: "clinic-panel/layouts/panel" });
+    res.render("clinic-panel/pages/panel/clinic-point", { layout: "clinic-panel/layouts/panel", user: req.user });
   }
 
   competition(req, res, next) {
-    res.render("clinic-panel/pages/panel/competition", { layout: "clinic-panel/layouts/panel" });
+    res.render("clinic-panel/pages/panel/competition", { layout: "clinic-panel/layouts/panel", user: req.user  });
   }
 
   messageOptions(req, res, next) {
-    res.render("clinic-panel/pages/panel/message-options", { layout: "clinic-panel/layouts/panel" });
+    res.render("clinic-panel/pages/panel/message-options", { layout: "clinic-panel/layouts/panel", user: req.user });
   }
 
   paymentOptions(req, res, next) {
-    res.render("clinic-panel/pages/panel/payment-options", { layout: "clinic-panel/layouts/panel" });
+    res.render("clinic-panel/pages/panel/payment-options", { layout: "clinic-panel/layouts/panel", user: req.user });
   }
 
   async promotions(req, res, next) {
@@ -537,7 +537,7 @@ class ClinicPanelController {
   }
 
   propertiesAndServices(req, res, next) {
-    res.render("clinic-panel/pages/panel/properties-and-services", { layout: "clinic-panel/layouts/panel" });
+    res.render("clinic-panel/pages/panel/properties-and-services", { layout: "clinic-panel/layouts/panel", user: req.user });
   }
 
   questionsNew(req, res, next) {
@@ -566,11 +566,11 @@ class ClinicPanelController {
   }
 
   updateUser(req, res, next) {
-    res.render("clinic-panel/pages/panel/update-user", { layout: "clinic-panel/layouts/panel" });
+    res.render("clinic-panel/pages/panel/update-user", { layout: "clinic-panel/layouts/panel", user: req.user  });
   }
 
   uploadImage(req, res, next) {
-    res.render("clinic-panel/pages/panel/upload-image", { layout: "clinic-panel/layouts/panel" });
+    res.render("clinic-panel/pages/panel/upload-image", { layout: "clinic-panel/layouts/panel", user: req.user });
   }
 
   async visibility(req, res, next) {
@@ -580,7 +580,7 @@ class ClinicPanelController {
   }
 
   whatClosest(req, res, next) {
-    res.render("clinic-panel/pages/panel/what-closest", { layout: "clinic-panel/layouts/panel" });
+    res.render("clinic-panel/pages/panel/what-closest", { layout: "clinic-panel/layouts/panel", user: req.user });
   }
 }
 

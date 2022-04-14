@@ -235,8 +235,12 @@ input#distance7.form-control {
   font-size: 12px; 
   font-family: "Montserrat", sans-serif;
 }
+input#others.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
 .clinic-center-text {
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
   margin-top: 20px;
-}
+} 

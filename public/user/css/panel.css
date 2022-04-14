@@ -162,3 +162,81 @@
   line-height: 1.2rem;
   margin-top: 5px;
 }
+.admin-inner-text {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: bold; 
+  line-height: 1.5rem; 
+}
+.clinic-form-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 17px; 
+}
+.tm-form-wide label {
+  font-family: "Lato", sans-serif;
+  font-weight: 700; 
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+input#name-surname.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#distance.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname2.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#distance2.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname3.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#distance3.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname4.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#distance4.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname5.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#distance5.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname6.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#distance6.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname7.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+input#distance7.form-control {
+  font-size: 12px; 
+  font-family: "Montserrat", sans-serif;
+}
+.clinic-center-text {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+}

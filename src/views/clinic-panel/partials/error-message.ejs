@@ -1,0 +1,15 @@
+<% validationErrors.forEach(result => { %>
+  <strong><%- result.message %> %> </strong> 
+<% }) %>
+
+<% authorizationErrors.forEach(result => { %> 
+  <strong><%- result.message %> %> </strong> 
+<% }) %>
+
+<% loginMessages.forEach(result => { %> 
+  <strong><%- result.message %> %> </strong> 
+<% }) %>
+
+<% loginErrors.forEach(error => { %> 
+  <strong><%- error %> %> </strong> 
+<% }) %>

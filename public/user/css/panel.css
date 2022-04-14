@@ -244,3 +244,17 @@ input#others.form-control {
   font-family: "Montserrat", sans-serif;
   margin-top: 20px;
 } 
+.tm-process .tm-process-text {
+  font-size: 13px; 
+  line-height: 1.2rem;
+}
+.clinic-points {
+  font-size: 13px; 
+  line-height: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+}
+.clinic-points .circle {
+  border-radius: 50% !important;
+  border: 2px solid #28353eb6 !important;
+  padding: 10px;
+}

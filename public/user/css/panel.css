@@ -299,3 +299,12 @@ input#explanation1.form-control {
   font-family: "Montserrat", sans-serif;
   line-height: 1.2rem;
 }
+.answer { 
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.2rem; 
+}
+.tm-step a {
+  font-size: 15px !important;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}

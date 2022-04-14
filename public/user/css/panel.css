@@ -283,3 +283,11 @@ input#explanation1.form-control {
 .tm-steps a {
   font-size: 12px !important;
 }
+.admin-box-text span {
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+}
+.admin-box-text span span {
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+}

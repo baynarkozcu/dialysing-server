@@ -11,6 +11,9 @@
                 <div class="row top">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
                         <form class="tm-form" action="/panel/login" method="POST">
+                          <div class="error-handling">
+                            <% if (locals.validationErrors != null) { %> <%- include('../partials/error-message') %> <% } %>
+                            </div>
                             <div class="form-title text-center">Giriş Yap</div>
                             <div class="form-group">
                               <label for="login-email">Email Adresi</label>

@@ -37,7 +37,7 @@ router.post("/uploadfile", (req, res) => {
         country: result.deneme[randomCount].country,
         city: result.deneme[randomCount].city,
         district: result.deneme[randomCount].district,
-        adressDetailText: result.deneme[randomCount].adressDetailText,
+        addressDetailText: result.deneme[randomCount].adressDetailText,
         zipCode: result.deneme[randomCount].zipCode,
       },
       contactInformation: {

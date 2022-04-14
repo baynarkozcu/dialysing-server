@@ -331,7 +331,12 @@ input#explanation1.form-control {
   font-family: "Montserrat", sans-serif;
 }
 .password input{
-  font-size: 13px !important;
-  font-family: "Montserrat", sans-serif !important;
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
   padding: 10px;
 } 
+.contact input {
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif ;
+  padding: 10px;
+}

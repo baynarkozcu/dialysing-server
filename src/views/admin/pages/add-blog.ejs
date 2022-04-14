@@ -13,20 +13,20 @@
         <h3 class="card-title">Yeni Blog Yazısı Ekle</h3>
       </div>
       <div class="card-body">
-        <form>
+        <form action="/admin/add-blog" method="POST">
           <div class="form-group">
             <div class="row align-items-center">
               <label class="col-sm-2 form-label">Başlık</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" />
+                <input type="text" name="title" class="form-control" />
               </div>
             </div>
           </div>
           <div class="form-group">
             <div class="row align-items-center">
-              <label class="col-sm-2 form-label">Konu</label>
+              <label class="col-sm-2 form-label">Yazar</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" />
+                <input type="text" name="author" class="form-control" />
               </div>
             </div>
           </div>
@@ -34,13 +34,14 @@
             <div class="row">
               <label class="col-sm-2 form-label">Yazı</label>
               <div class="col-sm-10">
-                <textarea rows="10" class="form-control"></textarea>
+                <textarea rows="10" name="content" class="form-control"></textarea>
               </div>
             </div>
           </div>
+          <button type="submit" class="btn btn-primary btn-space">Ekle</button>
         </form>
       </div>
-      <div class="card-footer d-sm-flex">
+      <!-- <div class="card-footer d-sm-flex">
         <div class="mt-2 mb-2">
           <a href="javascript:void(0)" class="btn btn-icon btn-white btn-svg" data-toggle="tooltip" title="" data-original-title="Attach"
             ><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="100%" width="100%">
@@ -67,9 +68,9 @@
         </div>
         <div class="btn-list ml-auto">
           <button type="button" class="btn btn-danger btn-space">Vazgeç</button>
-          <button type="submit" class="btn btn-primary btn-space">Ekle</button>
+          
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

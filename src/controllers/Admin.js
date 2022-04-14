@@ -1,4 +1,6 @@
-
+const BlogService = require("../services/Blogs");
+const DialysisCenterService = require("../services/DialysisCenters");
+const { convertToSlug } = require("../scripts/utils/slugConverter");
 
 class AdminController {
   login(req, res) {
@@ -25,12 +27,45 @@ class AdminController {
     res.render("admin/pages/error-500", { layout: "admin/layouts/auth" });
   }
 
+  // BLOGS
+
   blogs(req, res) {
-    res.render("admin/pages/blogs", { layout: "admin/layouts/index" });
+    BlogService.index()
+      .then((blogs) => {
+        res.render("admin/pages/blogs", { layout: "admin/layouts/index", blogs });
+      })
+      .catch((err) => {
+        //TODO index Sayfasına Yönlendir..
+        console.log("Hata Çıktı...", err);
+        res.render("admin/pages/blogs", { layout: "admin/layouts/index" });
+      });
+  }
+
+  addViewBlog(req, res) {
+    res.render("admin/pages/add-blog", { layout: "admin/layouts/index" });
   }
 
   addBlog(req, res) {
-    res.render("admin/pages/add-blog", { layout: "admin/layouts/index" });
+    req.body.seflink = convertToSlug(req.body.title);
+    BlogService.create(req.body)
+      .then((result) => {
+        res.render("admin/pages/blogs", { layout: "admin/layouts/index" });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...");
+        res.render("admin/pages/add-blog", { layout: "admin/layouts/index" });
+      });
+  }
+
+  deleteBlog(req, res) {
+    BlogService.delete(req.query.id)
+      .then((result) => {
+        res.redirect("/admin/blogs");
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...");
+        res.render("admin/pages/blogs", { layout: "admin/layouts/index" });
+      });
   }
 
   datatable(req, res) {
@@ -38,7 +73,14 @@ class AdminController {
   }
 
   confirmClinic(req, res) {
-    res.render("admin/pages/confirm-clinic", { layout: "admin/layouts/index" });
+    DialysisCenterService.index({ isActive: false, personalInformation: { $ne: undefined } })
+      .then((centers) => {
+        res.render("admin/pages/confirm-clinic", { layout: "admin/layouts/index", centers });
+      })
+      .catch((error) => {
+        console.log("Hata Çıktı...", error);
+        res.render("admin/pages/confirm-clinic", { layout: "admin/layouts/index" });
+      });
   }
 
   appointments(req, res) {
@@ -49,6 +91,5 @@ class AdminController {
     res.render("admin/pages/center-list", { layout: "admin/layouts/index" });
   }
 }
-
 
 module.exports = new AdminController();

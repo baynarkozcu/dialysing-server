@@ -10,7 +10,7 @@ const Controller = require("../controllers/Home");
 router.get("/",  Controller.index);
 
 //* CLINIC PANEL INDEX
-router.get("/clinic", authenticate, Controller.clinicMain);
+router.get("/clinic", Controller.clinicMain);
 
 //* CLINIC LIST - CLINIC PAGE - APPOINTMENT PAGES
 router.get("/clinic/clinic-list", Controller.clinicList);

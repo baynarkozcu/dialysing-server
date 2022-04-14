@@ -280,3 +280,6 @@ input#explanation1.form-control {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
 }
+.tm-steps a {
+  font-size: 12px !important;
+}

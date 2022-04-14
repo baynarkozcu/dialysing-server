@@ -3,9 +3,6 @@ const UserService = require("../services/Users");
 const BlogService = require("../services/Blogs");
 const DialysisCenterService = require("../services/DialysisCenters");
 
-const adad = require("../models/DialysisCenters");
-
-const mongoose = require("mongoose");
 
 const passport2 = require("passport");
 require("../scripts/utils/passport-local-config")(passport2);

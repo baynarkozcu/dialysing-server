@@ -5,7 +5,7 @@ const DialysisCenterService = require("../services/DialysisCenters");
 const Promotions = require("../models/Promotions");
 
 const passport = require("passport");
-const a = require("../scripts/utils/passport-local-config")(passport);
+require("../scripts/utils/passport-local-config")(passport);
 
 const { passwordToHash, hashToPassword } = require("../scripts/utils/helper");
 const ErrorMessage = require("../scripts/utils/errorMessages");

@@ -330,3 +330,8 @@ input#explanation1.form-control {
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
 }
+.password input{
+  font-size: 13px !important;
+  font-family: "Montserrat", sans-serif !important;
+  padding: 10px;
+} 

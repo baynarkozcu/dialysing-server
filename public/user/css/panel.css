@@ -371,3 +371,9 @@ input#explanation1.form-control {
   font-family: "Montserrat", sans-serif;
   line-height: 1.3rem; 
 }
+.analysis-process-title {
+  font-family: "Montserrat", sans-serif;
+  color: #025c90;
+  font-weight: 700;
+  font-size: 20px;
+}

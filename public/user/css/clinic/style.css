@@ -2592,3 +2592,7 @@ footer a {
   font-family: 'Gilroy', sans-serif !important;  
   font-size: 12px !important; 
 }
+input#password.form-control {
+  padding: 15px !important;
+  font-size: 15px !important;
+}

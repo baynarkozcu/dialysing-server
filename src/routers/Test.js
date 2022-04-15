@@ -6,6 +6,8 @@ const model = require("../models/DialysisCenters");
 const PromotionService = require("../models/Promotions");
 
 const { randMovie, randCountry, randNumber } = require("@ngneat/falso");
+const { convertToSlug } = require("../scripts/utils/slugConverter");
+
 
 router.get("/", (req, res) => {
   res.render("test", { layout: "clinic-panel/layouts/deneme" });
@@ -27,7 +29,6 @@ router.post("/uploadfile", (req, res) => {
     var randomCount = Math.floor(Math.random() * 100);
 
     const dialysisCenter = {
-      // number: result.deneme[randomCount].number,
       companyInformation: {
         companyName: result.deneme[randomCount].companyName,
         bio: result.deneme[randomCount].bio,
@@ -47,6 +48,7 @@ router.post("/uploadfile", (req, res) => {
       centerDetails: {
         centerType: result.deneme[randomCount].centerType,
       },
+      seflink: convertToSlug(result.deneme[randomCount].companyName) +"-"+ new Date().valueOf(),
     };
 
     new model(dialysisCenter)

@@ -5,7 +5,7 @@ const DialysisCenterService = require("../services/DialysisCenters");
 const Promotions = require("../models/Promotions");
 
 const passport = require("passport");
-const a = require("../scripts/utils/passport-local-config")(passport);
+require("../scripts/utils/passport-local-config")(passport);
 
 const { passwordToHash, hashToPassword } = require("../scripts/utils/helper");
 const ErrorMessage = require("../scripts/utils/errorMessages");
@@ -199,8 +199,6 @@ class ClinicPanelController {
   chooseCenter(req, res) {
     const dialysingCenter = req.cookies.selectedDialysingCenter;
     if (dialysingCenter != undefined) {
-    
-
       dialysingCenter.personalInformation.nameSurname = req.body.nameSurname;
       dialysingCenter.personalInformation.email = req.body.email;
       dialysingCenter.personalInformation.phone = req.body.phone;
@@ -216,7 +214,7 @@ class ClinicPanelController {
 
   getClinicList(req, res) {
     console.log("getClinicList");
-    DialysisCenterService.indexTop10({ "companyInformation.companyName": { $regex: req.body.companyName, $options: "i" } })
+    DialysisCenterService.indexTop10({ "companyInformation.companyName": { $regex: req.body.companyName, $options: "i" }, isActive: false })
       .then((centers) => {
         res.render("clinic-panel/pages/add-clinic/choose-center", { layout: "clinic-panel/layouts/index", list: centers || [] });
       })

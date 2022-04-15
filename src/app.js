@@ -6,7 +6,7 @@ const path = require("path");
 var cookieParser = require("cookie-parser");
 
 
-const { HomeRouter, ClinicPanelRouter, TestRouter } = require("./routers");
+const { HomeRouter, ClinicPanelRouter, AdminRouter, TestRouter } = require("./routers");
 const errorHandler = require("./middlewares/errorHandler");
 
 const session = require("express-session");
@@ -84,6 +84,7 @@ app.listen(process.env.APP_PORT, () => {
   console.log(`Server listening on port ${process.env.APP_PORT}`);
   app.use("/", HomeRouter);
   app.use("/panel", ClinicPanelRouter);
+  app.use("/admin", AdminRouter);
 
   app.use("/test", TestRouter);
 

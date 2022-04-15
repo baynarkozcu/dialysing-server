@@ -28,15 +28,15 @@
           <form class="tm-form-wide" action="/panel/choose-center" method="POST">
             <div class="form-group">
               <label for="name-surname">Ad Soyad</label>
-              <input type="text" class="form-control" id="nameSurname" name="nameSurname" value="<%- user.nameSurname || '' %>" placeholder="Adınız Soyadınız" />
+              <input type="text" class="form-control" id="nameSurname" name="nameSurname" value="<%- user.nameSurname || '' %>" placeholder="Adınız Soyadınız" disabled />
             </div>
             <div class="form-group">
               <label for="email">Email Adresi</label>
-              <input type="email" class="form-control" id="email" name="email" value="<%- user.email || '' %>" aria-describedby="email" placeholder="Email Adresiz" />
+              <input type="email" class="form-control" id="email" name="email" value="<%- user.email || '' %>" aria-describedby="email" placeholder="Email Adresiz" disabled />
             </div>
             <div class="form-group">
               <label for="phone">Cep Telefonu</label>
-              <input type="tel" class="form-control" id="phone" name="phone" value="<%- user.phone || '' %>" placeholder="Cep Telefonunuz" />
+              <input type="tel" class="form-control" id="phone" name="phone" value="<%- user.phone || '' %>" placeholder="Cep Telefonunuz" disabled />
             </div>
             <div class="form-group">
               <label for="job-dropdown">Görevinizi Seçiniz</label>

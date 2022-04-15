@@ -2,7 +2,6 @@ const Mongoose = require("mongoose");
 
 const DialysisCenterSchema = Mongoose.Schema(
   {
-    number: Number,
     personalInformation: {
       nameSurname: String,
       email: String,
@@ -72,20 +71,15 @@ const DialysisCenterSchema = Mongoose.Schema(
     ],
     isActive: {
       type: Boolean,
-      default: true,
+      default: false,
     },
-    // token: [{
-    //   packageName: String,
-    //   price: Number,
-    //   startDate: Date,
-    //   endDate: Date,
-    // }],
     promotions: [
       {
         type: Mongoose.Types.ObjectId,
         ref: "Promotions",
       },
     ],
+    seflink: String,
   },
   { timestamps: true, versionKey: false }
 );

@@ -17,19 +17,14 @@ const i18n = new I18n({
   //locales: ["en", "uk", "tr", "ps"],
   defaultLocale: "en",
   directory: path.resolve(__dirname, "../public/", "locales"),
-  
 });
 
-
-
-// console.log("Languages", i18n.getLocales());
-// console.log("Language", i18n.getLocale());
-// console.log(i18n.__("1"));
-// i18n.setLocale("uk");
-// console.log(i18n.__("1"));
-// i18n.setLocale("tr");
-// console.log(i18n.__("1"));
-// i18n.setLocale("en");
-// console.log(i18n.__("1"));
-
-module.exports = i18n;
+module.exports = function (req, res, next) {
+  
+  i18n.init(req, res);
+  if (req.cookies.lang) {
+    i18n.setLocale(req.cookies.lang);
+  }
+  res.setLocale(i18n.getLocale());
+  return next();
+};

@@ -22,5 +22,6 @@ router.get("/confirm-clinic", Controller.confirmClinicView);
 router.get("/confirm-clinic/:id", idChecker(),  Controller.confirmClinic);
 router.get("/appointments", Controller.appointments);
 router.get("/center-list", Controller.centerList);
+router.get("/deneme/:lang", Controller.deneme);
 
 module.exports = router;

@@ -75,11 +75,9 @@ class AdminController {
   }
 
   confirmClinicView(req, res) {
-    // i18n.setLocale("tr")
-    // console.log(i18n.getLocale());
     DialysisCenterService.index({ isActive: false, personalInformation: { $ne: undefined } })
       .then((centers) => {
-        res.render("admin/pages/confirm-clinic", { layout: "admin/layouts/index", centers, i18n });
+        res.render("admin/pages/confirm-clinic", { layout: "admin/layouts/index", centers });
       })
       .catch((error) => {
         console.log("Hata Çıktı...", error);
@@ -105,6 +103,12 @@ class AdminController {
 
   centerList(req, res) {
     res.render("admin/pages/center-list", { layout: "admin/layouts/index" });
+  }
+
+  //! TODO Change Language
+  deneme(req, res) {
+    res.cookie("lang", req.params.lang);
+    res.redirect("/admin/confirm-clinic");
   }
 }
 

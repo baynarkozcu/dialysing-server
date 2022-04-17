@@ -83,7 +83,8 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "./views"));
 
-app.use(i18n.init);
+app.use(i18n);
+
 
 app.listen(process.env.APP_PORT, () => {
   console.log(`Server listening on port ${process.env.APP_PORT}`);

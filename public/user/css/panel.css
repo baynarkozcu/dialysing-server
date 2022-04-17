@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Khula&family=Lato&family=Montserrat&family=Roboto&display=swap');
+.index-company .tm-section-title {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #28353e;
+  margin-bottom: 10px;
+}
+.index-company .icon {
+  font-size: 10px !important;
+  color: #19a2f2;
+  width: 20px;
+}
+.index-company .tm-color-shadow {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+.index-company .tm-color-dark {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px !important;
+  color: #28353e !important;
+  font-weight: bold;
+}
+.index-company .clinic-image {
+  border-radius: 10px;
+}
+@media screen and (max-width: 992px) {
+  .index-company .clinic-image {
+    background-color: blue;
+    height: 400px;
+    width: auto;
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .index-company {
+    background-color: none;
+  }
+}
+.index-company .admin-box {
+  margin: 10px;
+  padding: 20px 20px 20px 20px;
+}
+.index-company .admin-box-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+}
+.index-company .admin-box-title span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+}
+.index-company .admin-box-text {
+  margin-top: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+}
+.index-company .tm-process-title {
+  font-family: "Lato", sans-serif;
+}
+.index-company .tm-process-subtitle {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.index-company .tm-process-pers-av {
+  font-family: "Montserrat", sans-serif;
+  color: #000 !important;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.index-company .tm-process-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  line-height: 1.2rem;
+  color: #28353e !important;
+}
+.index-company .tm-process-link {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+}
+.index-company .admin-single-box {
+  margin: 0px;
+  padding: 0px;
+}
+.index-company .admin-single-title {
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+}
+.index-company .total {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 14px !important;
+}
+.index-company .average {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 10px !important;
+}
+.index-company .admin-text {
+  font-family: "Montserrat", sans-serif;
+  color: #000 !important;
+  font-size: 12px;
+  margin-top: 5px;
+  line-height: 1.5rem;
+}
+#sidebar {
+  font-family: "Lato", sans-serif;
+}
+#sidebar a:visited {
+  color: #fff;
+}
+#sidebar a:hover {
+  color: #28353e;
+}
+#sidebar a:active {
+  color: #19a2f2 !important;
+}
+.tm-box-info {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  line-height: 1.2rem;
+}
+.tm-box-title {
+  font-family: "Lato", sans-serif;
+}
+.tm-section-title {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #28353e;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.button-choose {
+  font-size: 12px !important;
+  font-family: "Lato", sans-serif;
+}
+.btn-forth {
+  font-family: "Lato", sans-serif;
+}
+.btn-second {
+  font-family: "Lato", sans-serif;
+}
+.title {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.text {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 5px !important;
+  font-size: 13px;
+  line-height: 1.5rem;
+  color: #28353e !important;
+  font-weight: 600;
+}
+.checkbox .tm-font-semibold {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  color: #28353e7a !important;
+  line-height: 1.2rem;
+  margin-top: 5px;
+}
+.admin-inner-text {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+.clinic-form-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+}
+.tm-form-wide label {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+input#name-surname.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#distance.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname2.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#distance2.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname3.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#distance3.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname4.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#distance4.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname5.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#distance5.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname6.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#distance6.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#name-surname7.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#distance7.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+input#others.form-control {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+.clinic-center-text {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+}
+.tm-process .tm-process-text {
+  font-size: 13px;
+  line-height: 1.2rem;
+}
+.clinic-points {
+  font-size: 13px;
+  line-height: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+}
+.clinic-points .circle {
+  border-radius: 50% !important;
+  border: 2px solid #28353eb6 !important;
+  padding: 10px;
+}
+.visibilty .tm-section-title {
+  text-transform: capitalize;
+}
+.dropdown-custom select {
+  width: 42% !important;
+  padding: 8px 5px 8px 20px !important;
+  margin: 0 !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px !important;
+}
+.token-number {
+  font-size: 15px !important;
+}
+.promotion-dates {
+  font-family: "Lato", sans-serif;
+  font-size: 13px !important;
+}
+input#explanation1.form-control {
+  padding: 8px 8px 8px 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+.tm-steps a {
+  font-size: 12px !important;
+}
+.admin-box-text span {
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+}
+.admin-box-text span span {
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+}
+.tm-font-semibold {
+  font-family: 'Khula', sans-serif !important;
+  font-size: 18px;
+}
+.tm-color-dark {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.2rem;
+}
+.answer { 
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.2rem; 
+}
+.tm-step a {
+  font-size: 15px !important;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.tm-color-shadow-3 {
+  font-size: 13px;
+  line-height: 1.3rem;
+}
+.questions-content .tm-process-text {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.questions-content .tm-process-pers {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+.questions-content button {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+.question .tm-color-second span {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+.password input{
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+} 
+.contact input {
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif ;
+  padding: 10px;
+}
+.clinic-center-box-content2 .span-text{
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.2rem;
+}
+.most{
+  font-size: 12px;
+  font-family: "Lato", sans-serif; 
+}
+.clinic-center-info .title {
+  font-family: "Lato", sans-serif;
+  font-size: 18px; 
+  margin-top: 15px;
+}
+.add-center a {
+  border: 2px #025c90 solid;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  color: #025c90;
+}
+.add-user input {
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif ;
+  padding: 10px;
+}
+.add-user .info {
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.3rem; 
+}
+.analysis-process-title {
+  font-family: "Montserrat", sans-serif;
+  color: #025c90;
+  font-weight: 700;
+  font-size: 20px;
+}

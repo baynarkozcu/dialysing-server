@@ -22321,8 +22321,7 @@ dl li {
   margin: auto;
   height: 300px;
   width: 100%;
-  font: 14px / normal SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  font-size: 14px;
 }
 
 .ace_editor .ace_content {
@@ -23103,7 +23102,7 @@ body.avgrund-active {
 
 @media (max-width: 991px) {
   .sidebar .nav .nav-item .nav-link {
-    border-radius: 0;
+    border-radius: 10px;
   }
 }
 
@@ -23119,7 +23118,7 @@ body.avgrund-active {
 }
 
 .rtl .sidebar .nav .nav-item .nav-link i.menu-icon {
-  margin-left: 2rem;
+  margin-left: 1.2rem;
   margin-right: 0;
 }
 
@@ -23175,21 +23174,24 @@ body.avgrund-active {
   background-color: #28353e;
 }
 
-.sidebar .nav .nav-item.active > .nav-link {
-  /* background: #fff;
+/* .sidebar .nav .nav-item.active > .nav-link {
+  background: #fff;
   position: relative;
   font-weight: bold;
-  font-size: 13px; */
-}
+  font-size: 13px;
+} */
 
 .sidebar .nav .nav-item.active > .nav-link i,
 .sidebar .nav .nav-item.active > .nav-link .menu-title,
 .sidebar .nav .nav-item.active > .nav-link .menu-arrow {
   color: #ffffff;
 }
+@import url("https://fonts.googleapis.com/css2?family=Khula&family=Lato&family=Montserrat&family=Roboto&display=swap");
 
 .sidebar .nav .nav-item.active > .nav-link .menu-title {
-  font-size: 13px;
+  font-size: 10px;
+  font-family: 'Lato', sans-serif; 
+  font-weight: 700;
 }
 
 .sidebar .nav .nav-item.active > .nav-link i.menu-arrow::before {
@@ -23230,7 +23232,6 @@ body.avgrund-active {
 .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link,
 .sidebar .nav:not(.sub-menu) > .nav-item:hover[aria-expanded="true"] {
   color: #fff;
-  background-color: #28353e;
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link {

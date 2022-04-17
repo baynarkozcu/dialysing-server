@@ -2,8 +2,9 @@
   <div class="content-wrapper">
     <div id="section-i" class="tm-p">
       <div class="row">
-        <div class="tm-section-title">Merkez Değerlendirmeleri</div>
-        <div class="admin-inner-text">Hastalarınızın merkeziniz hakkında yaptığı değerlendirmeleri bu sayfada görüntüleyebilirsiniz.</div>
+        <div class="tm-section-title">Merkez Değerlendİrmelerİ</div>
+        <div class="admin-inner-text">Hastalarınızın merkeziniz hakkında yaptığı değerlendirmeleri bu sayfada
+          görüntüleyebilirsiniz.</div>
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <form class="tm-form-wide">
             <div class="form-box questions with-evaluation">
@@ -53,45 +54,41 @@
               </div>
               <div class="questions-content">
                 <div class="question">
-                  <div class="tm-color-second tm-font-semibold">Ayhan Fırat Fındıkoğlu<span>Amerika, Newyork</span></div>
-                  <div class="tm-color-dark tm-margin-t-1">“Memleketime gelirken diyaliz problemimi nasıl çözeceğimi düşünüyordum ve websitenize denk geldim. Bundan sonra dilediğim zaman aklımda hiç soru işareti kalmadan memleketime gelebileceğim için çok mutluyum, iyi ki böyle bir sistem oluşturmuşsunuz”.</div>
+                  <div class="tm-color-second tm-font-semibold mb-1">Ayhan Fırat Fındıkoğlu<span>Amerika, Newyork</span>
+                  </div>
+                  <div class="tm-color-dark">“Memleketime gelirken diyaliz problemimi nasıl çözeceğimi
+                    düşünüyordum ve websitenize denk geldim. Bundan sonra dilediğim zaman aklımda hiç soru işareti
+                    kalmadan memleketime gelebileceğim için çok mutluyum, iyi ki böyle bir sistem oluşturmuşsunuz”.
+                  </div>
                 </div>
               </div>
               <div class="questions-content">
-                <button class="button-delete">Değerlendirmeyi Kaldır<img src="../clinic-panel/images/icons/delete.png" alt="Icon Delete" /></button>
-                <button class="button-delete">Değerlendirmeyi Sayfaya Sabitle<img src="../clinic-panel/images/icons/pin.png" alt="Icon Pin" /></button>
+                <button class="button-delete">Değerlendirmeyi Kaldır<img src="../clinic-panel/images/icons/delete.png"
+                    alt="Icon Delete" /></button>
+                <button class="button-delete">Değerlendirmeyi Sayfaya Sabitle<img
+                    src="../clinic-panel/images/icons/pin.png" alt="Icon Pin" /></button>
               </div>
             </div>
 
-            <% center.centerEveluation.forEach(eveluation => { %>
-                         <hr class="question-hr" />
-            <div class="form-box questions evaluation">
-              <div class="questions-content">
-                <div class="question">
-                  <div class="tm-color-second tm-font-semibold">Neslihan Çelik</div>
-                  <div class="tm-color-dark tm-margin-t-1"><%- eveluation.evaluationMessage  %> </div>
+            <% center.centerEveluation.forEach(eveluation=> { %>
+              <hr class="question-hr" />
+              <div class="form-box questions evaluation">
+                <div class="questions-content">
+                  <div class="question">
+                    <div class="tm-color-second tm-font-semibold">Neslihan Çelik</div>
+                    <div class="tm-color-dark tm-margin-t-1">
+                      <%- eveluation.evaluationMessage %>
+                    </div>
+                  </div>
+                </div>
+                <div class="questions-content">
+                  <button class="button-delete">Değerlendirmeyi Kaldır<img src="../clinic-panel/images/icons/delete.png"
+                      alt="Icon Delete" /></button>
+                  <button class="button-delete">Değerlendirmeyi Sayfaya Sabitle<img
+                      src="../clinic-panel/images/icons/pin.png" alt="Icon Pin" /></button>
                 </div>
               </div>
-              <div class="questions-content">
-                <button class="button-delete">Değerlendirmeyi Kaldır<img src="../clinic-panel/images/icons/delete.png" alt="Icon Delete" /></button>
-                <button class="button-delete">Değerlendirmeyi Sayfaya Sabitle<img src="../clinic-panel/images/icons/pin.png" alt="Icon Pin" /></button>
-              </div>
-            </div>
-            <% }) %>
-
-            <!-- <hr class="question-hr" />
-            <div class="form-box questions evaluation">
-              <div class="questions-content">
-                <div class="question">
-                  <div class="tm-color-second tm-font-semibold">Kristin Watson<span>South Dakota</span></div>
-                  <div class="tm-color-dark tm-margin-t-1">“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet”.</div>
-                </div>
-              </div>
-              <div class="questions-content">
-                <button class="button-delete">Değerlendirmeyi Kaldır<img src="../clinic-panel/images/icons/delete.png" alt="Icon Delete" /></button>
-                <button class="button-delete">Değerlendirmeyi Sayfaya Sabitle<img src="../clinic-panel/images/icons/pin.png" alt="Icon Pin" /></button>
-              </div>
-            </div> -->
+              <% }) %> 
           </form>
         </div>
       </div>
@@ -103,7 +100,8 @@
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="suggestion-button">
-            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png" alt="Icon Suggestion" />Öneriler</button>
+            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png"
+                alt="Icon Suggestion" />Öneriler</button>
           </div>
         </div>
       </div>
@@ -111,5 +109,5 @@
   </div>
 
   <%- include("../../partials/footer") %>
-  <!-- partial -->
+    <!-- partial -->
 </div>

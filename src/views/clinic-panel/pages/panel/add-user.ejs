@@ -28,14 +28,13 @@
                 </div>
               </div>
             </div>
-            <div class="tm-margin-t-2">
+            <!-- <div class="tm-margin-t-2">
               <button type="submit" class="btn-second">Yeni Kullanıcı Ekleyin</button>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7">
-          <form class="tm-form-wide">
-            <div class="clinic-form-title">Yeni Kullanıcı Ekleyin</div>
+          <form class="tm-form-wide add-user"> 
             <div class="form-group">
               <label for="email">Yeni Kullanıcı Ekleyin</label>
               <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Eklemek istediğiniz kullanıcının email adresini giriniz" />
@@ -65,21 +64,18 @@
             </div>
             <div class="admin-inner-text">Eklediğiniz kullanıcı seçtiğiniz merkez üzerinde yetki sahibi olacaktır.</div>
             <div class="clinic-form-title">Yetki Seçiniz</div>
-            <div class="form-group radio">
-              <label class="container"
-                >Yönetici
+            <div class="form-group radio add-user">
+              <label class="container">Yönetici
                 <input type="radio" checked="checked" name="radio" />
                 <span class="checkmark"></span>
                 <div class="info">Merkezin admin sayfasının tamamını kontrol edebilir. Rezervasyon görüntüleyebilir ve onaylayabilir, fiyatları düzenleyebilir, sorulara yanıt verebilir. İstatistikleri görüntüleyebilir.</div>
               </label>
-              <label class="container unselected"
-                >Baş Hemşire
+              <label class="container unselected">Baş Hemşire
                 <input type="radio" name="radio" />
                 <span class="checkmark"></span>
                 <div class="info">Hasta rezervasyonlarını görüntüleyebilir ve onaylayabilir, mesajları görüntüleyebilir ve yanıtlayabilir.</div>
               </label>
-              <label class="container unselected"
-                >Hasta Kabul
+              <label class="container unselected">Hasta Kabul
                 <input type="radio" name="radio" />
                 <span class="checkmark"></span>
                 <div class="info">Müsaitlik durumunu kontrol edebilir, rezervasyonları görüntüleyebilir ve onaylayabilir</div>

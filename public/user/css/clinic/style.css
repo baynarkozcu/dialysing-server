@@ -464,9 +464,9 @@ p {
   font-weight: normal;
 }
 /*Navbar*/
-.logo {
+/* .logo {
   font-size: 28px;
-}
+} */
 .logo span {
   color: #19a2f2;
 }
@@ -480,9 +480,9 @@ p {
   align-items: center;
 }
 
-.navbar .nav-item {
+/* .navbar .nav-item {
   margin: 0 0.5rem;
-}
+} */
 
 .navbar .nav-item.center {
   display: flex;
@@ -497,9 +497,9 @@ p {
   color: #ffffff;
 }
 
-.navbar-brand {
+/* .navbar-brand {
   font-weight: 600;
-}
+} */
 
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(238, 80, 87, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
@@ -2081,6 +2081,10 @@ footer a {
     background-color: #28353e;
     z-index: 99;
   }
+  #mainNav li {
+    margin: 0px;
+    padding: 0px;
+  }
 
   .navbar .navbar-nav {
     align-items: center;
@@ -2577,3 +2581,18 @@ footer a {
   font-size: 12px;
   font-family: 'Lato', sans-serif;  
 }  
+.logo { 
+  font-size: 25px !important;
+  font-weight: 600 !important;
+}
+.buttons a {
+  font-size: 11px !important;
+}
+.language-selection select {
+  font-family: 'Gilroy', sans-serif !important;  
+  font-size: 12px !important; 
+}
+input#password.form-control {
+  padding: 15px !important;
+  font-size: 15px !important;
+}

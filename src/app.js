@@ -5,6 +5,9 @@ const loaders = require("./loaders");
 const path = require("path");
 var cookieParser = require("cookie-parser");
 
+const i18n = require("./i18n.config");
+
+
 
 const { HomeRouter, ClinicPanelRouter, AdminRouter, TestRouter } = require("./routers");
 const errorHandler = require("./middlewares/errorHandler");
@@ -79,6 +82,9 @@ const expressLayouts = require("express-ejs-layouts");
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "./views"));
+
+app.use(i18n);
+
 
 app.listen(process.env.APP_PORT, () => {
   console.log(`Server listening on port ${process.env.APP_PORT}`);

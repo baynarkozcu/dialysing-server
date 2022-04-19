@@ -18,8 +18,10 @@ router.get("/add-blog", Controller.addViewBlog);
 router.post("/add-blog", Controller.addBlog);
 router.get("/delete-blog", Controller.deleteBlog);
 router.get("/datatable", Controller.datatable);
-router.get("/confirm-clinic", Controller.confirmClinic);
+router.get("/confirm-clinic", Controller.confirmClinicView);
+router.get("/confirm-clinic/:id", idChecker(),  Controller.confirmClinic);
 router.get("/appointments", Controller.appointments);
 router.get("/center-list", Controller.centerList);
+router.get("/deneme/:lang", Controller.deneme);
 
 module.exports = router;

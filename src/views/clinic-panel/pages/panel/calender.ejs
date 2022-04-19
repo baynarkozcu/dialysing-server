@@ -96,16 +96,69 @@
             </div>
           </form>
         </div>
-        <div class="tm-section-title blue calendar-title">Takvim</div>
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <div class="tm-form-wide">
-            <div class="calendar-select">
-              <button class="btn-second">Önceki Ay</button>
-              <div class="current-month">Eylül 2021</div>
-              <button class="btn-second">Sonraki Ay</button>
-            </div>
-            <div class="calendar">
+       
+        <div class="tm-section-title blue calendar-title calendar-wrapper">Takvim</div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12"> 
+        <div class="wrapper">
+
+          <div class="container-calendar">
+              <h3 id="monthAndYear"></h3>
+              
+              <div class="button-container-calendar">
+                  <button id="previous" class="btn-second" onclick="previous()">&#8249;</button>
+                  <button id="next" onclick="next()">&#8250;</button>
+              </div>
+              
+              <table class="table-calendar" id="calendar" data-lang="en">
+                  <thead id="thead-month"></thead>
+                  <tbody id="calendar-body"></tbody>
+              </table>
+              
+              <div class="footer-container-calendar">
+                   <label for="month">Jump To: </label>
+                   <select id="month" onchange="jump()">
+                       <option value=0>Jan</option>
+                       <option value=1>Feb</option>
+                       <option value=2>Mar</option>
+                       <option value=3>Apr</option>
+                       <option value=4>May</option>
+                       <option value=5>Jun</option>
+                       <option value=6>Jul</option>
+                       <option value=7>Aug</option>
+                       <option value=8>Sep</option>
+                       <option value=9>Oct</option>
+                       <option value=10>Nov</option>
+                       <option value=11>Dec</option>
+                   </select>
+                   <select id="year" onchange="jump()"></select>       
+              </div>
+      
+          </div>
+          
+      </div> 
+
+
+        
+
+
+
+        
+
+        <!-- <div class="tm-section-title blue calendar-title calendar-wrapper">Takvim</div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
+          <div class="tm-form-wide calendar">
+            <!-- <div class="calendar-select current-date">
+              <button class="btn-second prev" onclick="prevMonth()">Önceki Ay</button>
+              <div class="current-month current-month-year">Eylül 2021</div>
+              <div class="current-date current-month">
+                <span id="current_month">Month</span>
+                <span id="current_year">0000</span>
+              </div>
+              <button class="btn-second next" onclick="nextMonth()">Sonraki Ay</button>
+            </div> -->
+            <div class="calendar ">
               <div class="row">
+                <div class="col no-padding">
                 <div class="col">
                   <div class="calendar-day"></div>
                   <div class="seans-box">
@@ -116,8 +169,10 @@
                     <div class="calendar-seans-name">Gece</div>
                   </div>
                 </div>
+                </div>
+                <div class="calendar-body" id="calendar_body"></div>
                 <div class="col no-padding">
-                  <div class="calendar-day">Pazartesi</div>
+                  <div class="calendar-day">Pazartesi</div> 
                   <div class="calendar-box">
                     <div class="calendar-date">01</div>
                     <div class="calendar-others-time">2</div>
@@ -208,7 +263,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+                <!-- <div class="row">
                 <div class="col">
                   <div class="seans-box">
                     <div class="calendar-seans">Seanslar</div>
@@ -217,8 +272,8 @@
                     <div class="calendar-seans-name">Akşam</div>
                     <div class="calendar-seans-name">Gece</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">08</div>
                     <div class="calendar-others-time">2</div>
@@ -229,8 +284,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">09</div>
                     <div class="calendar-others-time">2</div>
@@ -241,8 +296,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">10</div>
                     <div class="calendar-others-time">2</div>
@@ -253,8 +308,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date future">11</div>
                     <div class="calendar-others-time next">2</div>
@@ -265,8 +320,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">12</div>
                     <div class="calendar-others-time next">2</div>
@@ -277,8 +332,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">13</div>
                     <div class="calendar-others-time next">2</div>
@@ -289,8 +344,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">14</div>
                     <div class="calendar-others-time next">2</div>
@@ -301,8 +356,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-              </div>
+                </div> -->
+                <!-- </div>
               <div class="row">
                 <div class="col">
                   <div class="seans-box">
@@ -312,8 +367,8 @@
                     <div class="calendar-seans-name">Akşam</div>
                     <div class="calendar-seans-name">Gece</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">15</div>
                     <div class="calendar-others-time next">2</div>
@@ -324,8 +379,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">16</div>
                     <div class="calendar-others-time next">2</div>
@@ -336,8 +391,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">17</div>
                     <div class="calendar-others-time next">2</div>
@@ -348,8 +403,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">18</div>
                     <div class="calendar-others-time next">2</div>
@@ -360,8 +415,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">19</div>
                     <div class="calendar-others-time next">2</div>
@@ -372,8 +427,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">20</div>
                     <div class="calendar-others-time next">2</div>
@@ -384,8 +439,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">21</div>
                     <div class="calendar-others-time next">2</div>
@@ -396,8 +451,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-              </div>
+                </div> -->
+                <!-- </div>
               <div class="row">
                 <div class="col">
                   <div class="seans-box">
@@ -407,8 +462,8 @@
                     <div class="calendar-seans-name">Akşam</div>
                     <div class="calendar-seans-name">Gece</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">22</div>
                     <div class="calendar-others-time next">2</div>
@@ -419,8 +474,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">23</div>
                     <div class="calendar-others-time next">2</div>
@@ -431,8 +486,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">24</div>
                     <div class="calendar-others-time next">2</div>
@@ -443,8 +498,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">25</div>
                     <div class="calendar-others-time next">2</div>
@@ -455,8 +510,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">26</div>
                     <div class="calendar-others-time next">2</div>
@@ -467,8 +522,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">27</div>
                     <div class="calendar-others-time next">2</div>
@@ -479,8 +534,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">28</div>
                     <div class="calendar-others-time next">2</div>
@@ -491,8 +546,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-              </div>
+                </div> -->
+                <!-- </div>
               <div class="row">
                 <div class="col">
                   <div class="seans-box">
@@ -502,8 +557,8 @@
                     <div class="calendar-seans-name">Akşam</div>
                     <div class="calendar-seans-name">Gece</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">29</div>
                     <div class="calendar-others-time next">2</div>
@@ -514,8 +569,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">30</div>
                     <div class="calendar-others-time next">2</div>
@@ -526,8 +581,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box">
                     <div class="calendar-date">31</div>
                     <div class="calendar-others-time next">2</div>
@@ -538,8 +593,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box not-this-month">
                     <div class="calendar-date">01</div>
                     <div class="calendar-others-time next">2</div>
@@ -550,8 +605,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box not-this-month">
                     <div class="calendar-date">02</div>
                     <div class="calendar-others-time next">2</div>
@@ -562,8 +617,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box not-this-month">
                     <div class="calendar-date">03</div>
                     <div class="calendar-others-time next">2</div>
@@ -574,8 +629,8 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
-                <div class="col no-padding">
+                </div> -->
+                <!-- <div class="col no-padding">
                   <div class="calendar-box not-this-month">
                     <div class="calendar-date">04</div>
                     <div class="calendar-others-time next">2</div>
@@ -586,28 +641,29 @@
                     <hr class="calendar-hr" />
                     <div class="calendar-others-time next">1</div>
                   </div>
-                </div>
+                </div> -->
+                <!-- </div> -->
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- content-wrapper ends -->
-  <div id="suggestion">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <div class="suggestion-button">
-            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png" alt="Icon Suggestion" />Öneriler</button>
+    <!-- content-wrapper ends -->
+    <div id="suggestion">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="suggestion-button">
+              <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png"
+                  alt="Icon Suggestion" />Öneriler</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <%- include("../../partials/footer") %>
+
+      <!-- partial -->
   </div>
-
-  <%- include("../../partials/footer") %>
-
-  <!-- partial -->
-</div>

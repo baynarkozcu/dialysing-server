@@ -3,6 +3,7 @@ const UserService = require("../services/Users");
 const BlogService = require("../services/Blogs");
 const DialysisCenterService = require("../services/DialysisCenters");
 
+const DialysisCenter = require("../models/DialysisCenters");
 
 const passport2 = require("passport");
 require("../scripts/utils/passport-local-config")(passport2);
@@ -27,7 +28,11 @@ class HomeController {
     const id = req.params.id;
     DialysisCenterService.findById(id)
       .then((center) => {
-        res.render("user/pages/clinic/single-clinic", { layout: "user/layouts/clinic-main", center });
+        if (req.cookies.tmpCheckInDate) {
+          res.render("user/pages/clinic/single-clinic", { layout: "user/layouts/clinic-main", center, date: req.cookies.tmpCheckInDate });
+        } else {
+          res.render("user/pages/clinic/single-clinic", { layout: "user/layouts/clinic-main", center, date: null });
+        }
       })
       .catch((err) => {
         console.log("Error", err);
@@ -99,13 +104,20 @@ class HomeController {
   }
 
   clinicList(req, res, next) {
+    if (req.query.checkInDate) {
+      res.cookie("tmpCheckInDate", req.query.checkInDate);
+    }
     if (req.query.city) {
+      const page = req.query.page || 0;
+      const perPage = 8;
       const query = {
         "address.city": req.query.city,
       };
-      DialysisCenterService.index(query)
+      DialysisCenterService.paginateList(query, page, perPage)
         .then((list) => {
-          return res.render("user/pages/clinic/clinic-list", { layout: "user/layouts/clinic-main", list, user: req.user });
+          DialysisCenter.count({ "address.city": req.query.city }).exec(function (err, count) {
+            return res.render("user/pages/clinic/clinic-list", { layout: "user/layouts/clinic-main", list, user: req.user, city: req.query.city, counter: count / perPage });
+          });
         })
         .catch((err) => {
           console.log("Error", err);

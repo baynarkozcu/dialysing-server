@@ -9,6 +9,12 @@ class DialysisCenters extends BaseService {
   async groupBy(fieldOne, fieldTwo) {
     return await BaseModal.aggregate([{ $group: { _id: { country: fieldOne, city: fieldTwo }, count: { $sum: 1 } } }]);
   }
+
+  paginateList(where, page, count) {
+    return this.BaseModal?.find(where || {})
+      .limit(count)
+      .skip(count * page);
+  }
 }
 
 module.exports = new DialysisCenters();

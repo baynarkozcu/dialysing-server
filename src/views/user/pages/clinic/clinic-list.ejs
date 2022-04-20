@@ -1,10 +1,10 @@
 <head>
   <link rel="stylesheet" href="../user/css/style.css" />
-  <link rel="stylesheet" href="../user/css/clinic/clinic.css" />  
+  <link rel="stylesheet" href="../user/css/clinic/clinic.css" />
   <link rel="stylesheet" href="../user/css/footer.css" />
 </head>
 <div class="tm-main-content tm-main-background" id="top">
-  <%- include("../../partials/clinic-list-navbar") %>  
+  <%- include("../../partials/clinic-list-navbar") %>
   <div class="tm-section tm-bg-img" id="tm-section-1">
     <div class="ie-container-width-fix-2">
       <div class="container ie-h-align-center-fix">
@@ -25,8 +25,7 @@
                   <img src="../user/img/icons/down.png" class="tm-form-element-icon-small icon-down dateicon" alt="Icon Down" />
                 </div>
                 <div class="form-group tm-form-element search">
-                  <button type="submit" class="btn btn-outline-primary"><i class="bi bi-search mx-2"></i> 
-                    <span key="centerFind">Diyaliz Bul</span></button>
+                  <button type="submit" class="btn btn-outline-primary"><i class="bi bi-search mx-2"></i> <span key="centerFind">Diyaliz Bul</span></button>
                 </div>
               </div>
             </form>
@@ -274,23 +273,26 @@
 
           <nav class="tm-p d-flex justify-content-center">
             <ul class="pagination">
+              <% if (false) { %>
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">
                   <span aria-hidden="true">&laquo;</span>
                   <span class="sr-only">Previous</span>
                 </a>
               </li>
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+              <% } %> <% for( let index = 0; index < counter; index++ ) { %> <% if (index == 0) { %>
+              <li class="page-item"><a class="page-link" href="/clinic/clinic-list?city=<%- city %>"><%- index+1 %> </a></li>
+              <% }else{ %>
+              <li class="page-item"><a class="page-link" href="/clinic/clinic-list?city=<%- city %>&page=<%- index %>"><%- index+1 %> </a></li>
+              <% } %> <% } %> <% if (false) { %>
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
                   <span aria-hidden="true">&raquo;</span>
                   <span class="sr-only">Next</span>
                 </a>
               </li>
+              <% } %>
             </ul>
           </nav>
         </div>

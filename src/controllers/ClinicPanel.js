@@ -567,8 +567,23 @@ class ClinicPanelController {
     res.render("clinic-panel/pages/panel/update-user", { layout: "clinic-panel/layouts/panel", user: req.user  });
   }
 
+  uploadImageView(req, res, next) {
+    var center = req.cookies.clinic;
+    res.render("clinic-panel/pages/panel/upload-image", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+  }
+
   uploadImage(req, res, next) {
-    res.render("clinic-panel/pages/panel/upload-image", { layout: "clinic-panel/layouts/panel", user: req.user });
+    if (req.file == undefined) {
+      console.log("Hata Çıktı :", "Lütfen bir resim seçiniz.");
+    } else {
+      req.cookies.clinic.companyInformation.photo.push(req.file.filename);
+      DialysisCenterService.update(req.cookies.clinic._id, { "companyInformation.photo": req.cookies.clinic.companyInformation.photo }).then((result) => {
+      res.cookie("clinic", result);
+        res.redirect("/panel/upload-image");
+      }).catch((err) => {
+        console.log("Hata Çıktı :", err);
+      })
+    }
   }
 
   async visibility(req, res, next) {

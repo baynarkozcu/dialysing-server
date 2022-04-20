@@ -377,6 +377,7 @@ input#explanation1.form-control {
   font-weight: 700;
   font-size: 20px;
 }
+/**/
 .visibilty {
   color: #025c90;
   font-family: "Lato", sans-serif;
@@ -410,4 +411,34 @@ span label {
   color: #28353e;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
+}
+.brand-logo { 
+  font-weight: 600;
+  font-family: 'Khula', sans-serif;
+}
+#dialysisCenter { 
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+ul .language { 
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px; 
+}
+ul .name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+}
+ul .logout {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+}
+ul a:hover {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  color: #fff;
+} 
+.user-dropdown svg {
+  width: 20px;
+  height: 20px;
+  fill: rgba(255, 255, 255, 0.836); 
 }

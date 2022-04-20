@@ -1981,7 +1981,8 @@ footer .copyright {
     position: absolute;
     top: 60px;
     right: 15px;
-    width: 92%;
+    /* width: 92%; */
+    width: 100%;
     -webkit-box-shadow: 0px 0px 7px 0px rgba(214, 214, 214, 1);
     -moz-box-shadow: 0px 0px 7px 0px rgba(214, 214, 214, 1);
     box-shadow: 0px 0px 7px 0px rgba(214, 214, 214, 1);
@@ -2012,7 +2013,7 @@ footer .copyright {
   .nav-item.buttons:not(:last-child),
   .nav-item:last-child {
     margin-bottom: 1rem;
-  } */ */
+  } */ 
 
   .tm-header-content {
     margin: 0;

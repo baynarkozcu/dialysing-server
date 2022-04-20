@@ -2096,6 +2096,7 @@ footer a {
 
   .navbar .navbar-nav {
     align-items: center;
+    font-family: "Montserrat", sans-serif;
   }
 
   .navbar .logo {
@@ -2107,6 +2108,7 @@ footer a {
   .navbar a {
     font-size: 12px;
     padding-right: 0.5rem;
+    font-family: "Montserrat", sans-serif;
   }
 
   .location {

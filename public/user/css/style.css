@@ -721,8 +721,9 @@ p {
   font-size: 12px;
 }
 
-.btn-second.wide {
-  width: 100%;
+.btn-second .wide {
+  width: 100%; 
+  font-family: 'Lato', sans-serif !important;
 }
 
 .btn-second.small {
@@ -767,10 +768,11 @@ p {
   border: 2px solid #055f8f;
   border-radius: 8px;
   cursor: pointer;
-  color: #055f8f;
-  font-weight: 500;
+  color: #055f8f; 
   padding: 0.5rem 1rem;
-  text-align: center;
+  text-align: center; 
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -2569,4 +2571,12 @@ footer .copyright {
 .select {
   border: rgba(0, 0, 0, 0.2) 1px solid;
   border-radius: 10px;
+}
+select.form-select {
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid #28353e52;
+  color: #28353e56;
+  border-radius: 10px;
+  padding: 10px;
 }

@@ -440,5 +440,6 @@ ul a:hover {
 .user-dropdown svg {
   width: 20px;
   height: 20px;
-  fill: rgba(255, 255, 255, 0.836); 
+  fill: rgba(255, 255, 255, 0.836);
+  margin: 0px !important;
 }

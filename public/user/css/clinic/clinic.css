@@ -98,8 +98,8 @@
 .clinic-text-description {
   font-family: 'Montserrat', sans-serif;
   color: #000000;
-  font-size: 16px;
-  line-height: 1.5rem;
+  font-size: 13px;
+  line-height: 1.6rem;
 }
 .tm-section-title {
     font-family: 'Montserrat', sans-serif;
@@ -143,7 +143,7 @@
 }
 
 .tm-clinic-box .tm-clinic-box-content .tm-clinic-box-title {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 30px;
   font-family: 'Montserrat', sans-serif;
@@ -151,9 +151,9 @@
 }
 
 .tm-clinic-box .tm-clinic-box-content .tm-clinic-box-text {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 2rem;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -805,11 +805,11 @@ a.clinic-images div {
   .tm-clinic-box .tm-clinic-box-content {
     padding: 2rem;
   }
-
+/* 
   .tm-clinic-box .tm-clinic-box-content .tm-clinic-box-title {
     font-size: 16px;
     line-height: normal;
-  }
+  } */
 
   .clinic-header .inner-content {
     position: relative;

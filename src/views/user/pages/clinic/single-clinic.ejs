@@ -1,82 +1,76 @@
 <head>
-     <link rel="stylesheet" href="../user/css/style.css" />
-    <link rel="stylesheet" href="../user/css/clinic/clinic.css" />
-    <link rel="stylesheet" href="../user/css/footer.css">
+  <link rel="stylesheet" href="../user/css/style.css" />
+  <link rel="stylesheet" href="../user/css/clinic/clinic.css" />
+  <link rel="stylesheet" href="../user/css/footer.css" />
 </head>
 
-<%- include("../../partials/navbar")  %> 
+<%- include("../../partials/navbar") %>
 
-        <div id="section-i" class="my-5 py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-8 col-lg-7 col-xl-7">
-                        <div class="tm-section-title clinic"><%- center.companyInformation.companyName  %> </div> 
-                          <div class="d-flex center-address">
-                            <div class="flex-grow-1">
-                                <p class="tm-color-shadow "><i class="bi bi-geo-alt-fill"></i> <%- center.address.addressDetailText  %> </p></div>
-                            <div class="flex-shrink-1 center-call"><a href="tel:<%-center.contactInformation.phone %>"><p><i class="bi bi-telephone-fill"></i> Merkezi Ara</p></a></div>
-                          </div>
-                          
-                        <div class="row"> 
-                            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 clinic-images">
-                                <img src="<%- center.companyInformation.photo[0]  %> " class="left-first"
-                                    alt="<%- center.companyInformation.companyName  %>" />
-                                <img src="<%- center.companyInformation.photo[0]  %> " class="left-second"
-                                    alt="<%- center.companyInformation.companyName  %>" />
-                            </div>
-                            <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 clinic-images">
-                                <img src="<%- center.companyInformation.photo[0]  %> " class="right" alt="<%- center.companyInformation.companyName  %>" />
-                            </div>
-                        </div> 
-                        <div class="sub-image row align-items-start mt-3">
-                          <div class="col">
-                            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
-                          </div>
-                          <div class="col">
-                            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
-                          </div>
-                          <div class="col">
-                            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
-                          </div>
-                          <div class="col">
-                            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
-                          </div>
-                          <div class="col">
-                            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
-                          </div>
-                        </div> 
+<div id="section-i" class="my-5 py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-7 col-xl-7">
+        <div class="tm-section-title clinic"><%- center.companyInformation.companyName %></div>
+        <div class="d-flex center-address">
+          <div class="flex-grow-1">
+            <p class="tm-color-shadow"><i class="bi bi-geo-alt-fill"></i> <%- center.address.addressDetailText %></p>
+          </div>
+          <div class="flex-shrink-1 center-call">
+            <a href="tel:<%-center.contactInformation.phone %>"
+              ><p><i class="bi bi-telephone-fill"></i> Merkezi Ara</p></a
+            >
+          </div>
+        </div>
 
-                        <div class="row">
-                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 px-3">
-                                <div class="tm-content">
-                                    <img src="../user/img/clinic/icons/virus.png" width="15%" height="20%" alt="Icon Virus" />
-                                    <div class="covid"> Bu diyaliz merkezinde tüm Covid 19 kapsamında gerekli olan önemler
-                                        alınmıştır. Sağlık ve hijyen konularında ekstra özen gösterilmektedir. <a href="">Merkez içinde alınan covid önlemlerini görmek için tıklayın.</a> </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 clinic-images">
+            <img src="<%- center.companyInformation.photo[0]  %> " class="left-first" alt="<%- center.companyInformation.companyName  %>" />
+            <img src="<%- center.companyInformation.photo[0]  %> " class="left-second" alt="<%- center.companyInformation.companyName  %>" />
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 clinic-images">
+            <img src="<%- center.companyInformation.photo[0]  %> " class="right" alt="<%- center.companyInformation.companyName  %>" />
+          </div>
+        </div>
+        <div class="sub-image row align-items-start mt-3">
+          <div class="col">
+            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+          </div>
+          <div class="col">
+            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+          </div>
+          <div class="col">
+            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+          </div>
+          <div class="col">
+            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+          </div>
+          <div class="col">
+            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+          </div>
+        </div>
 
-                        <div class="row my-4 mb-5">
-                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                <div class="tm-section-title px-2">Türkmed Diyaliz Merkezi Hakkında</div>
-                                <div class="tm-color-pale px-2">
-                                    Quis arcu congue est sit mi in netus egestas blandit fringilla vivamus vel
-                                    scelerisque fames duis id magnis sed mollis duis sem sollicitudin faucibus quis
-                                    aliquam at fermentum gravida molestie volutpat nunc enim proin fermentum, nibh urna
-                                    dignissim egestas duis sit sit egestas maecenas adipiscing quisque vitae ultrices
-                                    vitae diam
-                                </div>
-                            </div>
-                        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 px-3">
+            <div class="tm-content">
+              <img src="../user/img/clinic/icons/virus.png" width="15%" height="20%" alt="Icon Virus" />
+              <div class="covid">Bu diyaliz merkezinde tüm Covid 19 kapsamında gerekli olan önemler alınmıştır. Sağlık ve hijyen konularında ekstra özen gösterilmektedir. <a href="">Merkez içinde alınan covid önlemlerini görmek için tıklayın.</a></div>
+            </div>
+          </div>
+        </div>
 
-                    </div>
+        <div class="row my-4 mb-5">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="tm-section-title px-2"><%- center.companyInformation.companyName %></div>
+            <div class="tm-color-pale px-2"><%- center.companyInformation.bio %></div>
+          </div>
+        </div>
+      </div>
 
-                    
-                    <div class="col-sm-12 col-md-8 col-lg-5 col-xl-5">
-                        <div class="clinic-map-open with-form">
-                            <!-- <button type="button" class="btn-second" data-bs-toggle="modal" data-bs-target="#mapModal" data-toggle="modal" data-target="#mapModal">Harita Üzerinde Göster</button> -->
-                            
-                            <!-- <div class="modal fade p-5" id="mapModal" aria-labelledby="mapModalLabel" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="col-sm-12 col-md-8 col-lg-5 col-xl-5">
+        <div class="clinic-map-open with-form">
+          <!-- <button type="button" class="btn-second" data-bs-toggle="modal" data-bs-target="#mapModal" data-toggle="modal" data-target="#mapModal">Harita Üzerinde Göster</button> -->
+
+          <!-- <div class="modal fade p-5" id="mapModal" aria-labelledby="mapModalLabel" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">  
                                         <div class="row">
@@ -224,695 +218,686 @@
                                     </div>
                                 </div>
                             </div> -->
-                        </div> 
-                        <form class="tm-form-wide custom" action="/clinic/clinic-appointment" method="POST">
-                            <div class="form-group">
-                                <label for="job-dropdown">Tedavi Yöntemi</label>
-                                <div class="dropdown select">
-                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="treatmentMethod" name="treatmentMethod" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <option selected value="Hemodiyaliz">Hemodiyaliz</option>
-                                        <option value="Hemodiyafiltrasyon">Hemodiyafiltrasyon</option>
-                                        <option value="Merkezde Gece Hemodiyalizi">Merkezde Gece Hemodiyalizi</option>
-                                        <option value="Ev Hemodiyalizi">Ev Hemodiyalizi</option>
-                                        <option value="Hemşireli Ev Hemodiyalizi">Hemşireli Ev Hemodiyalizi</option>
-                                        <option value="Periton Diyalizi">Periton Diyalizi</option>
-                                    </select> 
-                                </div> 
-                            </div>
-                            <div class="form-group">
-                                <label for="job-dropdown">Haftalık Seans Sayısı</label>
-                                <div class="dropdown select">
-                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="sessionsDayCount" name="sessionsDayCount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <option selected>Haftalık Seans Sayınızı Seçiniz</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select> 
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="job-dropdown">Tercih Edilen Tedavi Günleri</label>
-                                <div class="dropdown select">
-                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="sessionsDay" name="sessionsDay"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <option selected>Tercih Edilen Tedavi Günlerinizi Seçiniz</option>
-                                        <option value="Pazartesi">Pazartesi</option>
-                                        <option value="Salı">Salı</option>
-                                        <option value="Çarşamba">Çarşamba</option> 
-                                        <option value="Perşembe">Perşembe</option>
-                                        <option value="Cuma">Cuma</option>
-                                        <option value="Cumartesi">Cumartesi</option>
-                                        <option value="Pazar">Pazar</option>
-                                    </select> 
-                                </div>
-                            </div>
-                            <div class="form-group clinic-check-dates">
-                                <div class="checkin">
-                                    <label for="check-in">Check-in Tarihi</label>
-                                    <input type="date" placeholder="Check-in Tarihi"  id="checkInDate" name="checkInDate" value="<%- date != null ? date : null  %>"  aria-describedby="emailHelp" class="form-control bi bi-chevron-down">
-                                </div>
-                                <div class="checkout">
-                                    <label for="check-out">Check-out Tarihi</label>
-                                    <input type="date" class="form-control  bi bi-chevron-down" id="checkOutDate" name="checkOutDate" aria-describedby="emailHelp" placeholder="Check-out Tarihi">
-                                </div>
-                              </div>
-                            <div class="form-group not-border checkbox">
-                                <input class="form-check-input mx-0" type="checkbox" value="" id="filterCheckBox41">
-                                <label class="form-check-label mx-0" for="filterCheckBox41">
-                                    Check-Out tarihim belli değil.
-                                </label>
-                            </div>
-                            <div class="form-group tm-margin-t-1">
-                                <label for="job-dropdown">Tercih Edilen Seans</label>
-                                <div class="dropdown select">
-                                    <select class="btn btn-dropdown dropdown-toggle" type="button" id="session" name="session" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                        
-                                        <option selected>Tercih Ettiğiniz Seansı Seçiniz</option>
-                                        <option value="Sabah">Sabah</option>
-                                        <option value="Öğle">Öğle</option>
-                                        <option value="Akşam">Akşam</option>
-                                        <option value="Gece">Gece</option>
-                                    </select> 
-                                </div>
-                            </div>
-                            <div class="alert small">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-exclamation-circle mx-2" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-                                  </svg>
-                                Randevu oluşturabilmek için check-in tarihi girmeniz gerekmektedir.
-                            </div> 
-                            <button type="submit" class="btn-second">Randevu Oluştur</button>
-                            <input type="hidden" name="centerId" value="<%- center._id  %>">
-                            <button class="btn-forth">Favorilerine Ekle</button> 
-                        </form>
-                        <div class="alert alert-danger alert-custom tm-margin-t-1" role="alert">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-exclamation-circle mx-2" viewBox="0 0 16 16">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-                              </svg>Seçtiğiniz tarihlerde son 2 adet uygun seans kalmıştır.
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-
-        <div id="section-ii" class="tm-margin-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <div class="tm-section-title-2 tm-margin-b-30">Özellikler</div>
-                    </div>
-                </div>
-                <div class="row tm-margin-b-30">
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-                        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Kabul Edilen Sigortalar</div>
-                        <div>
-                            <div class="tm-color-shadow-2">Özel Sağlık Sigortalı Merkez</div>
-                            <div class="tm-color-shadow-2">Banka Anlaşmalı Merkez</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-                        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Seans İçi Hizmetler</div>
-                        <div>
-                            <div class="tm-color-shadow-2">Kahvaltı Hizmeti</div>
-                            <div class="tm-color-shadow-2">Yemek Hizmeti</div>
-                            <div class="tm-color-shadow-2">Ücretsiz Wifi</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-4">
-                        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Merkez Binası Tipi</div>
-                        <div>
-                            <div class="tm-color-shadow-2">Müstakil Binalı Merkez</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-                        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Tesis İçi İmkanlar</div>
-                        <div>
-                            <div class="tm-color-shadow-2">Tekerlekli Sandalye Kullanımına Uygun</div>
-                            <div class="tm-color-shadow-2">Tutunma Kollu Tuvalet</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row tm-margin-b-30">
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3 ">
-                        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Seans Saatleri</div>
-                        <div>
-                            <div class="tm-color-shadow-2">Sabah Seansı: 08:00-12:00</div>
-                            <div class="tm-color-shadow-2">Öğlen Seansı: 12:30-16:30</div>
-                            <div class="tm-color-shadow-2">Akşam Seansı: 17:00-21:00</div>
-                            <div class="tm-color-shadow-2">Gece Seansı: 21:30-00:30</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-                        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Diyaliz Cihazları</div>
-                        <div>
-                            <div class="tm-color-shadow-2">Fresenius</div>
-                            <div class="tm-color-shadow-2">BBraun Dialog+</div>
-                            <div class="tm-color-shadow-2">Kawasumi</div>
-                            <div class="tm-color-shadow-2">Nikkiso</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
-                        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Sigorta </div>
-                        <div>
-                            <div class="tm-color-shadow-2">SSK Anlaşmalı</div>
-                            <div class="tm-color-shadow-2">Banka Anlaşmalı</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row tm-margin-b-30">
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3">
-                        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Diyaliz Merkezi Sağlık Çalışanları</div>
-                        <div>
-                            <div class="tm-color-shadow-2"><span class="tm-color-dark employe">Nefroloji Uzmanı:</span> Prof.
-                                Dr. Gülçin Kantarcı</div>
-                            <div class="tm-color-shadow-2"><span class="tm-color-dark employe">Mesul Müdür:</span> Dr. Mehtap
-                                Çelik Küçük</div>
-                            <div class="tm-color-shadow-2"><span class="tm-color-dark employe">Sorumlu Hekim:</span> Dr. Tekbir
-                                Atay</div>
-                            <div class="tm-color-shadow-2"><span class="tm-color-dark employe">Merkez Sorumlu Hemşiresi:</span>
-                                Hem. Aysel Demirhan</div>
-                        </div>
-                    </div>
-                </div> 
+        <form class="tm-form-wide custom" action="/clinic/clinic-appointment" method="POST">
+          <div class="form-group">
+            <label for="job-dropdown">Tedavi Yöntemi</label>
+            <div class="dropdown select">
+              <select class="btn btn-dropdown dropdown-toggle" type="button" id="treatmentMethod" name="treatmentMethod" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option selected value="Hemodiyaliz">Hemodiyaliz</option>
+                <option value="Hemodiyafiltrasyon">Hemodiyafiltrasyon</option>
+                <option value="Merkezde Gece Hemodiyalizi">Merkezde Gece Hemodiyalizi</option>
+                <option value="Ev Hemodiyalizi">Ev Hemodiyalizi</option>
+                <option value="Hemşireli Ev Hemodiyalizi">Hemşireli Ev Hemodiyalizi</option>
+                <option value="Periton Diyalizi">Periton Diyalizi</option>
+              </select>
             </div>
-        </div>
-
-        <div id="section-iii" class="tm-margin-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <div class="tm-section-title mb-4">Merkezde Gerçekleştirilen Diyaliz Tedavisi Tipleri</div>
-                        <div class="tm-color-dark type tm-margin-b-10">Hemodiyaliz</div>
-                        <div class="tm-color-pale tm-margin-b-30">Quis arcu congue est sit mi in netus egestas blandit
-                            fringilla vivamus vel scelerisque fames duis id magnis sed mollis duis sem sollicitudin
-                            faucibus quis aliquam at fermentum gravida molestie volutpat nunc enim proin fermentum, nibh
-                            urna dignissim egestas duis sit sit egestas maecenas adipiscing quisque vitae ultrices vitae
-                            diam</div>
-                        <div class="tm-color-dark type tm-margin-b-10">Merkezde Gece Hemodiyalizi</div>
-                        <div class="tm-color-pale tm-margin-b-30">Quis arcu congue est sit mi in netus egestas blandit
-                            fringilla vivamus vel scelerisque fames duis id magnis sed mollis duis sem sollicitudin
-                            faucibus quis aliquam at fermentum gravida molestie volutpat nunc enim proin fermentum, nibh
-                            urna dignissim egestas duis sit sit egestas maecenas adipiscing quisque vitae ultrices vitae
-                            diam</div>
-                        <div class="tm-color-dark type tm-margin-b-10">Periton Diyalizi</div>
-                        <div class="tm-color-pale tm-margin-b-30">Quis arcu congue est sit mi in netus egestas blandit
-                            fringilla vivamus vel scelerisque fames duis id magnis sed mollis duis sem sollicitudin
-                            faucibus quis aliquam at fermentum gravida molestie volutpat nunc enim proin fermentum, nibh
-                            urna dignissim egestas duis sit sit egestas maecenas adipiscing quisque vitae ultrices vitae
-                            diam</div>
-                    </div>
-                </div> 
-            </div>
-        </div>
-
-        <div id="section-iv" class="tm-margin-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <p class="tm-section-title mb-4">Yorumlar ve Değerlendirmeler <span class="mx-2"> <span class="mx-2">5.0</span><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span class="mx-2"> 16 değerlendirme</span></span></p>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                        <div class="tm-process">
-                            <div class="tm-process-bar-content">
-                                <div class="tm-process-text">Personel</div>
-                                <div class="tm-process-bar width-87 blue"></div>
-                            </div>
-                            <div class="tm-process-pers">8.7</div>
-                        </div>
-                        <div class="tm-process">
-                            <div class="tm-process-bar-content">
-                                <div class="tm-process-text">Rahatlık</div>
-                                <div class="tm-process-bar width-30 red"></div>
-                            </div>
-                            <div class="tm-process-pers">3.0</div>
-                        </div>
-                        <div class="tm-process">
-                            <div class="tm-process-bar-content">
-                                <div class="tm-process-text">Temizlik</div>
-                                <div class="tm-process-bar width-100 green"></div>
-                            </div>
-                            <div class="tm-process-pers">10</div>
-                        </div>
-                        <div class="tm-process">
-                            <div class="tm-process-bar-content">
-                                <div class="tm-process-text">İmkanlar</div>
-                                <div class="tm-process-bar width-76 blue"></div>
-                            </div>
-                            <div class="tm-process-pers">7.6</div>
-                        </div>
-                        <div class="tm-process">
-                            <div class="tm-process-bar-content">
-                                <div class="tm-process-text">Tedavi İmkanları</div>
-                                <div class="tm-process-bar width-68 blue"></div>
-                            </div>
-                            <div class="tm-process-pers">6.8</div>
-                        </div>
-                        <div class="tm-process">
-                            <div class="tm-process-bar-content">
-                                <div class="tm-process-text">Konum</div>
-                                <div class="tm-process-bar width-100 green"></div>
-                            </div>
-                            <div class="tm-process-pers">10</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                        <div class="tm-profile">
-                            <img src="../user/img/clinic/profiles/berkan.png" alt="Profile Berkan" />
-                            <div class="tm-profile-content">
-                                <div class="tm-profile-title">Berkan Tuğla</div>
-                                <div class="tm-profile-text">Amerika, Newyork</div>
-                            </div>
-                        </div>
-                        <div class="tm-profile-comment">
-                            “Memleketime gelirken diyaliz problemimi nasıl çözeceğimi düşünüyordum ve websitenize denk
-                            geldim. Bundan sonra dilediğim zaman aklımda hiç soru işareti kalmadan memleketime
-                            gelebileceğim için çok mutluyum, iyi ki böyle bir sistem oluşturmuşsunuz”.
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                        <div class="tm-profile">
-                            <img src="../user/img/clinic/profiles/neslihan.png" alt="Profile Neslihan" />
-                            <div class="tm-profile-content">
-                                <div class="tm-profile-title">Neslihan Çelik</div>
-                                <div class="tm-profile-text">İzmir, Konak</div>
-                            </div>
-                        </div>
-                        <div class="tm-profile-comment">
-                            “Tatilimizi sağlıklı bir şekilde geçirmemizi sağladıkları için dialysing.com ailesine sonsuz
-                            teşekkürler, daima kullanacağımız bir sistem oldu ve bizlerden tam puan aldı. Diyaliz
-                            hastalarına tavsiye etmekten asla tereddüt etmeyeceğiz”.
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                        <div class="tm-profile">
-                            <img src="../user/img/clinic/profiles/kristin.png" alt="Profile Kristin" />
-                            <div class="tm-profile-content">
-                                <div class="tm-profile-title">Kristin Watson</div>
-                                <div class="tm-profile-text">South Dakota</div>
-                            </div>
-                        </div>
-                        <div class="tm-profile-comment">
-                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
-                            consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-button-next">
-                        <a href="#" class="btn-second">Tüm Değerlendirmeleri Oku</a>
-                    </div>
-                </div> 
-            </div>
-        </div>
-
-        <div id="section-v" class="tm-margin-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <div class="tm-section-title">Sorunuz mu var?</div>
-                        <div class="tm-color-pale tm-margin-b-20">Aklınıza takılan kısımlar için aşağıdan bu diyaliz
-                            merkezine sorularınızı yöneltebilirsiniz.</div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                        <div class="tm-color-dark tm-margin-b-10 tm-f-600">Türkmed Diyaliz Merkezi</div>
-                        <div class="tm-color-shadow language tm-margin-b-10">Türkçe, İngilizce ve Fransızca dillerinde yanıtlar
-                            vermekteler.</div>
-                        <div class="tm-color-shadow language tm-margin-b-10">Bu merkez sorulara 24 ila 72 saat içerisinde yanıt
-                            vermektedir.</div>
-                        <button type="button" class="btn-second tm-full-width mail" data-toggle="modal" data-target="#questionModal" >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-video3 mx-2" viewBox="0 0 16 16">
-                                <path d="M14 9.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm-6 5.7c0 .8.8.8.8.8h6.4s.8 0 .8-.8-.8-3.2-4-3.2-4 2.4-4 3.2Z"/>
-                                <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h5.243c.122-.326.295-.668.526-1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v7.81c.353.23.656.496.91.783.059-.187.09-.386.09-.593V4a2 2 0 0 0-2-2H2Z"/>
-                              </svg>Merkeze Soru Sor</button>
-                        
-                        <div class="modal fade" id="questionModal" tabindex="-1" role="dialog" aria-labelledby="questionModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Aradığınız cevapları bulamadınız mı? 
-                                        Sorunuzu yöneltebilirsiniz.</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <img src="../user/img/icons/close.png" alt="Icon Close" />
-                                    </button>
-                                </div>
-                                <form class="tm-form">
-                                    <div class="form-group">
-                                        <label for="center-about" class="center-about">Sorunuzu Yazın</label>
-                                        <textarea class="form-control" id="center-about" rows="3" placeholder="Gece diyalizinde sağladığınız imkanlar nelerdir?"></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-second">Merkeze Soru Sor</button>
-                                  </form>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
-                        <div class="clinic-questions">
-                            <div class="clinic-question first">
-                                <div class="clinic-questions-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#025C90" class="bi bi-chat-right-text mx-2" viewBox="0 0 16 16">
-                                    <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
-                                    <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
-                                  </svg></div>
-                                <div class="clinic-questions-title">Diyaliz merkezinizde gece diyalizi hizmeti almak
-                                    istiyorum fakat, gece ziyaretçi imkanlarınız nelerdir?</div>
-                            </div>
-                            <div class="clinic-question-content">
-                                <div class="clinic-questions-icon">
-                                    <svg width="22" height="20" class="mx-2" viewBox="0 0 27 25" fill="#025C90" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3021 18.897C12.0118 18.897 9.68506 17.5595 8.32712 15.7892C1.81217 15.7892 1.61523 24.9454 1.61523 24.9454H26.9873C26.9873 24.9454 27.4987 15.7485 20.1722 15.7485C18.8158 17.5407 16.5923 18.897 14.3021 18.897Z" fill="#025C91"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7591 7.92021C19.7591 10.5546 17.3148 15.5921 14.2971 15.5921C11.2843 15.5921 8.83838 10.553 8.83838 7.92021C8.83838 5.2874 11.2827 3.1499 14.2971 3.1499C17.3148 3.15146 19.7591 5.28896 19.7591 7.92021Z" fill="#025C91"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1954 5.64692C22.1954 5.15317 21.4966 4.75474 20.6294 4.75161V3.73442C20.6294 3.58286 20.6881 0.0344238 14.3161 0.0344238C7.94733 0.0344238 8.00609 3.58286 8.00609 3.73442V4.78755C7.99021 4.78755 7.9775 4.78286 7.96321 4.78286C7.1008 4.78286 6.40674 5.17505 6.40674 5.66099V9.96411C6.40674 10.4469 7.10239 10.8407 7.96321 10.8407C8.82403 10.8407 9.52286 10.4469 9.52286 9.96411V5.66099C9.52286 5.5938 9.47997 5.53286 9.45456 5.47036V4.29692C9.45456 4.18911 8.99715 1.51099 14.3161 1.51099C19.6367 1.51099 19.084 4.18911 19.084 4.29692V5.53286C19.0745 5.57192 19.0443 5.6063 19.0443 5.64692V10.0485C19.0443 10.5438 19.7479 10.9454 20.6199 10.9454C20.6389 10.9454 20.6532 10.9391 20.6723 10.9391V12.5469H19.1094V14.0625H22.2113L22.1954 5.64692Z" fill="#025C91"/>
-                                        </svg>
-                                </div>
-                                <div class="clinic-questions-text">Merhabalar, diyaliz merkezimizde gece diyalizi
-                                    hizmeti sağladığımız zamanlarda
-                                    ziyaretçilerimizin ve hastalarımızın en konforlu şekilde hizmet almasını ve
-                                    kendilerini
-                                    evlerinde hissetmetlerini sağlamaya gayret göstermekteyiz. Ziyaretçiniz ile birlikte
-                                    kişiye özel odalarımızda sizleri ağırlamaktan şeref duyarız.</div>
-                            </div>
-                        </div>
-                        <div class="clinic-questions">
-                            <div class="clinic-question">
-                                <div class="clinic-questions-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#025C90" class="bi bi-chat-right-text mx-2" viewBox="0 0 16 16">
-                                    <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
-                                    <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
-                                  </svg>
-                                </div>
-                                <div class="clinic-questions-title">Diyaliz merkezinizde gece diyalizi hizmeti almak
-                                    istiyorum fakat, gece ziyaretçi imkanlarınız nelerdir?</div>
-                            </div>
-                            <div class="clinic-question-content">
-                                <div class="clinic-questions-icon">
-                                    <svg width="22" class="mx-2" height="20" viewBox="0 0 27 25" fill="#025C90" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3021 18.897C12.0118 18.897 9.68506 17.5595 8.32712 15.7892C1.81217 15.7892 1.61523 24.9454 1.61523 24.9454H26.9873C26.9873 24.9454 27.4987 15.7485 20.1722 15.7485C18.8158 17.5407 16.5923 18.897 14.3021 18.897Z" fill="#025C91"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7591 7.92021C19.7591 10.5546 17.3148 15.5921 14.2971 15.5921C11.2843 15.5921 8.83838 10.553 8.83838 7.92021C8.83838 5.2874 11.2827 3.1499 14.2971 3.1499C17.3148 3.15146 19.7591 5.28896 19.7591 7.92021Z" fill="#025C91"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1954 5.64692C22.1954 5.15317 21.4966 4.75474 20.6294 4.75161V3.73442C20.6294 3.58286 20.6881 0.0344238 14.3161 0.0344238C7.94733 0.0344238 8.00609 3.58286 8.00609 3.73442V4.78755C7.99021 4.78755 7.9775 4.78286 7.96321 4.78286C7.1008 4.78286 6.40674 5.17505 6.40674 5.66099V9.96411C6.40674 10.4469 7.10239 10.8407 7.96321 10.8407C8.82403 10.8407 9.52286 10.4469 9.52286 9.96411V5.66099C9.52286 5.5938 9.47997 5.53286 9.45456 5.47036V4.29692C9.45456 4.18911 8.99715 1.51099 14.3161 1.51099C19.6367 1.51099 19.084 4.18911 19.084 4.29692V5.53286C19.0745 5.57192 19.0443 5.6063 19.0443 5.64692V10.0485C19.0443 10.5438 19.7479 10.9454 20.6199 10.9454C20.6389 10.9454 20.6532 10.9391 20.6723 10.9391V12.5469H19.1094V14.0625H22.2113L22.1954 5.64692Z" fill="#025C91"/>
-                                        </svg>
-                                    </div>
-                                <div class="clinic-questions-text">Merhabalar, diyaliz merkezimizde gece diyalizi
-                                    hizmeti sağladığımız zamanlarda
-                                    ziyaretçilerimizin ve hastalarımızın en konforlu şekilde hizmet almasını ve
-                                    kendilerini
-                                    evlerinde hissetmetlerini sağlamaya gayret göstermekteyiz. Ziyaretçiniz ile birlikte
-                                    kişiye özel odalarımızda sizleri ağırlamaktan şeref duyarız.</div>
-                            </div>
-                        </div>
-                        <div class="clinic-questions">
-                            <div class="clinic-question tm-margin-b-0">
-                                <div class="clinic-questions-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#025C90" class="bi bi-chat-right-text mx-2" viewBox="0 0 16 16">
-                                        <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
-                                        <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
-                                      </svg>
-                                </div>
-                                <div class="clinic-questions-title">Diyaliz merkezinizde gece diyalizi hizmeti almak
-                                    istiyorum fakat, gece ziyaretçi imkanlarınız nelerdir?</div>
-                            </div>
-                            <div class="clinic-question-content">
-                                <div class="clinic-questions-icon">
-                                    <svg width="22" class="mx-2" height="20" viewBox="0 0 27 25" fill="#025C90" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3021 18.897C12.0118 18.897 9.68506 17.5595 8.32712 15.7892C1.81217 15.7892 1.61523 24.9454 1.61523 24.9454H26.9873C26.9873 24.9454 27.4987 15.7485 20.1722 15.7485C18.8158 17.5407 16.5923 18.897 14.3021 18.897Z" fill="#025C91"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7591 7.92021C19.7591 10.5546 17.3148 15.5921 14.2971 15.5921C11.2843 15.5921 8.83838 10.553 8.83838 7.92021C8.83838 5.2874 11.2827 3.1499 14.2971 3.1499C17.3148 3.15146 19.7591 5.28896 19.7591 7.92021Z" fill="#025C91"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1954 5.64692C22.1954 5.15317 21.4966 4.75474 20.6294 4.75161V3.73442C20.6294 3.58286 20.6881 0.0344238 14.3161 0.0344238C7.94733 0.0344238 8.00609 3.58286 8.00609 3.73442V4.78755C7.99021 4.78755 7.9775 4.78286 7.96321 4.78286C7.1008 4.78286 6.40674 5.17505 6.40674 5.66099V9.96411C6.40674 10.4469 7.10239 10.8407 7.96321 10.8407C8.82403 10.8407 9.52286 10.4469 9.52286 9.96411V5.66099C9.52286 5.5938 9.47997 5.53286 9.45456 5.47036V4.29692C9.45456 4.18911 8.99715 1.51099 14.3161 1.51099C19.6367 1.51099 19.084 4.18911 19.084 4.29692V5.53286C19.0745 5.57192 19.0443 5.6063 19.0443 5.64692V10.0485C19.0443 10.5438 19.7479 10.9454 20.6199 10.9454C20.6389 10.9454 20.6532 10.9391 20.6723 10.9391V12.5469H19.1094V14.0625H22.2113L22.1954 5.64692Z" fill="#025C91"/>
-                                        </svg>
-                                </div>
-                                <div class="clinic-questions-text last">Merhabalar, diyaliz merkezimizde gece diyalizi
-                                    hizmeti sağladığımız zamanlarda
-                                    ziyaretçilerimizin ve hastalarımızın en konforlu şekilde hizmet almasını ve
-                                    kendilerini
-                                    evlerinde hissetmetlerini sağlamaya gayret göstermekteyiz. Ziyaretçiniz ile birlikte
-                                    kişiye özel odalarımızda sizleri ağırlamaktan şeref duyarız.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-            </div>
-        </div>
-
-        <div id="section-v" class="tm-margin-5 px-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <div class="tm-section-title">Diyaliz Merkezi Çevresinde Neler Var?</div>
-                        <div class="tm-color-pale tm-margin-b-20">Bulunduğunuz şehri keşfetmek daima iyi bir tercihtir.
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 px-3">
-                        <div>
-                            <div class="clinic-centers-title">
-                                <div class="clinic-icon"><img src="../user/img/clinic/icons/hospital.png"
-                                        alt="Hospital Icon" /></div>
-                                <div class="clinic-title">Hastaneler</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Şişli Etfal Hastanesi</div>
-                                <div class="clinic-center-km">0.2 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Devlet Hastanesi</div>
-                                <div class="clinic-center-km">0.6 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Apeks Tıp Merkezi</div>
-                                <div class="clinic-center-km">1 km</div>
-                            </div>
-                        </div>
-                        <div class="tm-margin-t-20">
-                            <div class="clinic-centers-title">
-                                <div class="clinic-icon"><img src="../user/img/clinic/icons/pharmacy.png"
-                                        alt="Pharmacy Icon" /></div>
-                                <div class="clinic-title">Eczaneler</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Fındıkoğlu Eczanesi</div>
-                                <div class="clinic-center-km">0.2 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Şifa Eczanesi</div>
-                                <div class="clinic-center-km">0.6 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Helteca Eczanesi</div>
-                                <div class="clinic-center-km">1 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Med Eczanesi</div>
-                                <div class="clinic-center-km">2 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Med Eczanesi</div>
-                                <div class="clinic-center-km">2.5 km</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                        <div>
-                            <div class="clinic-centers-title">
-                                <div class="clinic-icon"><img src="../user/img/clinic/icons/hotel.png" alt="Hotel Icon" />
-                                </div>
-                                <div class="clinic-title">Hastaneler</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Hilton Otel</div>
-                                <div class="clinic-center-km">0.2 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Four Seasons</div>
-                                <div class="clinic-center-km">0.6 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Sultanbeyli Otel</div>
-                                <div class="clinic-center-km">1 km</div>
-                            </div>
-                        </div>
-                        <div class="tm-margin-t-20">
-                            <div class="clinic-centers-title">
-                                <div class="clinic-icon"><img src="../user/img/clinic/icons/travel.png" alt="Travel Icon" />
-                                </div>
-                                <div class="clinic-title">Gezilecek Noktalar</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Ayasofya Cami</div>
-                                <div class="clinic-center-km">0.2 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Kız Kulesi</div>
-                                <div class="clinic-center-km">0.6 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Topkapı Sarayı</div>
-                                <div class="clinic-center-km">1 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Koç Müzesi</div>
-                                <div class="clinic-center-km">2 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Arkeoloji Müzesi</div>
-                                <div class="clinic-center-km">2.5 km</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                        <div>
-                            <div class="clinic-centers-title">
-                                <div class="clinic-icon"><img src="../user/img/clinic/icons/airport.png"
-                                        alt="Airport Icon" /></div>
-                                <div class="clinic-title">Havaalanı</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">İstanbul Havaalanı</div>
-                                <div class="clinic-center-km">1 km</div>
-                            </div>
-                        </div>
-                        <div class="tm-margin-t-20">
-                            <div class="clinic-centers-title">
-                                <div class="clinic-icon"><img src="../user/img/clinic/icons/transportation.png"
-                                        alt="Transportation Icon" /></div>
-                                <div class="clinic-title">Ulaşım Hatları</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Metro İstasyonu</div>
-                                <div class="clinic-center-km">1 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Otobüs Durakları</div>
-                                <div class="clinic-center-km">2 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Taksi Durağı</div>
-                                <div class="clinic-center-km">2.5 km</div>
-                            </div>
-                        </div>
-                        <div class="tm-margin-t-20">
-                            <div class="clinic-centers-title">
-                                <div class="clinic-icon"><img src="../user/img/clinic/icons/restaurant.png"
-                                        alt="Restaurant Icon" /></div>
-                                <div class="clinic-title">Restaurant ve Cafeler</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Big Chefs</div>
-                                <div class="clinic-center-km">1 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Midpoint</div>
-                                <div class="clinic-center-km">2 km</div>
-                            </div>
-                            <div class="clinic-center-text">
-                                <div class="clinic-center-name">Starbucks</div>
-                                <div class="clinic-center-km">2.5 km</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-            </div>
-        </div>
-
-    <!--=========DIALYSING SUGGESTION POINT=========-->
-    <div class="my-5" id="center">
-        <div class="container">
-               
-             <div class="d-flex">
-                <div class="tm-section-title">Önerilen Diyaliz Merkezleri</div>
           </div>
-    
-           <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 g-3 mb-3">
-               
-              <div class="col col-five">
-                <div class="card">
-                <div class="position-relative">
-                  <a href="./clinic.html"><img src="../user/img/custom/center-i.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom Ankara" /></a> 
-                  <div class="position-absolute bottom-0 start-0 px-2">
-                    <h5 class="tm-box-title">Türkmed</h5>
-                     <p class="tm-box-text">Diyaliz Merkezi</p>
-                  </div>
-                </div>
-              </div>
+          <div class="form-group">
+            <label for="job-dropdown">Haftalık Seans Sayısı</label>
+            <div class="dropdown select">
+              <select class="btn btn-dropdown dropdown-toggle" type="button" id="sessionsDayCount" name="sessionsDayCount" onchange="seansSayisiDegisti()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option selected>Haftalık Seans Sayınızı Seçiniz</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
             </div>
-
-            <div class="col col-five">
-                 <div class="card">
-                <div class="position-relative">
-                  <img src="../user/img/custom/center-ii.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom Ankara" />
-                  <div class="position-absolute bottom-0 start-0 px-2">
-                    <h5 class="tm-box-title">Sultanbeyli</h5>
-                    <p class="tm-box-text">Diyaliz Merkezi</p>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <div class="form-group">
+            <label for="job-dropdown">Tercih Edilen Tedavi Günleri</label>
+            <div class="dropdown select">
+              <select class="btn btn-dropdown dropdown-toggle" type="button" id="sessionsDay" name="sessionsDay" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option selected>Tercih Edilen Tedavi Günlerinizi Seçiniz</option>
+                <!-- <option value="Pazartesi">Pazartesi</option>
+                <option value="Salı">Salı</option>
+                <option value="Çarşamba">Çarşamba</option>
+                <option value="Perşembe">Perşembe</option>
+                <option value="Cuma">Cuma</option>
+                <option value="Cumartesi">Cumartesi</option>
+                <option value="Pazar">Pazar</option> -->
+              </select>
             </div>
-
-            <div class="col col-five">
-              <div class="card">
-              <div class="position-relative">
-                <img src="../user/img/custom/center-iii.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom İstanbul - Avrupa" />
-                <div class="position-absolute bottom-0 start-0 px-2">
-                  <h4 class="tm-box-title">Bodrum</h4>
-                  <p class="tm-box-text">Diyaliz Merkezi</p>
-                </div>
-              </div>
-              </div>
+          </div>
+          <div class="form-group clinic-check-dates">
+            <div class="checkin">
+              <label for="check-in">Check-in Tarihi</label>
+              <input type="date" placeholder="Check-in Tarihi" id="checkInDate" name="checkInDate" value="<%- date != null ? date : null  %>" aria-describedby="emailHelp" class="form-control bi bi-chevron-down" />
             </div>
-
-            <div class="col col-five">
-                   <div class="card">
-                 <div class="position-relative">
-                   <img src="../user/img/custom/center-iv.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom İstanbul - Anadolu" />
-                <div class="position-absolute bottom-0 start-0 px-2">
-                     <h4 class="tm-box-title">Karşıyaka</h4>
-                     <p class="tm-box-text">Diyaliz Merkezi</p>
-                </div>
-                 </div>
-                 </div>
-               </div>
-
-            <div class="col col-five">
-                <div class="card">
-                <div class="position-relative">
-                  <img src="../user/img/custom/center-v.png" class="image-fluid card-img-top" width="100%"  height="100%" alt="Custom Ankara" />
-                  <div class="position-absolute bottom-0 start-0 px-2">
-                    <h4 class="tm-box-title">Milas</h4>
-                    <p class="tm-box-text">Diyaliz Merkezi</p>
-                  </div>
-                </div>
-              </div>
+            <div class="checkout">
+              <label for="check-out">Check-out Tarihi</label>
+              <input type="date" class="form-control bi bi-chevron-down" id="checkOutDate" name="checkOutDate" aria-describedby="emailHelp" placeholder="Check-out Tarihi" />
             </div>
+          </div>
+          <div class="form-group not-border checkbox">
+            <input class="form-check-input mx-0" type="checkbox" value="" id="filterCheckBox41" />
+            <label class="form-check-label mx-0" for="filterCheckBox41"> Check-Out tarihim belli değil. </label>
+          </div>
+          <div class="form-group tm-margin-t-1">
+            <label for="job-dropdown">Tercih Edilen Seans</label>
+            <div class="dropdown select">
+              <select class="btn btn-dropdown dropdown-toggle" type="button" id="session" name="session" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option selected>Tercih Ettiğiniz Seansı Seçiniz</option>
+                <option value="Sabah">Sabah</option>
+                <option value="Öğle">Öğle</option>
+                <option value="Akşam">Akşam</option>
+                <option value="Gece">Gece</option>
+              </select>
+            </div>
+          </div>
+          <div class="alert small">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-exclamation-circle mx-2" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+              <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+            </svg>
+            Randevu oluşturabilmek için check-in tarihi girmeniz gerekmektedir.
+          </div>
+          <button type="submit" class="btn-second">Randevu Oluştur</button>
+          <input type="hidden" name="centerId" value="<%- center._id  %>" />
+          <button class="btn-forth">Favorilerine Ekle</button>
+        </form>
+        <div class="alert alert-danger alert-custom tm-margin-t-1" role="alert">
+          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-exclamation-circle mx-2" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" /></svg
+          >Seçtiğiniz tarihlerde son 2 adet uygun seans kalmıştır.
         </div>
-     </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="section-ii" class="tm-margin-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="tm-section-title-2 tm-margin-b-30">Özellikler</div>
+      </div>
+    </div>
+    <div class="row tm-margin-b-30">
+      <% if (center.Payment.paymentTypes.length > 0) { %>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
+        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Kabul Edilen Sigortalar</div>
+        <div>
+          <% center.Payment.paymentTypes.forEach(element => { %>
+          <div class="tm-color-shadow-2"><%- element %></div>
+          <% }) %>
+        </div>
+      </div>
+      <% } %> <% if (center.services.inSessionService.length > 0) { %>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
+        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Seans İçi Hizmetler</div>
+        <div>
+          <% center.services.inSessionService.forEach(element => { %>
+          <div class="tm-color-shadow-2"><%- element %></div>
+          <% }) %>
+        </div>
+      </div>
+      <% } %> <% if (center.centerDetails.buildType) { %>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-4">
+        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Merkez Binası Tipi</div>
+        <div>
+          <div class="tm-color-shadow-2"><%- center.centerDetails.buildType %></div>
+        </div>
+      </div>
+      <% } %> <% if (center.centerDetails.centerServices.length > 0) { %>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
+        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Tesis İçi İmkanlar</div>
+        <div>
+          <% center.centerDetails.centerServices.forEach(element => { %>
+          <div class="tm-color-shadow-2"><%- element %></div>
+
+          <% }) %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <div class="row tm-margin-b-30">
+      <% if (center.sessions?.length > 0) { %>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
+        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Seans Saatleri</div>
+        <div>
+          <% center.sessions.forEach(element => { %>
+          <div class="tm-color-shadow-2"><%- element %></div>
+
+          <% }) %>
+        </div>
+      </div>
+      <% } %> <% if (center.services.machines?.length > 0) { %>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
+        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Diyaliz Cihazları</div>
+        <div>
+          <% center.services.machines.forEach(element => { %>
+          <div class="tm-color-shadow-2"><%- element %></div>
+          <% }) %>
+        </div>
+      </div>
+      <% } %> <% if (center.centerEmployees.length > 0) { %>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
+        <div class="tm-color-dark tm-f-600 tm-margin-b-10">Diyaliz Merkezi Sağlık Çalışanları</div>
+        <div>
+          <% center.centerEmployees.forEach(element => { %>
+          <div class="tm-color-shadow-2"><span class="tm-color-dark employe"><%- element.job %> :</span><%- element.employeeNameSurname %></div>
+
+          <% }) %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<!-- <div id="section-iii" class="tm-margin-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="tm-section-title mb-4">Merkezde Gerçekleştirilen Diyaliz Tedavisi Tipleri</div>
+        <div class="tm-color-dark type tm-margin-b-10">Hemodiyaliz</div>
+        <div class="tm-color-pale tm-margin-b-30">Quis arcu congue est sit mi in netus egestas blandit fringilla vivamus vel scelerisque fames duis id magnis sed mollis duis sem sollicitudin faucibus quis aliquam at fermentum gravida molestie volutpat nunc enim proin fermentum, nibh urna dignissim egestas duis sit sit egestas maecenas adipiscing quisque vitae ultrices vitae diam</div>
+        <div class="tm-color-dark type tm-margin-b-10">Merkezde Gece Hemodiyalizi</div>
+        <div class="tm-color-pale tm-margin-b-30">Quis arcu congue est sit mi in netus egestas blandit fringilla vivamus vel scelerisque fames duis id magnis sed mollis duis sem sollicitudin faucibus quis aliquam at fermentum gravida molestie volutpat nunc enim proin fermentum, nibh urna dignissim egestas duis sit sit egestas maecenas adipiscing quisque vitae ultrices vitae diam</div>
+        <div class="tm-color-dark type tm-margin-b-10">Periton Diyalizi</div>
+        <div class="tm-color-pale tm-margin-b-30">Quis arcu congue est sit mi in netus egestas blandit fringilla vivamus vel scelerisque fames duis id magnis sed mollis duis sem sollicitudin faucibus quis aliquam at fermentum gravida molestie volutpat nunc enim proin fermentum, nibh urna dignissim egestas duis sit sit egestas maecenas adipiscing quisque vitae ultrices vitae diam</div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div id="section-iv" class="tm-margin-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <p class="tm-section-title mb-4">
+          Yorumlar ve Değerlendirmeler <span class="mx-2"> <span class="mx-2">5.0</span><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span class="mx-2"> 16 değerlendirme</span></span>
+        </p>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+        <div class="tm-process">
+          <div class="tm-process-bar-content">
+            <div class="tm-process-text">Personel</div>
+            <div class="tm-process-bar width-87 blue"></div>
+          </div>
+          <div class="tm-process-pers">8.7</div>
+        </div>
+        <div class="tm-process">
+          <div class="tm-process-bar-content">
+            <div class="tm-process-text">Rahatlık</div>
+            <div class="tm-process-bar width-30 red"></div>
+          </div>
+          <div class="tm-process-pers">3.0</div>
+        </div>
+        <div class="tm-process">
+          <div class="tm-process-bar-content">
+            <div class="tm-process-text">Temizlik</div>
+            <div class="tm-process-bar width-100 green"></div>
+          </div>
+          <div class="tm-process-pers">10</div>
+        </div>
+        <div class="tm-process">
+          <div class="tm-process-bar-content">
+            <div class="tm-process-text">İmkanlar</div>
+            <div class="tm-process-bar width-76 blue"></div>
+          </div>
+          <div class="tm-process-pers">7.6</div>
+        </div>
+        <div class="tm-process">
+          <div class="tm-process-bar-content">
+            <div class="tm-process-text">Tedavi İmkanları</div>
+            <div class="tm-process-bar width-68 blue"></div>
+          </div>
+          <div class="tm-process-pers">6.8</div>
+        </div>
+        <div class="tm-process">
+          <div class="tm-process-bar-content">
+            <div class="tm-process-text">Konum</div>
+            <div class="tm-process-bar width-100 green"></div>
+          </div>
+          <div class="tm-process-pers">10</div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+        <div class="tm-profile">
+          <img src="../user/img/clinic/profiles/berkan.png" alt="Profile Berkan" />
+          <div class="tm-profile-content">
+            <div class="tm-profile-title">Berkan Tuğla</div>
+            <div class="tm-profile-text">Amerika, Newyork</div>
+          </div>
+        </div>
+        <div class="tm-profile-comment">“Memleketime gelirken diyaliz problemimi nasıl çözeceğimi düşünüyordum ve websitenize denk geldim. Bundan sonra dilediğim zaman aklımda hiç soru işareti kalmadan memleketime gelebileceğim için çok mutluyum, iyi ki böyle bir sistem oluşturmuşsunuz”.</div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+        <div class="tm-profile">
+          <img src="../user/img/clinic/profiles/neslihan.png" alt="Profile Neslihan" />
+          <div class="tm-profile-content">
+            <div class="tm-profile-title">Neslihan Çelik</div>
+            <div class="tm-profile-text">İzmir, Konak</div>
+          </div>
+        </div>
+        <div class="tm-profile-comment">“Tatilimizi sağlıklı bir şekilde geçirmemizi sağladıkları için dialysing.com ailesine sonsuz teşekkürler, daima kullanacağımız bir sistem oldu ve bizlerden tam puan aldı. Diyaliz hastalarına tavsiye etmekten asla tereddüt etmeyeceğiz”.</div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+        <div class="tm-profile">
+          <img src="../user/img/clinic/profiles/kristin.png" alt="Profile Kristin" />
+          <div class="tm-profile-content">
+            <div class="tm-profile-title">Kristin Watson</div>
+            <div class="tm-profile-text">South Dakota</div>
+          </div>
+        </div>
+        <div class="tm-profile-comment">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-button-next">
+        <a href="#" class="btn-second">Tüm Değerlendirmeleri Oku</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div id="section-v" class="tm-margin-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="tm-section-title">Sorunuz mu var?</div>
+        <div class="tm-color-pale tm-margin-b-20">Aklınıza takılan kısımlar için aşağıdan bu diyaliz merkezine sorularınızı yöneltebilirsiniz.</div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+        <div class="tm-color-dark tm-margin-b-10 tm-f-600">Türkmed Diyaliz Merkezi</div>
+        <div class="tm-color-shadow language tm-margin-b-10">Türkçe, İngilizce ve Fransızca dillerinde yanıtlar vermekteler.</div>
+        <div class="tm-color-shadow language tm-margin-b-10">Bu merkez sorulara 24 ila 72 saat içerisinde yanıt vermektedir.</div>
+        <button type="button" class="btn-second tm-full-width mail" data-toggle="modal" data-target="#questionModal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-video3 mx-2" viewBox="0 0 16 16">
+            <path d="M14 9.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm-6 5.7c0 .8.8.8.8.8h6.4s.8 0 .8-.8-.8-3.2-4-3.2-4 2.4-4 3.2Z" />
+            <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h5.243c.122-.326.295-.668.526-1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v7.81c.353.23.656.496.91.783.059-.187.09-.386.09-.593V4a2 2 0 0 0-2-2H2Z" /></svg
+          >Merkeze Soru Sor
+        </button>
+
+        <div class="modal fade" id="questionModal" tabindex="-1" role="dialog" aria-labelledby="questionModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Aradığınız cevapları bulamadınız mı? Sorunuzu yöneltebilirsiniz.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <img src="../user/img/icons/close.png" alt="Icon Close" />
+                </button>
+              </div>
+              <form class="tm-form">
+                <div class="form-group">
+                  <label for="center-about" class="center-about">Sorunuzu Yazın</label>
+                  <textarea class="form-control" id="center-about" rows="3" placeholder="Gece diyalizinde sağladığınız imkanlar nelerdir?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-second">Merkeze Soru Sor</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+        <div class="clinic-questions">
+          <div class="clinic-question first">
+            <div class="clinic-questions-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#025C90" class="bi bi-chat-right-text mx-2" viewBox="0 0 16 16">
+                <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z" />
+                <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+              </svg>
+            </div>
+            <div class="clinic-questions-title">Diyaliz merkezinizde gece diyalizi hizmeti almak istiyorum fakat, gece ziyaretçi imkanlarınız nelerdir?</div>
+          </div>
+          <div class="clinic-question-content">
+            <div class="clinic-questions-icon">
+              <svg width="22" height="20" class="mx-2" viewBox="0 0 27 25" fill="#025C90" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3021 18.897C12.0118 18.897 9.68506 17.5595 8.32712 15.7892C1.81217 15.7892 1.61523 24.9454 1.61523 24.9454H26.9873C26.9873 24.9454 27.4987 15.7485 20.1722 15.7485C18.8158 17.5407 16.5923 18.897 14.3021 18.897Z" fill="#025C91" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7591 7.92021C19.7591 10.5546 17.3148 15.5921 14.2971 15.5921C11.2843 15.5921 8.83838 10.553 8.83838 7.92021C8.83838 5.2874 11.2827 3.1499 14.2971 3.1499C17.3148 3.15146 19.7591 5.28896 19.7591 7.92021Z" fill="#025C91" />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M22.1954 5.64692C22.1954 5.15317 21.4966 4.75474 20.6294 4.75161V3.73442C20.6294 3.58286 20.6881 0.0344238 14.3161 0.0344238C7.94733 0.0344238 8.00609 3.58286 8.00609 3.73442V4.78755C7.99021 4.78755 7.9775 4.78286 7.96321 4.78286C7.1008 4.78286 6.40674 5.17505 6.40674 5.66099V9.96411C6.40674 10.4469 7.10239 10.8407 7.96321 10.8407C8.82403 10.8407 9.52286 10.4469 9.52286 9.96411V5.66099C9.52286 5.5938 9.47997 5.53286 9.45456 5.47036V4.29692C9.45456 4.18911 8.99715 1.51099 14.3161 1.51099C19.6367 1.51099 19.084 4.18911 19.084 4.29692V5.53286C19.0745 5.57192 19.0443 5.6063 19.0443 5.64692V10.0485C19.0443 10.5438 19.7479 10.9454 20.6199 10.9454C20.6389 10.9454 20.6532 10.9391 20.6723 10.9391V12.5469H19.1094V14.0625H22.2113L22.1954 5.64692Z"
+                  fill="#025C91"
+                />
+              </svg>
+            </div>
+            <div class="clinic-questions-text">Merhabalar, diyaliz merkezimizde gece diyalizi hizmeti sağladığımız zamanlarda ziyaretçilerimizin ve hastalarımızın en konforlu şekilde hizmet almasını ve kendilerini evlerinde hissetmetlerini sağlamaya gayret göstermekteyiz. Ziyaretçiniz ile birlikte kişiye özel odalarımızda sizleri ağırlamaktan şeref duyarız.</div>
+          </div>
+        </div>
+        <div class="clinic-questions">
+          <div class="clinic-question">
+            <div class="clinic-questions-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#025C90" class="bi bi-chat-right-text mx-2" viewBox="0 0 16 16">
+                <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z" />
+                <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+              </svg>
+            </div>
+            <div class="clinic-questions-title">Diyaliz merkezinizde gece diyalizi hizmeti almak istiyorum fakat, gece ziyaretçi imkanlarınız nelerdir?</div>
+          </div>
+          <div class="clinic-question-content">
+            <div class="clinic-questions-icon">
+              <svg width="22" class="mx-2" height="20" viewBox="0 0 27 25" fill="#025C90" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3021 18.897C12.0118 18.897 9.68506 17.5595 8.32712 15.7892C1.81217 15.7892 1.61523 24.9454 1.61523 24.9454H26.9873C26.9873 24.9454 27.4987 15.7485 20.1722 15.7485C18.8158 17.5407 16.5923 18.897 14.3021 18.897Z" fill="#025C91" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7591 7.92021C19.7591 10.5546 17.3148 15.5921 14.2971 15.5921C11.2843 15.5921 8.83838 10.553 8.83838 7.92021C8.83838 5.2874 11.2827 3.1499 14.2971 3.1499C17.3148 3.15146 19.7591 5.28896 19.7591 7.92021Z" fill="#025C91" />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M22.1954 5.64692C22.1954 5.15317 21.4966 4.75474 20.6294 4.75161V3.73442C20.6294 3.58286 20.6881 0.0344238 14.3161 0.0344238C7.94733 0.0344238 8.00609 3.58286 8.00609 3.73442V4.78755C7.99021 4.78755 7.9775 4.78286 7.96321 4.78286C7.1008 4.78286 6.40674 5.17505 6.40674 5.66099V9.96411C6.40674 10.4469 7.10239 10.8407 7.96321 10.8407C8.82403 10.8407 9.52286 10.4469 9.52286 9.96411V5.66099C9.52286 5.5938 9.47997 5.53286 9.45456 5.47036V4.29692C9.45456 4.18911 8.99715 1.51099 14.3161 1.51099C19.6367 1.51099 19.084 4.18911 19.084 4.29692V5.53286C19.0745 5.57192 19.0443 5.6063 19.0443 5.64692V10.0485C19.0443 10.5438 19.7479 10.9454 20.6199 10.9454C20.6389 10.9454 20.6532 10.9391 20.6723 10.9391V12.5469H19.1094V14.0625H22.2113L22.1954 5.64692Z"
+                  fill="#025C91"
+                />
+              </svg>
+            </div>
+            <div class="clinic-questions-text">Merhabalar, diyaliz merkezimizde gece diyalizi hizmeti sağladığımız zamanlarda ziyaretçilerimizin ve hastalarımızın en konforlu şekilde hizmet almasını ve kendilerini evlerinde hissetmetlerini sağlamaya gayret göstermekteyiz. Ziyaretçiniz ile birlikte kişiye özel odalarımızda sizleri ağırlamaktan şeref duyarız.</div>
+          </div>
+        </div>
+        <div class="clinic-questions">
+          <div class="clinic-question tm-margin-b-0">
+            <div class="clinic-questions-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#025C90" class="bi bi-chat-right-text mx-2" viewBox="0 0 16 16">
+                <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z" />
+                <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+              </svg>
+            </div>
+            <div class="clinic-questions-title">Diyaliz merkezinizde gece diyalizi hizmeti almak istiyorum fakat, gece ziyaretçi imkanlarınız nelerdir?</div>
+          </div>
+          <div class="clinic-question-content">
+            <div class="clinic-questions-icon">
+              <svg width="22" class="mx-2" height="20" viewBox="0 0 27 25" fill="#025C90" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3021 18.897C12.0118 18.897 9.68506 17.5595 8.32712 15.7892C1.81217 15.7892 1.61523 24.9454 1.61523 24.9454H26.9873C26.9873 24.9454 27.4987 15.7485 20.1722 15.7485C18.8158 17.5407 16.5923 18.897 14.3021 18.897Z" fill="#025C91" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7591 7.92021C19.7591 10.5546 17.3148 15.5921 14.2971 15.5921C11.2843 15.5921 8.83838 10.553 8.83838 7.92021C8.83838 5.2874 11.2827 3.1499 14.2971 3.1499C17.3148 3.15146 19.7591 5.28896 19.7591 7.92021Z" fill="#025C91" />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M22.1954 5.64692C22.1954 5.15317 21.4966 4.75474 20.6294 4.75161V3.73442C20.6294 3.58286 20.6881 0.0344238 14.3161 0.0344238C7.94733 0.0344238 8.00609 3.58286 8.00609 3.73442V4.78755C7.99021 4.78755 7.9775 4.78286 7.96321 4.78286C7.1008 4.78286 6.40674 5.17505 6.40674 5.66099V9.96411C6.40674 10.4469 7.10239 10.8407 7.96321 10.8407C8.82403 10.8407 9.52286 10.4469 9.52286 9.96411V5.66099C9.52286 5.5938 9.47997 5.53286 9.45456 5.47036V4.29692C9.45456 4.18911 8.99715 1.51099 14.3161 1.51099C19.6367 1.51099 19.084 4.18911 19.084 4.29692V5.53286C19.0745 5.57192 19.0443 5.6063 19.0443 5.64692V10.0485C19.0443 10.5438 19.7479 10.9454 20.6199 10.9454C20.6389 10.9454 20.6532 10.9391 20.6723 10.9391V12.5469H19.1094V14.0625H22.2113L22.1954 5.64692Z"
+                  fill="#025C91"
+                />
+              </svg>
+            </div>
+            <div class="clinic-questions-text last">Merhabalar, diyaliz merkezimizde gece diyalizi hizmeti sağladığımız zamanlarda ziyaretçilerimizin ve hastalarımızın en konforlu şekilde hizmet almasını ve kendilerini evlerinde hissetmetlerini sağlamaya gayret göstermekteyiz. Ziyaretçiniz ile birlikte kişiye özel odalarımızda sizleri ağırlamaktan şeref duyarız.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+  </div>
+</div>
+
+<!-- <div id="section-v" class="tm-margin-5 px-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="tm-section-title">Diyaliz Merkezi Çevresinde Neler Var?</div>
+        <div class="tm-color-pale tm-margin-b-20">Bulunduğunuz şehri keşfetmek daima iyi bir tercihtir.</div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 px-3">
+        <div>
+          <div class="clinic-centers-title">
+            <div class="clinic-icon"><img src="../user/img/clinic/icons/hospital.png" alt="Hospital Icon" /></div>
+            <div class="clinic-title">Hastaneler</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Şişli Etfal Hastanesi</div>
+            <div class="clinic-center-km">0.2 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Devlet Hastanesi</div>
+            <div class="clinic-center-km">0.6 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Apeks Tıp Merkezi</div>
+            <div class="clinic-center-km">1 km</div>
+          </div>
+        </div>
+        <div class="tm-margin-t-20">
+          <div class="clinic-centers-title">
+            <div class="clinic-icon"><img src="../user/img/clinic/icons/pharmacy.png" alt="Pharmacy Icon" /></div>
+            <div class="clinic-title">Eczaneler</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Fındıkoğlu Eczanesi</div>
+            <div class="clinic-center-km">0.2 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Şifa Eczanesi</div>
+            <div class="clinic-center-km">0.6 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Helteca Eczanesi</div>
+            <div class="clinic-center-km">1 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Med Eczanesi</div>
+            <div class="clinic-center-km">2 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Med Eczanesi</div>
+            <div class="clinic-center-km">2.5 km</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+        <div>
+          <div class="clinic-centers-title">
+            <div class="clinic-icon"><img src="../user/img/clinic/icons/hotel.png" alt="Hotel Icon" /></div>
+            <div class="clinic-title">Hastaneler</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Hilton Otel</div>
+            <div class="clinic-center-km">0.2 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Four Seasons</div>
+            <div class="clinic-center-km">0.6 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Sultanbeyli Otel</div>
+            <div class="clinic-center-km">1 km</div>
+          </div>
+        </div>
+        <div class="tm-margin-t-20">
+          <div class="clinic-centers-title">
+            <div class="clinic-icon"><img src="../user/img/clinic/icons/travel.png" alt="Travel Icon" /></div>
+            <div class="clinic-title">Gezilecek Noktalar</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Ayasofya Cami</div>
+            <div class="clinic-center-km">0.2 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Kız Kulesi</div>
+            <div class="clinic-center-km">0.6 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Topkapı Sarayı</div>
+            <div class="clinic-center-km">1 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Koç Müzesi</div>
+            <div class="clinic-center-km">2 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Arkeoloji Müzesi</div>
+            <div class="clinic-center-km">2.5 km</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+        <div>
+          <div class="clinic-centers-title">
+            <div class="clinic-icon"><img src="../user/img/clinic/icons/airport.png" alt="Airport Icon" /></div>
+            <div class="clinic-title">Havaalanı</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">İstanbul Havaalanı</div>
+            <div class="clinic-center-km">1 km</div>
+          </div>
+        </div>
+        <div class="tm-margin-t-20">
+          <div class="clinic-centers-title">
+            <div class="clinic-icon"><img src="../user/img/clinic/icons/transportation.png" alt="Transportation Icon" /></div>
+            <div class="clinic-title">Ulaşım Hatları</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Metro İstasyonu</div>
+            <div class="clinic-center-km">1 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Otobüs Durakları</div>
+            <div class="clinic-center-km">2 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Taksi Durağı</div>
+            <div class="clinic-center-km">2.5 km</div>
+          </div>
+        </div>
+        <div class="tm-margin-t-20">
+          <div class="clinic-centers-title">
+            <div class="clinic-icon"><img src="../user/img/clinic/icons/restaurant.png" alt="Restaurant Icon" /></div>
+            <div class="clinic-title">Restaurant ve Cafeler</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Big Chefs</div>
+            <div class="clinic-center-km">1 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Midpoint</div>
+            <div class="clinic-center-km">2 km</div>
+          </div>
+          <div class="clinic-center-text">
+            <div class="clinic-center-name">Starbucks</div>
+            <div class="clinic-center-km">2.5 km</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+  </div>
+</div> -->
+
+<!--=========DIALYSING SUGGESTION POINT=========-->
+<div class="my-5" id="center">
+  <div class="container">
+    <div class="d-flex">
+      <div class="tm-section-title">Önerilen Diyaliz Merkezleri</div>
     </div>
 
-    <!--======= PARTNER =====-->
-    <div id="section-x" class="tm-bg-white tm-p">
-        <div class="container">
-            <div class="row">
-                <div class="brands">
-                    <img src="../user/img/brands/JCI.png" alt="Brand JCI" class="height-100" />
-                    <img src="../user/img/brands/ISO.png" alt="Brand ISO" class="height-80" />
-                    <img src="../user/img/brands/sks.png" alt="Brand sks" class="height-100" />
-                    <img src="../user/img/brands/health.png" alt="Brand health" class="height-80" />
-                </div>
+    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 g-3 mb-3">
+      <div class="col col-five">
+        <div class="card">
+          <div class="position-relative">
+            <a href="./clinic.html"><img src="../user/img/custom/center-i.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom Ankara" /></a>
+            <div class="position-absolute bottom-0 start-0 px-2">
+              <h5 class="tm-box-title">Türkmed</h5>
+              <p class="tm-box-text">Diyaliz Merkezi</p>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!--======= NEWSLETTER =====-->
-    <div id="section-xi" class="tm-bg-dark-blue">
-        <div class="container tm-p-4 d-flex align-items-center justify-content-center">
-            <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7 mt-2">
-            <div class="row"> 
-                    <div class="tm-text-white mb-3 text-center newsletter">Son gelişmelerden ve diyaliz fırsatlarından haberdar olabilmek
-                        için mail listemize abone olabilirsiniz.</div>                        
-                    <div class="form-group bottom blue-input">
-                        <input name="check-in" type="text" class="form-control form-control-md" id="inputCheckIn" placeholder="dialysing@demo.com.tr" />
-                        <img src="../user/img/icons/arrow.png" class="mt-0" alt="Icon Arrow" />
-                        </div>
-                    </div> 
-                </div>
+      <div class="col col-five">
+        <div class="card">
+          <div class="position-relative">
+            <img src="../user/img/custom/center-ii.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom Ankara" />
+            <div class="position-absolute bottom-0 start-0 px-2">
+              <h5 class="tm-box-title">Sultanbeyli</h5>
+              <p class="tm-box-text">Diyaliz Merkezi</p>
             </div>
+          </div>
         </div>
+      </div>
 
-        <%- include("../../partials/footer")  %> 
+      <div class="col col-five">
+        <div class="card">
+          <div class="position-relative">
+            <img src="../user/img/custom/center-iii.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom İstanbul - Avrupa" />
+            <div class="position-absolute bottom-0 start-0 px-2">
+              <h4 class="tm-box-title">Bodrum</h4>
+              <p class="tm-box-text">Diyaliz Merkezi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-five">
+        <div class="card">
+          <div class="position-relative">
+            <img src="../user/img/custom/center-iv.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom İstanbul - Anadolu" />
+            <div class="position-absolute bottom-0 start-0 px-2">
+              <h4 class="tm-box-title">Karşıyaka</h4>
+              <p class="tm-box-text">Diyaliz Merkezi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-five">
+        <div class="card">
+          <div class="position-relative">
+            <img src="../user/img/custom/center-v.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom Ankara" />
+            <div class="position-absolute bottom-0 start-0 px-2">
+              <h4 class="tm-box-title">Milas</h4>
+              <p class="tm-box-text">Diyaliz Merkezi</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!--======= PARTNER =====-->
+<div id="section-x" class="tm-bg-white tm-p">
+  <div class="container">
+    <div class="row">
+      <div class="brands">
+        <img src="../user/img/brands/JCI.png" alt="Brand JCI" class="height-100" />
+        <img src="../user/img/brands/ISO.png" alt="Brand ISO" class="height-80" />
+        <img src="../user/img/brands/sks.png" alt="Brand sks" class="height-100" />
+        <img src="../user/img/brands/health.png" alt="Brand health" class="height-80" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--======= NEWSLETTER =====-->
+<div id="section-xi" class="tm-bg-dark-blue">
+  <div class="container tm-p-4 d-flex align-items-center justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7 mt-2">
+      <div class="row">
+        <div class="tm-text-white mb-3 text-center newsletter">Son gelişmelerden ve diyaliz fırsatlarından haberdar olabilmek için mail listemize abone olabilirsiniz.</div>
+        <div class="form-group bottom blue-input">
+          <input name="check-in" type="text" class="form-control form-control-md" id="inputCheckIn" placeholder="dialysing@demo.com.tr" />
+          <img src="../user/img/icons/arrow.png" class="mt-0" alt="Icon Arrow" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../../partials/footer") %>
+
+<script>
+  let gunler = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"];
+  function seansSayisiDegisti() {
+    const seansSayisi = document.getElementById("sessionsDayCount");
+    if (seansSayisi.value == 1) {
+      var x = document.getElementById("sessionsDay");
+      x.innerHTML = "";
+      gunler.forEach((gun) => {
+        var option = new Option(gun, gun);
+        x.appendChild(option);
+      });
+    } else if (seansSayisi.value == 2) {
+      var x = document.getElementById("sessionsDay");
+      x.innerHTML = "";
+      var option = new Option(gunler[0] + "-" + gunler[3], gunler[0] + "-" + gunler[3]);
+      var option2 = new Option(gunler[1] + "-" + gunler[4], gunler[1] + "-" + gunler[4]);
+      var option3 = new Option(gunler[2] + "-" + gunler[5], gunler[2] + "-" + gunler[5]);
+
+      x.appendChild(option);
+      x.appendChild(option2);
+      x.appendChild(option3);
+    } else if (seansSayisi.value == 3) {
+      var x = document.getElementById("sessionsDay");
+      x.innerHTML = "";
+      var option = new Option(gunler[0] + "-" + gunler[2] + "-" + gunler[4], gunler[0] + "-" + gunler[2] + "-" + gunler[4]);
+      var option2 = new Option(gunler[1] + "-" + gunler[3] + "-" + gunler[5],gunler[1] + "-" + gunler[3] + "-" + gunler[5]);
+
+      x.appendChild(option);
+      x.appendChild(option2);
+    }
+  }
+</script>

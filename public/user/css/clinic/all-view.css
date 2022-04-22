@@ -1,208 +1,209 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lato&family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Lato&family=Montserrat&display=swap");
 nav {
-    font-size: 14px;
-    background-color: #28353e;
-} 
-.navbar-brand { 
-    color: #fff;
-    font-family: 'Gilroy', sans-serif; 
-    font-size: 28px !important;
-    font-weight: 600;
+  font-size: 14px;
+  background-color: #28353e;
 }
-.navbar-brand:hover { 
-    color: #fff;
-} 
-.navbar-brand span { 
-    color: #19a2f2;
+.navbar-brand {
+  color: #fff;
+  font-family: "Gilroy", sans-serif;
+  font-size: 28px !important;
+  font-weight: 600;
+}
+.navbar-brand:hover {
+  color: #fff;
+}
+.navbar-brand span {
+  color: #19a2f2;
 }
 .btn-second {
-    border-radius: 12px;
-    border: none;
-    border-color: #055f8f;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #ffffff !important;
-    font-weight: 500;
-    padding: 0.5rem 1rem !important;
-    text-align: center;
-    border: 2px solid #055f8f; 
-    text-decoration: none !important;
-    background-color: #055f8f;
-    font-family: 'Lato', sans-serif !important;
-} 
-.btn-third {
-    background-color: transparent !important;
-    border: 2px solid #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #ffffff !important; 
-    padding: 0.5rem 1rem !important;
-    text-align: center; 
-    font-family: 'Lato', sans-serif !important;
+  border-radius: 12px;
+  border: none;
+  border-color: #055f8f;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  text-align: center;
+  border: 2px solid #055f8f;
+  text-decoration: none !important;
+  background-color: #055f8f;
+  font-family: "Lato", sans-serif !important;
 }
-.navbar-toggler { 
-    border: #fff 2px solid !important; 
-} 
+.btn-third {
+  background-color: transparent !important;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff !important;
+  padding: 0.5rem 1rem !important;
+  text-align: center;
+  font-family: "Lato", sans-serif !important;
+}
+.navbar-toggler {
+  border: #fff 2px solid !important;
+}
 .navbar-toggler-icon i {
-    color: #fff !important;  
+  color: #fff !important;
 }
 .bi {
-    color: #fff;
+  color: #fff;
 }
 footer {
-    font-size: 15px;
-    font-family: 'Gilroy', sans-serif; 
+  font-size: 15px;
+  font-family: "Gilroy", sans-serif;
 }
 .subtitle {
   font-weight: 500 !important;
   font-size: 18px;
 }
 .form-group {
-    position: relative;
+  position: relative;
 }
 .form-group .form-control + img {
-    position: absolute;
-    right: 20px;
-    top: 8px;
-}  
+  position: absolute;
+  right: 20px;
+  top: 8px;
+}
 .form-group .form-control + img.dateicon {
-    top: 50%;
-}  
+  top: 50%;
+}
 .form-group label + .form-control + img {
-    top: 36px;
-}  
+  top: 36px;
+}
 .form-group label + .form-control.datepicker + img {
-    top: 41px;
-} 
+  top: 41px;
+}
 .form-group .form-control::placeholder {
-    color: #055f8f;
+  color: #055f8f;
 }
 main h3 {
-    color: #055f8f;
+  color: #055f8f;
 }
 .accordion-button {
-    font-size: 12px !important;
-    font-weight: 700;
+  font-size: 12px !important;
+  font-weight: 700;
 }
 .history {
-    font-size: 15px;
-    font-weight: 600;
+  font-size: 15px;
+  font-weight: 600;
 }
 .accordion-collapse p {
-    font-size: 15px;
-    margin-bottom: 5px;
+  font-size: 15px;
+  margin-bottom: 5px;
 }
 .pass {
-    color: #d60808 !important;
-} 
-.future {
-    color: #058f0c !important;
+  color: #d60808 !important;
 }
-label{
-    font-size: 15px !important;
-    margin-bottom: 0px;
-    font-weight: 600; 
-    color: #28353e !important;
+.future {
+  color: #058f0c !important;
+}
+label {
+  font-size: 15px !important;
+  margin-bottom: 0px;
+  font-weight: 600;
+  color: #28353e !important;
 }
 .btn-register {
-    border-radius: 10px !important;
-    border: none;
-    border-color: #055f8f; 
-    cursor: pointer;
-    color: #ffffff !important; 
-    padding: 0.5rem .75rem !important;
-    text-align: center;
-    border: 2px solid #055f8f; 
-    text-decoration: none !important;
-    background-color: #055f8f;
-    font-size: 14px !important;
+  border-radius: 10px !important;
+  border: none;
+  border-color: #055f8f;
+  cursor: pointer;
+  color: #ffffff !important;
+  padding: 0.5rem 0.75rem !important;
+  text-align: center;
+  border: 2px solid #055f8f;
+  text-decoration: none !important;
+  background-color: #055f8f;
+  font-size: 14px !important;
 }
 #account p {
- font-size: 15px;
+  font-size: 15px;
 }
-#account input{
-    font-size: 12px;
-    padding: 5px !important;
+#account input {
+  font-size: 12px;
+  padding: 5px !important;
 }
-#account i{
-    color: #055f8f;
+#account i {
+  color: #055f8f;
 }
-#account button { 
-    border: none !important;
-    background-color: none !important;
+#account button {
+  border: none !important;
+  background-color: none !important;
 }
-.btn-secondary{
-    background-color: transparent !important;
-    border-radius: 12px;
-    border: none !important; 
-    cursor: pointer;
-    color: #ffffff !important; 
-    padding: 0.5rem 1rem !important; 
-    text-decoration: none !important; 
-    font-size: 15px !important; 
+.btn-secondary {
+  background-color: transparent !important;
+  border-radius: 12px;
+  border: none !important;
+  cursor: pointer;
+  color: #ffffff !important;
+  padding: 0.5rem 1rem !important;
+  text-decoration: none !important;
+  font-size: 15px !important;
 }
-#location{
-    text-decoration: none;
-    color: #fff;
-    font-size: 10px;
-}  
+#location {
+  text-decoration: none;
+  color: #fff;
+  font-size: 10px;
+}
 .dropdown-item {
   font-size: 13px;
 }
 #country-main {
-    background-color: #F5F9FC;
-    padding: 60px !important;
+  background-color: #f5f9fc;
+  padding: 60px !important;
+  height: 100vh;
 }
 #country button {
-    border: none;
-    background-color: #F5F9FC;
-    font-size: 20px;
-    color: #28353E !important;
-    font-family: 'Lato', sans-serif !important;
-    font-weight: 600;
+  border: none;
+  background-color: #f5f9fc;
+  font-size: 20px;
+  color: #28353e !important;
+  font-family: "Lato", sans-serif !important;
+  font-weight: 600;
 }
 #country span {
-    border: none;
-    background-color: #F5F9FC;
-    font-size: 15px;
-    color: #28353e56 !important;
-    font-family: 'Lato', sans-serif !important;
+  border: none;
+  background-color: #f5f9fc;
+  font-size: 15px;
+  color: #28353e56 !important;
+  font-family: "Lato", sans-serif !important;
 }
 #country i {
-    border: none;
-    background-color: #F5F9FC;
-    font-size: 15px; 
-    color: #055f8f !important;
-    font-family: 'Lato', sans-serif !important;
+  border: none;
+  background-color: #f5f9fc;
+  font-size: 15px;
+  color: #055f8f !important;
+  font-family: "Lato", sans-serif !important;
 }
 .accordion-item {
-    border: none !important;
-    background-color: #F5F9FC !important;
+  border: none !important;
+  background-color: #f5f9fc !important;
 }
 .title h1 {
-    color: #28353e !important;
-    font-family: 'Lato', sans-serif !important; 
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 3rem;
+  color: #28353e !important;
+  font-family: "Lato", sans-serif !important;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 3rem;
 }
 .title p {
-    color: #28353e67 !important; 
-    font-size: 15px;
-    font-family: 'Montserrat', sans-serif !important;
-} 
+  color: #28353e67 !important;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif !important;
+}
 .city {
-    color: #025C90;
-    font-size: 20px;
-    font-weight: 600; 
+  color: #025c90;
+  font-size: 20px;
+  font-weight: 600;
 }
 .city a {
-    text-decoration: none;
-    font-family: 'Lato', sans-serif !important; 
-    color: #025C90; 
+  text-decoration: none;
+  font-family: "Lato", sans-serif !important;
+  color: #025c90;
 }
 .countryOne button {
-    font-size: 25px;
-    color: #28353E !important;
-    font-family: 'Lato', sans-serif !important;
+  font-size: 25px;
+  color: #28353e !important;
+  font-family: "Lato", sans-serif !important;
 }

@@ -308,9 +308,14 @@
                     <option value="3">Hepatit C Pozitif</option>
                   </select>
                 </div>
-                SİGORTA DUZENLENECEK....
+                <!-- SGK -->
                 <div class="form-group">
-                  <label>Diyalize Girecek Kişinin Sigorta Durumu <span class="mandatory">*</span></label>
+                  <label>Diyalize Girecek Kişinin Sigorta Durumu <span class="mandatory">*</span></label><br>
+                  <div class="sgk-btn mt-1">
+                  <button type="button" id="sgk-btn" onclick="javascript:hideShowSgk()" >Sigortam Var</button>
+                  <button type="button" id="nosgk-btn" onclick="javascript:hideShowNoSgk()">Sigortam Yok</button>
+                </div>
+                  <div id="selectorsgk" class="sgk" style="display: none;">
                   <div class="form-group not-border checkbox form-check">
                     <input type="radio" name="insurance" class="form-check-input" id="exampleRadio1" value="SSK" />
                     <label class="form-check-label" for="exampleRadio1">SSK</label>
@@ -355,6 +360,12 @@
                     <label class="form-check-label" for="exampleRadio1">Diğer</label>
                   </div>
                 </div>
+                <div id="payment" class="nosgk mt-1" style="display: none;">
+                  <label class="mt-2" for="name-surname2">Sigortasız Tedavi Ücreti <span class="mandatory">*</span></label>
+                  <input type="text" class="form-control">
+                </div>
+                </div>
+
                 <div class="clinic-form-title my-4 mb-3">Adres Bilgileri</div>
                 <div class="form-group">
                   <label for="address">Adresinizi Girin <span class="mandatory">*</span></label>

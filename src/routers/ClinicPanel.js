@@ -3,6 +3,8 @@ require("express-router-group");
 const { clinicAuthenticate, clinicCurrentUser } = require("../middlewares/authentication");
 // const idChecker = require("../middlewares/idChecker");
 
+const multerConfig = require("../scripts/utils/multerConfig");
+
 //! TODO ADMIN KONTROLÜ YAPILACAK....
 
 const Controller = require("../controllers/ClinicPanel");
@@ -75,7 +77,8 @@ router.group("/", clinicAuthenticate, (router) => {
   router.get("/evaluation", Controller.evaluation);
 
   router.get("/update-user", Controller.updateUser);
-  router.get("/upload-image", Controller.uploadImage);
+  router.get("/upload-image", Controller.uploadImageView);
+  router.post("/upload-image", multerConfig.single("image"), Controller.uploadImage);
 
   router.get("/visibility", Controller.visibility);
 

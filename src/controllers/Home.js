@@ -21,7 +21,9 @@ class HomeController {
     res.render("user/pages/index", { layout: "user/layouts/index", user });
   }
   clinicMain(req, res, next) {
-    res.render("user/pages/clinic/clinic-main", { layout: "user/layouts/clinic-main" });
+    res.render("user/pages/clinic/clinic-main", {
+      layout: "user/layouts/clinic-main",
+    });
   }
 
   singleClinic(req, res, next) {
@@ -29,9 +31,17 @@ class HomeController {
     DialysisCenterService.findById(id)
       .then((center) => {
         if (req.cookies.tmpCheckInDate) {
-          res.render("user/pages/clinic/single-clinic", { layout: "user/layouts/clinic-main", center, date: req.cookies.tmpCheckInDate });
+          res.render("user/pages/clinic/single-clinic", {
+            layout: "user/layouts/clinic-main",
+            center,
+            date: req.cookies.tmpCheckInDate,
+          });
         } else {
-          res.render("user/pages/clinic/single-clinic", { layout: "user/layouts/clinic-main", center, date: null });
+          res.render("user/pages/clinic/single-clinic", {
+            layout: "user/layouts/clinic-main",
+            center,
+            date: null,
+          });
         }
       })
       .catch((err) => {
@@ -42,12 +52,23 @@ class HomeController {
   async viewAppointment(req, res, next) {
     res.cookie("tmpAppointment", req.body);
 
-    const birthDate = ("0" + req.user.birthDate.getDate()).slice(-2) + "." + ("0" + (req.user.birthDate.getMonth() + 1)).slice(-2) + "." + req.user.birthDate.getFullYear();
+    const birthDate =
+      ("0" + req.user.birthDate.getDate()).slice(-2) +
+      "." +
+      ("0" + (req.user.birthDate.getMonth() + 1)).slice(-2) +
+      "." +
+      req.user.birthDate.getFullYear();
     const user = req.user;
 
     DialysisCenterService.findById(req.body.centerId)
       .then((center) => {
-        res.render("user/pages/clinic/appointment", { layout: "user/layouts/clinic-main", cookieValue: req.body, user, birthDate, center });
+        res.render("user/pages/clinic/appointment", {
+          layout: "user/layouts/clinic-main",
+          cookieValue: req.body,
+          user,
+          birthDate,
+          center,
+        });
       })
       .catch((err) => {
         console.log("Error", err);
@@ -85,7 +106,9 @@ class HomeController {
     AppointmentService.create(appointment)
       .then((data) => {
         req.user.appointments.push(data._id);
-        UserService.update(req.user._id, { appointments: req.user.appointments })
+        UserService.update(req.user._id, {
+          appointments: req.user.appointments,
+        })
           .then((data) => {
             res.clearCookie("tmpAppointment");
             res.redirect("/user");
@@ -100,7 +123,9 @@ class HomeController {
   }
 
   addressCorrection(req, res, next) {
-    res.render("user/pages/clinic/clinic-address-correction", { layout: "user/layouts/clinic" });
+    res.render("user/pages/clinic/clinic-address-correction", {
+      layout: "user/layouts/clinic",
+    });
   }
 
   clinicList(req, res, next) {
@@ -115,9 +140,17 @@ class HomeController {
       };
       DialysisCenterService.paginateList(query, page, perPage)
         .then((list) => {
-          DialysisCenter.count({ "address.city": req.query.city }).exec(function (err, count) {
-            return res.render("user/pages/clinic/clinic-list", { layout: "user/layouts/clinic-main", list, user: req.user, city: req.query.city, counter: count / perPage });
-          });
+          DialysisCenter.count({ "address.city": req.query.city }).exec(
+            function (err, count) {
+              return res.render("user/pages/clinic/clinic-list", {
+                layout: "user/layouts/clinic-main",
+                list,
+                user: req.user,
+                city: req.query.city,
+                counter: count / perPage,
+              });
+            }
+          );
         })
         .catch((err) => {
           console.log("Error", err);
@@ -130,16 +163,28 @@ class HomeController {
 
   async allView(req, res, next) {
     const countries = await DialysisCenterService.groupBy("$address.country");
-    const cities = await DialysisCenterService.groupBy("$address.country", "$address.city");
+    const cities = await DialysisCenterService.groupBy(
+      "$address.country",
+      "$address.city"
+    );
 
-    res.render("user/pages/clinic/all-view", { layout: "user/layouts/clinic-main", countries, cities, user: req.user });
+    res.render("user/pages/clinic/all-view", {
+      layout: "user/layouts/clinic-main",
+      countries,
+      cities,
+      user: req.user,
+    });
   }
   clinicLogin(req, res, next) {
-    res.render("user/pages/clinic/clinic-login", { layout: "user/layouts/clinic-main" });
+    res.render("user/pages/clinic/clinic-login", {
+      layout: "user/layouts/clinic-main",
+    });
   }
 
   gfrCalculator(req, res, next) {
-    res.render("user/pages/gfr-calculate", { layout: "user/layouts/gfr-calculate" });
+    res.render("user/pages/gfr-calculate", {
+      layout: "user/layouts/gfr-calculate",
+    });
   }
 
   user(req, res, next) {
@@ -147,7 +192,11 @@ class HomeController {
       .then((user) => {
         user.password = hashToPassword(user.password);
         user.appointments = user.appointments.reverse();
-        res.render("user/pages/user", { layout: "user/layouts/user", user, errors: null });
+        res.render("user/pages/user", {
+          layout: "user/layouts/user",
+          user,
+          errors: null,
+        });
       })
       .catch((err) => {
         res.redirect("/");
@@ -160,7 +209,11 @@ class HomeController {
         .then((user) => {
           user.password = hashToPassword(user.password);
           user.appointments = user.appointments.reverse();
-          return res.render("user/pages/user", { layout: "user/layouts/user", user, errors: req.errors });
+          return res.render("user/pages/user", {
+            layout: "user/layouts/user",
+            user,
+            errors: req.errors,
+          });
         })
         .catch((err) => {
           console.log("Hata : ", err);
@@ -175,9 +228,17 @@ class HomeController {
           const message = ErrorMessage.printMessage(err);
           if (message != undefined) {
             console.log("User", req.user);
-            return res.render("user/pages/user", { layout: "user/layouts/user", user: req.user, errors: message });
+            return res.render("user/pages/user", {
+              layout: "user/layouts/user",
+              user: req.user,
+              errors: message,
+            });
           } else {
-            return res.render("user/pages/user", { layout: "user/layouts/user", user: req.user, errors: "Güncelleme Sırasında Hata Oluştu." });
+            return res.render("user/pages/user", {
+              layout: "user/layouts/user",
+              user: req.user,
+              errors: "Güncelleme Sırasında Hata Oluştu.",
+            });
           }
         });
     }
@@ -215,7 +276,8 @@ class HomeController {
           { expiresIn: "1d" }
         );
 
-        const verifyURL = process.env.MAIL_VERIFY_URL + "user/verify?token=" + token;
+        const verifyURL =
+          process.env.MAIL_VERIFY_URL + "user/verify?token=" + token;
         let transporter = mailer.createTransport({
           service: "gmail",
           auth: {
@@ -237,7 +299,10 @@ class HomeController {
             transporter.close();
           }
         );
-        return res.render("user/pages/verify", { layout: "user/layouts/clinic-main", email: data.email });
+        return res.render("user/pages/verify", {
+          layout: "user/layouts/clinic-main",
+          email: data.email,
+        });
       } catch (err) {
         const message = ErrorMessage.printMessage(err);
         if (message != undefined) {
@@ -249,7 +314,10 @@ class HomeController {
           req.flash("password", enterPassword);
           return res.redirect("/register");
         }
-        const htmlMessage = new HtmlMessage("Kayıt İşlemi Sırasında Hata Oluştu.", "danger");
+        const htmlMessage = new HtmlMessage(
+          "Kayıt İşlemi Sırasında Hata Oluştu.",
+          "danger"
+        );
         req.flash("validationErrors", htmlMessage);
         req.flash("nameSurname", req.body.nameSurname);
         req.flash("email", req.body.email);
@@ -293,16 +361,24 @@ class HomeController {
       try {
         jwt.verify(token, process.env.CONFIRM_SECRET, async (e, decoded) => {
           if (e) {
-            req.flash("validationErrors", [{ msg: "Geçersiz Token. Lütfen Yeniden Kayıt Olun.." }]);
+            req.flash("validationErrors", [
+              { msg: "Geçersiz Token. Lütfen Yeniden Kayıt Olun.." },
+            ]);
             res.redirect("/register");
           } else {
             const userID = decoded.id;
-            const result = await UserService.update(userID, { emailConfirmed: true });
+            const result = await UserService.update(userID, {
+              emailConfirmed: true,
+            });
             if (result) {
-              req.flash("validationErrors", [{ msg: "Emailiniz Onaylanmıştır.", result: "success" }]);
+              req.flash("validationErrors", [
+                { msg: "Emailiniz Onaylanmıştır.", result: "success" },
+              ]);
               res.redirect("/register");
             } else {
-              req.flash("validationErrors", [{ msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." }]);
+              req.flash("validationErrors", [
+                { msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." },
+              ]);
               res.redirect("/register");
             }
           }
@@ -319,7 +395,10 @@ class HomeController {
     BlogService.index()
       .then((blogs) => {
         console.log("Blogs :", blogs);
-        res.render("user/pages/blogs/all-blogs", { layout: "user/layouts/blog", blogs });
+        res.render("user/pages/blogs/all-blogs", {
+          layout: "user/layouts/blog",
+          blogs,
+        });
       })
       .catch((err) => {
         console.log("Hata : ", err);
@@ -329,7 +408,10 @@ class HomeController {
   singleBlog(req, res, next) {
     var seflink = req.params.seflink;
     BlogService.find({ seflink: seflink }).then((blog) => {
-      res.render("user/pages/blogs/blog", { layout: "user/layouts/blog", blog });
+      res.render("user/pages/blogs/blog", {
+        layout: "user/layouts/blog",
+        blog,
+      });
     });
   }
 }

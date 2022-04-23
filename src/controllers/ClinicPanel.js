@@ -503,7 +503,8 @@ class ClinicPanelController {
   }
 
   clinicPoint(req, res, next) {
-    res.render("clinic-panel/pages/panel/clinic-point", { layout: "clinic-panel/layouts/panel", user: req.user });
+    var center = req.cookies.clinic;
+    res.render("clinic-panel/pages/panel/clinic-point", { layout: "clinic-panel/layouts/panel", user: req.user, center });
   }
 
   competition(req, res, next) {

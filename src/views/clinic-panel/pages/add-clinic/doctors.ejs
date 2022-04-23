@@ -27,77 +27,78 @@
         <!--======= MERKEZ SAĞLIK ÇALIŞANLARI =====-->
         <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7">
           <div class="tm-section-title tm-clinic-title">Merkez Sağlık Çalışanları</div>
-          <form class="tm-form-wide" action="/panel/clinic-summary" method="GET">
+          <form class="tm-form-wide" autocomplete="off" onkeypress="return event.keyCode != 13;">
             <div class="form-box">
               <div class="title">MSağlık Çalışanı Adı Soyadı</div>
               <div class="form-group">
-                <input type="text" class="form-control" id="center-name" placeholder="Sağlık Çalışanı Adı Soyadı" />
+                <input type="text" class="form-control" id="employeeNameSurname" name="employeeNameSurname" placeholder="Sağlık Çalışanı Adı Soyadı" />
               </div>
             </div>
             <div class="form-box">
               <div class="title">Merkezimizdeki Görevi</div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                <input class="form-check-input" type="checkbox" value="Nefroloji Uzmanı" name="employeeJob" id="flexCheckChecked" checked />
                 <label class="form-check-label selected" for="flexCheckChecked"> Nefroloji Uzmanı </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked"> Nefroloji Uzmanı </label>
-              </div>
-              <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <input class="form-check-input" type="checkbox" value="Mesul Müdür" name="employeeJob" id="flexCheckChecked" />
                 <label class="form-check-label" for="flexCheckChecked"> Mesul Müdür </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <input class="form-check-input" type="checkbox" value="Sorumlu Hekim" name="employeeJob" id="flexCheckChecked" />
                 <label class="form-check-label" for="flexCheckChecked"> Sorumlu Hekim </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <input class="form-check-input" type="checkbox" value="Merkez Başhemşiresi" name="employeeJob" id="flexCheckChecked" />
                 <label class="form-check-label" for="flexCheckChecked"> Merkez Başhemşiresi </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <input class="form-check-input" type="checkbox" value="Diyetisyen" name="employeeJob" id="flexCheckChecked" />
                 <label class="form-check-label" for="flexCheckChecked"> Diyetisyen </label>
               </div>
             </div>
             <div class="form-box">
               <div class="title">Akademik Eğitim Durumunu Seçiniz</div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                <input class="form-check-input" type="checkbox" value="Profesör" name="academicEducation" id="flexCheckChecked" checked />
                 <label class="form-check-label selected" for="flexCheckChecked"> Profesör </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <input class="form-check-input" type="checkbox" value="Uzman Hekim" name="academicEducation" id="flexCheckChecked" />
                 <label class="form-check-label" for="flexCheckChecked"> Uzman Hekim </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <input class="form-check-input" type="checkbox" value="Doktor" name="academicEducation" id="flexCheckChecked" />
                 <label class="form-check-label" for="flexCheckChecked"> Doktor </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <input class="form-check-input" type="checkbox" value="Hemşire" name="academicEducation" id="flexCheckChecked" />
                 <label class="form-check-label" for="flexCheckChecked"> Hemşire </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <input class="form-check-input" type="checkbox" value="Diyetisyen" name="academicEducation" id="flexCheckChecked" />
                 <label class="form-check-label" for="flexCheckChecked"> Diyetisyen </label>
               </div>
             </div>
+            <button type="button" class="btn" onclick="addPersonel()">Ekle</button>
             <div class="clinic-doctors">
               <div class="title">Sağlık Çalışanları</div>
+              <ul id="clinic-doctor-list" name="personelList">
+
+              </ul>
+              <!-- <div class="title">Sağlık Çalışanları</div>
               <div class="text">Nefroloji Uzmanı: Prof. Dr. Gülçin Kantarcı</div>
               <div class="text">Mesul Müdür: Dr. Mehtap Çelik Küçük</div>
-              <div class="text">Sorumlu Hekim: Dr. Tekbir Atay</div>
+              <div class="text">Sorumlu Hekim: Dr. Tekbir Atay</div> -->
             </div>
             <div class="tm-button-next left">
-              <a href="./clinic-details.html"
+              <!-- <a href="/"
                 ><button type="button" class="btn btn-outline-secondary">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#025c91" class="bi bi-chevron-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
                   </svg></button
-              ></a>
-              <button type="submit" class="btn btn-secondary mx-2">Sonraki Adım</button>
+              ></a> -->
+              <button type="button" onclick="save()" class="btn btn-secondary mx-2">Sonraki Adım</button>
             </div>
           </form>
         </div>
@@ -132,3 +133,44 @@
     </div>
   </div>
 </div>
+
+<script>
+  function addPersonel(){
+    var nameSurname = document.getElementById("employeeNameSurname").value;
+    var employeeJob = document.querySelector('input[name="employeeJob"]:checked').value;
+    var academicEducation = document.querySelector('input[name="academicEducation"]:checked').value;
+
+    var list = document.getElementById("clinic-doctor-list");
+
+    var li = document.createElement("li");
+
+    li.innerHTML = `<div class="text" employeeJob="${employeeJob}" academicEducation=${academicEducation} nameSurname=${nameSurname} >${employeeJob}: ${academicEducation} ${nameSurname}</div>`;
+
+    list.appendChild(li);
+  }
+
+  function save(){
+    var list = document.getElementById("clinic-doctor-list");
+    var personelList = [];
+
+    for(var i = 0; i < list.children.length; i++){
+      var nameSurname = list.children[i].getElementsByTagName("div")[0].getAttribute("nameSurname");
+      var employeeJob = list.children[i].getElementsByTagName("div")[0].getAttribute("employeeJob");
+      var academicEducation = list.children[i].getElementsByTagName("div")[0].getAttribute("academicEducation");
+
+      personelList.push({
+        employeeNameSurname: nameSurname,
+        job: employeeJob,
+        academicEducation: academicEducation
+      });
+    }
+
+    $.post('/panel/clinic-summary',  { personelList }, function(data, status){
+      if(status == "success"){
+        window.location.href = "/panel/clinic-summary";
+      }
+    });
+  }
+
+
+</script>

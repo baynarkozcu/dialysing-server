@@ -40,7 +40,8 @@ router.group("/", clinicAuthenticate, (router) => {
   router.post("/clinic-services", Controller.clinicServices);
   router.post("/payment-option", Controller.paymentOption);
   router.post("/doctors", Controller.doctors);
-  router.get("/clinic-summary", Controller.clinicSummary);
+  router.post("/clinic-summary", Controller.clinicSummary);
+  router.get("/clinic-summary", Controller.clinicSummaryView);
   router.get("/clinic-save", Controller.clinicSave);
 
   router.get("/analysis", Controller.analysis);

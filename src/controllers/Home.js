@@ -52,12 +52,7 @@ class HomeController {
   async viewAppointment(req, res, next) {
     res.cookie("tmpAppointment", req.body);
 
-    const birthDate =
-      ("0" + req.user.birthDate.getDate()).slice(-2) +
-      "." +
-      ("0" + (req.user.birthDate.getMonth() + 1)).slice(-2) +
-      "." +
-      req.user.birthDate.getFullYear();
+    const birthDate = ("0" + req.user.birthDate.getDate()).slice(-2) + "." + ("0" + (req.user.birthDate.getMonth() + 1)).slice(-2) + "." + req.user.birthDate.getFullYear();
     const user = req.user;
 
     DialysisCenterService.findById(req.body.centerId)
@@ -133,24 +128,89 @@ class HomeController {
       res.cookie("tmpCheckInDate", req.query.checkInDate);
     }
     if (req.query.city) {
+      console.log("City", req.body);
       const page = req.query.page || 0;
       const perPage = 8;
       const query = {
         "address.city": req.query.city,
+        //"services.dialysisType": req.query.dialysisTypeList ?? "",
+        // "services.inSessionService": req.query.inSessionServiceList ?? "",
+        // "centerDetails.centerServices": req.query.centerServicesList ?? "",
+        // "centerDetails.buildType": req.query.buildTypeList ?? "",
+        // "centerDetails.centerType": req.query.centerTypeList ?? "",
       };
+      console.log("Deneme :", query);
       DialysisCenterService.paginateList(query, page, perPage)
         .then((list) => {
-          DialysisCenter.count({ "address.city": req.query.city }).exec(
-            function (err, count) {
-              return res.render("user/pages/clinic/clinic-list", {
-                layout: "user/layouts/clinic-main",
-                list,
-                user: req.user,
-                city: req.query.city,
-                counter: count / perPage,
-              });
-            }
-          );
+          DialysisCenter.count(query).exec(function (err, count) {
+            return res.render("user/pages/clinic/clinic-list", {
+              layout: "user/layouts/clinic-main",
+              list,
+              user: req.user,
+              city: req.query.city,
+              counter: count / perPage,
+            });
+          });
+        })
+        .catch((err) => {
+          console.log("Error", err);
+          return res.redirect("/");
+        });
+    } else {
+      return res.redirect("/clinic/all");
+    }
+  }
+  filterClinicList(req, res, next) {
+    if (req.query.city) {
+      console.log("filterClinicList", req.body);
+      const page = req.query.page || 0;
+      const perPage = 8;
+
+      // {
+      //   $and: [{ "address.city": { $in: ["İstanbul", "Bursa"] } }, { "centerDetails.centerType": { $in: ["Kamu"] } }];
+      // }
+
+      var dialysisTypeQuery = {};
+      if (req.body.dialysisType) {
+        dialysisTypeQuery = { "services.dialysisType": { $in: req.body.dialysisType } };
+      }
+
+      var inSessionServiceQuery = {};
+      if (req.body.inSessionService) {
+        inSessionServiceQuery = { "services.inSessionService": { $in: req.body.inSessionService } };
+      }
+
+      var centerServicesQuery = {};
+      if (req.body.centerServices) {
+        centerServicesQuery = { "centerDetails.centerServices": { $in: req.body.centerServices } };
+      }
+
+      var buildTypeQuery = {};
+      if (req.body.buildType) {
+        buildTypeQuery = { "centerDetails.buildType": { $in: req.body.buildType } };
+      }
+
+      var centerTypeQuery = {};
+      if (req.body.centerType) {
+        centerTypeQuery = { "centerDetails.centerType": { $in: req.body.centerType } };
+      }
+
+      const query = {
+        $and: [{ "address.city": req.query.city }, dialysisTypeQuery, inSessionServiceQuery, centerServicesQuery, buildTypeQuery, centerTypeQuery],
+      };
+        
+        console.log("Deneme :", query);
+      DialysisCenterService.paginateList(query, page, perPage)
+        .then((list) => {
+          DialysisCenter.count(query).exec(function (err, count) {
+            return res.render("user/pages/clinic/clinic-list", {
+              layout: "user/layouts/clinic-main",
+              list,
+              user: req.user,
+              city: req.query.city,
+              counter: count / perPage,
+            });
+          });
         })
         .catch((err) => {
           console.log("Error", err);
@@ -163,10 +223,7 @@ class HomeController {
 
   async allView(req, res, next) {
     const countries = await DialysisCenterService.groupBy("$address.country");
-    const cities = await DialysisCenterService.groupBy(
-      "$address.country",
-      "$address.city"
-    );
+    const cities = await DialysisCenterService.groupBy("$address.country", "$address.city");
 
     res.render("user/pages/clinic/all-view", {
       layout: "user/layouts/clinic-main",
@@ -276,8 +333,7 @@ class HomeController {
           { expiresIn: "1d" }
         );
 
-        const verifyURL =
-          process.env.MAIL_VERIFY_URL + "user/verify?token=" + token;
+        const verifyURL = process.env.MAIL_VERIFY_URL + "user/verify?token=" + token;
         let transporter = mailer.createTransport({
           service: "gmail",
           auth: {
@@ -314,10 +370,7 @@ class HomeController {
           req.flash("password", enterPassword);
           return res.redirect("/register");
         }
-        const htmlMessage = new HtmlMessage(
-          "Kayıt İşlemi Sırasında Hata Oluştu.",
-          "danger"
-        );
+        const htmlMessage = new HtmlMessage("Kayıt İşlemi Sırasında Hata Oluştu.", "danger");
         req.flash("validationErrors", htmlMessage);
         req.flash("nameSurname", req.body.nameSurname);
         req.flash("email", req.body.email);
@@ -361,9 +414,7 @@ class HomeController {
       try {
         jwt.verify(token, process.env.CONFIRM_SECRET, async (e, decoded) => {
           if (e) {
-            req.flash("validationErrors", [
-              { msg: "Geçersiz Token. Lütfen Yeniden Kayıt Olun.." },
-            ]);
+            req.flash("validationErrors", [{ msg: "Geçersiz Token. Lütfen Yeniden Kayıt Olun.." }]);
             res.redirect("/register");
           } else {
             const userID = decoded.id;
@@ -371,14 +422,10 @@ class HomeController {
               emailConfirmed: true,
             });
             if (result) {
-              req.flash("validationErrors", [
-                { msg: "Emailiniz Onaylanmıştır.", result: "success" },
-              ]);
+              req.flash("validationErrors", [{ msg: "Emailiniz Onaylanmıştır.", result: "success" }]);
               res.redirect("/register");
             } else {
-              req.flash("validationErrors", [
-                { msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." },
-              ]);
+              req.flash("validationErrors", [{ msg: "Bir Hata Çıktı Daha Sonra Tekrar Deneyin.." }]);
               res.redirect("/register");
             }
           }

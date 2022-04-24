@@ -14,6 +14,7 @@ router.get("/clinic", Controller.clinicMain);
 
 //* CLINIC LIST - CLINIC PAGE - APPOINTMENT PAGES
 router.get("/clinic/clinic-list", Controller.clinicList);
+router.post("/clinic/clinic-list", Controller.filterClinicList);
 router.get("/clinic/all", Controller.allView);
 // router.get("/clinic/appointment", authenticate, Controller.clinicAppointment);
 router.post("/clinic/clinic-appointment", authenticate, Controller.viewAppointment);

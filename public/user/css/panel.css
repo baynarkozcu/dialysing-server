@@ -443,3 +443,12 @@ ul a:hover {
   fill: rgba(255, 255, 255, 0.836);
   margin: 0px !important;
 }
+/*  {
+  background-color: #000;
+} */
+.adviserment select.custom-select {
+  border: 1.5px solid #28353e31 !important;
+  padding: 0px 15px 0px 15px;
+  margin-right: 20px; 
+  font-size: 12px;
+}

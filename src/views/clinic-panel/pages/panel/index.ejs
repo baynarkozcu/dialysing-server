@@ -179,86 +179,194 @@
           <div class="admin-text">Merkezinizin görünürlüğünü çeşitli seçenekler ile arttırmanız mümkün. Merkezinize 30
             KM uzaklıkta olan diğer merkezlerin görüntülenme oranları sizden %30 daha fazla durumdadır.</div>
           <form>
-            <div class="visibilty mb-1">Görünürlük Başlangıç Tarihi</div> 
-            <div class="adviserment mb-3 mr-3">
-            <select class="custom-select">
-              <option selected>Ay Seçin</option>
-              <option value="1">Ocak</option>
-              <option value="2">Şubat</option>
-              <option value="3">Mart</option>
-              <option value="4">Nisan</option>
-              <option value="5">Mayıs</option>
-              <option value="6">Haziran</option>
-              <option value="7">Temmuz</option>
-              <option value="8">Ağustos</option>
-              <option value="9">Eylül</option>
-              <option value="10">Ekim</option>
-              <option value="11">Kasım</option>
-              <option value="12">Aralık</option>
-            </select>
-            <select class="custom-select">
-              <option selected>Yıl Seçin</option>
-              <option value="13">2022</option>
-              <option value="14">2023</option>
-            </select>
-          </div>
-          <div class="visibilty mb-1">Görünürlük Bitiş Tarihi</div>
-          <div class="adviserment mb-3">
-            <select class="custom-select">
-              <option selected>Ay Seçin</option>
-              <option value="1">Ocak</option>
-              <option value="2">Şubat</option>
-              <option value="3">Mart</option>
-              <option value="4">Nisan</option>
-              <option value="5">Mayıs</option>
-              <option value="6">Haziran</option>
-              <option value="7">Temmuz</option>
-              <option value="8">Ağustos</option>
-              <option value="9">Eylül</option>
-              <option value="10">Ekim</option>
-              <option value="11">Kasım</option>
-              <option value="12">Aralık</option>
-            </select>
-            <select class="custom-select">
-              <option selected>Yıl Seçin</option>
-              <option value="13">2022</option>
-              <option value="14">2023</option>
-            </select>
-          </div>
-
-            <!-- <span>
-              <label for="day">Day:</label>
-              <select name="day" id="day"></select>
-            </span>
-            <span>
-              <label for="month">Month:</label>
-              <select name="month" id="month"></select>
-            </span>
-            <span>
-              <label for="year">Year:</label>
-              <select name="year" id="year">Year:</select>
-            </span> -->
+            <div class="visibilty mb-1">Görünürlük Tarihinizi Seçin</div>
+            <div class="container">
+              <div class="row align-items-start">
+                <div class="col">
+                  <div id="year">
+                    <script>document.write(new Date().getFullYear());</script>
+                  </div>
+                  <div class="month">
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month1">
+                          <label class="form-check-label mx-0 mr-0" for="month1">
+                            Ocak
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month2">
+                          <label class="form-check-label mx-0 mr-0" for="month2">
+                            Şubat
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month3">
+                          <label class="form-check-label mx-0 mr-0" for="month3">
+                            Mart
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month4">
+                          <label class="form-check-label mx-0 mr-0" for="month4">
+                            Nisan
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month5">
+                          <label class="form-check-label mx-0 mr-0" for="month5">
+                            Mayıs
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month6">
+                          <label class="form-check-label mx-0 mr-0" for="month6">
+                            Haziran
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month7">
+                          <label class="form-check-label mx-0 mr-0" for="month7">
+                            Temmuz
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month8">
+                          <label class="form-check-label mx-0 mr-0" for="month8">
+                            Ağustos
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month9">
+                          <label class="form-check-label mx-0 mr-0" for="month9">
+                            Eylül
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month10">
+                          <label class="form-check-label mx-0 mr-0" for="month10">
+                            Ekim
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month11">
+                          <label class="form-check-label mx-0 mr-0" for="month11">
+                            Kasım
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0" type="checkbox" value="" id="month12">
+                          <label class="form-check-label mx-0 mr-0" for="month12">
+                            Aralık
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="year">
+                    <script>document.write(new Date().getFullYear());</script>
+                  </div>
+                  <div class="month">
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month1">
+                          <label class="form-check-label mx-0 mr-0" for="month1">
+                            Ocak
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month2">
+                          <label class="form-check-label mx-0 mr-0" for="month2">
+                            Şubat
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month3">
+                          <label class="form-check-label mx-0 mr-0" for="month3">
+                            Mart
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month4">
+                          <label class="form-check-label mx-0 mr-0" for="month4">
+                            Nisan
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month5">
+                          <label class="form-check-label mx-0 mr-0" for="month5">
+                            Mayıs
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month6">
+                          <label class="form-check-label mx-0 mr-0" for="month6">
+                            Haziran
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month7">
+                          <label class="form-check-label mx-0 mr-0" for="passmonth7">
+                            Temmuz
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month8">
+                          <label class="form-check-label mx-0 mr-0" for="passmonth8">
+                            Ağustos
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month9">
+                          <label class="form-check-label mx-0 mr-0" for="passmonth9">
+                            Eylül
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month10">
+                          <label class="form-check-label mx-0 mr-0" for="passmonth10">
+                            Ekim
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0 mr-0" type="checkbox" value="" id="month11">
+                          <label class="form-check-label mx-0 mr-0" for="passmonth11">
+                            Kasım
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input mx-0" type="checkbox" value="" id="month12">
+                          <label class="form-check-label mx-0 mr-0" for="passmonth12">
+                            Aralık
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </form>
-
         </div>
       </div>
     </div>
-
-
-
-
-
-
   </div>
   <!-- content-wrapper ends -->
-
+  <div id="calendar"></div>
   <div id="suggestion">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="suggestion-button">
-            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png"
-                alt="Icon Suggestion" />Öneriler</button>
+            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png" alt="Icon Suggestion" />Öneriler</button>
           </div>
         </div>
       </div>

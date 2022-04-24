@@ -9,7 +9,7 @@ class BaseService {
     return this.BaseModal?.find(where || {});
   }
 
-  indexTop10(where) {
+  indexTop5(where) {
     return this.BaseModal?.find(where || {}).limit(5);
   }
 

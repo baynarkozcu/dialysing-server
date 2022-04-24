@@ -11,7 +11,7 @@ $(document).ready(function() {
   
     // EXTRACT JSON DATA.
     $.getJSON(url, function(data) {
-      console.log(data);
+      
       $.each(data, function(index, value) {
         // APPEND OR INSERT DATA TO SELECT ELEMENT.
         $("#country").append(
@@ -56,7 +56,6 @@ $(document).ready(function() {
         BATTUTA_KEY +
         "&callback=?";
       $.getJSON(url, function(data) {
-        console.log(data);
         $("#city option").remove();
         $('#city').append('<option value="">Please select your city</option>');
         $.each(data, function(index, value) {

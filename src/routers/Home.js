@@ -3,11 +3,11 @@ const validate = require("../middlewares/validator");
 const { authenticate, currentUser } = require("../middlewares/authentication");
 const { createValidator, updateValidator, loginValidator } = require("../validations/Users");
 
- const idChecker = require("../middlewares/idChecker");
+const idChecker = require("../middlewares/idChecker");
 
 const Controller = require("../controllers/Home");
 
-router.get("/",  Controller.index);
+router.get("/", Controller.index);
 
 //* CLINIC PANEL INDEX
 router.get("/clinic", Controller.clinicMain);
@@ -35,6 +35,5 @@ router.get("/register", currentUser, Controller.registerView);
 router.post("/register", validate(createValidator), Controller.register);
 router.post("/login", currentUser, validate(loginValidator), Controller.login);
 router.get("/logout", authenticate, Controller.logout);
-
 
 module.exports = router;

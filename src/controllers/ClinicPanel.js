@@ -212,11 +212,11 @@ class ClinicPanelController {
     res.render("clinic-panel/pages/add-clinic/choose-center", { layout: "clinic-panel/layouts/index", list: undefined, center: req.cookies.selectedDialysingCenter });
   }
 
+  //AJAX METHOD
   getClinicList(req, res) {
-    console.log("getClinicList");
-    DialysisCenterService.indexTop10({ "companyInformation.companyName": { $regex: req.body.companyName, $options: "i" }, isActive: false })
+    DialysisCenterService.indexTop5({ "companyInformation.companyName": { $regex: req.body.companyName, $options: "i" }, isActive: false })
       .then((centers) => {
-        res.render("clinic-panel/pages/add-clinic/choose-center", { layout: "clinic-panel/layouts/index", list: centers || [] });
+        res.json(centers);
       })
       .catch((err) => {
         console.log("Hata Çıktı :", err);
@@ -328,6 +328,15 @@ class ClinicPanelController {
   }
 
   clinicSummary(req, res) {
+    console.log("clinicSummary", req.body);
+    const dialysingCenter = req.cookies.selectedDialysingCenter;
+    dialysingCenter.centerEmployees = req.body.personelList;
+
+    res.cookie("selectedDialysingCenter", dialysingCenter);
+    return res.send("success");
+  }
+
+  clinicSummaryView(req, res) {
     res.render("clinic-panel/pages/add-clinic/clinic-summary", { layout: "clinic-panel/layouts/index" });
   }
 
@@ -360,7 +369,7 @@ class ClinicPanelController {
   // }
 
   analysis(req, res, next) {
-    res.render("clinic-panel/pages/panel/analysis", { layout: "clinic-panel/layouts/panel", user: req.user  });
+    res.render("clinic-panel/pages/panel/analysis", { layout: "clinic-panel/layouts/panel", user: req.user });
   }
 
   answerWaitingRezervations(req, res, next) {
@@ -494,11 +503,12 @@ class ClinicPanelController {
   }
 
   clinicPoint(req, res, next) {
-    res.render("clinic-panel/pages/panel/clinic-point", { layout: "clinic-panel/layouts/panel", user: req.user });
+    var center = req.cookies.clinic;
+    res.render("clinic-panel/pages/panel/clinic-point", { layout: "clinic-panel/layouts/panel", user: req.user, center });
   }
 
   competition(req, res, next) {
-    res.render("clinic-panel/pages/panel/competition", { layout: "clinic-panel/layouts/panel", user: req.user  });
+    res.render("clinic-panel/pages/panel/competition", { layout: "clinic-panel/layouts/panel", user: req.user });
   }
 
   messageOptions(req, res, next) {
@@ -564,7 +574,7 @@ class ClinicPanelController {
   }
 
   updateUser(req, res, next) {
-    res.render("clinic-panel/pages/panel/update-user", { layout: "clinic-panel/layouts/panel", user: req.user  });
+    res.render("clinic-panel/pages/panel/update-user", { layout: "clinic-panel/layouts/panel", user: req.user });
   }
 
   uploadImageView(req, res, next) {
@@ -577,12 +587,14 @@ class ClinicPanelController {
       console.log("Hata Çıktı :", "Lütfen bir resim seçiniz.");
     } else {
       req.cookies.clinic.companyInformation.photo.push(req.file.filename);
-      DialysisCenterService.update(req.cookies.clinic._id, { "companyInformation.photo": req.cookies.clinic.companyInformation.photo }).then((result) => {
-      res.cookie("clinic", result);
-        res.redirect("/panel/upload-image");
-      }).catch((err) => {
-        console.log("Hata Çıktı :", err);
-      })
+      DialysisCenterService.update(req.cookies.clinic._id, { "companyInformation.photo": req.cookies.clinic.companyInformation.photo })
+        .then((result) => {
+          res.cookie("clinic", result);
+          res.redirect("/panel/upload-image");
+        })
+        .catch((err) => {
+          console.log("Hata Çıktı :", err);
+        });
     }
   }
 

@@ -8,16 +8,19 @@
           <div class="tm-form-wide mobile">
             <div class="clinic-form-title">Ekibiniz</div>
             <div class="user-profiles">
-              <div class="user-profile">
+              <% center.centerEmployees.forEach(user => { %>
+                             <div class="user-profile">
                 <div class="user-image">
-                  <a href="./update-user.html"><img src="../clinic-panel/images/profiles/ayhan.png" alt="Ayhan Image" /></a>
+                  <a href="#"><img src="../clinic-panel/images/profiles/ayhan.png" alt="Ayhan Image" /></a>
                 </div>
                 <div class="user-info">
-                  <div class="user-name">Ayhan Fırat Fındıkoğlu</div>
-                  <div class="user-role">Yönetici</div>
+                  <div class="user-name"><%- user.employeeNameSurname  %> </div>
+                  <div class="user-role"><%- user.job  %> </div>
                 </div>
               </div>
-              <hr />
+              <% }) %>
+
+              <!-- <hr />
               <div class="user-profile">
                 <div class="user-image">
                   <a href="./update-user.html"><img src="../clinic-panel/images/profiles/wade.png" alt="Wade Image" /></a>
@@ -26,7 +29,7 @@
                   <div class="user-name">Wade Warren</div>
                   <div class="user-role">Hasta Kabul</div>
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- <div class="tm-margin-t-2">
               <button type="submit" class="btn-second">Yeni Kullanıcı Ekleyin</button>

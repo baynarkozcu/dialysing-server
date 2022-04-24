@@ -5,7 +5,7 @@
         <div class="tm-section-title">Merkez Puanı</div>
         <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
           <div class="tm-form-wide">
-            <div class="tm-process">
+            <!-- <div class="tm-process">
               <div class="tm-process-bar-content">
                 <div>
                   <div class="tm-space-between">
@@ -16,28 +16,48 @@
                 </div>
                 <div class="tm-process-bar width-87 blue"></div>
                 <div class="tm-process-pers-av">Bölge Ort. %90</div>
-                <div class="tm-process-text">Merkez puanı %100 olan merkezlerin %30’luk bir oran ile daha fazla randevu
-                  aldığı gözlemlenmiştir.</div>
+                <div class="tm-process-text">Merkez puanı %100 olan merkezlerin %30’luk bir oran ile daha fazla randevu aldığı gözlemlenmiştir.</div>
               </div>
-            </div>
+            </div> -->
+
             <div class="clinic-points">
+              <% if (center.centerDetails.centerServices.length > 0) { %>
               <div>
                 <img src="../clinic-panel/images/icons/done.png" alt="Icon Done" />
               </div>
+              <% }else{ %>
+              <div class="circle"></div>
+              <% } %>
               <div>
                 <div class="clinic-point-title">Hastalarınıza Sağladığınız İmkanları Belirtin</div>
+                <% if (center.centerDetails.centerServices.length > 0) { %>
                 <div class="clinic-point-process done">Bitti!</div>
+                <% } %>
               </div>
             </div>
+
             <hr class="custom" />
+
             <div class="clinic-points">
+              <% if (center.address.addressDetailText != undefined) { %>
+              <div>
+                <img src="../clinic-panel/images/icons/done.png" alt="Icon Done" />
+              </div>
+              <% }else{ %>
               <div class="circle"></div>
+              <% } %>
               <div>
                 <div class="clinic-point-title">Merkeziniz İçin Yol Tarifi Ekleyin</div>
+                <% if (center.centerDetails.centerServices.length > 0) { %>
+                <div class="clinic-point-process done">Bitti!</div>
+                <% }else{ %>
                 <div class="clinic-point-process">Hastalarınızın merkezinizi bulmasına yardımcı olun.</div>
+                <% } %>
               </div>
             </div>
+
             <hr class="custom" />
+
             <div class="clinic-points">
               <div class="circle"></div>
               <div>
@@ -46,41 +66,91 @@
               </div>
             </div>
             <hr class="custom" />
+
             <div class="clinic-points">
-              <div class="circle"></div>
-              <div>
-                <div class="clinic-point-title">En Az 5 Adet Fotoğraf Yükleyin</div>
-                <div class="clinic-point-process">Şu an sadece 4 fotoğraf yüklediniz.</div>
-              </div>
-            </div>
-            <hr class="custom" />
-            <div class="clinic-points">
-              <div class="circle"></div>
-              <div>
-                <div class="clinic-point-title">Çalışanlarınızın Konuştuğu Dilleri Ekleyin</div>
-                <div class="clinic-point-process">Çalışanlarınızın konuştuğu dilleri ekleyerek hastalarınızı
-                  bilgilendirin.</div>
-              </div>
-            </div>
-            <hr class="custom" />
-            <div class="clinic-points">
+              <% if (center.companyInformation.photo.length > 4) { %>
               <div>
                 <img src="../clinic-panel/images/icons/done.png" alt="Icon Done" />
               </div>
+              <% }else{ %>
+              <div class="circle"></div>
+              <% } %>
+
+              <div>
+                <div class="clinic-point-title">En Az 5 Adet Fotoğraf Yükleyin</div>
+                <% if (center.companyInformation.photo.length > 4) { %>
+                <div>
+                  <div class="clinic-point-process done">Bitti!</div>
+                </div>
+                <% }else{ %>
+                <div class="clinic-point-process">Şu an sadece <%- center.companyInformation.photo.length %> fotoğraf yüklediniz.</div>
+                <% } %>
+              </div>
+            </div>
+            <hr class="custom" />
+
+            <div class="clinic-points">
+              <% if (center.services.languages.length > 0) { %>
+              <div>
+                <img src="../clinic-panel/images/icons/done.png" alt="Icon Done" />
+              </div>
+              <% }else{ %>
+              <div class="circle"></div>
+              <% } %>
+              <div>
+                <div class="clinic-point-title">Çalışanlarınızın Konuştuğu Dilleri Ekleyin</div>
+                <% if (center.services.languages.length > 0) { %>
+                <div>
+                  <div class="clinic-point-process done">Bitti!</div>
+                </div>
+                <% }else{ %>
+                <div class="clinic-point-process">Çalışanlarınızın konuştuğu dilleri ekleyerek hastalarınızı bilgilendirin.</div>
+                <% } %>
+              </div>
+            </div>
+            <hr class="custom" />
+
+            <div class="clinic-points">
+              <% if (center.contactInformation.email != undefined && center.contactInformation.phone != undefined) { %>
+              <div>
+                <img src="../clinic-panel/images/icons/done.png" alt="Icon Done" />
+              </div>
+              <% }else{ %>
+              <div class="circle"></div>
+              <% } %>
               <div>
                 <div class="clinic-point-title">İletişim Bilgilerinizi Güncelleyin</div>
-                <div class="clinic-point-process done">Bitti!</div>
+                <% if (center.contactInformation.email != undefined && center.contactInformation.phone != undefined) { %>
+                <div>
+                  <div class="clinic-point-process done">Bitti!</div>
+                </div>
+                <% }else{ %>
+                <div class="clinic-point-process">İletişim bilgilerinizi doldurun.</div>
+                <% } %>
               </div>
             </div>
             <hr class="custom" />
             <div class="clinic-points">
+              <% if (center.companyInformation.bio != undefined) { %>
+              <div>
+                <img src="../clinic-panel/images/icons/done.png" alt="Icon Done" />
+              </div>
+              <% }else{ %>
               <div class="circle"></div>
+              <% } %>
               <div>
                 <div class="clinic-point-title">Merkez Bio’nuzu Ekleyin</div>
+                <% if (center.companyInformation.bio != undefined) { %>
+                <div>
+                  <div class="clinic-point-process done">Bitti!</div>
+                </div>
+                <% }else{ %>
                 <div class="clinic-point-process">Hastalarınızı merkeziniz hakkında bilgilendirin.</div>
+                <% } %>
               </div>
             </div>
             <hr class="custom" />
+
             <div class="clinic-points">
               <div class="circle"></div>
               <div>
@@ -89,11 +159,24 @@
               </div>
             </div>
             <hr class="custom" />
+
             <div class="clinic-points">
+              <% if (user.priceCount > 0) { %>
+              <div>
+                <img src="../clinic-panel/images/icons/done.png" alt="Icon Done" />
+              </div>
+              <% }else{ %>
               <div class="circle"></div>
+              <% } %>
               <div>
                 <div class="clinic-point-title">Dialysis Token Satın Al</div>
+                <% if (user.priceCount > 0) { %>
+                <div>
+                  <div class="clinic-point-process done">Bitti!</div>
+                </div>
+                <% }else{ %>
                 <div class="clinic-point-process">Dialysis tokenlarınız ile görünürlüğünüzü arttırın</div>
+                <% } %>
               </div>
             </div>
           </div>
@@ -107,8 +190,7 @@
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="suggestion-button">
-            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png"
-                alt="Icon Suggestion" />Öneriler</button>
+            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png" alt="Icon Suggestion" />Öneriler</button>
           </div>
         </div>
       </div>
@@ -116,5 +198,5 @@
   </div>
 
   <%- include("../../partials/footer") %>
-    <!-- partial -->
+  <!-- partial -->
 </div>

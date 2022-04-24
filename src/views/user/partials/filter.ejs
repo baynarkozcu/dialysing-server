@@ -1,7 +1,7 @@
 <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
   <div class="tm-box-categories">
     <div class="tm-categories-title">Filtreleme</div>
-    <form class="tm-form-small filter">
+    <form class="tm-form-small filter" action="/clinic/clinic-list?city=<%- city  %>" method="POST">
       <div class="form-group">
         <label for="distance" class="form-label">Aranılan lokasyona uzaklık</label>
         <div id="distance" class="distance">
@@ -32,7 +32,7 @@
       </div>
       <div class="tm-categories-subtitle">Diyaliz Tedavisi Tipi</div>
       <div class="form-group not-border checkbox">
-        <input class="form-check-input" type="checkbox" value="Hemodiyaliz" name="dialysisType" id="Hemodiyaliz"  />
+        <input class="form-check-input" type="checkbox" value="Hemodiyaliz" name="dialysisType" id="Hemodiyaliz" />
         <label class="form-check-label selected" for="Hemodiyaliz"> Hemodiyaliz </label>
       </div>
       <div class="form-group not-border checkbox">
@@ -57,7 +57,7 @@
       </div>
       <div class="tm-categories-subtitle">Seans İçi Hizmetler</div>
       <div class="form-group not-border checkbox">
-        <input class="form-check-input" type="checkbox" value="Seans İçi Yiyecek Sunumu" name="inSessionService" id="Seans_Ici_Yiyecek_Sunumu"  />
+        <input class="form-check-input" type="checkbox" value="Seans İçi Yiyecek Sunumu" name="inSessionService" id="Seans_Ici_Yiyecek_Sunumu" />
         <label class="form-check-label selected" for="Seans_Ici_Yiyecek_Sunumu"> Seans İçi Yiyecek Sunumu </label>
       </div>
       <div class="form-group not-border checkbox">
@@ -65,7 +65,7 @@
         <label class="form-check-label selected" for="Ucretsiz_Ulasim_Hizmeti"> Ücretsiz Ulaşım Hizmeti </label>
       </div>
       <div class="form-group not-border checkbox">
-        <input class="form-check-input" type="checkbox" value="Kişiye Özel Tv Hizmeti"  name="inSessionService" id="Kisiye_Ozel_Tv_Hizmeti" />
+        <input class="form-check-input" type="checkbox" value="Kişiye Özel Tv Hizmeti" name="inSessionService" id="Kisiye_Ozel_Tv_Hizmeti" />
         <label class="form-check-label selected" for="Kisiye_Ozel_Tv_Hizmeti"> Kişiye Özel Tv Hizmeti </label>
       </div>
       <div class="form-group not-border checkbox">
@@ -78,7 +78,7 @@
       </div>
       <div class="tm-categories-subtitle">Tesis İçi İmkanlar</div>
       <div class="form-group not-border checkbox">
-        <input class="form-check-input" type="checkbox" value="Tekerlekli Sandalye Kullanım" name="centerServices" id="Tekerlekli_Sandalye_Kullanim"  />
+        <input class="form-check-input" type="checkbox" value="Tekerlekli Sandalye Kullanım" name="centerServices" id="Tekerlekli_Sandalye_Kullanim" />
         <label class="form-check-label selected" for="Tekerlekli_Sandalye_Kullanim"> Tekerlekli Sandalye Kullanım </label>
       </div>
       <div class="form-group not-border checkbox">
@@ -127,7 +127,7 @@
       </div>
       <div class="tm-categories-subtitle">Merkez Binası Tipi</div>
       <div class="form-group not-border checkbox">
-        <input class="form-check-input" type="checkbox" value="Müstakil Binalı Merkezler" name="buildType" id="Müstakil_Binali_Merkezler"  />
+        <input class="form-check-input" type="checkbox" value="Müstakil Binalı Merkezler" name="buildType" id="Müstakil_Binali_Merkezler" />
         <label class="form-check-label selected" for="Müstakil_Binali_Merkezler"> Müstakil Binalı Merkezler </label>
       </div>
       <div class="form-group not-border checkbox">
@@ -140,40 +140,52 @@
       </div>
       <div class="tm-categories-subtitle">Diyaliz Merkezleri</div>
       <div class="form-group not-border checkbox">
-        <input class="form-check-input" type="checkbox" value="Tüm Diyaliz Merkezleri" name="centerType" id="Tum_Diyaliz_Merkezleri"  />
+        <input class="form-check-input" type="checkbox" value="Tüm Diyaliz Merkezleri" name="centerType" id="Tum_Diyaliz_Merkezleri" />
         <label class="form-check-label selected" for="Tum_Diyaliz_Merkezleri"> Tüm Diyaliz Merkezleri </label>
       </div>
       <div class="form-group not-border checkbox">
-        <input class="form-check-input" type="checkbox" value="Özel Diyaliz Merkezleri" name="centerType" id="Ozel_Diyaliz_Merkezleri" />
+        <input class="form-check-input" type="checkbox" value="Özel" name="centerType" id="Ozel_Diyaliz_Merkezleri" />
         <label class="form-check-label selected" for="Ozel_Diyaliz_Merkezleri"> Özel Diyaliz Merkezleri </label>
       </div>
       <div class="form-group not-border checkbox">
-        <input class="form-check-input" type="checkbox" value="Kamu Diyaliz Merkezleri" name="centerType" id="Kamu_Diyaliz_Merkezleri" />
+        <input class="form-check-input" type="checkbox" value="Kamu" name="centerType" id="Kamu_Diyaliz_Merkezleri" />
         <label class="form-check-label selected" for="Kamu_Diyaliz_Merkezleri"> Kamu Diyaliz Merkezleri </label>
       </div>
-      <button onclick="filterCenter()" class="btn btn-second wide small" type="button">Filtreleri Uygula</button>
+      <button class="btn btn-second wide small" type="submit">Filtreleri Uygula</button>
     </form>
   </div>
 </div>
 
-<script>
-  function filterCenter(){
-    const centerPointList = document.querySelectorAll('input[name="centerPoint"]:checked');
+<!-- <script>
+  function filterCenter() {
+    //const centerPointList = document.querySelectorAll('input[name="centerPoint"]:checked');
     const dialysisTypeList = document.querySelectorAll('input[name="dialysisType"]:checked');
     const inSessionServiceList = document.querySelectorAll('input[name="inSessionService"]:checked');
     const centerServicesList = document.querySelectorAll('input[name="centerServices"]:checked');
     const buildTypeList = document.querySelectorAll('input[name="buildType"]:checked');
     const centerTypeList = document.querySelectorAll('input[name="centerType"]:checked');
 
+    const selectedCity = new URL(window.location.href).searchParams.get("city");
+
+    console.log(dialysisTypeList[0].value);
+
+    $.get("/clinic/clinic-list?city="+selectedCity+"&dialysisTypeList="+dialysisTypeList[0].value, (data, status) => {
+
+      console.log("get", status);
+      console.log("get", data);
+    });
+
+
+
     // dialysisTypeList.forEach(x => {
     //   console.log(x.value);
     // })
 
-    console.log(centerPointList);
-    console.log(dialysisTypeList);
-    console.log(inSessionServiceList);
-    console.log(centerServicesList);
-    console.log(buildTypeList);
-    console.log(centerTypeList);
+    // console.log(centerPointList);
+    // console.log(dialysisTypeList);
+    // console.log(inSessionServiceList);
+    // console.log(centerServicesList);
+    // console.log(buildTypeList);
+    // console.log(centerTypeList);
   }
-</script>
+</script> -->

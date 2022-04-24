@@ -162,13 +162,8 @@ class HomeController {
   }
   filterClinicList(req, res, next) {
     if (req.query.city) {
-      console.log("filterClinicList", req.body);
       const page = req.query.page || 0;
       const perPage = 8;
-
-      // {
-      //   $and: [{ "address.city": { $in: ["İstanbul", "Bursa"] } }, { "centerDetails.centerType": { $in: ["Kamu"] } }];
-      // }
 
       var dialysisTypeQuery = {};
       if (req.body.dialysisType) {
@@ -199,7 +194,6 @@ class HomeController {
         $and: [{ "address.city": req.query.city }, dialysisTypeQuery, inSessionServiceQuery, centerServicesQuery, buildTypeQuery, centerTypeQuery],
       };
         
-        console.log("Deneme :", query);
       DialysisCenterService.paginateList(query, page, perPage)
         .then((list) => {
           DialysisCenter.count(query).exec(function (err, count) {

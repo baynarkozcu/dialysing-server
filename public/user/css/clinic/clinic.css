@@ -1077,6 +1077,46 @@ input#checkOutDate.form-control.bi.bi-chevron-down {
   font-size: 13px;
   padding: 10px;
 }
+input#addressDetailText.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#taxNumber.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#taxOffice.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#country.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#city.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#zipcode.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#abroadPayment.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#domesticPayment.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
 hr {
   background-color: #28353e38;
 }

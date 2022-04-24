@@ -28,45 +28,45 @@
         <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7">
           <div class="tm-section-title tm-clinic-title">Merkez Detayları</div>
           <form class="tm-form-wide" action="/panel/clinic-services" method="POST">
-            <div class="form-box">
+            <div class="form-box"> 
               <div class="title">Merkez Binası Tipi</div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" id="buildType" name="buildType" value="Müstakil Binalı Merkezler" />
-                <label class="form-check-label selected" for="buildType"> Müstakil Binalı Merkezler </label>
+                <input class="form-check-input" type="radio" id="buildType" name="buildType" value="Müstakil Binalı Merkezler" />
+                <label class="form-check-label" for="buildType"> Müstakil Binalı Merkezler </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" id="buildType" name="buildType" value="Müstakil Binada Olmayan Merkezler" />
-                <label class="form-check-label" for="buildType"> Müstakil Binada Olmayan Merkezler </label>
+                <input class="form-check-input" type="radio" id="buildType1" name="buildType" value="Müstakil Binada Olmayan Merkezler" />
+                <label class="form-check-label" for="buildType1"> Müstakil Binada Olmayan Merkezler </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" id="buildType" name="buildType" value="Hastane İçi Merkezler" />
-                <label class="form-check-label" for="buildType"> Hastane İçi Merkezler </label>
+                <input class="form-check-input" type="radio" id="buildType2" name="buildType" value="Hastane İçi Merkezler" />
+                <label class="form-check-label" for="buildType2"> Hastane İçi Merkezler </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" id="buildType" name="buildType" value="Diğer" />
-                <label class="form-check-label" for="buildType"> Diğer </label>
+                <input class="form-check-input" type="radio" id="buildType3" name="buildType" value="Diğer" />
+                <label class="form-check-label" for="buildType3"> Diğer </label>
               </div>
             </div>
             <div class="form-box">
               <div class="title">Diyaliz Merkeziniz</div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" id="centerType" name="centerType" value="Özel Merkez" />
-                <label class="form-check-label selected" for="centerType"> Özel Merkez </label>
+                <input class="form-check-input" type="radio" id="centerType" name="centerType" value="Özel Merkez" />
+                <label class="form-check-label" for="centerType"> Özel Merkez </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" id="centerType" name="centerType" value="Kamuya Ait Diyaliz Merkezi" />
-                <label class="form-check-label" for="centerType"> Kamuya Ait Diyaliz Merkezi </label>
+                <input class="form-check-input" type="radio" id="centerType1" name="centerType" value="Kamuya Ait Diyaliz Merkezi" />
+                <label class="form-check-label" for="centerType1"> Kamuya Ait Diyaliz Merkezi </label>
               </div>
               <div class="form-group not-border checkbox">
-                <input class="form-check-input" type="checkbox" id="centerType" name="centerType" value="Üniversite Diyaliz Merkezi" />
-                <label class="form-check-label" for="centerType"> Üniversite Diyaliz Merkezi </label>
+                <input class="form-check-input" type="radio" id="centerType2" name="centerType" value="Üniversite Diyaliz Merkezi" />
+                <label class="form-check-label" for="centerType2"> Üniversite Diyaliz Merkezi </label>
               </div>
             </div>
             <div class="form-box">
               <div class="title">Merkez Hasta Aracı Otoparkı</div>
               <div class="form-group not-border checkbox">
                 <input class="form-check-input" type="checkbox" value="Kapalı Otopark İmkanı" name="parkingType" id="parkingType" />
-                <label class="form-check-label selected" for="parkingType"> Kapalı Otopark İmkanı </label>
+                <label class="form-check-label" for="parkingType"> Kapalı Otopark İmkanı </label>
               </div>
               <div class="form-group not-border checkbox">
                 <input class="form-check-input" type="checkbox" value="Açık Otopark İmkanı"  name="parkingType" id="parkingType" />
@@ -85,7 +85,7 @@
               <div class="title">Tesis İçi İmkanlar</div>
               <div class="form-group not-border checkbox">
                 <input class="form-check-input" type="checkbox" value="Tekerlekli Sandalye Kullanım" name="centerServices" id="centerServices" checked />
-                <label class="form-check-label selected" for="centerServices"> Tekerlekli Sandalye Kullanım </label>
+                <label class="form-check-label" for="centerServices"> Tekerlekli Sandalye Kullanım </label>
               </div>
               <div class="form-group not-border checkbox">
                 <input class="form-check-input" type="checkbox" value="Tutunma Kollu Tuvalet"  name="centerServices" id="centerServices" />
@@ -101,7 +101,7 @@
               </div>
               <div class="form-group not-border checkbox">
                 <input class="form-check-input" type="checkbox" value="Rampalı Hassas Tartı"  name="centerServices"  id="centerServices" checked />
-                <label class="form-check-label selected" for="centerServices"> Rampalı Hassas Tartı </label>
+                <label class="form-check-label" for="centerServices"> Rampalı Hassas Tartı </label>
               </div>
               <div class="form-group not-border checkbox">
                 <input class="form-check-input" type="checkbox" value="Kişisel Eşyalar İçin Kilitli Dolap"  name="centerServices"  id="centerServices" />
@@ -164,14 +164,17 @@
           </div>
           <div class="tm-box-info">
             <div class="tm-box-top">
+              <div class="col d-flex align-items-start">
               <img src="../user/img/clinic/attention.png" alt="Attention Icon" />
               <div class="tm-box-title">Bilgileri daha sonrasında değiştirebiliyor muyum?</div>
             </div>
+            </div>
+            <!--======= INFORMATION CARD =====-->
             <div class="tm-box-bottom">
               <div>Bu bilgileri merkezinizi listeledikten sonra güncelleyebilir veya değiştirebilirsiniz. Bu bilgilerin doğru girilmesi hastalarınızın merkezinize daha rahatça ulaşabilmesi içindir.</div>
               <div>Lütfen merkezinizde sağlamadığınız hizmetleri bu listeden seçmeyiniz.</div>
             </div>
-          </div>
+          </div> 
         </div>
       </div>
     </div>

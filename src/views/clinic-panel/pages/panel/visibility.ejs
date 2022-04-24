@@ -3,11 +3,13 @@
     <div id="section-i" class="tm-p">
       <div class="row">
         <div class="tm-section-title mb-1">Görünürlüğünüzü Arttırın</div>
-        <div class="admin-inner-text">Sadece 3 adımda merkezinizin boş diyaliz cihazlarını doldurabilir ve hastalarınızın ilgilerini çekebilirsiniz.</div>
+        <div class="admin-inner-text">Sadece 3 adımda merkezinizin boş diyaliz cihazlarını doldurabilir ve
+          hastalarınızın ilgilerini çekebilirsiniz.</div>
         <!--=====Hangi tarihlerde görünürlüğünüzü arttırmak istersiniz?=====-->
         <div class="col-sm-12 col-md-12 col-lg-7 col-xl-8 visibilty">
           <div class="tm-section-title blue mb-0 mt-5">Hangi tarihlerde görünürlüğünüzü arttırmak İstersiniz?</div>
-          <div class="admin-inner-text">Sadece 3 adımda merkezinizin boş diyaliz cihazlarını doldurabilir ve hastalarınızın ilgilerini çekebilirsiniz.</div>
+          <div class="admin-inner-text">Sadece 3 adımda merkezinizin boş diyaliz cihazlarını doldurabilir ve
+            hastalarınızın ilgilerini çekebilirsiniz.</div>
           <div class="dropdown-custom">
             <div class="form-group">
               <label for="job-dropdown">Ay Seçiniz</label>
@@ -28,62 +30,101 @@
               <img src="../clinic-panel/images/icons/down-admin.png" alt="Down Admin Icon" class="dropdown-down" />
             </div>
           </div>
-          <div class="tm-section-title blue mb-0 mt-5">Hastalarınızın dikkatini çekmek istediğiniz lokasyonlar neler?</div>
-          <div class="admin-inner-text">Belirli lokasyonlarda ki hastaların ilgisini çekin ya da görünürlüğünüzü herkes için arttırın.</div>
+          <div class="tm-section-title blue mb-0 mt-5">Hastalarınızın dikkatini çekmek istediğiniz lokasyonlar neler?
+          </div>
+          <div class="admin-inner-text">Belirli lokasyonlarda ki hastaların ilgisini çekin ya da görünürlüğünüzü herkes
+            için arttırın.</div>
+
           <!--=====Hastalarınızın dikkatini çekmek istediğiniz lokasyonlar neler?=====-->
           <div class="form-group d-flex flex-row radio same-row">
             <div class="row">
               <div class="col">
-                <label class="custom container"
-                  >Belirli ülke
-                  <input type="radio" checked="checked" name="radio" />
-                  <span class="checkmark"></span>
-                  <div class="tooltip-custom">
-                    <img src="../clinic-panel/images/icons/question.png" alt="Question Icon" class="tooltip-custom" />
-                    <span class="tooltiptext">Seçtiğiniz ülkeyi aratan kullanıcılarda en önde görünürsünüz. </span>
+                <div class="dropdown">
+                  <button class="custom container" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Belirli bölge
+                    <input type="radio" checked="checked" name="radio" />
+                    <span class="checkmark"></span>
+                    <div class="tooltip-custom">
+                      <img src="../clinic-panel/images/icons/question.png" alt="Question Icon" class="tooltip-custom" />
+                      <span class="tooltiptext">Seçtiğiniz ülkeyi aratan kullanıcılarda en önde görünürsünüz. </span>
+                    </div>
+                  </button>
+
+                  <div class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
+                    <form>    
+                    <div class="dropdown-item form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <label class="form-check-label" for="defaultCheck1">Kuzey Avrupa Bölgesi</label>
+                    </div>               
+                      <div class="dropdown-item form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">Güney ve Doğu Avrupa Bölgeleri</label>
+                      </div>
+                      <div class="dropdown-item form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">Kuzey Afrika Bölgesi</label>
+                      </div>
+                      <div class="dropdown-item form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">Orta ve Güney Afrika Bölgesi</label>
+                      </div>
+                      <div class="dropdown-item form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">Yakın Coğrafya Bölgesi</label>
+                      </div>
+                      <div class="dropdown-item form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">Kuzey Amerika Bölgesi</label>
+                      </div>
+                      <div class="dropdown-item form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">Güney Amerika Bölgesi</label>
+                      </div> 
+                    </form>
                   </div>
-                </label>
+                </div>
+
               </div>
               <div class="col">
-                <label class="custom container unselected"
-                  >Bulunduğun İl
+                <label class="custom container unselected">Bulunduğun İl
                   <input type="radio" name="radio" />
                   <span class="checkmark"></span>
                   <div class="tooltip-custom">
-                    <img src="../clinic-panel/images/icons/question-pale.png" alt="Question Icon" class="tooltip-custom" />
+                    <img src="../clinic-panel/images/icons/question-pale.png" alt="Question Icon"
+                      class="tooltip-custom" />
                     <span class="tooltiptext">Tooltip text</span>
                   </div>
                 </label>
               </div>
               <div class="col">
-                <label class="custom container unselected"
-                  >Bulunduğun İlçe
+                <label class="custom container unselected">Bulunduğun İlçe
                   <input type="radio" name="radio" />
                   <span class="checkmark"></span>
                   <div class="tooltip-custom">
-                    <img src="../clinic-panel/images/icons/question-pale.png" alt="Question Icon" class="tooltip-custom" />
+                    <img src="../clinic-panel/images/icons/question-pale.png" alt="Question Icon"
+                      class="tooltip-custom" />
                     <span class="tooltiptext">Tooltip text</span>
                   </div>
                 </label>
               </div>
               <div class="col">
-                <label class="custom container unselected"
-                  >Anasayfa Önerilen Merkezler
+                <label class="custom container unselected">Anasayfa Önerilen Merkezler
                   <input type="radio" name="radio" />
                   <span class="checkmark"></span>
                   <div class="tooltip-custom">
-                    <img src="../clinic-panel/images/icons/question-pale.png" alt="Question Icon" class="tooltip-custom" />
+                    <img src="../clinic-panel/images/icons/question-pale.png" alt="Question Icon"
+                      class="tooltip-custom" />
                     <span class="tooltiptext">Tooltip text</span>
                   </div>
                 </label>
               </div>
               <div class="col">
-                <label class="custom container unselected"
-                  >Ülke Seçiniz
+                <label class="custom container unselected">Ülke Seçiniz
                   <input type="radio" name="radio" />
                   <span class="checkmark"></span>
                   <div class="tooltip-custom">
-                    <img src="../clinic-panel/images/icons/question-pale.png" alt="Question Icon" class="tooltip-custom" />
+                    <img src="../clinic-panel/images/icons/question-pale.png" alt="Question Icon"
+                      class="tooltip-custom" />
                     <span class="tooltiptext">Tooltip text</span>
                   </div>
                 </label>
@@ -91,7 +132,8 @@
             </div>
           </div>
           <div class="tm-section-title blue mb-0 mt-5">Fiyatlandırmalar</div>
-          <div class="admin-inner-text">Seçimlerinize göre fiyatlandırma aşağıda yer almaktadır. Ulaşabileceğiniz hasta sayıları yalnızca öngörüdür.</div>
+          <div class="admin-inner-text">Seçimlerinize göre fiyatlandırma aşağıda yer almaktadır. Ulaşabileceğiniz hasta
+            sayıları yalnızca öngörüdür.</div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-9 col-xl-9">
               <div class="tm-form-wide">
@@ -123,18 +165,20 @@
             <div class="tm-box-top">
               <div class="col d-flex align-items-start">
                 <div class="me-1"><img src="../user/img/clinic/attention.png" alt="Attention Icon" /></div>
-              <div class="tm-box-title">Dialysing.com öne çıkma ücretleri</div>
-            </div>
+                <div class="tm-box-title">Dialysing.com öne çıkma ücretleri</div>
+              </div>
             </div>
             <div class="tm-box-bottom">
-              <div>Kullanıcıların arattığı merkez listelerinde, seçtiğiniz bölgeye göre listede en başa çıkmak için fiyat listesi aşağıdadır.</div>
+              <div>Kullanıcıların arattığı merkez listelerinde, seçtiğiniz bölgeye göre listede en başa çıkmak için
+                fiyat listesi aşağıdadır.</div>
               <ul>
                 <li>1 Ay - 99 Dialysis Token</li>
                 <li>3 Ay- 199 Dialysis Token</li>
                 <li>6 Ay- 349 Dialysis Token</li>
                 <li>12 Ay-599 Dialysis Token</li>
               </ul>
-              <div>Aynı anda farklı bölgelerde öne çıkmak isterseniz promosyonlar bölümünden size uygun promosyonu seçebilirsiniz.</div>
+              <div>Aynı anda farklı bölgelerde öne çıkmak isterseniz promosyonlar bölümünden size uygun promosyonu
+                seçebilirsiniz.</div>
             </div>
           </div>
         </div>
@@ -147,7 +191,8 @@
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="suggestion-button">
-            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png" alt="Icon Suggestion" />Öneriler</button>
+            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png"
+                alt="Icon Suggestion" />Öneriler</button>
           </div>
         </div>
       </div>
@@ -155,5 +200,5 @@
   </div>
 
   <%- include("../../partials/footer") %>
-  <!-- partial -->
+    <!-- partial -->
 </div>

@@ -1,0 +1,19 @@
+#sgk-btn {
+  border-radius: 5px;
+  border: 1.5px #025c90 solid; 
+  padding: 5px 25px 5px 25px;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #025c90;
+}
+#nosgk-btn {
+  border-radius: 5px;
+  border: 1.5px #025c90 solid; 
+  padding: 5px 25px 5px 25px;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #025c90;
+  margin-top: 10px;
+}

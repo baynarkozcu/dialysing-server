@@ -228,6 +228,13 @@
   text-align: right;
   font-size: 16px;
 }
+.tm-clinic-subtitle a {
+  text-decoration: none;
+  font-size: 14px;
+}
+.tm-clinic-subtitle a:hover { 
+  color: #1772a7;
+}
 
 .form-box {
   margin: 1rem 0;
@@ -1066,6 +1073,46 @@ input#checkInDate.form-control.bi.bi-chevron-down {
   padding: 10px;
 }
 input#checkOutDate.form-control.bi.bi-chevron-down {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#addressDetailText.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#taxNumber.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#taxOffice.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#country.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#city.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#zipcode.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#abroadPayment.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px;
+  padding: 10px;
+}
+input#domesticPayment.form-control {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 13px;
   padding: 10px;

@@ -183,10 +183,10 @@ class ClinicPanelController {
     }
   }
 
-  choosePersonel(req, res) {
+   choosePersonel(req, res) {
     const user = req.user;
     if (user.isAdmin) {
-      res.render("clinic-panel/pages/add-clinic/choose-personel", { layout: "clinic-panel/layouts/index", user });
+      res.render("clinic-panel/pages/add-clinic/choose-personel", { layout: "clinic-panel/layouts/index", user:req.user });
     } else {
       req.logout();
       req.session.destroy((error) => {

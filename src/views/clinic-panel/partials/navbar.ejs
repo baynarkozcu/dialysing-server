@@ -3,8 +3,8 @@
   <div class="container">
     <div class="row">
       <nav class="navbar navbar-expand-lg narbar-light">
-        <a class="navbar-brand logo mt-2 mt-2" href="/"> Dialysing<span>.com</span> </a>
-        <a href="#" class="location mt-2 mt-2 mx-1"><i class="bi bi-geo-alt-fill" type="button"
+        <a class="navbar-brand logo mt-2" href="/"> Dialysing<span>.com</span> </a>
+        <a href="#" class="location mt-2 mx-1"><i class="bi bi-geo-alt-fill" type="button"
             class="btn btn-outline-white mx-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i> <span
             id="location"></span></a>
         <!-- Location Modal -->
@@ -77,18 +77,27 @@
                 </select>
               </div>
             </li>
-            <li class="nav-item question mt-2 mt-2">
+            <li class="nav-item ms-auto name mx-3 mt-2 text-white">
+
+              <a href="/panel"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
+                <%- user.nameSurname %>
+              </a>
+            </li>
+            <li class="nav-item question mx-2 mt-2">
               <img src="../user/img/icons/question.png" alt="Icons Question" />
             </li>
-            <li class="nav-item buttons mt-2 mt-2">
+            <li class="nav-item buttons mx-2 mt-2">
               <a href="/panel" class="nav-link btn-third">Merkezinizi Ekleyin</a>
             </li>
-            <li class="nav-item buttons mt-2 mt-2">
+            <!-- <li class="nav-item buttons mx-2 mt-2 mt-2">
               <a href="/register" class="nav-link btn-second">Kayıt Ol</a>
-            </li>
-            <li class="nav-item buttons mt-2 mt-2">
+            </li> -->
+            <!-- <li class="nav-item buttons mx-2 mt-2 mt-2">
               <a href="/panel/login" class="nav-link btn-second">Giriş Yap</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </nav>

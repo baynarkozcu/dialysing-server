@@ -77,8 +77,29 @@
               <img src="../user/img/icons/question.png" alt="Icons Question" />
               <div class="is-clinic mr-3">Klinik Hesabınız Var Mı?</div>
             </li>
+            <% if (user) { %>
+              <li class="nav-item buttons mt-3 mb-3 mx-0">
+                <a class="nav-link" id="UserDropdown" data-bs-toggle="dropdown" aria-expanded="false"> 
+                  <svg class="img-xs rounded-circle" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg></a>
+                <div class="dropdown-menu dropdown-menu-right bg-dark navbar-dropdown mt-0 text-white" aria-labelledby="UserDropdown">
+                  <div class="dropdown-header"> 
+                    <p class="text-white mb-0">Busra Ceval</p>
+                    <p class="fw-light text-muted text-white">ceval2772@gmail.com</p>
+                  </div> 
+                  <a class="dropdown-item mb-2" href="/user"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i>Profil</a> 
+                </div>
+              </li>
+              <% } %>
             <li class="nav-item mt-3 mb-3">
+              <% if (!user) { %>
               <a href="/panel/choose-personel" class="nav-link btn-third">Giriş Yap</a>
+              <% } %>
+              <% if (user) { %>
+                <a href="/logout" class="nav-link btn-third">Çıkış Yap</a>
+                <% } %>
             </li>
           </ul>
         </div>

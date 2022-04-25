@@ -23,6 +23,7 @@ class HomeController {
   clinicMain(req, res, next) {
     res.render("user/pages/clinic/clinic-main", {
       layout: "user/layouts/clinic-main",
+      user: req.user
     });
   }
 
@@ -35,12 +36,14 @@ class HomeController {
             layout: "user/layouts/clinic-main",
             center,
             date: req.cookies.tmpCheckInDate,
+            user: req.user
           });
         } else {
           res.render("user/pages/clinic/single-clinic", {
             layout: "user/layouts/clinic-main",
             center,
             date: null,
+            user: req.user
           });
         }
       })
@@ -439,6 +442,7 @@ class HomeController {
         res.render("user/pages/blogs/all-blogs", {
           layout: "user/layouts/blog",
           blogs,
+          user: req.user
         });
       })
       .catch((err) => {
@@ -452,6 +456,7 @@ class HomeController {
       res.render("user/pages/blogs/blog", {
         layout: "user/layouts/blog",
         blog,
+        user: req.user
       });
     });
   }

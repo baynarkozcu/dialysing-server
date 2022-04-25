@@ -23,6 +23,7 @@ class HomeController {
   clinicMain(req, res, next) {
     res.render("user/pages/clinic/clinic-main", {
       layout: "user/layouts/clinic-main",
+      user: req.user
     });
   }
 

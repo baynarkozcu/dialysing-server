@@ -83,25 +83,19 @@
             <button type="button" class="btn" onclick="addPersonel()">Ekle</button>
             <div class="clinic-doctors">
               <div class="title">Sağlık Çalışanları</div>
-              <ul id="clinic-doctor-list" name="personelList">
-
-              </ul>
+              <ul id="clinic-doctor-list" name="personelList"></ul>
               <!-- <div class="title">Sağlık Çalışanları</div>
               <div class="text">Nefroloji Uzmanı: Prof. Dr. Gülçin Kantarcı</div>
               <div class="text">Mesul Müdür: Dr. Mehtap Çelik Küçük</div>
               <div class="text">Sorumlu Hekim: Dr. Tekbir Atay</div> -->
             </div>
             <div class="tm-button-next left">
-<<<<<<< HEAD
               <a href="/panel/payment-option"
-=======
-              <!-- <a href="/"
->>>>>>> main
                 ><button type="button" class="btn btn-outline-secondary">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#025c91" class="bi bi-chevron-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
                   </svg></button
-              ></a> -->
+              ></a>
               <button type="button" onclick="save()" class="btn btn-secondary mx-2">Sonraki Adım</button>
             </div>
           </form>
@@ -112,10 +106,10 @@
           <div class="tm-box-info">
             <div class="tm-box-top">
               <div class="col d-flex align-items-start">
-              <img src="../user/img/clinic/attention.png" alt="Attention Icon" />
-              <div class="tm-box-title">Bu adımları atlamanızı önermiyoruz.</div>
+                <img src="../user/img/clinic/attention.png" alt="Attention Icon" />
+                <div class="tm-box-title">Bu adımları atlamanızı önermiyoruz.</div>
+              </div>
             </div>
-          </div>
             <div class="tm-box-bottom">
               <div>Bu bilgileri dilediğiniz gibi sonra doldurabilirsiniz fakat Dialysing.com olarak tüm bilgileri eksiksiz ve sırasıyla doldurmanızı ziyaretçilerinizin dikkatini daha fazla çekebilmeniz adına öneriyoruz</div>
             </div>
@@ -123,10 +117,10 @@
           <div class="tm-box-info">
             <div class="tm-box-top">
               <div class="col d-flex align-items-start">
-              <img src="../user/img/clinic/attention.png" alt="Attention Icon" />
-              <div class="tm-box-title">Bilgileri daha sonrasında değiştirebiliyor muyum?</div>
+                <img src="../user/img/clinic/attention.png" alt="Attention Icon" />
+                <div class="tm-box-title">Bilgileri daha sonrasında değiştirebiliyor muyum?</div>
+              </div>
             </div>
-          </div>
             <div class="tm-box-bottom">
               <div>Bu bilgileri merkezinizi listeledikten sonra güncelleyebilir veya değiştirebilirsiniz. Bu bilgilerin doğru girilmesi hastalarınızın merkezinize daha rahatça ulaşabilmesi içindir.</div>
               <div>Lütfen merkezinizde sağlamadığınız hizmetleri bu listeden seçmeyiniz.</div>
@@ -139,7 +133,7 @@
 </div>
 
 <script>
-  function addPersonel(){
+  function addPersonel() {
     var nameSurname = document.getElementById("employeeNameSurname").value;
     var employeeJob = document.querySelector('input[name="employeeJob"]:checked').value;
     var academicEducation = document.querySelector('input[name="academicEducation"]:checked').value;
@@ -153,11 +147,11 @@
     list.appendChild(li);
   }
 
-  function save(){
+  function save() {
     var list = document.getElementById("clinic-doctor-list");
     var personelList = [];
 
-    for(var i = 0; i < list.children.length; i++){
+    for (var i = 0; i < list.children.length; i++) {
       var nameSurname = list.children[i].getElementsByTagName("div")[0].getAttribute("nameSurname");
       var employeeJob = list.children[i].getElementsByTagName("div")[0].getAttribute("employeeJob");
       var academicEducation = list.children[i].getElementsByTagName("div")[0].getAttribute("academicEducation");
@@ -165,16 +159,14 @@
       personelList.push({
         employeeNameSurname: nameSurname,
         job: employeeJob,
-        academicEducation: academicEducation
+        academicEducation: academicEducation,
       });
     }
 
-    $.post('/panel/clinic-summary',  { personelList }, function(data, status){
-      if(status == "success"){
+    $.post("/panel/clinic-summary", { personelList }, function (data, status) {
+      if (status == "success") {
         window.location.href = "/panel/clinic-summary";
       }
     });
   }
-
-
 </script>

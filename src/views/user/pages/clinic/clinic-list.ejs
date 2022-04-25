@@ -10,7 +10,7 @@
       <div class="container ie-h-align-center-fix">
         <div class="row">
           <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix text-center tm-header-content">
-            <div class="tm-header-title"><span>element.companyInformation.companyName </span> bölgesindeki Diyaliz Merkezleri</div>
+            <div class="tm-header-title"><span><%- city  %>  </span> bölgesindeki Diyaliz Merkezleri</div>
             <div class="tm-header-text">Tarihlerinizi girin ve aradığınız lokasyona en yakın diyaliz merkezini bulun</div>
 
             <form action="/clinic/clinic-list" method="GET" class="tm-search-form tm-section-pad-2">
@@ -56,10 +56,10 @@
 
         <div class="col-sm-12 col-md-12 col-lg-9 col-xl-9">
           <div class="clinic-map tm-margin-b-1">
-            <div class="tm-section-title-2">İstanbul İlinde 4 Adet Diyaliz Merkezi Bulundu</div>
-            <div class="clinic-map-open">
+            <!-- <div class="tm-section-title-2"><%- city  %>  İlinde <%- list.length %> Adet Diyaliz Merkezi Bulundu</div> -->
+            <!-- <div class="clinic-map-open">
               <button class="btn-second" data-toggle="modal" data-target="#mapModal">Harita Üzerinde Göster</button>
-              <!-- Modal -->
+              
               <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
@@ -193,7 +193,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="clinic-filter tm-margin-b-1">
             <div class="row">

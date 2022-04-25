@@ -35,12 +35,14 @@ class HomeController {
             layout: "user/layouts/clinic-main",
             center,
             date: req.cookies.tmpCheckInDate,
+            user: req.user
           });
         } else {
           res.render("user/pages/clinic/single-clinic", {
             layout: "user/layouts/clinic-main",
             center,
             date: null,
+            user: req.user
           });
         }
       })

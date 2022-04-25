@@ -443,3 +443,6 @@ ul a:hover {
   fill: rgba(255, 255, 255, 0.836);
   margin: 0px !important;
 }
+.left button {
+  font-size: 13px !important;
+}

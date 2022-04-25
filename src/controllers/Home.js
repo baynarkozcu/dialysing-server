@@ -439,6 +439,7 @@ class HomeController {
         res.render("user/pages/blogs/all-blogs", {
           layout: "user/layouts/blog",
           blogs,
+          user: req.user
         });
       })
       .catch((err) => {
@@ -452,6 +453,7 @@ class HomeController {
       res.render("user/pages/blogs/blog", {
         layout: "user/layouts/blog",
         blog,
+        user: req.user
       });
     });
   }

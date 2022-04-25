@@ -445,4 +445,30 @@ ul a:hover {
 }
 .left button {
   font-size: 13px !important;
+}  
+.date {
+  border: none; 
+  font-family: "Montserrat", sans-serif;
+  color: #025c90;
+  font-weight: 700;
+} 
+#sonuc {
+  border: none; 
+  font-family: "Montserrat", sans-serif;
+  color: #025c90;
+  font-weight: 700;
+  background-color: #cae1ee0a;
+}
+.date button {
+  border: none;
+  background-color: #cae1ee0a;
+  color: #025c90;
+  font-size: 15px; 
+} 
+.justify-content-center {
+  background-color: #cae1ee0a;
+}
+.month label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px !important;
 }

@@ -183,9 +183,11 @@
             <div class="container">
               <div class="row align-items-start">
                 <div class="col">
-                  <div id="year">
+                  <div class="d-flex justify-content-center date m-0 p-0">
+                  <div class="mt-1" id="year">
                     <script>document.write(new Date().getFullYear());</script>
                   </div>
+                </div>
                   <div class="month">
                     <div class="row">
                       <div class="col">
@@ -268,8 +270,16 @@
                   </div>
                 </div>
                 <div class="col">
-                  <div class="year">
-                    <script>document.write(new Date().getFullYear());</script>
+                  <div class="d-flex justify-content-center date m-0 p-0">
+                    <button type=button onclick="azalt()" >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                      </svg>
+                    </button>
+                  <input type=button id="sonuc" value="2022">
+                  <button type=button onclick="arttir()" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                  </svg></button> 
                   </div>
                   <div class="month">
                     <div class="row">
@@ -352,6 +362,17 @@
                     </div>
                   </div>
                 </div>
+                <script>
+                  function arttir() {
+                    var sonuc = document.getElementById("sonuc");
+                    sonuc.value = Number(sonuc.value) + 1;
+                  }
+                  function azalt() {
+                    var sonuc = document.getElementById("sonuc");
+                    sonuc.value = Number(sonuc.value) - 1;
+                  }
+
+                </script>
               </div>
             </div>
           </form>
@@ -366,7 +387,8 @@
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="suggestion-button">
-            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png" alt="Icon Suggestion" />Öneriler</button>
+            <button type="button" class="btn-second suggestion"><img src="../clinic-panel/images/icons/suggestion.png"
+                alt="Icon Suggestion" />Öneriler</button>
           </div>
         </div>
       </div>

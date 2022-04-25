@@ -73,7 +73,7 @@
         response.forEach((element) => {
           if (!centerList.innerHTML.includes(element._id)) {
             var schema = `<div class="form-group checkbox">
-              <input class="form-check-input" name="companyId" type="checkbox" value="${element._id}" id="${element._id}" />
+              <input class="form-check-input" name="companyId" type="radio" value="${element._id}" id="${element._id}" />
               <label class="form-check-label" for="${element._id}"> ${element.companyInformation.companyName} </label>
             </div>`;
             var li = document.createElement("li");

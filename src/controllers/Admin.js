@@ -109,6 +109,18 @@ class AdminController {
     res.render("admin/pages/center-list", { layout: "admin/layouts/index" });
   }
 
+  homeManagement(req, res) {
+    res.render("admin/pages/home-management", { layout: "admin/layouts/index" });
+  }
+
+  clinicHomeManagement(req, res) {
+    res.render("admin/pages/clinic-home-management", { layout: "admin/layouts/index" });
+  }
+
+  clinicManagement(req, res) {
+    res.render("admin/pages/clinic-management", { layout: "admin/layouts/index" });
+  }
+
   premiumCenter(req, res) {
     res.render("admin/pages/premium-clinic", { layout: "admin/layouts/index" });
   }

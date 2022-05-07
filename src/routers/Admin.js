@@ -23,6 +23,9 @@ router.get("/confirm-clinic", Controller.confirmClinicView);
 router.get("/confirm-clinic/:id", idChecker(),  Controller.confirmClinic);
 router.get("/appointments", Controller.appointments);
 router.get("/center-list", Controller.centerList);
+router.get("/home-management", Controller.homeManagement);
+router.get("/clinic-home-management", Controller.clinicHomeManagement);
+router.get("/clinic-management", Controller.clinicManagement);
 router.get("/premium-center", Controller.premiumCenter);
 router.get("/deneme/:lang", Controller.deneme);
 

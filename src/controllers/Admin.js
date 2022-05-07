@@ -105,6 +105,10 @@ class AdminController {
     res.render("admin/pages/center-list", { layout: "admin/layouts/index" });
   }
 
+  premiumCenter(req, res) {
+    res.render("admin/pages/premium-clinic", { layout: "admin/layouts/index" });
+  }
+
   //! TODO Change Language
   deneme(req, res) {
     res.cookie("lang", req.params.lang);

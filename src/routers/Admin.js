@@ -26,6 +26,12 @@ router.get("/center-list", Controller.centerList);
 router.get("/home-management", Controller.homeManagement);
 router.get("/clinic-home-management", Controller.clinicHomeManagement);
 router.get("/clinic-management", Controller.clinicManagement);
+
+router.get("/center-spend", Controller.centerSpend);
+router.get("/charged", Controller.chargedSpend);
+router.get("/debtor-account", Controller.deptorAccount);
+router.get("/token-tracking", Controller.tokenTracking);
+
 router.get("/premium-center", Controller.premiumCenter);
 router.get("/deneme/:lang", Controller.deneme);
 

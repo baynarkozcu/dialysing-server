@@ -74,6 +74,10 @@ class AdminController {
     res.render("admin/pages/datatable", { layout: "admin/layouts/index" });
   }
 
+  userEdit(req, res) {
+    res.render("admin/pages/user-edit", { layout: "admin/layouts/index" });
+  }
+
   confirmClinicView(req, res) {
     DialysisCenterService.index({ isActive: false, personalInformation: { $ne: undefined } })
       .then((centers) => {

@@ -2,6 +2,8 @@ const AppointmentService = require("../services/Appointments");
 const UserService = require("../services/Users");
 const BlogService = require("../services/Blogs");
 const DialysisCenterService = require("../services/DialysisCenters");
+const SeoSettings = require("../services/SeoSettings");
+
 
 const DialysisCenter = require("../models/DialysisCenters");
 
@@ -16,14 +18,17 @@ const jwt = require("jsonwebtoken");
 const mailer = require("nodemailer");
 
 class HomeController {
-  index(req, res, next) {
+  async index(req, res, next) {
+    const seoSettings = await SeoSettings.find({ page : "HomePage"});
     const user = req.user;
-    res.render("user/pages/index", { layout: "user/layouts/index", user });
+    res.render("user/pages/index", { layout: "user/layouts/index", user, seoSettings });
   }
-  clinicMain(req, res, next) {
+  async clinicMain(req, res, next) {
+    const seoSettings = await SeoSettings.find({ page : "ClinicMainPage"});
     res.render("user/pages/clinic/clinic-main", {
-      layout: "user/layouts/clinic-main",
-      user: req.user
+      layout: "user/layouts/clinic-main-index",
+      user: req.user,
+      seoSettings
     });
   }
 
@@ -222,11 +227,14 @@ class HomeController {
     const countries = await DialysisCenterService.groupBy("$address.country");
     const cities = await DialysisCenterService.groupBy("$address.country", "$address.city");
 
+    const seoSettings = await SeoSettings.find({ page: "ClinicListPage" });
+
     res.render("user/pages/clinic/all-view", {
-      layout: "user/layouts/clinic-main",
+      layout: "user/layouts/clinic-all-view",
       countries,
       cities,
       user: req.user,
+      seoSettings
     });
   }
   clinicLogin(req, res, next) {

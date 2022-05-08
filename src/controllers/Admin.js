@@ -74,6 +74,10 @@ class AdminController {
     res.render("admin/pages/datatable", { layout: "admin/layouts/index" });
   }
 
+  userEdit(req, res) {
+    res.render("admin/pages/user-edit", { layout: "admin/layouts/index" });
+  }
+
   confirmClinicView(req, res) {
     DialysisCenterService.index({ isActive: false, personalInformation: { $ne: undefined } })
       .then((centers) => {
@@ -103,6 +107,36 @@ class AdminController {
 
   centerList(req, res) {
     res.render("admin/pages/center-list", { layout: "admin/layouts/index" });
+  }
+
+  homeManagement(req, res) {
+    res.render("admin/pages/home-management", { layout: "admin/layouts/index" });
+  }
+
+  clinicHomeManagement(req, res) {
+    res.render("admin/pages/clinic-home-management", { layout: "admin/layouts/index" });
+  }
+
+  clinicManagement(req, res) {
+    res.render("admin/pages/clinic-management", { layout: "admin/layouts/index" });
+  }
+
+  centerSpend(req, res) {
+    res.render("admin/pages/center-spend", { layout: "admin/layouts/index" });
+  }
+  chargedSpend(req, res) {
+    res.render("admin/pages/charged", { layout: "admin/layouts/index" });
+  }
+  deptorAccount(req, res) {
+    res.render("admin/pages/debtor-account", { layout: "admin/layouts/index" });
+  }
+  tokenTracking(req, res) {
+    res.render("admin/pages/token-tracking", { layout: "admin/layouts/index" });
+  }
+
+
+  premiumCenter(req, res) {
+    res.render("admin/pages/premium-clinic", { layout: "admin/layouts/index" });
   }
 
   //! TODO Change Language

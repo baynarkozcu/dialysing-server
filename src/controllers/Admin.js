@@ -1,5 +1,6 @@
 const BlogService = require("../services/Blogs");
 const DialysisCenterService = require("../services/DialysisCenters");
+const SeoSettings = require("../services/SeoSettings");
 const { convertToSlug } = require("../scripts/utils/slugConverter");
 
 const i18n = require("../i18n.config");
@@ -51,7 +52,7 @@ class AdminController {
     req.body.seflink = convertToSlug(req.body.title);
     BlogService.create(req.body)
       .then((result) => {
-        res.render("admin/pages/blogs", { layout: "admin/layouts/index" });
+        res.redirect("/admin/blogs");
       })
       .catch((err) => {
         console.log("Hata Çıktı...");
@@ -110,6 +111,10 @@ class AdminController {
   }
 
   homeManagement(req, res) {
+    res.render("admin/pages/home-management", { layout: "admin/layouts/index" });
+  }
+
+  saveHomeManagement(req, res) {
     res.render("admin/pages/home-management", { layout: "admin/layouts/index" });
   }
 

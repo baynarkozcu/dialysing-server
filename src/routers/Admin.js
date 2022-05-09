@@ -34,6 +34,10 @@ router.get("/center-spend", Controller.centerSpend);
 router.get("/debtor", Controller.spendDebtor);
 
 router.get("/premium-center", Controller.premiumCenter);
+
+router.get("/profile-auth", Controller.profileAuth);
+
+
 router.get("/deneme/:lang", Controller.deneme);
 
 module.exports = router;

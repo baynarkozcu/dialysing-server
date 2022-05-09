@@ -27,8 +27,9 @@ router.get("/home-management", Controller.homeManagement);
 router.get("/clinic-home-management", Controller.clinicHomeManagement);
 router.get("/clinic-management", Controller.clinicManagement);
 
-router.get("/center-spend", Controller.centerSpend);
-router.get("/charged", Controller.chargedSpend);
+router.get("/invoice-list", Controller.invoiceList);
+
+router.get("/center-spend", Controller.centerSpend); 
 router.get("/debtor-account", Controller.deptorAccount);
 router.get("/token-tracking", Controller.tokenTracking);
 

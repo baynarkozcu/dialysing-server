@@ -121,12 +121,13 @@ class AdminController {
     res.render("admin/pages/clinic-management", { layout: "admin/layouts/index" });
   }
 
+  invoiceList(req, res) {
+    res.render("admin/pages/invoice-list", { layout: "admin/layouts/index" });
+  }
+
   centerSpend(req, res) {
     res.render("admin/pages/center-spend", { layout: "admin/layouts/index" });
-  }
-  chargedSpend(req, res) {
-    res.render("admin/pages/charged", { layout: "admin/layouts/index" });
-  }
+  } 
   deptorAccount(req, res) {
     res.render("admin/pages/debtor-account", { layout: "admin/layouts/index" });
   }

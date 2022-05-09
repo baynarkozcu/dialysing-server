@@ -130,16 +130,17 @@ class AdminController {
     res.render("admin/pages/invoice-list", { layout: "admin/layouts/index" });
   }
 
-  centerSpend(req, res) {
-    res.render("admin/pages/center-spend", { layout: "admin/layouts/index" });
-  } 
-  deptorAccount(req, res) {
-    res.render("admin/pages/debtor-account", { layout: "admin/layouts/index" });
-  }
-  tokenTracking(req, res) {
-    res.render("admin/pages/token-tracking", { layout: "admin/layouts/index" });
+  centerInvoiceDetail(req, res) {
+    res.render("admin/pages/center-invoice-detail", { layout: "admin/layouts/index" });
   }
 
+  centerSpend(req, res) {
+    res.render("admin/pages/center-spend", { layout: "admin/layouts/index" });
+  }
+
+  spendDebtor(req, res) {
+    res.render("admin/pages/debtor", { layout: "admin/layouts/index" });
+  }
 
   premiumCenter(req, res) {
     res.render("admin/pages/premium-clinic", { layout: "admin/layouts/index" });

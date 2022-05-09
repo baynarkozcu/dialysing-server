@@ -28,10 +28,10 @@ router.get("/clinic-home-management", Controller.clinicHomeManagement);
 router.get("/clinic-management", Controller.clinicManagement);
 
 router.get("/invoice-list", Controller.invoiceList);
+router.get("/center-invoice-detail", Controller.centerInvoiceDetail);
 
-router.get("/center-spend", Controller.centerSpend); 
-router.get("/debtor-account", Controller.deptorAccount);
-router.get("/token-tracking", Controller.tokenTracking);
+router.get("/center-spend", Controller.centerSpend);
+router.get("/debtor", Controller.spendDebtor);
 
 router.get("/premium-center", Controller.premiumCenter);
 router.get("/deneme/:lang", Controller.deneme);

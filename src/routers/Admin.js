@@ -34,7 +34,7 @@ router.get("/invoice-list", Controller.invoiceList);
 router.get("/center-invoice-detail", Controller.centerInvoiceDetail);
 
 router.get("/center-spend", Controller.centerSpend);
-router.get("/debtor", Controller.spendDebtor);
+// router.get("/debtor", Controller.spendDebtor);
 
 router.get("/premium-center", Controller.premiumCenter);
 

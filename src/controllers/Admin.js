@@ -189,14 +189,7 @@ class AdminController {
   centerSpend(req, res) {
     res.render("admin/pages/center-spend", { layout: "admin/layouts/index" });
   }
-
-<<<<<<< HEAD
-  spendDebtor(req, res) {
-    res.render("admin/pages/debtor", { layout: "admin/layouts/index" });
-  }
-
-=======
->>>>>>> main
+  
   premiumCenter(req, res) {
     res.render("admin/pages/premium-clinic", { layout: "admin/layouts/index" });
   }

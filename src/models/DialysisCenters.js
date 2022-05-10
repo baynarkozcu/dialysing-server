@@ -73,6 +73,10 @@ const DialysisCenterSchema = Mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    isPremium: {
+      type: Boolean,
+      default: false,
+    },
     promotions: [
       {
         type: Mongoose.Types.ObjectId,

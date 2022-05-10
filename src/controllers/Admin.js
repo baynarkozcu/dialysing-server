@@ -94,11 +94,13 @@ class AdminController {
 
   deleteUser(req, res) {
     const id = req.params.id;
-    Users.delete(id).then((result) => {
-      res.redirect("/admin/user-edit");
-    }).catch((err) => {
-      console.log("Hata Çıktı...", err);
-    });
+    Users.delete(id)
+      .then((result) => {
+        res.redirect("/admin/user-edit");
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+      });
   }
 
   confirmClinicView(req, res) {
@@ -129,7 +131,13 @@ class AdminController {
   }
 
   centerList(req, res) {
-    res.render("admin/pages/center-list", { layout: "admin/layouts/index" });
+    DialysisCenterService.index({ isActive: true })
+      .then((centers) => {
+        res.render("admin/pages/center-list", { layout: "admin/layouts/index", centers });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+      });
   }
 
   homeManagementView(req, res) {
@@ -213,7 +221,44 @@ class AdminController {
   }
 
   premiumCenter(req, res) {
-    res.render("admin/pages/premium-clinic", { layout: "admin/layouts/index" });
+    DialysisCenterService.index({ isActive: true, isPremium: true })
+      .then((centers) => {
+        res.render("admin/pages/premium-clinic", { layout: "admin/layouts/index", centers });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+      });
+  }
+
+  deleteCenter(req, res) {
+    const id = req.params.id;
+    DialysisCenterService.delete(id)
+      .then(() => {
+        res.redirect("/admin/center-list");
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+      });
+  }
+
+  makePremium(req, res) {
+    const id = req.params.id;
+    DialysisCenterService.update(id, { isPremium: true })
+      .then(() => {
+        res.redirect("/admin/premium-center");
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+      });
+  }
+
+  deletePremium(req, res) {
+    const id = req.params.id;
+    DialysisCenterService.update(id, { isPremium: false }).then(() => {
+      res.redirect("/admin/premium-center");
+    }).catch((err) => {
+      console.log("Hata Çıktı...", err);
+    })
   }
 
   profileAuth(req, res) {

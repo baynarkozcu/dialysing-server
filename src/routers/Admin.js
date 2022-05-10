@@ -38,6 +38,9 @@ router.get("/center-spend", Controller.centerSpend);
 // router.get("/debtor", Controller.spendDebtor);
 
 router.get("/premium-center", Controller.premiumCenter);
+router.get("/delete-center/:id", Controller.deleteCenter);
+router.get("/make-premium/:id", Controller.makePremium);
+router.get("/delete-premium/:id", Controller.deletePremium);
 
 router.get("/profile-auth", Controller.profileAuth);
 router.get("/faq", Controller.faqSubmit);

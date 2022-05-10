@@ -110,20 +110,72 @@ class AdminController {
     res.render("admin/pages/center-list", { layout: "admin/layouts/index" });
   }
 
-  homeManagement(req, res) {
-    res.render("admin/pages/home-management", { layout: "admin/layouts/index" });
+  homeManagementView(req, res) {
+    SeoSettings.find({ page: "HomePage" })
+      .then((settings) => {
+        console.log("Home Settings", settings);
+        res.render("admin/pages/home-management", { layout: "admin/layouts/index", seoSettings: settings });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+        //res.render("admin/pages/home-management", { layout: "admin/layouts/index" });
+      });
   }
 
-  saveHomeManagement(req, res) {
-    res.render("admin/pages/home-management", { layout: "admin/layouts/index" });
+  homeManagement(req, res) {
+    SeoSettings.updateWhere({ page: "HomePage" }, { $set: { ...req.body } })
+      .then(() => {
+        res.redirect("/admin/home-management");
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+        res.redirect("/admin/home-management");
+      });
+  }
+
+  clinicHomeManagementView(req, res) {
+    SeoSettings.find({ page: "ClinicMainPage" })
+      .then((settings) => {
+        res.render("admin/pages/clinic-home-management", { layout: "admin/layouts/index", seoSettings: settings });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+        //res.render("admin/pages/home-management", { layout: "admin/layouts/index" });
+      });
   }
 
   clinicHomeManagement(req, res) {
-    res.render("admin/pages/clinic-home-management", { layout: "admin/layouts/index" });
+    SeoSettings.updateWhere({ page: "ClinicMainPage" }, { $set: { ...req.body } })
+      .then(() => {
+        res.redirect("/admin/clinic-home-management");
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+        res.redirect("/admin/clinic-home-management");
+      });
+  }
+
+  clinicManagementView(req, res) {
+    SeoSettings.find({ page: "ClinicListPage" })
+      .then((settings) => {
+        console.log("Home Settings", settings);
+        res.render("admin/pages/clinic-management", { layout: "admin/layouts/index", seoSettings: settings });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+        //res.render("admin/pages/home-management", { layout: "admin/layouts/index" });
+      });
   }
 
   clinicManagement(req, res) {
-    res.render("admin/pages/clinic-management", { layout: "admin/layouts/index" });
+    SeoSettings.updateWhere({ page: "ClinicListPage" }, { $set: { ...req.body } })
+      .then(() => {
+        res.redirect("/admin/clinic-management");
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+        res.redirect("/admin/clinic-management");
+      });
   }
 
   invoiceList(req, res) {
@@ -138,10 +190,13 @@ class AdminController {
     res.render("admin/pages/center-spend", { layout: "admin/layouts/index" });
   }
 
+<<<<<<< HEAD
   spendDebtor(req, res) {
     res.render("admin/pages/debtor", { layout: "admin/layouts/index" });
   }
 
+=======
+>>>>>>> main
   premiumCenter(req, res) {
     res.render("admin/pages/premium-clinic", { layout: "admin/layouts/index" });
   }

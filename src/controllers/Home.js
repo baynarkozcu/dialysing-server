@@ -4,7 +4,6 @@ const BlogService = require("../services/Blogs");
 const DialysisCenterService = require("../services/DialysisCenters");
 const SeoSettings = require("../services/SeoSettings");
 
-
 const DialysisCenter = require("../models/DialysisCenters");
 
 const passport2 = require("passport");
@@ -19,16 +18,16 @@ const mailer = require("nodemailer");
 
 class HomeController {
   async index(req, res, next) {
-    const seoSettings = await SeoSettings.find({ page : "HomePage"});
+    const seoSettings = await SeoSettings.find({ page: "HomePage" });
     const user = req.user;
     res.render("user/pages/index", { layout: "user/layouts/index", user, seoSettings });
   }
   async clinicMain(req, res, next) {
-    const seoSettings = await SeoSettings.find({ page : "ClinicMainPage"});
+    const seoSettings = await SeoSettings.find({ page: "ClinicMainPage" });
     res.render("user/pages/clinic/clinic-main", {
       layout: "user/layouts/clinic-main-index",
       user: req.user,
-      seoSettings
+      seoSettings,
     });
   }
 
@@ -41,14 +40,14 @@ class HomeController {
             layout: "user/layouts/clinic-main",
             center,
             date: req.cookies.tmpCheckInDate,
-            user: req.user
+            user: req.user,
           });
         } else {
           res.render("user/pages/clinic/single-clinic", {
             layout: "user/layouts/clinic-main",
             center,
             date: null,
-            user: req.user
+            user: req.user,
           });
         }
       })
@@ -131,7 +130,7 @@ class HomeController {
     });
   }
 
-  clinicList(req, res, next) {
+  async clinicList(req, res, next) {
     if (req.query.checkInDate) {
       res.cookie("tmpCheckInDate", req.query.checkInDate);
     }
@@ -147,16 +146,18 @@ class HomeController {
         // "centerDetails.buildType": req.query.buildTypeList ?? "",
         // "centerDetails.centerType": req.query.centerTypeList ?? "",
       };
-      console.log("Deneme :", query);
+      const seoSettings = await SeoSettings.find({ page: "ClinicListPage" });
+
       DialysisCenterService.paginateList(query, page, perPage)
         .then((list) => {
           DialysisCenter.count(query).exec(function (err, count) {
             return res.render("user/pages/clinic/clinic-list", {
-              layout: "user/layouts/clinic-main",
+              layout: "user/layouts/clinic-all-view",
               list,
               user: req.user,
               city: req.query.city,
               counter: count / perPage,
+              seoSettings,
             });
           });
         })
@@ -201,7 +202,7 @@ class HomeController {
       const query = {
         $and: [{ "address.city": req.query.city }, dialysisTypeQuery, inSessionServiceQuery, centerServicesQuery, buildTypeQuery, centerTypeQuery],
       };
-        
+
       DialysisCenterService.paginateList(query, page, perPage)
         .then((list) => {
           DialysisCenter.count(query).exec(function (err, count) {
@@ -227,14 +228,11 @@ class HomeController {
     const countries = await DialysisCenterService.groupBy("$address.country");
     const cities = await DialysisCenterService.groupBy("$address.country", "$address.city");
 
-    const seoSettings = await SeoSettings.find({ page: "ClinicListPage" });
-
     res.render("user/pages/clinic/all-view", {
-      layout: "user/layouts/clinic-all-view",
+      layout: "user/layouts/clinic-main",
       countries,
       cities,
       user: req.user,
-      seoSettings
     });
   }
   clinicLogin(req, res, next) {
@@ -450,7 +448,7 @@ class HomeController {
         res.render("user/pages/blogs/all-blogs", {
           layout: "user/layouts/blog",
           blogs,
-          user: req.user
+          user: req.user,
         });
       })
       .catch((err) => {
@@ -464,7 +462,7 @@ class HomeController {
       res.render("user/pages/blogs/blog", {
         layout: "user/layouts/blog",
         blog,
-        user: req.user
+        user: req.user,
       });
     });
   }

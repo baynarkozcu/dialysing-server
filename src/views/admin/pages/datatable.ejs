@@ -18,79 +18,21 @@
           <table class="table table-bordered text-nowrap" id="example1">
             <thead>
               <tr>
-                <th class="wd-15p border-bottom-0">First name</th>
-                <th class="wd-15p border-bottom-0">Last name</th>
-                <th class="wd-15p border-bottom-0">Start date</th>
+                <th class="wd-15p border-bottom-0">Ad Soyad</th>
+                <th class="wd-15p border-bottom-0">Kayıt Tarihi</th>
                 <th class="wd-25p border-bottom-0">E-mail</th>
+                <th class="wd-25p border-bottom-0">Telefon</th>
               </tr>
             </thead>
             <tbody>
+              <% users.forEach(user => { %>
               <tr>
-                <td>Bella</td>
-                <td>Chloe</td>
-                <td>2018/03/12</td>
-                <td>b.Chloe@datatables.net</td>
+                <td><%- user.nameSurname  %> </td>
+                <td><%- user.createdAt  %> </td>
+                <td><%- user.email  %> </td>
+                <td><%- user.phone  %> </td>
               </tr>
-              <tr>
-                <td>Donna</td>
-                <td>Bond</td>
-                <td>2012/02/21</td>
-                <td>d.bond@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Harry</td>
-                <td>Carr</td>
-                <td>20011/02/87</td>
-                <td>h.carr@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Lucas</td>
-                <td>Dyer</td>
-                <td>2014/08/23</td>
-                <td>l.dyer@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Karen</td>
-                <td>Hill</td>
-                <td>2010/7/14</td>
-                <td>k.hill@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Dominic</td>
-                <td>Hudson</td>
-                <td>2015/10/16</td>
-                <td>d.hudson@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Herrod</td>
-                <td>Chandler</td>
-                <td>2012/08/06</td>
-                <td>h.chandler@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Jonathan</td>
-                <td>Ince</td>
-                <td>2012/11/23</td>
-                <td>j.ince@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Leonard</td>
-                <td>Ellison</td>
-                <td>2010/03/19</td>
-                <td>l.ellison@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Madeleine</td>
-                <td>Lee</td>
-                <td>20015/8/23</td>
-                <td>m.lee@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Karen</td>
-                <td>Miller</td>
-                <td>2012/9/25</td>
-                <td>k.miller@datatables.net</td>
-              </tr>
+              <% }) %>
             </tbody>
           </table>
         </div>

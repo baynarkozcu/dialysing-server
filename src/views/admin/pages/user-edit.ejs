@@ -2,7 +2,7 @@
 <div class="page-header">
   <div class="page-leftheader">
     <h4 class="page-title">Kullanıcıları Düzenleme</h4>
-  </div> 
+  </div>
 </div>
 <!--End Page header-->
 
@@ -17,78 +17,28 @@
         <div class="table-responsive">
           <table class="table table-bordered text-nowrap" id="example1">
             <thead>
-              <tr> 
-                <th class="wd-15p border-bottom-0">Adı</th>
-                <th class="wd-15p border-bottom-0">Soyadı</th> 
+              <tr>
+                <th class="wd-15p border-bottom-0">Ad Soyad</th>
                 <th class="wd-25p border-bottom-0">Email Adresi</th>
               </tr>
             </thead>
-            <tbody> 
-              <tr> 
-                <td>Bella</td>
-                <td>Chloe</td> 
-                <td>b.Chloe@datatables.net
-                <div class="float-right ml-auto">
-                  <div class="btn-group mx-2 mb-0">
-                    <a href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#"><i class="fe fe-trash mr-2"></i> Delete</a>
-                    </div>
-                  </div>
-                  </div>
-                  </td> 
-              </tr>
+            <tbody>
+              <% users.forEach(user => { %>
               <tr>
-                <td>Donna</td>
-                <td>Bond</td> 
-                <td>d.bond@datatables.net
-                <div class="float-right ml-auto">
-                  <div class="btn-group mx-2 mb-0">
-                    <a href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#"><i class="fe fe-trash mr-2"></i> Delete</a>
-                    </div>
-                  </div> </td>
-              </tr>
-              <tr>
-                <td>Harry</td>
-                <td>Carr</td> 
-                <td>h.carr@datatables.net
+                <td><%- user.nameSurname  %> </td>
+                <td>
+                  <%- user.email  %> 
                   <div class="float-right ml-auto">
                     <div class="btn-group mx-2 mb-0">
-                      <a href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                      <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#"><i class="fe fe-trash mr-2"></i> Delete</a>
+                        <a class="dropdown-item" href="/admin/delete-user/<%- user._id  %>"><i class="fe fe-trash mr-2"></i> Delete</a>
                       </div>
-                    </div> 
                     </div>
-                </td> 
+                  </div>
+                </td>
               </tr>
-              <tr>
-                <td>Lucas</td>
-                <td>Dyer</td> 
-                <td>l.dyer@datatables.net
-                  <div class="float-right ml-auto">
-                    <div class="btn-group mx-2 mb-0">
-                      <a href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#"><i class="fe fe-trash mr-2"></i> Delete</a>
-                      </div>
-                    </div> 
-                </td> 
-              </tr>
-              <tr>
-                <td>Karen</td>
-                <td>Hill</td> 
-                <td>k.hill@datatables.net                
-                  <div class="float-right ml-auto">
-                  <div class="btn-group mx-2 mb-0">
-                    <a href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#"><i class="fe fe-trash mr-2"></i> Delete</a>
-                    </div>
-                  </div> </td>
-              </tr> 
+              <% }) %>
             </tbody>
           </table>
         </div>

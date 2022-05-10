@@ -19,6 +19,7 @@ router.post("/add-blog", Controller.addBlog);
 router.get("/delete-blog", Controller.deleteBlog);
 router.get("/datatable", Controller.datatable);
 router.get("/user-edit", Controller.userEdit);
+router.get("/delete-user/:id", Controller.deleteUser);
 router.get("/confirm-clinic", Controller.confirmClinicView);
 router.get("/confirm-clinic/:id", idChecker(),  Controller.confirmClinic);
 router.get("/appointments", Controller.appointments);

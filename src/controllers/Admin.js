@@ -1,6 +1,7 @@
 const BlogService = require("../services/Blogs");
 const DialysisCenterService = require("../services/DialysisCenters");
 const SeoSettings = require("../services/SeoSettings");
+const Users = require("../services/Users");
 const { convertToSlug } = require("../scripts/utils/slugConverter");
 
 const i18n = require("../i18n.config");
@@ -72,11 +73,32 @@ class AdminController {
   }
 
   datatable(req, res) {
-    res.render("admin/pages/datatable", { layout: "admin/layouts/index" });
+    Users.index()
+      .then((users) => {
+        res.render("admin/pages/datatable", { layout: "admin/layouts/index", users });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+      });
   }
 
   userEdit(req, res) {
-    res.render("admin/pages/user-edit", { layout: "admin/layouts/index" });
+    Users.index()
+      .then((users) => {
+        res.render("admin/pages/user-edit", { layout: "admin/layouts/index", users });
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+      });
+  }
+
+  deleteUser(req, res) {
+    const id = req.params.id;
+    Users.delete(id).then((result) => {
+      res.redirect("/admin/user-edit");
+    }).catch((err) => {
+      console.log("Hata Çıktı...", err);
+    });
   }
 
   confirmClinicView(req, res) {
@@ -189,7 +211,7 @@ class AdminController {
   centerSpend(req, res) {
     res.render("admin/pages/center-spend", { layout: "admin/layouts/index" });
   }
-  
+
   premiumCenter(req, res) {
     res.render("admin/pages/premium-clinic", { layout: "admin/layouts/index" });
   }
@@ -200,7 +222,6 @@ class AdminController {
   faqSubmit(req, res) {
     res.render("admin/pages/faq", { layout: "admin/layouts/index" });
   }
-  
 
   //! TODO Change Language
   deneme(req, res) {

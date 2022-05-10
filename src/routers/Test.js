@@ -63,7 +63,7 @@ router.post("/uploadfile", (req, res) => {
   }
 });
 
-router.post("/save-promotions", (req, res) => {
+router.get("/save-promotions", (req, res) => {
   for (let index = 0; index < 20; index++) {
     const promotion = {
       title: randMovie(),

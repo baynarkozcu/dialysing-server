@@ -149,6 +149,10 @@ class AdminController {
   profileAuth(req, res) {
     res.render("admin/pages/profile-auth", { layout: "admin/layouts/index" });
   }
+  faqSubmit(req, res) {
+    res.render("admin/pages/faq", { layout: "admin/layouts/index" });
+  }
+  
 
   //! TODO Change Language
   deneme(req, res) {

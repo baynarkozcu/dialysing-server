@@ -36,6 +36,7 @@ router.get("/debtor", Controller.spendDebtor);
 router.get("/premium-center", Controller.premiumCenter);
 
 router.get("/profile-auth", Controller.profileAuth);
+router.get("/faq", Controller.faqSubmit);
 
 
 router.get("/deneme/:lang", Controller.deneme);

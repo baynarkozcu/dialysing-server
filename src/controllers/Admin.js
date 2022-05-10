@@ -178,22 +178,29 @@ class AdminController {
       });
   }
 
+  invoiceList(req, res) {
+    res.render("admin/pages/invoice-list", { layout: "admin/layouts/index" });
+  }
+
+  centerInvoiceDetail(req, res) {
+    res.render("admin/pages/center-invoice-detail", { layout: "admin/layouts/index" });
+  }
+
   centerSpend(req, res) {
     res.render("admin/pages/center-spend", { layout: "admin/layouts/index" });
   }
-  chargedSpend(req, res) {
-    res.render("admin/pages/charged", { layout: "admin/layouts/index" });
-  }
-  deptorAccount(req, res) {
-    res.render("admin/pages/debtor-account", { layout: "admin/layouts/index" });
-  }
-  tokenTracking(req, res) {
-    res.render("admin/pages/token-tracking", { layout: "admin/layouts/index" });
-  }
-
+  
   premiumCenter(req, res) {
     res.render("admin/pages/premium-clinic", { layout: "admin/layouts/index" });
   }
+
+  profileAuth(req, res) {
+    res.render("admin/pages/profile-auth", { layout: "admin/layouts/index" });
+  }
+  faqSubmit(req, res) {
+    res.render("admin/pages/faq", { layout: "admin/layouts/index" });
+  }
+  
 
   //! TODO Change Language
   deneme(req, res) {

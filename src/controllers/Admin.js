@@ -4,11 +4,36 @@ const SeoSettings = require("../services/SeoSettings");
 const Users = require("../services/Users");
 const { convertToSlug } = require("../scripts/utils/slugConverter");
 
+const { passwordToHash, hashToPassword } = require("../scripts/utils/helper");
+
 const i18n = require("../i18n.config");
 
 class AdminController {
-  login(req, res) {
+  loginView(req, res) {
     res.render("admin/pages/login", { layout: "admin/layouts/auth" });
+  }
+
+  login(req, res) {
+    Users.find({ email: req.body.email })
+      .then((user) => {
+        if (!user) {
+          console.log("Email Bulunamadı...");
+          res.render("admin/pages/login", { layout: "admin/layouts/auth" });
+        } else {
+          if (req.body.password === hashToPassword(user.password)) {
+            console.log("Giriş Başarılı...", user);
+            //TODO DEGİŞTİRİLECEK....
+            res.redirect("/admin/confirm-clinic");
+          } else {
+            console.log("Şifre Yanlış...");
+            res.render("admin/pages/login", { layout: "admin/layouts/auth" });
+          }
+        }
+      })
+      .catch((error) => {
+        console.log("Hata Çıktı...", error);
+        res.render("admin/pages/login", { layout: "admin/layouts/auth" });
+      });
   }
 
   register(req, res) {
@@ -254,11 +279,13 @@ class AdminController {
 
   deletePremium(req, res) {
     const id = req.params.id;
-    DialysisCenterService.update(id, { isPremium: false }).then(() => {
-      res.redirect("/admin/premium-center");
-    }).catch((err) => {
-      console.log("Hata Çıktı...", err);
-    })
+    DialysisCenterService.update(id, { isPremium: false })
+      .then(() => {
+        res.redirect("/admin/premium-center");
+      })
+      .catch((err) => {
+        console.log("Hata Çıktı...", err);
+      });
   }
 
   profileAuth(req, res) {

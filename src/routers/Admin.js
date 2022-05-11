@@ -7,7 +7,8 @@ const idChecker = require("../middlewares/idChecker");
 
 const Controller = require("../controllers/Admin");
 
-router.get("/login", Controller.login);
+router.get("/login", Controller.loginView);
+router.post("/login", Controller.login);
 router.get("/register", Controller.register);
 router.get("/forgot-password", Controller.forgotPassword);
 router.get("/lock-screen", Controller.lockScreen);

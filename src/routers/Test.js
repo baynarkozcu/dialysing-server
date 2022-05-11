@@ -4,10 +4,11 @@ const excelToJson = require("convert-excel-to-json");
 
 const model = require("../models/DialysisCenters");
 const PromotionService = require("../models/Promotions");
+const Permissions = require("../models/Permissions");
+const Admin = require("../models/Admin");
 
-const { randMovie, randCountry, randNumber } = require("@ngneat/falso");
+const { randMovie, randCountry, randNumber, randMusicGenre } = require("@ngneat/falso");
 const { convertToSlug } = require("../scripts/utils/slugConverter");
-
 
 router.get("/", (req, res) => {
   res.render("test", { layout: "clinic-panel/layouts/deneme" });
@@ -24,8 +25,7 @@ router.post("/uploadfile", (req, res) => {
     },
   });
 
- for (let index = 0; index < 25; index++) {
-
+  for (let index = 0; index < 25; index++) {
     var randomCount = Math.floor(Math.random() * 100);
 
     const dialysisCenter = {
@@ -48,7 +48,7 @@ router.post("/uploadfile", (req, res) => {
       centerDetails: {
         centerType: result.deneme[randomCount].centerType,
       },
-      seflink: convertToSlug(result.deneme[randomCount].companyName) +"-"+ new Date().valueOf(),
+      seflink: convertToSlug(result.deneme[randomCount].companyName) + "-" + new Date().valueOf(),
     };
 
     new model(dialysisCenter)
@@ -79,6 +79,49 @@ router.get("/save-promotions", (req, res) => {
         console.log("Hata Çıktı :", err);
       });
   }
+});
+
+// router.get("/save-permission", (req, res) => {
+//   for (let index = 0; index < 20; index++) {
+//     const promotion = {
+//       title: randMusicGenre(),
+//     };
+//     new Permissions(promotion)
+//       .save()
+//       .then(() => {
+//         console.log("success");
+//       })
+//       .catch((err) => {
+//         console.log("Hata Çıktı :", err);
+//       });
+//   }
+// });
+
+router.get("/save-admin", (req, res) => {
+  const admins = {
+    nameSurname: "Admin",
+    email: "deneme@dneme.com",
+    password: "123456",
+    phone: "05555555555",
+  };
+  Admin.create(admins)
+    .then((admin) => {
+      console.log("admin :", admin);
+    })
+    .catch((err) => {
+      console.log("Hata Çıktı :", err);
+    });
+});
+
+router.get("/save-permission", (req, res) => {
+  Admin.findByIdAndUpdate("627c20bb0453dcab3801bade", { permissions: [{ permission: "627c1f928af68c29423ea513", allow: true }] })
+    .then((deneme) => {
+      console.log("Kayıt Başarılı", deneme);
+    })
+    .catch((err) => {
+      console.log("Hata Çıktı :", err);
+    });
+  // Admin.updateOne({ nameSurname: "Admin" }, { permissions: [{ permission: "627c1f928af68c29423ea513", allow: true }] });
 });
 
 module.exports = router;

@@ -2,6 +2,7 @@ const BlogService = require("../services/Blogs");
 const DialysisCenterService = require("../services/DialysisCenters");
 const SeoSettings = require("../services/SeoSettings");
 const Users = require("../services/Users");
+const Admin = require("../services/Admin");
 const { convertToSlug } = require("../scripts/utils/slugConverter");
 
 const { passwordToHash, hashToPassword } = require("../scripts/utils/helper");
@@ -14,7 +15,7 @@ class AdminController {
   }
 
   login(req, res) {
-    Users.find({ email: req.body.email })
+    Admin.find({ email: req.body.email })
       .then((user) => {
         if (!user) {
           console.log("Email Bulunamadı...");

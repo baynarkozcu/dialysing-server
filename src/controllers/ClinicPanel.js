@@ -214,7 +214,7 @@ class ClinicPanelController {
 
   //AJAX METHOD
   getClinicList(req, res) {
-    DialysisCenterService.indexTop5({ "companyInformation.companyName": { $regex: req.body.companyName, $options: "i" }, isActive: false })
+    DialysisCenterService.indexTop({ "companyInformation.companyName": { $regex: req.body.companyName, $options: "i" }, isActive: false })
       .then((centers) => {
         res.json(centers);
       })

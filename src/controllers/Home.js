@@ -242,9 +242,11 @@ class HomeController {
   }
 
   gfrCalculator(req, res, next) {
-    res.render("user/pages/gfr-calculate", {
-      layout: "user/layouts/gfr-calculate",
+    res.render("user/pages/gfr-calculator", {
+      layout: "user/layouts/blog", 
+      user: req.user,
     });
+    
   }
 
   user(req, res, next) {

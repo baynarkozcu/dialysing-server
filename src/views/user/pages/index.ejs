@@ -6,16 +6,31 @@
       <a href="./clinic/all" class="tm-show-all-link" key="allView">Tümünü Görüntüle</a>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <% centers.forEach((center, index) => { %>
+        <% if (index < 2) { %>
+                      <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
         <div class="tm-box card">
           <img src="../user/img/custom/ankara.png" alt="Custom Ankara" />
           <div class="tm-box-content">
-            <div class="tm-box-title"><a href="#">Ankara</a></div>
+            <div class="tm-box-title"><a href="#"><%- center.companyInformation.companyName  %> </a></div>
             <div class="tm-box-text">300 <span key="dialysCenter">Diyaliz Merkezi</span></div>
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <% } else { %>
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+        <div class="tm-box card">
+          <img src="../user/img/custom/istanbul-anadolu.png" alt="Custom Istanbul Anadolu" />
+          <div class="tm-box-content">
+            <div class="tm-box-title"><a href="./clinic/clinic-list.html"><%- center.companyInformation.companyName  %> </a></div>
+            <div class="tm-box-text">243 <span key="dialysCenter"><%- center.companyInformation.companyName  %> </span></div>
+          </div>
+        </div>
+      </div>
+          <% } %> 
+
+      <% }) %>
+      <!-- <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
         <div class="tm-box card">
           <img src="../user/img/custom/istanbul-avrupa.png" alt="Custom Istanbul Avrupa" />
           <div class="tm-box-content">
@@ -50,7 +65,7 @@
             <div class="tm-box-text">212 <span key="dialysCenter">Diyaliz Merkezi</span></div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -63,17 +78,19 @@
       <a key="allViewArticle" href="/blogs" class="tm-show-all-link">Tüm Makaleleri Görüntüle</a>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+      <% blogs.forEach(blog => { %>
+             <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
         <div class="tm-box">
           <a href="#">
             <img src="../user/img/custom/dialysis-i.png" alt="Dialysis I" /></a>
           <div class="tm-box-content">
-            <div key="articleSubTitle1" class="tm-box-title">Diyaliz Nedir?</div>
-            <div key="articlesSubText1" class="tm-box-text">Fermentum tristique egestas elit nulla morbi integer rhoncus quis in quam quis purus eu posuere dui scelerisque urna, turpis senectus</div>
+            <div key="articleSubTitle1" class="tm-box-title"><%- blog.title  %> </div>
+            <div key="articlesSubText1" class="tm-box-text"><%- blog.content.substring(0,50) %> </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+      <% }) %>
+      <!-- <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
         <div class="tm-box">
           <a href="./articles/diyalizde-beslenme.html"><img src="../user/img/custom/dialysis-ii.png" alt="Dialysis II" /></a>
           <div class="tm-box-content">
@@ -99,7 +116,7 @@
             <div key="articlesSubText4" class="tm-box-text">A est sed nunc, et sagittis, velit scelerisque posuere suspendisse orci hendrerit non sed nascetur ut nunc id blandit at felis, aliquam volutpat nunc arcu ut diam mattis tristique penatibus lobortis scelerisque scelerisque mi orci</div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
         <div class="tm-box">
           <a href="#"><img src="../user/img/custom/dialysis-v.png" alt="Dialysis V" /></a>

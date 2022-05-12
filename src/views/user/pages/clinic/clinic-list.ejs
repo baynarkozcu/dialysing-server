@@ -10,7 +10,7 @@
       <div class="container ie-h-align-center-fix">
         <div class="row">
           <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix text-center tm-header-content">
-            <div class="tm-header-title"><span><%- city  %>  </span> bölgesindeki Diyaliz Merkezleri</div>
+            <div class="tm-header-title"><span><%- city %> </span> bölgesindeki Diyaliz Merkezleri</div>
             <div class="tm-header-text">Tarihlerinizi girin ve aradığınız lokasyona en yakın diyaliz merkezini bulun</div>
 
             <form action="/clinic/clinic-list" method="GET" class="tm-search-form tm-section-pad-2">
@@ -215,7 +215,11 @@
           <% list.forEach(element => { %>
           <div class="clinic-center-box">
             <!-- <img src="../user/img/clinic/centers/clinic-ix.png" alt="Clinic Center iii" class="clinic-img" /> -->
-            <img src="<%- element.companyInformation.photo[0] %>" alt="Clinic Center iii" class="clinic-img" />
+            <% if (element.companyInformation.photo[0]) { %>
+            <img src="<%- element.companyInformation.photo[0]%>" alt="Clinic Center iii" class="clinic-img" />
+            <% }else{ %>
+            <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <% } %>
             <div class="clinic-center-main-content">
               <div class="clinic-center-box-content">
                 <div class="clinic-center-info">
@@ -265,12 +269,11 @@
                 </div>
                 <div class="right">
                   <% if (element.isActive) { %>
-                   <a href="/clinic/<%- element._id %>" class="btn btn-second">Randevu Oluştur</a>
+                  <a href="/clinic/<%- element._id %>" class="btn btn-second">Randevu Oluştur</a>
                   <% } else{ %>
-                   <a href="/clinic/<%- element._id %>" class="btn btn-second">Merkez Profiline Bak</a>
+                  <a href="/clinic/<%- element._id %>" class="btn btn-second">Merkez Profiline Bak</a>
 
-                    <% } %> 
-                  
+                  <% } %>
                 </div>
               </div>
             </div>

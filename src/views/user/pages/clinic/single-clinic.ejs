@@ -24,7 +24,14 @@
 
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 clinic-images">
-            <img src="<%- center.companyInformation.photo[0]  %> " class="left-first" alt="<%- center.companyInformation.companyName  %>" />
+            <!-- TODO DEFAULT RESIM YUKLEME İŞLEMLERİ AŞAĞIDAKİ AYNI ŞEKİLDE YAPILACAK... -->
+            <% if (center.companyInformation.photo[0]) { %>
+            <img src="<%- center.companyInformation.photo[0]%>" alt="Clinic Center iii" class="clinic-img" />
+            <% }else{ %>
+            <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <% } %>
+            <!-- TODO DEFAULT RESIM YUKLEME İŞLEMLERİ YUKARIDAKI AYNI ŞEKİLDE YAPILACAK... -->
+            
             <img src="<%- center.companyInformation.photo[0]  %> " class="left-second" alt="<%- center.companyInformation.companyName  %>" />
           </div>
           <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 clinic-images">

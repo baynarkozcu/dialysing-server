@@ -40,7 +40,7 @@
                       <div class="form-group">
                         <label for="job-dropdown" key="gfrGender">Cinsiyetiniz</label>
                         <div class="dropdown select">
-                            <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                            
+                            <select class="btn btn-dropdown dropdown-toggle" type="button" id="cinsiyet-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                            
                                 <option key="gfrGender" selected>Cinsiyetiniz</option>
                                 <option value="1" key="gfrWoman">Kadın</option>
                                 <option value="2" key="gfrMan">Erkek</option> 
@@ -239,7 +239,9 @@ function hesapla(){
     var weight = document.getElementById("weight").value;
     var keratin = document.getElementById("keratin").value;
 
-    var cinsiyet = document.getElementById("cinsiyet").value;
+    var cinsiyet = document.getElementById("cinsiyet-dropdown");
+
+    console.log("Deneme",cinsiyet);
 
     var gfr = 186 * (Math.pow(keratin,-1.154 )) * (Math.pow(age, -0.203));
 

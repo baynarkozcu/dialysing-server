@@ -264,7 +264,13 @@
                   <!-- <div class="users"><img src="../user/img/clinic/icons/3-User.png" alt="Icon 3-User" />Bu ay 15 kişi bu diyaliz merkezini inceledi</div> -->
                 </div>
                 <div class="right">
-                  <a href="/clinic/<%- element._id %>" class="btn btn-second">Randevu Oluştur</a>
+                  <% if (element.isActive) { %>
+                   <a href="/clinic/<%- element._id %>" class="btn btn-second">Randevu Oluştur</a>
+                  <% } else{ %>
+                   <a href="/clinic/<%- element._id %>" class="btn btn-second">Merkez Profiline Bak</a>
+
+                    <% } %> 
+                  
                 </div>
               </div>
             </div>

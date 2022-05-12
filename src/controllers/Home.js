@@ -235,7 +235,7 @@ class HomeController {
 
   async allView(req, res, next) {
     const countries = await DialysisCenterService.groupBy("$address.country");
-    const cities = await DialysisCenterService.groupBy("$address.country", "$address.city");
+    const cities = await (await DialysisCenterService.groupBy("$address.country", "$address.city"));
 
     res.render("user/pages/clinic/all-view", {
       layout: "user/layouts/clinic-main",

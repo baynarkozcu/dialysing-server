@@ -38,18 +38,16 @@
                           <input type="text" class="form-control" id="keration" placeholder="Son Kreatin Seviyeniz">
                       </div>
                       <div class="form-group">
-                          <label for="job-dropdown">Cinsiyetiniz</label>
-                          <div class="dropdown">
-                              <button class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Cinsiyetiniz
-                              </button>
-                              <div class="dropdown-menu" aria-labelledby="job-dropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
-                            </div>
-                      </div>
+                        <label for="job-dropdown" key="gfrGender">Cinsiyetiniz</label>
+                        <div class="dropdown select">
+                            <select class="btn btn-dropdown dropdown-toggle" type="button" id="job-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                            
+                                <option key="gfrGender" selected>Cinsiyetiniz</option>
+                                <option value="1" key="gfrWoman">Kadın</option>
+                                <option value="2" key="gfrMan">Erkek</option> 
+                            </select> 
+                          </div>
+                          
+                    </div>
                       <div class="gfr-button">
                           <button type="button" class="btn-second">GFR’ımı Hesapla</button>
                       </div>

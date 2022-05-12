@@ -20,8 +20,12 @@ class HomeController {
   async index(req, res, next) {
     const seoSettings = await SeoSettings.find({ page: "HomePage" });
     const user = req.user;
-    res.render("user/pages/index", { layout: "user/layouts/index", user, seoSettings });
+    const blogs = await BlogService.indexTop({}, 4).sort({ createdAt: -1 });;
+    const centers = await DialysisCenterService.indexTop({}, 5).sort({ createdAt: -1 });
+
+    res.render("user/pages/index", { layout: "user/layouts/index", user, seoSettings, blogs, centers });
   }
+
   async clinicMain(req, res, next) {
     const seoSettings = await SeoSettings.find({ page: "ClinicMainPage" });
     res.render("user/pages/clinic/clinic-main", {

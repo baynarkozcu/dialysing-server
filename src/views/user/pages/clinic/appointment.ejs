@@ -306,6 +306,7 @@
                     <option value="1">Hepatit Negatif</option>
                     <option value="2">Hepatit B Pozitif</option>
                     <option value="3">Hepatit C Pozitif</option>
+                    <option value="3">HIV Pozitif</option>
                   </select>
                 </div>
                 <!-- SGK -->
@@ -313,7 +314,7 @@
                   <label>Diyalize Girecek Kişinin Sigorta Durumu <span class="mandatory">*</span></label><br>
                   <div class="sgk-btn mt-1">
                   <button type="button" id="sgk-btn" onclick="javascript:hideShowSgk()" >Sigortam Var</button>
-                  <button type="button" id="nosgk-btn" onclick="javascript:hideShowNoSgk()">Sigortam Yok</button>
+                  <button type="button" id="nosgk-btn" onclick="javascript:hideShowNoSgk()">Kendim Ödeyeceğim</button>
                 </div>
                   <div id="selectorsgk" class="sgk" style="display: none;">
                   <div class="form-group not-border checkbox form-check">
@@ -325,11 +326,11 @@
                       value="Özel Sigortalı" />
                     <label class="form-check-label" for="custom">Özel Sigorta</label>
                   </div>
-                  <!-- <div class="form-group not-border checkbox form-check">
+                  <div class="form-group not-border checkbox form-check">
                     <input type="radio" name="insurance" class="form-check-input" id="greenCard"
                       value="Yeşilkart Sigortalısı" />
                     <label class="form-check-label" for="greenCard">Yeşilkart Sigortalısı</label>
-                  </div> -->
+                  </div>
                   <!-- <div class="form-group not-border checkbox form-check">
                     <input type="radio" name="insurance" class="form-check-input" id="bank"
                       value="Banka Sigortalısı" />
@@ -349,6 +350,31 @@
                     <input type="radio" name="insurance" class="form-check-input" id="bkk"
                       value="BKK" />
                     <label class="form-check-label" for="bkk">BKK </label>
+                  </div>
+                  <div class="form-group not-border checkbox form-check">
+                    <input type="radio" name="insurance" class="form-check-input" id="tkk"
+                      value="TKK" />
+                    <label class="form-check-label" for="tkk">TKK </label>
+                  </div>
+                  <div class="form-group not-border checkbox form-check">
+                    <input type="radio" name="insurance" class="form-check-input" id="ikk"
+                      value="IKK" />
+                    <label class="form-check-label" for="ikk">IKK </label>
+                  </div>
+                  <div class="form-group not-border checkbox form-check">
+                    <input type="radio" name="insurance" class="form-check-input" id="knappschaft"
+                      value="KNAPPSCHAFT" />
+                    <label class="form-check-label" for="knappschaft">KNAPPSCHAFT </label>
+                  </div>
+                  <div class="form-group not-border checkbox form-check">
+                    <input type="radio" name="insurance" class="form-check-input" id="hkk"
+                      value="HKK" />
+                    <label class="form-check-label" for="hkk">HKK </label>
+                  </div>
+                  <div class="form-group not-border checkbox form-check">
+                    <input type="radio" name="insurance" class="form-check-input" id="barmer"
+                      value="BARMER" />
+                    <label class="form-check-label" for="barmer">BARMER</label>
                   </div>
                   <div class="form-group not-border checkbox form-check">
                     <input type="radio" name="insurance" class="form-check-input" id="ehic"

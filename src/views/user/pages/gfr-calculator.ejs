@@ -235,22 +235,23 @@
 <script>
 
 function hesapla(){
-    var age = document.getElementById("age").value;
-    var weight = document.getElementById("weight").value;
-    var keratin = document.getElementById("keratin").value;
+    // var age = document.getElementById("age").value;
+    // var weight = document.getElementById("weight").value;
+    // var keratin = document.getElementById("keratin").value;
 
-    var cinsiyet = document.getElementById("cinsiyet-dropdown");
+    var cinsiyet = $('#cinsiyet-dropdow :selected');
 
-    console.log("Deneme",cinsiyet);
+    console.log(cinsiyet);
 
-    var gfr = 186 * (Math.pow(keratin,-1.154 )) * (Math.pow(age, -0.203));
+
+    //var gfr = 186 * (Math.pow(keratin,-1.154 )) * (Math.pow(age, -0.203));
 
 
 //     186 X ([Kreatinin Düzeyi] -1.154*) X ([Yaş] -0.203*) X (0.742 kadın ise; cinsiyet erkek ise aynen (1
 // ile çarpılır. )
 // *Not : Formülde bulunan 1.154 veya 0.203 değerler üs katsayılardır.
 
-    alert("dene");
+    //alert("Cinsiyet", cinsiyet);
 }
 
 

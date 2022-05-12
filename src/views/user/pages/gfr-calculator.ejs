@@ -49,7 +49,7 @@
                           
                     </div>
                       <div class="gfr-button">
-                          <button type="button" class="btn-second">GFR’ımı Hesapla</button>
+                          <button type="button" onclick="hesapla()" class="btn-second">GFR’ımı Hesapla</button>
                       </div>
                   </form>
                   <div class="tm-section-title">Hesaplama Sonucunuz</div>
@@ -231,3 +231,25 @@
       </div>
   </div>
 </div>
+
+<script>
+
+function hesapla(){
+    var age = document.getElementById("age").value;
+    var weight = document.getElementById("weight").value;
+    var keratin = document.getElementById("keratin").value;
+
+    var cinsiyet = document.getElementById("cinsiyet").value;
+
+    var gfr = 186 * (Math.pow(keratin,-1.154 )) * (Math.pow(age, -0.203));
+
+
+//     186 X ([Kreatinin Düzeyi] -1.154*) X ([Yaş] -0.203*) X (0.742 kadın ise; cinsiyet erkek ise aynen (1
+// ile çarpılır. )
+// *Not : Formülde bulunan 1.154 veya 0.203 değerler üs katsayılardır.
+
+    alert("dene");
+}
+
+
+</script>

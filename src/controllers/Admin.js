@@ -76,15 +76,30 @@ class AdminController {
   }
 
   addBlog(req, res) {
-    req.body.seflink = convertToSlug(req.body.title);
-    BlogService.create(req.body)
-      .then((result) => {
-        res.redirect("/admin/blogs");
-      })
-      .catch((err) => {
-        console.log("Hata Çıktı...");
-        res.render("admin/pages/add-blog", { layout: "admin/layouts/index" });
-      });
+    if (req.file == undefined) {
+      console.log("Hata Çıktı...", req.file);
+      console.log("Hata Çıktı :", "Lütfen bir resim seçiniz.");
+    } else {
+      // req.cookies.clinic.companyInformation.photo.push(req.file.filename);
+      // DialysisCenterService.update(req.cookies.clinic._id, { "companyInformation.photo": req.cookies.clinic.companyInformation.photo })
+      //   .then((result) => {
+      //     res.cookie("clinic", result);
+      //     res.redirect("/panel/upload-image");
+      //   })
+      //   .catch((err) => {
+      //     console.log("Hata Çıktı :", err);
+      //   });
+      req.body.seflink = convertToSlug(req.body.title);
+      req.body.image = req.file.filename;
+      BlogService.create(req.body)
+        .then((result) => {
+          res.redirect("/admin/blogs");
+        })
+        .catch((err) => {
+          console.log("Hata Çıktı...");
+          res.render("admin/pages/add-blog", { layout: "admin/layouts/index" });
+        });
+    }
   }
 
   deleteBlog(req, res) {

@@ -4,6 +4,8 @@ const { authenticate, currentUser } = require("../middlewares/authentication");
 // const { createValidator, updateValidator, loginValidator } = require("../validations/Users");
 
 const idChecker = require("../middlewares/idChecker");
+const multerConfig = require("../scripts/utils/multerConfig");
+
 
 const Controller = require("../controllers/Admin");
 
@@ -16,7 +18,7 @@ router.get("/reset-password", Controller.resetPassword);
 router.get("/error", Controller.error);
 router.get("/blogs", Controller.blogs);
 router.get("/add-blog", Controller.addViewBlog);
-router.post("/add-blog", Controller.addBlog);
+router.post("/add-blog", multerConfig.single("image"), Controller.addBlog);
 router.get("/delete-blog", Controller.deleteBlog);
 router.get("/datatable", Controller.datatable);
 router.get("/user-edit", Controller.userEdit);

@@ -13,7 +13,7 @@
         <h3 class="card-title">Yeni Blog Yazısı Ekle</h3>
       </div>
       <div class="card-body">
-        <form action="/admin/add-blog" method="POST">
+        <form action="/admin/add-blog" enctype="multipart/form-data" method="POST">
           <div class="form-group">
             <div class="row align-items-center">
               <label class="col-sm-2 form-label">Başlık</label>
@@ -39,8 +39,10 @@
             </div>
           </div>
           <div class="form-group">
-            <div class="row"> 
-              <input type="file" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+            <div class="row">
+              <input name="image" id="filer_input2" multiple="multiple" type="file" />
+
+              <!-- <input type="file" name="image" id="filer_input2" multiple="multiple" aria-describedby="inputGroupFileAddon04" aria-label="Upload"> -->
             </div>
           </div>
           <button type="submit" class="btn btn-primary btn-space">Ekle</button>
@@ -73,7 +75,6 @@
         </div> -->
         <div class="btn-list ml-auto">
           <button type="button" class="btn btn-danger btn-space">Vazgeç</button>
-          
         </div>
       </div>
     </div>

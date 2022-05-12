@@ -21,9 +21,14 @@ class HomeController {
     const seoSettings = await SeoSettings.find({ page: "HomePage" });
     const user = req.user;
     const blogs = await BlogService.indexTop({}, 4).sort({ createdAt: -1 });;
-    const centers = await DialysisCenterService.indexTop({}, 5).sort({ createdAt: -1 });
+    
+        const country = await DialysisCenterService.groupBy("$address.country");
+    const cities = await DialysisCenterService.groupBy("$address.country", "$address.city");
+    
+    console.log("Cities : ", cities);
+    console.log("Country : ", country[0]._id.country);
 
-    res.render("user/pages/index", { layout: "user/layouts/index", user, seoSettings, blogs, centers });
+    res.render("user/pages/index", { layout: "user/layouts/index", user, seoSettings, blogs, country: country[0]._id.country, cities });
   }
 
   async clinicMain(req, res, next) {

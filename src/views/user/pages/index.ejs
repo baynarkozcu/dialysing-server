@@ -6,30 +6,19 @@
       <a href="./clinic/all" class="tm-show-all-link" key="allView">Tümünü Görüntüle</a>
     </div>
     <div class="row">
-      <% centers.forEach((center, index) => { %>
-        <% if (index < 2) { %>
-                      <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-        <div class="tm-box card">
-          <img src="../user/img/custom/ankara.png" alt="Custom Ankara" />
-          <div class="tm-box-content">
-            <div class="tm-box-title"><a href="#"><%- center.companyInformation.companyName  %> </a></div>
-            <div class="tm-box-text">300 <span key="dialysCenter">Diyaliz Merkezi</span></div>
-          </div>
-        </div>
-      </div>
-        <% } else { %>
-                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+      <% cities.forEach(city => { %> <% if (country == city._id.country) { %>
+      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
         <div class="tm-box card">
           <img src="../user/img/custom/istanbul-anadolu.png" alt="Custom Istanbul Anadolu" />
           <div class="tm-box-content">
-            <div class="tm-box-title"><a href="./clinic/clinic-list.html"><%- center.companyInformation.companyName  %> </a></div>
-            <div class="tm-box-text">243 <span key="dialysCenter"><%- center.companyInformation.companyName  %> </span></div>
+            <div class="tm-box-title"><a href="./clinic/clinic-list.html"><%- city._id.city %> </a></div>
+            <div class="tm-box-text"> <%- city.count  %>  <span key="dialysCenter">Diyaliz Merkezi</span></div>
           </div>
         </div>
       </div>
-          <% } %> 
+      <!-- <p class="city"><a href="/clinic/clinic-list?city=<%- city._id.city  %>"><%- city._id.city %></a> <span>( <%- city.count %> )</span></p> -->
+      <% } %> <% }) %>
 
-      <% }) %>
       <!-- <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
         <div class="tm-box card">
           <img src="../user/img/custom/istanbul-avrupa.png" alt="Custom Istanbul Avrupa" />
@@ -79,13 +68,12 @@
     </div>
     <div class="row">
       <% blogs.forEach(blog => { %>
-             <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
         <div class="tm-box">
-          <a href="#">
-            <img src="../user/img/custom/dialysis-i.png" alt="Dialysis I" /></a>
+          <a href="#"> <img src="../user/img/custom/dialysis-i.png" alt="Dialysis I" /></a>
           <div class="tm-box-content">
-            <div key="articleSubTitle1" class="tm-box-title"><%- blog.title  %> </div>
-            <div key="articlesSubText1" class="tm-box-text"><%- blog.content.substring(0,50) %> </div>
+            <div key="articleSubTitle1" class="tm-box-title"><%- blog.title %></div>
+            <div key="articlesSubText1" class="tm-box-text"><%- blog.content.substring(0,58) %></div>
           </div>
         </div>
       </div>

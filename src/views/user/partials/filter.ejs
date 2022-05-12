@@ -5,18 +5,18 @@
       <div class="form-group">
         <label for="distance" class="form-label">Aranılan lokasyona uzaklık</label>
         <div id="distance" class="distance">
-          <output id="result">40</output>
-          <span> km uzaklık</span>
+          <output id="result">30</output>
+          <span>km uzaklık</span>
         </div>
 
-        <input onchange="changeValue(this.value)" type="range" value="40" min="0" max="50" oninput="this.nextElementSibling.value = this.value" class="form-range" id="distance" />
+        <input onchange="changeValue(this.value)" type="range" value="30" min="0" max="50" oninput="this.nextElementSibling.value = this.value" class="form-range" id="distance" />
 
         <div class="total-distance">Total: 50</div>
       </div>
       <div class="tm-categories-subtitle">Merkez Ortalama Puanı</div>
       <div class="form-group not-border checkbox">
         <input class="form-check-input" type="checkbox" value="Süper" name="centerPoint" id="Super" />
-        <label class="form-check-label selected" for="Super"> Süper +9 </label>
+        <label class="form-check-label selected" for="Super"> Süper +8 </label>
       </div>
       <div class="form-group not-border checkbox">
         <input class="form-check-input" type="checkbox" value="Çok iyi" name="centerPoint" id="Cok_iyi" />
@@ -57,9 +57,10 @@
       </div>
       <div class="tm-categories-subtitle">Seans İçi Hizmetler</div>
       <div class="form-group not-border checkbox">
-        <input class="form-check-input" type="checkbox" value="Seans İçi Yiyecek Sunumu" name="inSessionService" id="Seans_Ici_Yiyecek_Sunumu" />
-        <label class="form-check-label selected" for="Seans_Ici_Yiyecek_Sunumu"> Seans İçi Yiyecek Sunumu </label>
+        <input class="form-check-input" type="checkbox" value="Seans İçi Yiyecek Sunumu" name="inSessionService" id="Seans_Ici_Yiyecek_Sunumu" disabled />
+        <label class="form-check-label disabled" for="Seans_Ici_Yiyecek_Sunumu"> Seans İçi Yiyecek Sunumu</label>  
       </div>
+      <div class="önlem disabled">Covid 19 pandemi nedenleriyle seans içi yiyecek içecek tüketilmesi önerilmemektedir.</div>
       <div class="form-group not-border checkbox">
         <input class="form-check-input" type="checkbox" value="Ücretsiz Ulaşım Hizmeti" name="inSessionService" id="Ucretsiz_Ulasim_Hizmeti" />
         <label class="form-check-label selected" for="Ucretsiz_Ulasim_Hizmeti"> Ücretsiz Ulaşım Hizmeti </label>

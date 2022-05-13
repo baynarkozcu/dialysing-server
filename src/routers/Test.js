@@ -6,6 +6,7 @@ const model = require("../models/DialysisCenters");
 const PromotionService = require("../models/Promotions");
 const Permissions = require("../models/Permissions");
 const Admin = require("../models/Admin");
+const SeoSettings = require("../models/SeoSettings");
 
 const { randMovie, randCountry, randNumber, randMusicGenre } = require("@ngneat/falso");
 const { convertToSlug } = require("../scripts/utils/slugConverter");
@@ -122,6 +123,29 @@ router.get("/save-permission", (req, res) => {
       console.log("Hata Çıktı :", err);
     });
   // Admin.updateOne({ nameSurname: "Admin" }, { permissions: [{ permission: "627c1f928af68c29423ea513", allow: true }] });
+});
+
+router.get("/save-seo-settings", (req, res) => {
+  const seoSettings = [
+    {
+      title: "Home Sayfasi Başlık",
+      description: "Home Sayfasi Açıklama",
+      page: "HomePage",
+    },
+    {
+      title: "Klinik Listeleme Sayfasi Başlık",
+      description: "Klinik Listeleme Sayfasi Açıklama",
+      page: "ClinicListPage",
+    },
+    {
+      title: "Klinik Ana Sayfasi Başlık",
+      description: "Klinik Ana Sayfasi Açıklama",
+      page: "ClinicMainPage",
+    },
+  ];
+  SeoSettings.insertMany(seoSettings).then(() => {
+    console.log("success");
+  }).catch(err => console.log(err));
 });
 
 module.exports = router;

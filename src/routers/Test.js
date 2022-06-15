@@ -8,6 +8,8 @@ const Permissions = require("../models/Permissions");
 const Admin = require("../models/Admin");
 const SeoSettings = require("../models/SeoSettings");
 
+const path = require("path");
+
 const { randMovie, randCountry, randNumber, randMusicGenre } = require("@ngneat/falso");
 const { convertToSlug } = require("../scripts/utils/slugConverter");
 
@@ -17,7 +19,8 @@ router.get("/", (req, res) => {
 
 router.post("/uploadfile", (req, res) => {
   const result = excelToJson({
-    sourceFile: "C:/Projects/dialysing-server/public/uploads/test.xlsx",
+    //sourceFile: "C:/Projects/dialysing-server/public/uploads/test.xlsx",
+    sourceFile: path.resolve(__dirname, "../../public/uploads/test.xlsx"),
     header: {
       rows: 1,
     },

@@ -1,6 +1,9 @@
 const AppointmentService = require("../services/Appointments");
 const UserService = require("../services/Users");
 const BlogService = require("../services/Blogs");
+
+const Errors = require("../models/Errors");
+
 const DialysisCenterService = require("../services/DialysisCenters");
 const SeoSettings = require("../services/SeoSettings");
 
@@ -368,6 +371,10 @@ class HomeController {
           (error) => {
             if (error) {
               console.log("Send Mail Error: " + error);
+              Errors.create({
+                type: "email",
+                message: "Email Gönderilirken Hata Oluştu. :" + error,
+              });
             }
             transporter.close();
           }

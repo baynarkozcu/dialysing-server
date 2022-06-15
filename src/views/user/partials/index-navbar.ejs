@@ -90,77 +90,76 @@
                 <a href="/clinic" key="addCenter" class="nav-link btn-third">Merkezinizi Ekleyin</a>
               </li>
               <% if (user) { %>
-              <li class="nav-item buttons mt-2 mb-3 mx-0">
-                <a class="nav-link" id="UserDropdown" data-bs-toggle="dropdown" aria-expanded="false"> 
-                  <svg class="img-xs rounded-circle" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
-                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                </svg></a>
-                <div class="dropdown-menu dropdown-menu-right bg-dark navbar-dropdown mt-0 text-white" aria-labelledby="UserDropdown">
-                  <div class="dropdown-header"> 
-                    <p class="text-white mb-0">Busra Ceval</p>
-                    <p class="fw-light text-muted text-white">ceval2772@gmail.com</p>
-                  </div> 
-                  <a class="dropdown-item mb-2" href="/user"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i>Profil</a> 
-                </div>
-              </li>
-              <% } %>
-              <% if (!user) { %>
-                <li class="nav-item buttons mt-2 mb-3">
-                  <a href="/register" key="register" class="nav-link btn-second">Kayıt Ol</a>
+                <li class="nav-item buttons mt-2 mb-3 mx-0">
+                  <a class="nav-link" id="UserDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg class="img-xs rounded-circle" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                      fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                      <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                    </svg></a>
+                  <div class="dropdown-menu dropdown-menu-right bg-dark navbar-dropdown mt-0 text-white"
+                    aria-labelledby="UserDropdown">
+                    <div class="dropdown-header">
+                      <p class="text-white mb-0">Busra Ceval</p>
+                      <p class="fw-light text-muted text-white">ceval2772@gmail.com</p>
+                    </div>
+                    <a class="dropdown-item mb-2" href="/user"><i
+                        class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i>Profil</a>
+                  </div>
                 </li>
                 <% } %>
-                  <li class="nav-item buttons mt-2 mb-3">
-                    <!-- Button trigger modal -->
-                    <% if (!user) { %>
-                      <button type="button" key="login" class="nav-link btn-second" data-toggle="modal"
-                        data-target="#loginModal">Giriş Yap</button>
+                  <% if (!user) { %>
+                    <li class="nav-item buttons mt-2 mb-3">
+                      <a href="/register" key="register" class="nav-link btn-second">Kayıt Ol</a>
+                    </li>
+                    <% } %>
+                    <li class="nav-item buttons mt-2 mb-3">
+                      <!-- Button trigger modal -->
+                      <% if (!user) { %>
+                         <button type="button" key="login" class="nav-link btn-second" data-bs-toggle="modal" data-bs-target="#loginModal">Giriş Yap</button>
                       <% } %>
-
-                        <% if (user) { %>
-                          <a href="/logout" class="nav-link btn-second">Çıkış Yap</a>
-                          <% } %>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-                              <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <img src="../user/img/icons/close.png" alt="Icon Close" />
-                                    </button>
-                                  </div>
-                                  <form class="tm-form" action="/login" method="POST">
-                                    <div key="login" class="form-title text-center">Giriş Yap</div>
-                                    <div class="form-group">
-                                      <label key="emailAddress" for="login-email">Email Adresi</label>
-                                      <input type="email" class="form-control" id="email" name="email"
-                                        aria-describedby="emailHelp" placeholder="Email Adresiniz" />
-                                    </div>
-                                    <div class="form-group password">
-                                      <label key="password" for="login-password">Şifrenizi Giriniz</label>
-                                      <input type="password" class="form-control" id="password" name="password"
-                                        placeholder="Şifreniz" />
-                                      <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
-                                    </div>
-                                    <div class="links">
-                                      <div class="form-group not-border checkbox">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                          id="flexCheckChecked" />
-                                        <label class="form-check-label" key="rememberMe" for="flexCheckChecked"> Beni
-                                          Hatırla </label>
-                                      </div>
-                                      <a key="passwordFind" href="#">Şifremi Unuttum</a>
-                                    </div>
-                                    <button type="submit" key="login" class="btn btn-second">Giriş Yap</button>
-                                    <div key="accountInformation" class="link">Hesabınız ile birlikte,<a href="#">
-                                        Şartlar ve Koşullar ve Gizlilik Politikası & Kişisel Verilerin İşlenmesine</a>
-                                      onay verilir.</div>
-                                  </form>
-                                </div>
+                       <% if (user) { %>
+                        <a href="/logout" class="nav-link btn-second">Çıkış Yap</a>
+                      <% } %>
+                       <!-- Modal -->
+                       <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <img src="../user/img/icons/close.png" alt="Icon Close" />
+                              </button>
+                            </div>
+                            <form class="tm-form" action="/login" method="POST">
+                              <div key="login" class="form-title text-center">Giriş Yap</div>
+                              <div class="form-group">
+                                <label key="emailAddress" for="login-email">Email Adresi</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                  aria-describedby="emailHelp" placeholder="Email Adresiniz" />
                               </div>
-                            </div>    
-                  </li>
+                              <div class="form-group password">
+                                <label key="password" for="login-password">Şifrenizi Giriniz</label>
+                                 <input type="password" class="form-control" id="password" name="password"
+                                   placeholder="Şifreniz" />
+                                <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
+                               </div>
+                              <div class="links">
+                                <div class="form-group not-border checkbox">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                                  <label class="form-check-label" key="rememberMe" for="flexCheckChecked">Beni Hatırla </label>
+                                </div>
+                                <a key="passwordFind" href="#">Şifremi Unuttum</a>
+                              </div>
+                              <button type="submit" key="login" class="btn btn-second">Giriş Yap</button>
+                              <div key="accountInformation" class="link">Hesabınız ile birlikte,<a href="#">
+                                  Şartlar ve Koşullar ve Gizlilik Politikası & Kişisel Verilerin
+                                  İşlenmesine</a> onay verilir.</div>
+                            </form>
+                          </div>
+                        </div>
+                       </div>
+                    </li>
             </ul>
           </div>
         </nav>

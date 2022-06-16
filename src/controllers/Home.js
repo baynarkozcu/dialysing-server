@@ -1,6 +1,9 @@
 const AppointmentService = require("../services/Appointments");
 const UserService = require("../services/Users");
 const BlogService = require("../services/Blogs");
+
+const Errors = require("../models/Errors");
+
 const DialysisCenterService = require("../services/DialysisCenters");
 const SeoSettings = require("../services/SeoSettings");
 
@@ -20,11 +23,11 @@ class HomeController {
   async index(req, res, next) {
     const seoSettings = await SeoSettings.find({ page: "HomePage" });
     const user = req.user;
-    const blogs = await BlogService.indexTop({}, 4).sort({ createdAt: -1 });;
-    
-        const country = await DialysisCenterService.groupBy("$address.country");
+    const blogs = await BlogService.indexTop({}, 4).sort({ createdAt: -1 });
+
+    const country = await DialysisCenterService.groupBy("$address.country");
     const cities = await DialysisCenterService.groupBy("$address.country", "$address.city");
-    
+
     console.log("Cities : ", cities);
     console.log("Country : ", country[0]._id.country);
 
@@ -235,7 +238,7 @@ class HomeController {
 
   async allView(req, res, next) {
     const countries = await DialysisCenterService.groupBy("$address.country");
-    const cities = await (await DialysisCenterService.groupBy("$address.country", "$address.city"));
+    const cities = await await DialysisCenterService.groupBy("$address.country", "$address.city");
 
     res.render("user/pages/clinic/all-view", {
       layout: "user/layouts/clinic-main",
@@ -252,10 +255,9 @@ class HomeController {
 
   gfrCalculator(req, res, next) {
     res.render("user/pages/gfr-calculator", {
-      layout: "user/layouts/blog", 
+      layout: "user/layouts/blog",
       user: req.user,
     });
-    
   }
 
   user(req, res, next) {
@@ -350,6 +352,10 @@ class HomeController {
         const verifyURL = process.env.MAIL_VERIFY_URL + "user/verify?token=" + token;
         let transporter = mailer.createTransport({
           service: "gmail",
+          host: "smtp.google.com",
+          port: 587,
+          secure: false,
+
           auth: {
             user: process.env.GMAIL_USER,
             pass: process.env.GMAIL_PASSWORD,
@@ -365,6 +371,10 @@ class HomeController {
           (error) => {
             if (error) {
               console.log("Send Mail Error: " + error);
+              Errors.create({
+                type: "email",
+                message: "Email Gönderilirken Hata Oluştu. :" + error,
+              });
             }
             transporter.close();
           }

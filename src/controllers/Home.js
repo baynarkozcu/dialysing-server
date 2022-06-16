@@ -371,12 +371,12 @@ class HomeController {
           (error) => {
             if (error) {
               console.log("Send Mail Error: " + error);
-              Errors.create({
+              await Errors.create({
                 type: "email",
                 message: "Email Gönderilirken Hata Oluştu. :" + error,
               });
             } else {
-              Errors.create({
+              await Errors.create({
                 type: "email",
                 message: "Email Gönderildi.",
               });

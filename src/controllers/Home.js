@@ -368,12 +368,17 @@ class HomeController {
             subject: "Emailinizi Onaylayınız.",
             text: "Emailinizi Onaylamak için Linke Tıklayın " + verifyURL,
           },
-          (error) => {
+          async (error) => {
             if (error) {
               console.log("Send Mail Error: " + error);
-              Errors.create({
+              await Errors.create({
                 type: "email",
                 message: "Email Gönderilirken Hata Oluştu. :" + error,
+              });
+            } else {
+              await Errors.create({
+                type: "email",
+                message: "Email Gönderildi.",
               });
             }
             transporter.close();

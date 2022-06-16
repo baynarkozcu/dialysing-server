@@ -375,6 +375,11 @@ class HomeController {
                 type: "email",
                 message: "Email Gönderilirken Hata Oluştu. :" + error,
               });
+            } else {
+              Errors.create({
+                type: "email",
+                message: "Email Gönderildi.",
+              });
             }
             transporter.close();
           }

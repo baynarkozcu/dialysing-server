@@ -368,7 +368,7 @@ class HomeController {
             subject: "Emailinizi Onaylayınız.",
             text: "Emailinizi Onaylamak için Linke Tıklayın " + verifyURL,
           },
-          (error) => {
+          async (error) => {
             if (error) {
               console.log("Send Mail Error: " + error);
               await Errors.create({

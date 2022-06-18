@@ -2,9 +2,10 @@
   <!-- Top Navbar -->
   <div class="container">
     <div class="row">
-      <nav class="navbar navbar-expand-lg narbar-light">
-        <a class="navbar-brand logo mb-3 mt-3" href="/"> Dialysing<span>.com</span></a>
-        <a href="#" class="location mx-1"><i class="bi bi-geo-alt-fill" type="button" class="btn btn-outline-white mx-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i> <span id="location"></span></a>
+      <nav class="navbar navbar-expand-lg navbar-light mt-3">
+        <div class="container">
+          <a class="navbar-brand logo" href="/">Dialysing<span>.com</span></a>
+          <a href="#" class="location mx-1"><i class="bi bi-geo-alt-fill" type="button" class="btn btn-outline-white mx-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i> <span id="location"></span></a>
         <!-- Location Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -16,33 +17,31 @@
                 <!-- ülke -->
                 <div class="row">
                   <div class="col-md-6 col-xs-6">
-                    <p><b>Ülkenizi Seçin</b></p>
+                    <p key="country"><b>Ülkenizi Seçin</b></p>
                   </div>
                   <div class="col-md-6 col-xs-6 mb-3">
                     <select id="country" class="form-control">
-                      <option value="">-- Ülke --</option>
+                      <option key="countr" value="">-- Ülke --</option>
                     </select>
                   </div>
                 </div>
                 <!-- end country row -->
-
                 <!-- Şehir -->
                 <div class="row">
                   <div class="col-md-6 col-xs-6">
-                    <p><b>Şehrinizi Seçin</b></p>
+                    <p key="citySelect"><b>Şehrinizi Seçin</b></p>
                   </div>
                   <div class="col-md-6 col-xs-6 mb-3">
                     <select id="region" class="form-control">
-                      <option value="">-- İl --</option>
+                      <option key="cities" value="">-- İl --</option>
                     </select>
                   </div>
                 </div>
                 <!-- end şehir row -->
-
                 <!-- ilçe -->
                 <div class="row">
                   <div class="col-md-6 col-xs-6">
-                    <p><b>İlçenizi Seçin</b></p>
+                    <p key="districtSelect"><b>İlçenizi Seçin</b></p>
                   </div>
                   <div class="col-md-6 col-xs-6 mb-3">
                     <select id="city" class="form-control">
@@ -53,74 +52,74 @@
                 <!-- end ilçe row -->
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ekle</button>
+                <button type="button" key="add" class="btn btn-secondary" data-bs-dismiss="modal">Ekle</button>
               </div>
             </div>
           </div>
         </div>
-        <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="mainNav" class="collapse navbar-collapse">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item language-selection mb-3 mt-3">
-              <img src="../user/img/flags/turkey.png" alt="Flags Turkey" />
-              <div class="tm-form-element tm-form-element-2">
-                <select name="language" class="form-control tm-select" id="language">
-                  <option value="">Türkçe</option>
-                  <option value="1">Ingilizce</option>
-                  <option value="2">Almanca</option>
-                </select>
-              </div>
-            </li>
-            <!-- <li class="nav-item question mb-3 mt-3">
-              <img src="../user/img/icons/question.png" alt="Icons Question" />
-            </li> -->
-            <li class="nav-item buttons mb-3 mt-3">
-              <a href="/clinic" class="nav-link btn-third">Merkezinizi Ekleyin</a>
-            </li>
-            <li class="nav-item buttons mb-3 mt-3">
-              <a href="#" class="nav-link btn-second">Kayıt Ol</a>
-            </li>
-            <li class="nav-item buttons mb-3 mt-3">
-              <!-- Button trigger modal -->
-              <button type="button" class="nav-link btn-second" data-toggle="modal" data-target="#loginModal">Giriş Yap</button>
-
-              <!-- Modal -->
-              <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <img src="../user/img/icons/close.png" alt="Icon Close" />
-                      </button>
-                    </div>
-                    <form class="tm-form" action="/login" method="POST">
-                      <div class="form-title text-center">Giriş Yap</div>
-                      <div class="form-group">
-                        <label for="login-email">Email Adresi</label>
-                        <input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Email Adresiniz" />
-                      </div>
-                      <div class="form-group password">
-                        <label for="login-password">Şifrenizi Giriniz</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Şifreniz" />
-                        <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
-                      </div>
-                      <div class="links">
-                        <div class="form-group not-border checkbox">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                          <label class="form-check-label" for="flexCheckChecked"> Beni Hatırla </label>
-                        </div>
-                        <a href="#">Şifremi Unuttum</a>
-                      </div>
-                      <button type="submit" class="btn btn-second">Giriş Yap</button>
-                      <div class="link">Hesabınız ile birlikte,<a href="#"> Şartlar ve Koşullar ve Gizlilik Politikası & Kişisel Verilerin İşlenmesine</a> onay verilir.</div>
-                    </form>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+          aria-expanded="false" aria-label="Toggle navigation"><i class="bi bi-list"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            <ul class="d-flex mb-2 navbar-nav mb-lg-0">
+              <li class="nav-item m-1"> 
+                <div class="dropdown select-lang">
+                  <img key="flag" src="../user/img/flags/turkey.png" alt="Flags Turkey" />
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="drop_yazı" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Türkçe</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" id="tr" href="#"><div class="input-group select-lang mb-2"><img key="flag" src="../user/img/flags/turkey.png" class="mx-1" alt="Flags Turkey" /> Türkçe </div></a>
+                    <a class="dropdown-item" id="en" href="#"><div class="input-group select-lang mb-2"><img key="flag" src="../user/img/flags/en.png" class="mx-1" alt="Flags Turkey" /> English </div></a>
                   </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+              <li class="nav-item m-1">
+                <a href="/clinic" key="addCenter" class="btn btn-center">Merkezinizi Ekleyin</a>
+              </li>
+              
+                <li class="nav-item m-1">
+                  <a href="/register" key="register" class="btn btn-register">Kayıt Ol</a>
+                </li>
+                
+              <li class="nav-item m-1">
+                  <!-- Button trigger modal -->
+                <button type="button" key="login" class="btn btn-login" data-bs-toggle="modal" data-bs-target="#loginModal"> Giriş Yap </button> 
+                 
+                <!-- Modal -->
+                <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                  tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header"> 
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <form class="tm-form" action="/login" method="POST">
+                        <div key="login" class="form-title text-center">Giriş Yap</div>
+                        <div class="form-group">
+                          <label key="emailAddress" for="login-email">Email Adresi</label>
+                          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email Adresiniz" />
+                        </div>
+                        <div class="form-group password">
+                          <label key="password" for="login-password">Şifrenizi Giriniz</label>
+                           <input type="password" class="form-control" id="password" name="password" placeholder="Şifreniz" />
+                          <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
+                         </div>
+                        <div class="links">
+                          <div class="form-group not-border checkbox">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                            <label class="form-check-label" key="rememberMe" for="flexCheckChecked">Beni Hatırla </label>
+                          </div>
+                          <a key="passwordFind" href="#">Şifremi Unuttum</a>
+                        </div>
+                        <button type="submit" key="login" class="btn btn-second">Giriş Yap</button>
+                        <div key="accountInformation" class="link">Hesabınız ile birlikte,<a href="#"> Şartlar ve Koşullar ve Gizlilik Politikası & Kişisel Verilerin İşlenmesine</a> onay verilir.</div>
+                      </form> 
+                    </div>
+                  </div>
+                </div> 
+                </li>      
+            </ul>
+          </div>
         </div>
       </nav>
     </div>

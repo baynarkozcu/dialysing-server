@@ -93,7 +93,7 @@ class HomeController {
   //   res.render("user/pages/clinic/appointment", { layout: "user/layouts/clinic-main" });
   // }
 
-  createAppointment(req, res, next) {
+  async createAppointment(req, res, next) {
     const appointment = {
       nameSurname: req.user.nameSurname,
       email: req.user.email,
@@ -117,23 +117,62 @@ class HomeController {
       dialysisCenter: req.cookies.tmpAppointment.centerId,
       note: req.body.note,
     };
-    AppointmentService.create(appointment)
-      .then((data) => {
-        req.user.appointments.push(data._id);
-        UserService.update(req.user._id, {
-          appointments: req.user.appointments,
-        })
-          .then((data) => {
-            res.clearCookie("tmpAppointment");
-            res.redirect("/user");
+
+    var center = await DialysisCenterService.findById(req.cookies.tmpAppointment.centerId);
+
+    if (center.isActive) {
+      AppointmentService.create(appointment)
+        .then((data) => {
+          req.user.appointments.push(data._id);
+          UserService.update(req.user._id, {
+            appointments: req.user.appointments,
           })
-          .catch((err) => {
-            console.log("Hata : ", err);
-          });
-      })
-      .catch((err) => {
-        console.log(err);
+            .then((data) => {
+              res.clearCookie("tmpAppointment");
+              res.redirect("/user");
+            })
+            .catch((err) => {
+              console.log("Hata : ", err);
+            });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      let transporter = mailer.createTransport({
+        service: "gmail",
+        host: "smtp.google.com",
+        port: 465,
+        secure: true,
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PASSWORD,
+        },
       });
+      await transporter.sendMail(
+        {
+          from: "@Dialysing <info@dialysing.com",
+          to: data.email,
+          subject: "Randevu Talebiniz Bulunmaktadır",
+          text: "dialysing.com üzerinden gelen online randevu talebiniz bulunmaktadır. Randevunuzu onaylamak için aşağıdaki linki tıklayınız. \n\n" + "https://dialysing.com/",
+        },
+        async (error) => {
+          if (error) {
+            console.log("Send Mail Error: " + error);
+            await Errors.create({
+              type: "email",
+              message: "Email Gönderilirken Hata Oluştu. :" + error,
+            });
+          } else {
+            await Errors.create({
+              type: "email",
+              message: "Email Gönderildi.",
+            });
+          }
+          transporter.close();
+        }
+      );
+    }
   }
 
   addressCorrection(req, res, next) {
@@ -355,7 +394,6 @@ class HomeController {
           host: "smtp.google.com",
           port: 465,
           secure: true,
-
           auth: {
             user: process.env.GMAIL_USER,
             pass: process.env.GMAIL_PASSWORD,

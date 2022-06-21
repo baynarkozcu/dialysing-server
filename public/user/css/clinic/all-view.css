@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Lato&family=Montserrat&display=swap");
 nav {
-  font-size: 14px;
+  font-size: 13px;
   background-color: #28353e;
 }
 .navbar-brand {
   color: #fff;
   font-family: "Gilroy", sans-serif;
   font-size: 28px !important;
-  font-weight: 600;
 }
 .navbar-brand:hover {
   color: #fff;
@@ -22,13 +21,11 @@ nav {
   border-radius: 8px;
   cursor: pointer;
   color: #ffffff !important;
-  font-weight: 500;
   padding: 0.5rem 1rem !important;
   text-align: center;
   border: 2px solid #055f8f;
   text-decoration: none !important;
   background-color: #055f8f;
-  font-family: "Lato", sans-serif !important;
 }
 .btn-third {
   background-color: transparent !important;
@@ -38,13 +35,15 @@ nav {
   color: #ffffff !important;
   padding: 0.5rem 1rem !important;
   text-align: center;
-  font-family: "Lato", sans-serif !important;
 }
 .navbar-toggler {
   border: #fff 2px solid !important;
 }
 .navbar-toggler-icon i {
   color: #fff !important;
+}
+.select-lang { 
+  font-size: 13px; 
 }
 .bi {
   color: #fff;
@@ -133,13 +132,12 @@ label {
 }
 .btn-secondary {
   background-color: transparent !important;
-  border-radius: 12px;
   border: none !important;
   cursor: pointer;
   color: #ffffff !important;
   padding: 0.5rem 1rem !important;
   text-decoration: none !important;
-  font-size: 15px !important;
+  font-size: 13px !important;
 }
 #location {
   text-decoration: none;

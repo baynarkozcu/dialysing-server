@@ -26,7 +26,7 @@
 .tm-header-content a {
   text-decoration: none;
 }
-.nav-item.question {
+/* .nav-item.question {
   color: #ffffff;
   display: flex;
   justify-content: space-around;
@@ -35,7 +35,7 @@
 
 .nav-item.question img {
   margin-right: 0.5rem;
-}
+} */
 
 .clinic-header .inner-content {
   position: relative;
@@ -845,10 +845,10 @@ a.clinic-images div {
   .tm-s-step {
     width: 2px;
   }
-
+/* 
   .nav-item.question {
     display: none;
-  }
+  } */
   .clinic-screenshot img{
     width: 100%;
   }

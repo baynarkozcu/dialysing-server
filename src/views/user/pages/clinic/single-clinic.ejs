@@ -16,43 +16,65 @@
             <p class="tm-color-shadow"><i class="bi bi-geo-alt-fill"></i> <%- center.address.addressDetailText %></p>
           </div>
           <div class="flex-shrink-1 center-call">
-            <a href="tel:<%-center.contactInformation.phone %>"
-              ><p><i class="bi bi-telephone-fill"></i> Merkezi Ara</p></a
-            >
+            <a href="tel:<%-center.contactInformation.phone %>"><p><i class="bi bi-telephone-fill"></i> Merkezi Ara</p></a>
           </div>
         </div>
 
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 clinic-images">
             <!-- TODO DEFAULT RESIM YUKLEME İŞLEMLERİ AŞAĞIDAKİ AYNI ŞEKİLDE YAPILACAK... -->
-            <% if (center.companyInformation.photo[0]) { %>
+            <!-- <% if (center.companyInformation.photo[0]) { %>
             <img src="<%- center.companyInformation.photo[0]%>" alt="Clinic Center iii" class="clinic-img" />
             <% }else{ %>
             <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
-            <% } %>
+            <% } %> -->
             <!-- TODO DEFAULT RESIM YUKLEME İŞLEMLERİ YUKARIDAKI AYNI ŞEKİLDE YAPILACAK... -->
             
-            <img src="<%- center.companyInformation.photo[0]  %> " class="left-second" alt="<%- center.companyInformation.companyName  %>" />
+            <!-- <img src="<%- center.companyInformation.photo[0]  %> " class="left-second" alt="<%- center.companyInformation.companyName  %>" /> -->
           </div>
-          <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 clinic-images">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 clinic-images">
+            <% if (center.companyInformation.photo[0]) { %>
             <img src="<%- center.companyInformation.photo[0]  %> " class="right" alt="<%- center.companyInformation.companyName  %>" />
+            <% } else{ %>
+              <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <% } %>
           </div>
         </div>
         <div class="sub-image row align-items-start mt-3">
           <div class="col">
+            <% if (center.companyInformation.photo[0]) { %>
             <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+            <% } else{ %>
+              <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <% } %>
           </div>
           <div class="col">
-            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+            <% if (center.companyInformation.photo[0]) { %>
+              <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+              <% } else{ %>
+                <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+              <% } %>
           </div>
           <div class="col">
+                        <% if (center.companyInformation.photo[0]) { %>
             <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+            <% } else{ %>
+              <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <% } %>
           </div>
           <div class="col">
+                        <% if (center.companyInformation.photo[0]) { %>
             <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+            <% } else{ %>
+              <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <% } %>
           </div>
           <div class="col">
+                        <% if (center.companyInformation.photo[0]) { %>
             <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+            <% } else{ %>
+              <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <% } %>
           </div>
         </div>
 
@@ -385,7 +407,6 @@
         <div>
           <% center.centerEmployees.forEach(element => { %>
           <div class="tm-color-shadow-2"><span class="tm-color-dark employe"><%- element.job %> :</span><%- element.employeeNameSurname %></div>
-
           <% }) %>
         </div>
       </div>

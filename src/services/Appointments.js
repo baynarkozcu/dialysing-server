@@ -8,6 +8,10 @@ class Appointments extends BaseService {
   index(where) {
     return this.BaseModal?.find(where || {}).sort("checkInDate");
   }
+
+  reverseIndex(where) {
+    return this.BaseModal?.find(where || {}).sort("checkInDate").reverse();
+  }
 }
 
 module.exports = new Appointments();

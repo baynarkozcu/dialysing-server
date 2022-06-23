@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Khula&family=Lato&family=Montserrat&family=Roboto&display=swap");
-
+.navbar-dark-thema {
+  background-color: #28353E;
+}
 .tm-bg-background {
   height: 500px;
 }
@@ -1167,7 +1169,25 @@ textarea#note.form-control {
 }
 .is-clinic {
   font-family: 'Lato', sans-serif !important;
+  color: #fff;
 }
 .language-selection {
   font-family: 'Lato', sans-serif !important;
 } 
+.tm-forms {
+  padding: 50px !important;
+  border-radius: 16px !important;
+}
+.form-title {
+  color: #28353e;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 50px;
+}
+.password-forgot {
+  color: #000;
+  text-decoration: none;
+}
+.password-forgot:hover {
+  color: #000;
+}

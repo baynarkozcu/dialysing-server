@@ -1676,7 +1676,7 @@ select.form-control {
   background-color: #ffffff;
 }
 
-.tm-form .form-title,
+.tm-form .tm-forms .form-title,
 .tm-form-wide .form-title {
   color: #28353e;
   font-size: 24px;

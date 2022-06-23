@@ -20,18 +20,22 @@ class ClinicPanelController {
 
     if (req.user.centerList.length > 0) {
       if (center) {
+        var pastAppointment = await AppointmentService.index({ dialysisCenter: center, isActive: true, $lt: { checkInDate: Date() } });
+        var comingAppointment = await AppointmentService.index({ dialysisCenter: center, isActive: true, $gt: { checkInDate: Date() } });
         DialysisCenterService.findById(center)
-          .then((center) => {
-            res.cookie("clinic", center);
-            return res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel", user: req.user, center });
+          .then((dialysisCenter) => {
+            res.cookie("clinic", dialysisCenter);
+            return res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel", user: req.user, center, pastAppointment: pastAppointment.slice(0, 3), comingAppointment: comingAppointment.slice(0, 3) });
           })
           .catch((err) => {
             console.log(err);
             return res.redirect("/panel");
           });
       } else {
+        var pastAppointment = await AppointmentService.index({ dialysisCenter: req.user.centerList[0]._id, isActive: true, $lt: { checkInDate: Date() } });
+        var comingAppointment = await AppointmentService.index({ dialysisCenter: req.user.centerList[0]._id, isActive: true, $gt: { checkInDate: Date() } });
         await res.cookie("clinic", req.user.centerList[0]);
-        return res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel", user: req.user, center: req.user.centerList[0] });
+        return res.render("clinic-panel/pages/panel/index", { layout: "clinic-panel/layouts/panel", user: req.user, center: req.user.centerList[0], pastAppointment: pastAppointment.slice(0, 3), comingAppointment: comingAppointment.slice(0, 3) });
       }
     } else {
       res.redirect("/panel/choose-personel");
@@ -183,10 +187,10 @@ class ClinicPanelController {
     }
   }
 
-   choosePersonel(req, res) {
+  choosePersonel(req, res) {
     const user = req.user;
     if (user.isAdmin) {
-      res.render("clinic-panel/pages/add-clinic/choose-personel", { layout: "clinic-panel/layouts/index", user:req.user });
+      res.render("clinic-panel/pages/add-clinic/choose-personel", { layout: "clinic-panel/layouts/index", user: req.user });
     } else {
       req.logout();
       req.session.destroy((error) => {

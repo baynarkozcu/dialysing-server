@@ -883,7 +883,7 @@ select#specificLangSelect.form-select {
     font-size: 18px !important; 
     font-family: 'Lato', sans-serif; 
   }
-  .search {
+  /* .search {
     background: #19a2f2;
     align-content: center;
     justify-content: center; 
@@ -894,6 +894,53 @@ select#specificLangSelect.form-select {
   }
   .date { 
     border-radius: 0px 20px 20px 0px !important;
+  } */
+  .form-control {
+    border-radius: 32px;
+  }
+  .tm-search-form .tm-form-element {
+    width: 100%;
+    max-width: 100%;
+  }
+  .tm-fx-col-xs {
+    flex-direction: column;
+  }
+  .tm-section-pad {
+    padding: 25px 15px;
+  }
+  .tm-header-title{
+    margin-top: 30px;
+  }
+  .location-main {
+    background: #fff;
+    border-radius: 20px !important; 
+  }
+  .location-main input { 
+    font-size: 13px !important;
+    padding: 5px 10px 5px 50px !important;
+  }
+  .date {
+    background: #fff;
+    border-radius: 20px !important;
+    padding: 10px;
+    border: 20px !important;
+  }
+  .date input { 
+    padding: 0px 10px 0px 50px !important;
+    font-size: 13px !important;
+  }
+  .search {
+    background: #19a2f2;
+    align-content: center;
+    justify-content: center; 
+    border-radius: 20px !important; 
+  }
+  .btn-outline-primary {
+    padding: 10px !important;
+    font-size: 13px !important;
+  }
+  .search-icon {
+    font-size: 5px !important;
   }
 }
 /*banner mobile*/
@@ -1684,7 +1731,20 @@ select.form-control {
   line-height: 50px;
   margin-bottom: 2rem;
 }
-
+.form-title {
+  color: #28353e;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 2rem;
+}
+.password-forgot {
+  color: #000;
+  text-decoration: none;
+}
+.password-forgot:hover {
+  color: #000;
+}
 .tm-form label,
 .tm-form-wide label,
 .tm-form-small label {
@@ -2444,4 +2504,13 @@ select.form-select {
   color: #28353e56;
   border-radius: 10px;
   padding: 10px;
+}
+.dropdown-header p {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+.userProfile {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
 }

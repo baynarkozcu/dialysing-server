@@ -1,98 +1,94 @@
-        <div class="tm-top-bar single mixed tm-bg-background" id="tm-top-bar">
-            <!-- Top Navbar -->
-            <div class="container">
-                <div class="row">
-                    <nav class="navbar navbar-expand-lg narbar-light mt-3">
-                        <a class="navbar-brand logo mb-2" href="/">Dialysing<span>.com</span></a>
-                        <div class="navbar-nav">
-                            <a href="#" class="location"><i class="bi bi-geo-alt-fill mx-2"></i><span>İstanbul, Türkiye</span></a>
+<div class="tm-top-bar single mixed tm-bg-background" id="tm-top-bar">
+    <!-- Top Navbar -->
+    <div class="container">
+        <div class="row">
+            <header class="d-flex flex-wrap justify-content-center mt-5 py-3 mb-2">
+                <a href="/"
+                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none logo">Dialysing<span>.com</span></a>
+
+                <ul class="nav">
+                    <li class="nav-item mb-3 me-2 language-selection">
+                        <img src="../user/img/flags/turkey.png" alt="Flags Turkey" />
+                        <div>
+                            <select name="language" class="form-control" id="language">
+                                <option value="">Türkçe</option>
+                                <option value="1">Ingilizce</option>
+                                <option value="2">Almanca</option>
+                            </select>
                         </div>
-                        <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div id="mainNav" class="collapse navbar-collapse">
-                            <ul class="navbar-nav mx-auto mb-lg-0"></ul>
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item language-selection mb-3">
-                                    <img src="../user/img/flags/turkey.png" alt="Flags Turkey" />
-                                    <div class="tm-form-element tm-form-element-2">                                            
-                                        <select name="language" class="form-control tm-select" id="language">
-                                            <option value="">Türkçe</option>
-                                            <option value="1">Ingilizce</option>
-                                            <option value="2">Almanca</option>
-                                        </select>
-                                    </div>
-                                </li>
-                                <!-- <li class="nav-item question mb-3">
-                                    <img src="../user/img/icons/question.png" alt="Icons Question" />
-                                </li> -->
-                                <li class="nav-item buttons mb-3">
-                                    <a class="nav-link btn-third">Merkezinizi Ekleyin</a>
-                                </li>
-                                <% if (!user) { %>
-                                <li class="nav-item buttons mb-3">
-                                    <a href="/register" class="nav-link btn-second">Kayıt Ol</a>
-                                </li> 
+                    </li>
+                    <li class="nav-item buttons me-2"><a href="#" class="nav-link btn-third">Merkezinizi Ekleyin</a></li>
+                    <% if (!user) { %>
+                        <li class="nav-item buttons me-2"><a href="/register" class="nav-link btn-second">Kayıt Ol</a></li>
+                        <% } %>
+                        <li class="nav-item">
+                            <% if (!user) { %>
+                                <button type="button" class="nav-link btn-second" data-toggle="modal"
+                                    data-target="#loginModal">Giriş Yap</button>
                                 <% } %>
-                                <% if (user) { %>
-                                    <li class="nav-item buttons mb-3 mx-0">
-                                      <a class="nav-link" id="UserDropdown" data-bs-toggle="dropdown" aria-expanded="false"> 
-                                        <svg class="img-xs rounded-circle" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                                      </svg></a>
-                                      <div class="dropdown-menu dropdown-menu-right bg-dark navbar-dropdown mt-0 text-white" aria-labelledby="UserDropdown">
-                                        <div class="dropdown-header"> 
-                                          <p class="text-white mb-0">Busra Ceval</p>
-                                          <p class="fw-light text-muted text-white">ceval2772@gmail.com</p>
-                                        </div> 
-                                        <a class="dropdown-item mb-2" href="/user"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i>Profil</a> 
-                                      </div>
-                                    </li>
-                                    <% } %>
-                                <li class="nav-item buttons mb-3">
-                                    <!-- Button Giriş Yap Modal -->
-                                    <% if (!user) { %>
-                                    <button type="button" class="nav-link btn-second" data-toggle="modal" data-target="#loginModal">Giriş Yap</button>
-                                    <% } %>
                                     <% if (user) { %>
-                                    <button type="button" class="nav-link btn-second" data-toggle="modal" data-target="#loginModal">Çıkış Yap</button>
-                                    <% } %>
-                                    <!-- Modal Giriş Yap -->
-                                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="../user/img/icons/close.png" alt="Icon Close" /></button>
-                                            </div>
-                                            <form class="tm-form">
-                                                <div class="form-title text-center">Giriş Yap</div>
-                                                <div class="form-group">
-                                                  <label for="login-email">Email Adresi</label>
-                                                  <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp" placeholder="Email Adresiniz">
-                                                </div>
-                                                <div class="form-group password">
-                                                  <label for="login-password">Şifrenizi Giriniz</label>
-                                                  <input type="password" class="form-control" id="login-password" placeholder="Şifreniz">
-                                                  <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
-                                                </div>
-                                                <div class="links">
-                                                    <div class="form-group not-border checkbox">
-                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                                        <label class="form-check-label" for="flexCheckChecked"> Beni Hatırla </label>
-                                                    </div>
-                                                    <a href="#">Şifremi Unuttum</a>
-                                                </div>
-                                                <button type="submit" class="btn btn-second">Giriş Yap</button>
-                                                <div class="link">Hesabınız ile birlikte,<a href="#"> Şartlar ve Koşullar ve Gizlilik Politikası & Kişisel Verilerin İşlenmesine</a> onay verilir.</div>
-                                            </form>
+                                        <button type="button" class="nav-link btn-second"
+                                            data-toggle="modal" data-target="#loginModal">Çıkış Yap</button>
+                                        <% } %>
+                        </li>
+                            <% if (user) { %>
+                                <li class="nav-item buttons me-2 mb-3">
+                                    <a class="nav-link" id="UserDropdown" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <svg class="img-xs rounded-circle" xmlns="http://www.w3.org/2000/svg" width="25"
+                                            height="25" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            <path fill-rule="evenodd"
+                                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                        </svg></a>
+                                    <div class="dropdown-menu dropdown-menu-right bg-dark navbar-dropdown mt-0 text-white"
+                                        aria-labelledby="UserDropdown">
+                                        <div class="dropdown-header">
+                                            <p class="text-white mb-0">Busra Ceval</p>
+                                            <p class="fw-light text-muted text-white">ceval2772@gmail.com</p>
                                         </div>
-                                        </div>
+                                        <a class="dropdown-item mb-2 text-white" href="/user"><i
+                                                class="dropdown-item-icon mdi mdi-message-text-outline text-white me-2"></i>Profil</a>
                                     </div>
                                 </li>
-                            </ul>
+                                <% } %>
+                                    
+                </ul>
+            </header>
+            <!-- Modal Giriş Yap -->
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img
+                                    src="../user/img/icons/close.png" alt="Icon Close" /></button>
                         </div>
-                    </nav>
+                        <form class="tm-form">
+                            <div class="form-title text-center">Giriş Yap</div>
+                            <div class="form-group">
+                                <label for="login-email">Email Adresi</label>
+                                <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp"
+                                    placeholder="Email Adresiniz">
+                            </div>
+                            <div class="form-group password">
+                                <label for="login-password">Şifrenizi Giriniz</label>
+                                <input type="password" class="form-control" id="login-password" placeholder="Şifreniz">
+                                <img src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
+                            </div>
+                            <div class="links">
+                                <div class="form-group not-border checkbox">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked"> Beni Hatırla </label>
+                                </div>
+                                <a href="#">Şifremi Unuttum</a>
+                            </div>
+                            <button type="submit" class="btn btn-second">Giriş Yap</button>
+                            <div class="link">Hesabınız ile birlikte,<a href="#"> Şartlar ve Koşullar ve Gizlilik
+                                    Politikası & Kişisel Verilerin İşlenmesine</a> onay verilir.</div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>

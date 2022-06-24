@@ -1,22 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Khula&family=Lato&family=Montserrat&family=Roboto&display=swap');
-.index-company .tm-section-title {
+/* Home */
+.tm-process-text {
+  font-size: 12px !important;
+  line-height: 1.5rem;
+}
+.admin-single-title {
+  font-size: 10px;
+  text-align: center;
+}
+.tm-section-title {
+  font-size: 18px;
+}
+.tm-color-shadow {
+  font-size: 12px;
+}
+/* .index-company .tm-section-title {
   font-family: "Lato", sans-serif;
   font-size: 20px;
   text-transform: capitalize;
   color: #28353e;
   margin-bottom: 10px;
-}
+} */
 .index-company .icon {
   font-size: 10px !important;
   color: #19a2f2;
   width: 20px;
 }
-.index-company .tm-color-shadow {
+/* .index-company .tm-color-shadow {
   font-family: "Montserrat", sans-serif;
   font-size: 12px !important;
   color: #000 !important;
   font-weight: bold;
-}
+} */
 .index-company .tm-color-dark {
   font-family: "Montserrat", sans-serif;
   font-size: 12px !important;
@@ -69,7 +84,7 @@
   font-size: 12px;
   margin-top: 5px;
 }
-.index-company .tm-process-text {
+.index-company {
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
   line-height: 1.2rem;
@@ -83,10 +98,10 @@
   margin: 0px;
   padding: 0px;
 }
-.index-company .admin-single-title {
+/* .index-company .admin-single-title {
   font-family: "Lato", sans-serif;
   font-size: 11px;
-}
+} */
 .index-company .total {
   font-family: "Montserrat", sans-serif;
   text-align: center;
@@ -124,14 +139,14 @@
 .tm-box-title {
   font-family: "Lato", sans-serif;
 }
-.tm-section-title {
+/* .tm-section-title {
   font-family: "Lato", sans-serif;
   font-size: 20px;
   text-transform: uppercase;
   color: #28353e;
   margin-bottom: 30px;
   margin-top: 10px;
-}
+} */
 .button-choose {
   font-size: 12px !important;
   font-family: "Lato", sans-serif;
@@ -244,10 +259,6 @@ input#others.form-control {
   font-family: "Montserrat", sans-serif;
   margin-top: 20px;
 }
-.tm-process .tm-process-text {
-  font-size: 13px;
-  line-height: 1.2rem;
-}
 .clinic-points {
   font-size: 13px;
   line-height: 1.2rem;
@@ -258,9 +269,9 @@ input#others.form-control {
   border: 2px solid #28353eb6 !important;
   padding: 10px;
 }
-.visibilty .tm-section-title {
+/* .visibilty .tm-section-title {
   text-transform: capitalize;
-}
+} */
 .dropdown-custom select {
   width: 42% !important;
   padding: 8px 5px 8px 20px !important;
@@ -311,10 +322,6 @@ input#explanation1.form-control {
 .tm-color-shadow-3 {
   font-size: 13px;
   line-height: 1.3rem;
-}
-.questions-content .tm-process-text {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
 }
 .questions-content .tm-process-pers {
   font-family: "Lato", sans-serif;
@@ -471,4 +478,10 @@ ul a:hover {
 .month label {
   font-family: "Montserrat", sans-serif;
   font-size: 12px !important;
+}
+
+.home-text {
+  font-family: "Montserrat", sans-serif;
+  color: #28353e !important;
+  line-height: 2rem !important;
 }

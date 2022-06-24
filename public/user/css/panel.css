@@ -181,9 +181,9 @@
   margin-top: 5px;
 } */
 .admin-inner-text {
-  font-family: "Lato", sans-serif;
-  font-size: 15px;
-  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
   line-height: 1.5rem;
 }
 .clinic-form-title {
@@ -386,11 +386,14 @@ input#explanation1.form-control {
   font-weight: 700;
   font-size: 20px;
 }
-/**/
+/*visibilty*/
 .visibilty {
   color: #025c90;
   font-family: "Lato", sans-serif;
   font-weight: 700;
+}
+.section-title {
+  font-size: 15px;
 }
 select#day {
   color: #28353e;
@@ -486,4 +489,4 @@ ul a:hover {
   font-family: "Montserrat", sans-serif;
   color: #28353e !important;
   line-height: 2rem !important;
-}
+} 

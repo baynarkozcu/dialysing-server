@@ -72,7 +72,7 @@
                 </div>
               </li>
               <li class="nav-item mt-3 mb-2"><div class="is-clinic me-3">Klinik Hesabınız Var Mı?</div></li>
-              <% if (user) { %>
+              <!-- <% if (user) { %>
                 <li class="nav-item buttons mt-2">
                   <div class="dropdown">
                     <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -88,11 +88,12 @@
                     </ul>
                   </div>
                 </li>
-                <% } %>
+                <% } %> -->
               <li class="nav-item"> 
                 <% if (!user) { %>
-                  <button type="button" class="nav-link btn-second mx-2 mt-2" data-toggle="modal"
-                      data-target="#loginModal">Giriş Yap</button>
+                  <!-- <button type="button" class="nav-link btn-second mx-2 mt-2" data-toggle="modal"
+                      data-target="#loginModal">Giriş Yap</button> -->
+                      <a href="/panel/choose-personel" class="nav-link btn-second mx-2 mt-2">Giriş Yap</a>
                   <% } %>
                 <% if (user) { %>
                   <a href="/logout" class="nav-link btn-second mx-2 mt-2">Çıkış Yap</a>
@@ -103,7 +104,7 @@
         </div>
       </nav>
       <!-- Modal Giriş Yap -->
-      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <!-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <form class="tm-form tm-forms">
@@ -132,7 +133,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
     </div>
   </div>
 </div>

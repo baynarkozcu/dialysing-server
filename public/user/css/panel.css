@@ -20,6 +20,10 @@
   font-weight: bolder;
   margin-right: 20px;
 }
+.bi-list {
+  font-weight: bolder;
+  font-size: 25px;
+}
 /* Home */
 .tm-process-text {
   font-size: 12px !important;

@@ -381,6 +381,10 @@ input#explanation1.form-control {
 .blue {
   color: #025c90;
 }
+/*rezervation*/
+.flex-sm-fill {
+  font-family: "Montserrat", sans-serif;
+}
 select#day {
   color: #28353e;
   font-family: "Montserrat", sans-serif;

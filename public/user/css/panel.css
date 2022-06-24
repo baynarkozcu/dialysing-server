@@ -14,6 +14,8 @@
 .tm-color-shadow {
   font-size: 12px;
 }
+/*message-options*/
+
 /* .index-company .tm-section-title {
   font-family: "Lato", sans-serif;
   font-size: 20px;
@@ -170,13 +172,13 @@
   color: #28353e !important;
   font-weight: 600;
 }
-.checkbox .tm-font-semibold {
+/* .checkbox .tm-font-semibold {
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
   color: #28353e7a !important;
   line-height: 1.2rem;
   margin-top: 5px;
-}
+} */
 .admin-inner-text {
   font-family: "Lato", sans-serif;
   font-size: 15px;
@@ -302,10 +304,10 @@ input#explanation1.form-control {
   font-family: "Lato", sans-serif;
   font-size: 13px;
 }
-.tm-font-semibold {
+/* .tm-font-semibold {
   font-family: 'Khula', sans-serif !important;
   font-size: 18px;
-}
+} */
 .tm-color-dark {
   font-family: "Montserrat", sans-serif;
   line-height: 1.2rem;

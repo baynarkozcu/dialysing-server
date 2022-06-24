@@ -6,12 +6,11 @@
         <div class="admin-inner-text">Panelinizin kontrolü için yeni kullanıcılar ekleyebilir, yetkilerini özelleştirebilirsiniz.</div>
         <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
           <div class="tm-form-wide mobile">
-            <div class="clinic-form-title">Ekibiniz</div>
+            <div class="clinic-form-title mb-2 blue">Ekibiniz</div>
             <div class="user-profiles">
               <% center.centerEmployees.forEach(user => { %>
-                             <div class="user-profile">
-                <div class="user-image">
-                  <a href="#"><img src="../clinic-panel/images/profiles/ayhan.png" alt="Ayhan Image" /></a>
+                <div class="user-profile mb-3">
+                <div class="user-image"><a href="#"><img src="../clinic-panel/images/profiles/ayhan.png" alt="Ayhan Image" /></a>
                 </div>
                 <div class="user-info">
                   <div class="user-name"><%- user.employeeNameSurname  %> </div>
@@ -66,19 +65,19 @@
               <input type="text" class="form-control" id="center" placeholder="Kullanıcıyı eklemek istediğiniz merkezi seçin" />
             </div>
             <div class="admin-inner-text">Eklediğiniz kullanıcı seçtiğiniz merkez üzerinde yetki sahibi olacaktır.</div>
-            <div class="clinic-form-title">Yetki Seçiniz</div>
+            <div class="clinic-form-title mb-2 blue">Yetki Seçiniz</div>
             <div class="form-group radio add-user">
               <label class="container">Yönetici
                 <input type="radio" checked="checked" name="radio" />
                 <span class="checkmark"></span>
                 <div class="info">Merkezin admin sayfasının tamamını kontrol edebilir. Rezervasyon görüntüleyebilir ve onaylayabilir, fiyatları düzenleyebilir, sorulara yanıt verebilir. İstatistikleri görüntüleyebilir.</div>
               </label>
-              <label class="container unselected">Baş Hemşire
+              <label class="container">Baş Hemşire
                 <input type="radio" name="radio" />
                 <span class="checkmark"></span>
                 <div class="info">Hasta rezervasyonlarını görüntüleyebilir ve onaylayabilir, mesajları görüntüleyebilir ve yanıtlayabilir.</div>
               </label>
-              <label class="container unselected">Hasta Kabul
+              <label class="container">Hasta Kabul
                 <input type="radio" name="radio" />
                 <span class="checkmark"></span>
                 <div class="info">Müsaitlik durumunu kontrol edebilir, rezervasyonları görüntüleyebilir ve onaylayabilir</div>

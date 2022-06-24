@@ -157,7 +157,8 @@
   font-family: "Lato", sans-serif;
 }
 .btn-second {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px !important;
 }
 .title {
   font-family: "Lato", sans-serif;
@@ -191,10 +192,9 @@
   font-size: 17px;
 }
 .tm-form-wide label {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 3px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: bold !important;
 }
 input#name-surname.form-control {
   font-size: 12px;

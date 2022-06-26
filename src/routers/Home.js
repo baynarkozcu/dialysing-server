@@ -17,8 +17,9 @@ router.get("/clinic/clinic-list", Controller.clinicList);
 router.post("/clinic/clinic-list", Controller.filterClinicList);
 router.get("/clinic/all", Controller.allView);
 // router.get("/clinic/appointment", authenticate, Controller.clinicAppointment);
-router.post("/clinic/clinic-appointment", authenticate, Controller.viewAppointment);
-router.post("/clinic/new-clinic-appointment", Controller.createAppointment);
+router.post("/clinic/clinic-appointment",  Controller.viewAppointment);
+router.post("/clinic/request-appointment",  Controller.requestAppointment);
+router.post("/clinic/new-clinic-appointment", authenticate, Controller.createAppointment);
 router.get("/clinic/:id", Controller.singleClinic);
 
 //* BLOG LIST - BLOG PAGE

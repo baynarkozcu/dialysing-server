@@ -82,7 +82,19 @@
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 px-3">
             <div class="tm-content">
               <img src="../user/img/clinic/icons/virus.png" width="15%" height="20%" alt="Icon Virus" />
-              <div class="covid">Bu diyaliz merkezinde tüm Covid 19 kapsamında gerekli olan önemler alınmıştır. Sağlık ve hijyen konularında ekstra özen gösterilmektedir. <a href="">Merkez içinde alınan covid önlemlerini görmek için tıklayın.</a></div>
+              <div class="covid">Bu diyaliz merkezinde Covid 19 Pandemisi kapsamında alınması gereken tüm önlemler alınmıştır. Sağlık ve hijyen konularına extra özen gösterilmektedir.<a href="" data-bs-toggle="modal" data-bs-target="#covid">Merkez içinde alınan covid önlemlerini görmek için tıklayın.</a>
+              </div>
+              <div class="modal fade" id="covid" tabindex="-1" aria-labelledby="covidLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content"> 
+                    <div class="d-flex justify-content-end p-2">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button></div>
+                    <div class="modal-body p-3 text-center mb-2 mt-2">
+                      Henüz bu diyaliz merkezi merkez içinde alınan Covid ve hijyen önlemlerine ait bilgiler girilmemiştir.
+                    </div> 
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -415,23 +427,29 @@
   </div>
 </div>
 
-<!-- <div id="section-iii" class="tm-margin-5">
+<div id="section-iii" class="tm-margin-5">
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="tm-section-title mb-4">Merkezde Gerçekleştirilen Diyaliz Tedavisi Tipleri</div>
         <div class="tm-color-dark type tm-margin-b-10">Hemodiyaliz</div>
-        <div class="tm-color-pale tm-margin-b-30">Quis arcu congue est sit mi in netus egestas blandit fringilla vivamus vel scelerisque fames duis id magnis sed mollis duis sem sollicitudin faucibus quis aliquam at fermentum gravida molestie volutpat nunc enim proin fermentum, nibh urna dignissim egestas duis sit sit egestas maecenas adipiscing quisque vitae ultrices vitae diam</div>
+        <div class="tm-color-pale tm-margin-b-30">Hemodiyaliz, böbrek yetmezliği olan kişilerde, vücutta biriken fazla sıvı ve atık maddelerin yarı geçirgen bir membran ( diyalizör) aracılığıyla hemodiyaliz cihazları ile temizlenmesi işlemidir. Diyaliz tedavisi genelde haftada 3 kez 4 saat süren seanslar şeklinde uygulanır. Ancak kişinin böbrek yetmezliği seviyesine ve genel  durumuna göre hafta 1 veya 2 gün ila diyaliz tedavisi tipine göre 4 veya 5 günde hemodiyaliz uygulandığı durumlar da vardır. </div>
+        <div class="tm-color-dark type tm-margin-b-10">Hemodiyafiltrasyon</div>
+        <div class="tm-color-pale tm-margin-b-30">Hemodiyafiltrasyon, replasman ( yerine koyma) sıvısı olarak hemodiyaliz makinesi tarafından üretilen ultra saf diyalizatın kullanıldığı bir tedavi şeklidir. hemodiyaliz tedavisinde vücutta biriken toksinler difüzyon ile uzaklaştırılırken, hemodiyafiltrasyon daha geniş bir toksin spektrumunun uzaklaştırılması için daha efektif bir yöntem olan konveksiyonu kullanır. Hemodiyafiltrasyon tedavisi seans sırasında daha büyük miktarda sıvı değişimi sağlayarak, böbreğin doğal fonksiyonuna daha fazla benzeyen bir diyalizin gerçekleşmesini mümkün kılar. Hemodiyafiltrasyon tedavisi gerçekleştirilen diyaliz merkezlerinde Su Arıtma Sistemi Double Reverse Osmoslu Ultra Saf Su sistemleri kullanılır. </div>
         <div class="tm-color-dark type tm-margin-b-10">Merkezde Gece Hemodiyalizi</div>
-        <div class="tm-color-pale tm-margin-b-30">Quis arcu congue est sit mi in netus egestas blandit fringilla vivamus vel scelerisque fames duis id magnis sed mollis duis sem sollicitudin faucibus quis aliquam at fermentum gravida molestie volutpat nunc enim proin fermentum, nibh urna dignissim egestas duis sit sit egestas maecenas adipiscing quisque vitae ultrices vitae diam</div>
+        <div class="tm-color-pale tm-margin-b-30">Gece Uzun Diyaliz olarak da bilinir. Diyaliz merkezlerinde hemodiyaliz için kullanılan aynı cihaz ve filtreler kullanılarak gece boyunca yedi ila sekiz saatlik sürelerle u-genelde hasta uyurken uygulanan diyaliz tipidir. Hemodiyaliz işlemlerinin hemodiyaliz hemşirelerince yapılması ve seans sırasında gelişebilecek komplikasyonlara karşı hastaların sürekli gözetim altında olmaları avantaj sağlar. Uygulanan uzun süreli hemodiyaliz tedavisi ile yüksek oranda temizleme gerçekleşir. </div>
+        <div class="tm-color-dark type tm-margin-b-10">Ev Hemodiyalizi </div>
+        <div class="tm-color-pale tm-margin-b-30">Ev hemodiyalizi hemodiyaliz cihazının ve hemodiyaliz için gereken saf su arıtma sisteminin hastanın evine kurularak tedavinin hastanın kendisi veya bir yakını tarafından gerçekleştirildiği hemodiyaliz tedavisi tipidir. Ev hemodiyalizi, dört farklı şekilde gerçekleştirilebilir. Bunlar:  Standart; haftada üç gün dört saat , Kısa günlük hemodiyaliz; haftada yaklaşık beş ila yedi kez olmak üzere, günde iki ila dört saat seanslar şeklinde, Noktürnal ev hemodiyalizi; haftada üç ya da yedi gece altı ila yedi saat olarak ve Gün aşırı hemodiyaliz; şeklinde gerçekleştirilir. </div>
+        <div class="tm-color-dark type tm-margin-b-10">Hemşireli Ev Hemodiyalizi</div>
+        <div class="tm-color-pale tm-margin-b-30">Ev hemodiyalizi işlemlerinin hastanın kendisi veya bir yakını tarafından değil bir hemşire tarafından gerçekleştirildiği hemodiyaliz tedavisidir. Bu diyaliz tedavisi tipinde tedaviyi gerçekleştirecek olan özel hemşireye ait ücret ödemeleri genelde hastanın kendisi tarafından ödenir </div>
         <div class="tm-color-dark type tm-margin-b-10">Periton Diyalizi</div>
-        <div class="tm-color-pale tm-margin-b-30">Quis arcu congue est sit mi in netus egestas blandit fringilla vivamus vel scelerisque fames duis id magnis sed mollis duis sem sollicitudin faucibus quis aliquam at fermentum gravida molestie volutpat nunc enim proin fermentum, nibh urna dignissim egestas duis sit sit egestas maecenas adipiscing quisque vitae ultrices vitae diam</div>
+        <div class="tm-color-pale tm-margin-b-30">Periton diyalizinde, karın zarının bir bölümü diyalizer ( filtre ) işlevi görür. Su ve suda çözünen maddeler, bağırsakları ve karaciğeri kaplayan çok ince bir zar olan periton zarı boyunca kandan diyalizata geçer. Yaklaşık iki litre diyaliz sıvısı, kateter adı verilen esnek silikon bir tüp ile karın boşluğuna doldurulur. Kateter, böbrek hastası periton diyalizi tedavisinde olduğu süre boyunca yerinde takılı kalır. Diyalizat, periton boşluğundayken, kan ve diyalizat taraflarındaki çözeltilerin konsantrasyonları eşitlenene kadar atık ürünler ve aşırı suyun diyalizata geçişi gerçekleşir. Suyun ve atık ürünlerin bu hareketi, bekleme süresi sırasında meydana gelir. Belirli bir bekleme saatinde sonra, karın boşluğundaki diyalizat yine kateter aracılığıyla boşaltılır. Periton diyalizi, boşaltılan PD sıvısı, yeni PD sıvısıyla değiştirilerek devam eder. Kullanılan PD sıvısının yeni PD sıvısıyla değiştirilme işlemi, değişim olarak adlandırılır.</div>
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
-<!-- <div id="section-iv" class="tm-margin-5">
+<div id="section-iv" class="tm-margin-5">
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -449,35 +467,35 @@
         </div>
         <div class="tm-process">
           <div class="tm-process-bar-content">
-            <div class="tm-process-text">Rahatlık</div>
+            <div class="tm-process-text">Hizmet</div>
             <div class="tm-process-bar width-30 red"></div>
           </div>
           <div class="tm-process-pers">3.0</div>
         </div>
         <div class="tm-process">
           <div class="tm-process-bar-content">
-            <div class="tm-process-text">Temizlik</div>
+            <div class="tm-process-text">Tedavi </div>
             <div class="tm-process-bar width-100 green"></div>
           </div>
           <div class="tm-process-pers">10</div>
         </div>
         <div class="tm-process">
           <div class="tm-process-bar-content">
-            <div class="tm-process-text">İmkanlar</div>
+            <div class="tm-process-text">Temizlik ve Hijyen</div>
             <div class="tm-process-bar width-76 blue"></div>
           </div>
           <div class="tm-process-pers">7.6</div>
         </div>
         <div class="tm-process">
           <div class="tm-process-bar-content">
-            <div class="tm-process-text">Tedavi İmkanları</div>
+            <div class="tm-process-text">Sunulan İmkanlar </div>
             <div class="tm-process-bar width-68 blue"></div>
           </div>
           <div class="tm-process-pers">6.8</div>
         </div>
         <div class="tm-process">
           <div class="tm-process-bar-content">
-            <div class="tm-process-text">Konum</div>
+            <div class="tm-process-text">Konum ve Ulaşım</div>
             <div class="tm-process-bar width-100 green"></div>
           </div>
           <div class="tm-process-pers">10</div>
@@ -518,7 +536,7 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
 <div id="section-v" class="tm-margin-5">
   <div class="container">

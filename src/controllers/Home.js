@@ -76,7 +76,7 @@ class HomeController {
       let transporter = mailer.createTransport({
         service: "gmail",
         host: "smtp.google.com",
-        port: 465,
+        port: 587,
         secure: true,
         auth: {
           user: process.env.GMAIL_USER,
@@ -195,7 +195,7 @@ class HomeController {
       let transporter = mailer.createTransport({
         service: "gmail",
         host: "smtp.google.com",
-        port: 465,
+        port: 587,
         secure: true,
         auth: {
           user: process.env.GMAIL_USER,
@@ -445,7 +445,7 @@ class HomeController {
         let transporter = mailer.createTransport({
           service: "gmail",
           host: "smtp.google.com",
-          port: 465,
+          port: 587,
           secure: true,
           auth: {
             user: process.env.GMAIL_USER,

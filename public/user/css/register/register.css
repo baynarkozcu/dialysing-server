@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Khula&family=Lato&family=Montserrat&family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Khula&family=Montserrat&family=Poppins&display=swap');
 .tm-top-bar {
   position: unset;
 }
@@ -137,7 +137,7 @@ input#nameSurname.form-control, input#email.form-control, input#birthDate.form-c
 } 
 label {
   font-size: 14px;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .error-handling {
   font-size: 12px;

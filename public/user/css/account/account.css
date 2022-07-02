@@ -1,6 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lato&family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khula&family=Montserrat&family=Poppins&display=swap');
 nav {
     font-size: 14px;
     background-color: #28353e;
@@ -30,7 +29,7 @@ nav {
     border: 2px solid #055f8f; 
     text-decoration: none !important;
     background-color: #055f8f;
-    font-family: 'Lato', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 } 
 .btn-third {
     background-color: transparent !important;
@@ -40,7 +39,7 @@ nav {
     color: #ffffff !important; 
     padding: 0.5rem 1rem !important;
     text-align: center; 
-    font-family: 'Lato', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 .navbar-toggler { 
     border: #fff 2px solid !important; 
@@ -105,7 +104,7 @@ label{
     margin-bottom: 0px;
     font-weight: 600; 
     color: #055f8f !important;
-    font-family: 'Lato', sans-serif; 
+    font-family: 'Poppins', sans-serif; 
 }
 .btn-register {
     border-radius: 10px !important;
@@ -128,7 +127,7 @@ label{
   -ms-box-shadow: 0px 0px 15px 0px rgba(82, 63, 105, 0.1);
 }
 .h3 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600 !important; 
   font-size: 28px !important;
 }
@@ -533,11 +532,11 @@ body{
   height: 18px;
 }
 #account h3 {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 35px !important;
 }
 #account label {
-  font-family: 'Lato', sans-serif !important; 
+  font-family: 'Poppins', sans-serif !important; 
 }
 #account input {
   padding: 15px; 

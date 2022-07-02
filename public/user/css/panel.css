@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Khula&family=Lato&family=Montserrat&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khula&family=Montserrat&family=Poppins&display=swap');
 /*SİDEBAR*/
 /* #sidebar {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 #sidebar a:visited {
   color: #fff;
@@ -85,10 +85,10 @@
   font-size: 12px;
 }
 .index-company .tm-process-title {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .index-company .tm-process-subtitle {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 .index-company .tm-process-pers-av {
@@ -104,7 +104,7 @@
   color: #28353e !important;
 }
 .index-company .tm-process-link {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 .index-company .admin-single-box {
@@ -134,21 +134,21 @@
   line-height: 1.2rem;
 }
 .tm-box-title {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .button-choose {
   font-size: 12px !important;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .btn-forth {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .btn-second {
   font-family: "Montserrat", sans-serif;
   font-size: 12px !important;
 }
 .title {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: bold;
 }
@@ -166,7 +166,7 @@
   line-height: 1.5rem;
 }
 .clinic-form-title {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 17px;
 }
@@ -272,11 +272,11 @@ input#explanation1.form-control {
   font-size: 12px !important;
 }
 .admin-box-text span {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 13px;
 }
 .admin-box-text span span {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 13px;
 }
 .tm-color-dark {
@@ -289,7 +289,7 @@ input#explanation1.form-control {
 }
 .tm-step a {
   font-size: 15px !important;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 .tm-color-shadow-3 {
@@ -297,12 +297,12 @@ input#explanation1.form-control {
   line-height: 1.3rem;
 }
 .questions-content .tm-process-pers {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   margin-left: 1rem;
 }
 .questions-content button {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: 600;
 }
@@ -327,10 +327,10 @@ input#explanation1.form-control {
 }
 .most{
   font-size: 12px;
-  font-family: "Lato", sans-serif; 
+  font-family: "Poppins", sans-serif; 
 }
 .clinic-center-info .title {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px; 
   margin-top: 15px;
 }
@@ -338,7 +338,7 @@ input#explanation1.form-control {
   border: 2px #025c90 solid;
   font-weight: 700;
   font-size: 14px;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #025c90;
 }
 .add-user input {
@@ -360,7 +360,7 @@ input#explanation1.form-control {
 /*visibilty*/
 .visibilty {
   color: #025c90;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 /*center-payment-options*/

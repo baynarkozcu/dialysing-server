@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Lato&family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Khula&family=Montserrat&family=Poppins&display=swap');
 nav {
   font-size: 13px;
   background-color: #28353e;
@@ -157,7 +157,7 @@ label {
   background-color: #f5f9fc;
   font-size: 20px;
   color: #28353e !important;
-  font-family: "Lato", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   font-weight: 600;
 }
 #country span {
@@ -165,14 +165,14 @@ label {
   background-color: #f5f9fc;
   font-size: 15px;
   color: #28353e56 !important;
-  font-family: "Lato", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 #country i {
   border: none;
   background-color: #f5f9fc;
   font-size: 15px;
   color: #055f8f !important;
-  font-family: "Lato", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 .accordion-item {
   border: none !important;
@@ -180,7 +180,7 @@ label {
 }
 .title h1 {
   color: #28353e !important;
-  font-family: "Lato", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   font-weight: 600;
   font-size: 30px;
   line-height: 3rem;
@@ -197,11 +197,11 @@ label {
 }
 .city a {
   text-decoration: none;
-  font-family: "Lato", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   color: #025c90;
 }
 .countryOne button {
   font-size: 25px;
   color: #28353e !important;
-  font-family: "Lato", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }

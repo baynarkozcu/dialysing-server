@@ -68,6 +68,50 @@ class HomeController {
       });
   }
 
+  async requestAppointment(req, res, next) {
+    // console.log("Deneme", req.body);
+    // res.send(true);
+    const center = DialysisCenterService.findById(req.body.center);
+    try {
+      let transporter = mailer.createTransport({
+        service: "gmail",
+        host: "smtp.google.com",
+        port: 587,
+        secure: true,
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PASSWORD,
+        },
+      });
+      await transporter.sendMail(
+        {
+          from: "@Dialysing <info@dialysing.com",
+          to: center.contactInformation.email,
+          subject: "Randevu Talebiniz Bulunmaktadır",
+          text: "dialysing.com üzerinden gelen online randevu talebiniz bulunmaktadır. Randevunuzu onaylamak için aşağıdaki linki tıklayınız. \n\n" + "https://dialysing.com/",
+        },
+        async (error) => {
+          if (error) {
+            console.log("Send Mail Error: " + error);
+            await Errors.create({
+              type: "email",
+              message: "Email Gönderilirken Hata Oluştu. :" + error,
+            });
+          } else {
+            await Errors.create({
+              type: "email",
+              message: "Email Gönderildi.",
+            });
+          }
+          transporter.close();
+        }
+      );
+      res.send(true);
+    } catch (err) {
+      res.send(err);
+    }
+  }
+
   async viewAppointment(req, res, next) {
     res.cookie("tmpAppointment", req.body);
 
@@ -76,13 +120,22 @@ class HomeController {
 
     DialysisCenterService.findById(req.body.centerId)
       .then((center) => {
-        res.render("user/pages/clinic/appointment", {
-          layout: "user/layouts/clinic-main",
-          cookieValue: req.body,
-          user,
-          birthDate,
-          center,
-        });
+        if (center.isActive) {
+          res.render("user/pages/clinic/appointment", {
+            layout: "user/layouts/clinic-main",
+            cookieValue: req.body,
+            user,
+            birthDate,
+            center,
+          });
+        } else {
+          res.render("user/pages/clinic/single-clinic", {
+            layout: "user/layouts/clinic-main",
+            center,
+            date: null,
+            user,
+          });
+        }
       })
       .catch((err) => {
         console.log("Error", err);
@@ -142,7 +195,7 @@ class HomeController {
       let transporter = mailer.createTransport({
         service: "gmail",
         host: "smtp.google.com",
-        port: 465,
+        port: 587,
         secure: true,
         auth: {
           user: process.env.GMAIL_USER,
@@ -392,7 +445,7 @@ class HomeController {
         let transporter = mailer.createTransport({
           service: "gmail",
           host: "smtp.google.com",
-          port: 465,
+          port: 587,
           secure: true,
           auth: {
             user: process.env.GMAIL_USER,

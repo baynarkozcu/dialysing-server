@@ -11,12 +11,16 @@
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-7 col-xl-7">
         <div class="tm-section-title clinic"><%- center.companyInformation.companyName %></div>
+        <input type="hidden" id="centerId" value="<%- center._id %>">
+        
         <div class="d-flex center-address">
           <div class="flex-grow-1">
             <p class="tm-color-shadow"><i class="bi bi-geo-alt-fill"></i> <%- center.address.addressDetailText %></p>
           </div>
           <div class="flex-shrink-1 center-call">
-            <a href="tel:<%-center.contactInformation.phone %>"><p><i class="bi bi-telephone-fill"></i> Merkezi Ara</p></a>
+            <a href="tel:<%-center.contactInformation.phone %>"
+              ><p><i class="bi bi-telephone-fill"></i> Merkezi Ara</p></a
+            >
           </div>
         </div>
 
@@ -29,14 +33,14 @@
             <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
             <% } %> -->
             <!-- TODO DEFAULT RESIM YUKLEME İŞLEMLERİ YUKARIDAKI AYNI ŞEKİLDE YAPILACAK... -->
-            
+
             <!-- <img src="<%- center.companyInformation.photo[0]  %> " class="left-second" alt="<%- center.companyInformation.companyName  %>" /> -->
           </div>
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 clinic-images">
             <% if (center.companyInformation.photo[0]) { %>
             <img src="<%- center.companyInformation.photo[0]  %> " class="right" alt="<%- center.companyInformation.companyName  %>" />
             <% } else{ %>
-              <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
             <% } %>
           </div>
         </div>
@@ -45,35 +49,35 @@
             <% if (center.companyInformation.photo[0]) { %>
             <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
             <% } else{ %>
-              <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
             <% } %>
           </div>
           <div class="col">
             <% if (center.companyInformation.photo[0]) { %>
-              <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
-              <% } else{ %>
-                <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
-              <% } %>
-          </div>
-          <div class="col">
-                        <% if (center.companyInformation.photo[0]) { %>
             <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
             <% } else{ %>
-              <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
             <% } %>
           </div>
           <div class="col">
-                        <% if (center.companyInformation.photo[0]) { %>
+            <% if (center.companyInformation.photo[0]) { %>
             <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
             <% } else{ %>
-              <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
             <% } %>
           </div>
           <div class="col">
-                        <% if (center.companyInformation.photo[0]) { %>
+            <% if (center.companyInformation.photo[0]) { %>
             <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
             <% } else{ %>
-              <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
+            <% } %>
+          </div>
+          <div class="col">
+            <% if (center.companyInformation.photo[0]) { %>
+            <img src="<%- center.companyInformation.photo[0]  %> " width="100%" height="100%" alt="<%- center.companyInformation.companyName  %>" />
+            <% } else{ %>
+            <img src="../user/img/clinic/centers/clinic-iii.png" alt="Clinic Center iii" class="clinic-img" />
             <% } %>
           </div>
         </div>
@@ -333,7 +337,13 @@
             </svg>
             Randevu oluşturabilmek için check-in tarihi girmeniz gerekmektedir.
           </div> -->
+          <% if (center.isActive) { %>
           <button type="submit" class="btn-second">Randevu Oluştur</button>
+
+          <% } else{ %>
+          <button onclick="talepGonder()" class="btn-second">Randevu Talep Et</button>
+          <% } %>
+
           <input type="hidden" name="centerId" value="<%- center._id  %>" />
           <button class="btn-forth">Favorilerine Ekle</button>
         </form>
@@ -954,5 +964,25 @@
       x.appendChild(option);
       x.appendChild(option2);
     }
+  }
+
+  function talepGonder() {
+    var talep = {
+      center: document.getElementById("centerId").value,
+      seansSayisi: document.getElementById("sessionsDayCount").value,
+      seansGun: document.getElementById("sessionsDay").value,
+      method: document.getElementById("treatmentMethod").value,
+      checkInDate: document.getElementById("checkInDate").value,
+      checkOutDate: document.getElementById("checkOutDate").value,
+      seans: document.getElementById("session").value,
+    };
+
+    $.post("/clinic/request-appointment", talep, function (data, status) {
+      if (status == "success") {
+        alert("Randevu Talebiniz Alınmıştır.");
+      } else {
+        alert("Mesaj Gönderim Sırasında Hata Oluştu. Lütfen Daha Sonra Tekrar Deneyiniz..");
+      }
+    });
   }
 </script>

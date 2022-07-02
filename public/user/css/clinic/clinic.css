@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Khula&family=Lato&family=Montserrat&family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Khula&family=Montserrat&family=Poppins&display=swap');
 .navbar-dark-thema {
   background-color: #28353E;
 }
@@ -937,7 +937,7 @@ a.clinic-images div {
   text-decoration: none;
 }
 .clinic {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 25px;
 }
 .sub-image img{
@@ -949,13 +949,13 @@ a.clinic-images div {
   font-size: 16px; 
 }
 .tm-section-title-2 {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 28px !important;
   color: #28353E;
   font-weight: 700 !important;
 }
 .tm-color-dark {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 15px !important;
 }
 .tm-color-shadow-2 {
@@ -974,13 +974,13 @@ a.clinic-images div {
   color: #000 !important;
 }
 .type {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 16px !important;
   color: #28353E;
   font-weight: 700 !important;  
 }
 .tm-section-title {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 24px;
 }
 .tm-section-title i {
@@ -988,19 +988,19 @@ a.clinic-images div {
   font-size: 13px;
 }
 .tm-section-title span {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 13px;
 }
 .tm-process-pers {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 11px !important;
   font-weight: 600;
 }
 .tm-profile-title {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 .tm-profile-text {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 11px;
 }
 .tm-profile-comment {
@@ -1015,11 +1015,11 @@ a.clinic-images div {
 }
 .clinic-questions-title {
   line-height: 1.6rem;
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 15px;
 }
 .clinic-title {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 .clinic-center-name {
   font-family: 'Montserrat', sans-serif !important;
@@ -1031,7 +1031,7 @@ a.clinic-images div {
   font-size: 13px;
 }
 .card .tm-box-title {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 .card .tm-box-text {
   font-family: 'Montserrat', sans-serif !important;
@@ -1040,7 +1040,7 @@ a.clinic-images div {
   font-family: 'Montserrat', sans-serif !important; 
 }
 .tm-form-wide label {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 14px;
 }
 .select {
@@ -1120,28 +1120,28 @@ hr {
   background-color: #28353e38;
 }
 .clinic-center-info .title {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 22px !important;
   line-height: 2.3rem;
 }
 .clinic-center-info .text {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 .point {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 .circle { 
   border-radius: 50% !important;
   padding: 20px !important;
 }
 .circle .puan {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 .clinic-form-title {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 .clinic-form-inner-box label {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 .clinic-form-inner-box input {
   font-family: 'Montserrat', sans-serif !important;
@@ -1165,11 +1165,11 @@ textarea#note.form-control {
   font-weight: 700 !important; 
 }
 .is-clinic {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   color: #fff;
 }
 .language-selection {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 } 
 .tm-forms {
   padding: 50px !important;

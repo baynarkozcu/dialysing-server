@@ -7,8 +7,8 @@
           <form class="tm-form-wide" enctype="multipart/form-data" action="/panel/upload-image" method="POST">
             <div class="photo-buttons">
               <button type="button" class="button-choose">Tümünü Seç</button>
-              <button type="button" class="button-choose pale">Tüm Seçimleri Kaldır</button>
-              <button type="button" class="button-choose pale">Seçilenleri Sil</button>
+              <button type="button" class="button-choose pale" id="btn-all-remove">Tüm Seçimleri Kaldır</button>
+              <button type="button" class="button-choose pale" id="btn-single-remove">Seçilenleri Sil</button>
             </div>
             <div class="upload upload-theme-dragdropbox">
               <input style="z-index: 999; opacity: 0; width: 100%; height: 100%; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto" name="image" id="filer_input2" multiple="multiple" type="file" />
@@ -25,9 +25,9 @@
             </div>
             <div class="row">
               <% center.companyInformation.photo.forEach(element => { %>
-                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                 <div class="uploaded-image mb-3">
-                  <img src="../uploads/images/<%- element  %> " alt="Upload Image 3" />
+                  <img class="select-upload-image" src="../uploads/images/<%- element  %> " alt="Upload Image 3" />
                 </div>
               </div>
               <% }) %>
@@ -39,7 +39,7 @@
           </form>
         </div>
         
-        <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
+        <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5 mt-5">
           <div class="tm-box-info">
             <div class="tm-box-top">
               <div class="col d-flex align-items-start">

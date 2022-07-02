@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Khula&family=Lato&family=Montserrat&family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Khula&family=Montserrat&family=Poppins&display=swap');
 body {
   font-family: "Gilroy", sans-serif; 
   font-size: 14px;
@@ -423,7 +423,7 @@ p {
   color:rgba(238, 80, 87, 1); 
 }
 .btn-center {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #fff;
   border: 1px #fff solid;
   font-size: 12px;
@@ -706,7 +706,7 @@ select#specificLangSelect.form-select {
 
 .btn-second .wide {
   width: 100%; 
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .btn-second.small {
@@ -754,7 +754,7 @@ select#specificLangSelect.form-select {
   color: #055f8f; 
   padding: 0.5rem 1rem;
   text-align: center; 
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 600;
 }
@@ -816,7 +816,7 @@ select#specificLangSelect.form-select {
 .tm-header-title {
   color: #ffffff;
   font-size: 25px !important;  
-  font-family: 'Lato', sans-serif !important; 
+  font-family: 'Poppins', sans-serif !important; 
 }
 @media screen and (max-width: 767px) {
   .tm-search-form .tm-form-element {
@@ -871,17 +871,17 @@ select#specificLangSelect.form-select {
   }
   .capatalize h6 {
     font-size: 12px !important;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
   } 
   .tm-header-content .tm-header-text {
     color: #ffffff;
     font-size: 13px !important; 
-    font-family: 'Lato', sans-serif; 
+    font-family: 'Poppins', sans-serif; 
   }
   .tm-header-content .tm-header-title {
     color: #ffffff;
     font-size: 18px !important; 
-    font-family: 'Lato', sans-serif; 
+    font-family: 'Poppins', sans-serif; 
   }
   /* .search {
     background: #19a2f2;
@@ -950,17 +950,17 @@ select#specificLangSelect.form-select {
   }
   .capatalize h6 {
     font-size: 12px !important;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
   } 
   .tm-header-content .tm-header-title {
     color: #ffffff;
     font-size: 18px !important; 
-    font-family: 'Lato', sans-serif; 
+    font-family: 'Poppins', sans-serif; 
   }
   .tm-header-content .tm-header-text {
     color: #ffffff;
     font-size: 13px !important; 
-    font-family: 'Lato', sans-serif; 
+    font-family: 'Poppins', sans-serif; 
   }
   .form-control {
     border-radius: 32px;
@@ -1058,7 +1058,7 @@ select#specificLangSelect.form-select {
 }
 .capatalize h6 {
   font-size: 15px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 input#city.form-control.first-child{
   padding: 10px 10px 10px 55px;
@@ -1078,7 +1078,7 @@ button.btn.btn-outline-primary{
 .tm-header-text {
   color: #ffffff;
   font-size: 15px !important; 
-  font-family: 'Lato', sans-serif; 
+  font-family: 'Poppins', sans-serif; 
 }
 .tm-header-content {
   margin-top: 5rem;
@@ -1226,7 +1226,7 @@ select.form-control {
   font-size: 24px;
   font-weight: 700; 
   margin-bottom: 1rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .tm-section-title-2 {
   font-size: 20px;
@@ -1245,13 +1245,13 @@ select.form-control {
   font-size: 16px;
   margin-bottom: 1.5rem;
   line-height: 30px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .tm-text-white {
   font-size: 16px;
   color: #fff;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 2rem;
 }
 
@@ -1367,7 +1367,7 @@ select.form-control {
   color: #ffffff;
   font-weight: bold;
   font-size: 25px; 
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .tm-box-title a{
   text-decoration: none;
@@ -1385,7 +1385,7 @@ select.form-control {
   color: #28353e;
   opacity: 0.4;
   height: 155px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .tm-box-with-content .tm-profile {
@@ -1399,7 +1399,7 @@ select.form-control {
 }
 .tm-box-with-content .tm-name {
   color: #28353e;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .tm-box-with-content .tm-city {
   color: #000000;
@@ -1411,7 +1411,7 @@ select.form-control {
 }
 .tm-box-text {
   color: #ffffff;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 15px;
 }
 .tm-box-small {
@@ -1773,7 +1773,7 @@ select.form-control {
   font-size: 12px;
 }
 .point {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 16px; 
 }
@@ -1922,7 +1922,7 @@ select.form-control {
 /*footer*/
 footer {
   font-size: 14px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 footer .icon {
   padding: 15px;

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Khula&family=Lato&family=Montserrat&family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Khula&family=Montserrat&family=Poppins&display=swap');
 body {
   font-family: "Gilroy", sans-serif;
   font-size: 13px;
@@ -324,7 +324,7 @@ input:checked + .tm-slider:before {
 }
 .tm-color-dark {
   color: #28353e;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
 }
 .employe {
@@ -337,7 +337,7 @@ input:checked + .tm-slider:before {
 }
 .type {
   font-size: 18px;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .tm-color-shadow {
   color: #28353e88;
@@ -358,7 +358,7 @@ input:checked + .tm-slider:before {
 }
 .tm-section-title span {
   font-size: 13px;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .tm-section-title span i {
   color: #ffcc16;
@@ -825,7 +825,7 @@ p {
   text-align: center;
   font-weight: 600;
   font-size: 12px !important;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .btn-forth-active {
   background-color: #055f8f;
@@ -838,7 +838,7 @@ p {
   text-align: center;
   font-weight: 600;
   font-size: 12px !important;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .select select {
   border: rgba(0, 0, 0, 0.205) solid 0.5px !important;
@@ -922,7 +922,7 @@ p {
   font-size: 28px;
   font-weight: 600;
   padding: 0.5rem 0;
-  font-family: "Lato", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .tm-header-title.blue {
@@ -943,7 +943,7 @@ p {
 .tm-form-element {
   position: relative;
   font-size: 12px !important;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .tm-form-element:last-child {
   margin-right: 0;
@@ -1013,7 +1013,7 @@ select option {
 }
 select#job-dropdown.btn.btn-dropdown.dropdown-toggle {
   font-size: 14px;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #28353e7e;
   padding: 10px;
 }
@@ -1720,7 +1720,7 @@ input#center-name.form-control {
 /*kişiselbilgiler*/
 .clinic-form-text {
   color: rgba(0, 0, 0, 0.5);
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .circle {
   background-color: #e9f7ff;
@@ -1740,18 +1740,18 @@ input#center-name.form-control {
   font-weight: 400;
   font-size: 17px;
   line-height: 30px;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .circle-content .clinic-prop {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   opacity: 0.7;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .alert-danger {
   color: #c61232;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
 }
 .alert-danger svg {
@@ -1775,7 +1775,7 @@ input#center-name.form-control {
   font-size: 15px;
   margin-bottom: 2px;
   font-weight: 600;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .tm-form-small {
   border-radius: 16px;
@@ -1949,7 +1949,7 @@ input#center-name.form-control {
 }
 .clinic-questions-title {
   color: #28353e;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
   line-height: 1.5rem;
 }
@@ -1957,7 +1957,7 @@ input#center-name.form-control {
   font-family: "Montserrat", sans-serif;
 }
 .clinic-title {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .clinic-center-km {
   font-family: "Montserrat", sans-serif;
@@ -1970,7 +1970,7 @@ input#center-name.form-control {
   border-radius: 15px;
 }
 .tm-box-title {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .tm-box-text {
   font-family: "Montserrat", sans-serif;
@@ -2049,7 +2049,7 @@ input#center-name.form-control {
   width: 10%;
   font-size: 13px;
   text-align: right;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 footer a {
@@ -2558,7 +2558,7 @@ footer a {
   display: block;
 }
 .text-date {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 11px;
   color: rgba(0, 0, 0, 0.329);
 }
@@ -2570,23 +2570,23 @@ footer a {
 }
 .text {
   font-size: 12px;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 11px;
   color: rgba(0, 0, 0, 0.329);
 }
 .span-text1 {
   color: #19a2f2;
   font-size: 12px;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
 }
 .attention {
   font-size: 12px;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .users {
   font-size: 12px;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .logo {
   font-size: 25px !important;

@@ -266,7 +266,7 @@ $(document).ready(function() {
               'newsletterText': 'You can subscribe to our mailing list to be informed about the latest developments and dialysis opportunities.',
                     
               //    <!--======= FOOTER =====-->  
-              'footerTitle': 'Eleifend eleifend vel lobortis arcu quam mattis sodales turpis ornare at dictumst in',
+              'footerTitle': 'Diyalize girenlerin diledikleri an ve güvenle tatil yapabilecekleri, dünyayı özgürce dolaşabilecekleri bir gelecek inşa etmek için çalışıyoruz.',
               'footerText': '2021 Dialysing.com All rights reserved.',
               'footerSupport': 'Support',
               'footerSupport1': 'Our Staff',

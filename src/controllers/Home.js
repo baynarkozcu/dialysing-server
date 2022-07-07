@@ -109,7 +109,7 @@ class HomeController {
       //   }
       // );
       axios
-        .get("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + center.contactInformation.email + "&konu=Mail Onay&mesaj=Mail Gönderildi.")
+        .get(encodeURI("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + center.contactInformation.email + "&konu=Mail Onay&mesaj=Mail Gönderildi."))
         .then(function (response) {
           // handle success
           console.log(response);
@@ -208,7 +208,7 @@ class HomeController {
         });
     } else {
       axios
-        .get("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + center.contactInformation.email + "&konu=Mail Onay&mesaj=dialysing.com üzerinden gelen online randevu talebiniz bulunmaktadır. Randevunuzu onaylamak için aşağıdaki linki tıklayınız.")
+        .get(encodeURI("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + center.contactInformation.email + "&konu=Mail Onay&mesaj=dialysing.com üzerinden gelen online randevu talebiniz bulunmaktadır. Randevunuzu onaylamak için aşağıdaki linki tıklayınız."))
         .then(function (response) {
           // handle success
           console.log(response);
@@ -469,11 +469,12 @@ class HomeController {
           { expiresIn: "1d" }
         );
         const verifyURL = process.env.MAIL_VERIFY_URL + "user/verify?token=" + token;
+        
         axios
-          .get("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + data.email, +"&konu=Mail Onay&mesaj=Emailinizi Onaylamak için Linke Tıklayın " + verifyURL)
+          .get(encodeURI("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + data.email + "&konu=Mail Onay&mesaj=Emailinizi Onaylamak için Linke Tıklayın " + verifyURL))
           .then(function (response) {
             // handle success
-            console.log(response);
+            console.log(response.status);
           })
           .catch(function (error) {
             // handle error

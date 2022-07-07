@@ -116,7 +116,7 @@ class ClinicPanelController {
 
         const verifyURL = process.env.MAIL_VERIFY_URL + "panel/activation?token=" + token;
             axios
-              .get("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + data.email + "&konu=Mail Onay&mesaj=" + verifyURL)
+              .get(encodeURI("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + data.email + "&konu=Mail Onay&mesaj=" + verifyURL))
               .then(function (response) {
                 // handle success
                 console.log(response);

@@ -468,9 +468,9 @@ class HomeController {
           process.env.CONFIRM_SECRET,
           { expiresIn: "1d" }
         );
-
+        const verifyURL = process.env.MAIL_VERIFY_URL + "user/verify?token=" + token;
         axios
-          .get("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + center.contactInformation.email + "&konu=Mail Onay&mesaj=Mail Gönderildi.")
+          .get("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + data.email, +"&konu=Mail Onay&mesaj=Emailinizi Onaylamak için Linke Tıklayın " + verifyURL)
           .then(function (response) {
             // handle success
             console.log(response);

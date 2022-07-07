@@ -14,6 +14,8 @@ const HtmlMessage = require("../scripts/utils/htmlMessages");
 const jwt = require("jsonwebtoken");
 const mailer = require("nodemailer");
 
+const axios = require("axios").default;
+
 class ClinicPanelController {
   async index(req, res, next) {
     const center = req.query.clinic;
@@ -113,27 +115,19 @@ class ClinicPanelController {
         );
 
         const verifyURL = process.env.MAIL_VERIFY_URL + "panel/activation?token=" + token;
-        let transporter = mailer.createTransport({
-          service: "gmail",
-          auth: {
-            user: process.env.GMAIL_USER,
-            pass: process.env.GMAIL_PASSWORD,
-          },
-        });
-        await transporter.sendMail(
-          {
-            from: "@Dialysing <info@dialysing.com",
-            to: data.email,
-            subject: "Emailinizi Onaylayınız.",
-            text: "Emailinizi Onaylamak için Linke Tıklayın " + verifyURL,
-          },
-          (error) => {
-            if (error) {
-              console.log("Send Mail Error: " + error);
-            }
-            transporter.close();
-          }
-        );
+            axios
+              .get("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + data.email + "&konu=Mail Onay&mesaj=" + verifyURL)
+              .then(function (response) {
+                // handle success
+                console.log(response);
+              })
+              .catch(function (error) {
+                // handle error
+                console.log(error);
+              })
+              .then(function () {
+                // always executed
+              });
         return res.render("clinic-panel/pages/clinic-activation", { layout: "clinic-panel/layouts/index" });
       } catch (err) {
         console.log("Hata Çıktı :", err);

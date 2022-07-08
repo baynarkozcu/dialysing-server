@@ -129,7 +129,7 @@
           <a href="/gfr-calculator"><img src="../user/img/custom/dialysis-v.png" alt="Dialysis V" /></a>
           <div class="tm-box-content">
             <div key="articleSubTitle5" class="tm-box-title">GFR Hesaplama</div>
-            <div key="articlesSubText5" class="tm-box-text">Glomerüler filtrasyon hızı (GFR), böbreklerin ne kadar iyi performans gösterdiğini değerlendirmek için kullanılan bir testtir. </div>
+            <div key="articlesSubText5" class="tm-box-text">Glomerüler filtrasyon hızı (GFR), böbreklerin ne kadar iyi performans gösterdiğini değerlendirmek için kullanılan bir testtir.</div>
           </div>
         </div>
       </div>
@@ -142,16 +142,29 @@
   <div class="container">
     <div key="favoriteTitle" class="tm-section-title">Favori Tatil Diyalizi Seyahat Noktalarını Keşfedin</div>
     <div class="row">
+      <% tatilMerkezleri.forEach((element, index) => { %> <% if (index <4) { %>
       <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
         <div class="tm-box">
-          <img src="../user/img/custom/antalya-iii.png" alt="Custom Antalya III" />
+          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/antalya-iii.png" alt="Custom Antalya III" /></a>
           <div class="tm-box-content">
-            <div class="tm-box-title">Antalya</div>
+            <div class="tm-box-title"><%- element.companyInformation.companyName  %> </div>
             <div key="favoriteSubTitle1" class="tm-box-text">Akdenizin Mavi İncisi</div>
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
+      <% }else{ %>
+      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <div class="tm-box">
+          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/izmir-iii.png" alt="Izmir III" /></a>
+          <div class="tm-box-content">
+            <div class="tm-box-title"><%- element.companyInformation.companyName  %></div>
+            <div key="favoriteSubTitle5" class="tm-box-text">Egenin İncisi</div>
+          </div>
+        </div>
+      </div>
+      <% } %> <% }) %>
+
+      <!-- <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
         <div class="tm-box">
           <img src="../user/img/custom/bodrum-iii.png" alt="Custom Bodrum III" />
           <div class="tm-box-content">
@@ -177,8 +190,8 @@
             <div key="favoriteSubTitle4" class="tm-box-text">Dillere Destan Güzellikler</div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      </div> -->
+      <!-- <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
         <div class="tm-box">
           <img src="../user/img/custom/izmir-iii.png" alt="Izmir III" />
           <div class="tm-box-content">
@@ -195,7 +208,7 @@
             <div key="favoriteSubTitle6" class="tm-box-text">Denizin ve Güneşin Tadı</div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -208,20 +221,23 @@
     </div>
 
     <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 g-3 mb-3">
-      
-      <div class="col col-five">
+
+      <% onerilenMerkezler.forEach(element => { %>
+             <div class="col col-five">
         <div class="card">
           <div class="position-relative">
-            <a href="./clinic/clinic.html"><img src="../user/img/custom/center-i.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom Ankara" /></a>
+            <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/center-i.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom Ankara" /></a>
             <div class="position-absolute bottom-0 start-0 px-2">
-              <h5 class="tm-box-title">Türkmed</h5>
+              <h5 class="tm-box-title"><%- element.companyInformation.companyName  %> </h5>
               <p key="suggestion" class="tm-box-text">Diyaliz Merkezi</p>
             </div>
           </div>
         </div>
       </div>
+      <% }) %>
 
-      <div class="col col-five">
+
+      <!-- <div class="col col-five">
         <div class="card">
           <div class="position-relative">
             <img src="../user/img/custom/center-ii.png" class="image-fluid card-img-top" width="100%" height="100%" alt="Custom Ankara" />
@@ -267,7 +283,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -333,11 +349,13 @@
   <div class="container">
     <div class="tm-section-title" key="likedTitle">Beğenilen Diyaliz Merkezleri</div>
     <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+      <% begenilenMerkezler.forEach((element, index) => { %>
+       <% if (index < 3) { %>
+              <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
         <div class="tm-box">
-          <img src="../user/img/custom/liked-i.png" alt="Custom Liked I" />
+          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/liked-i.png" alt="Custom Liked I" /></a>
           <div class="tm-box-content">
-            <div class="tm-box-title">Milas <span key="likedText">Diyaliz Merkezi</span></div>
+            <div class="tm-box-title"><%- element.companyInformation.companyName %><span key="likedText">Diyaliz Merkezi</span></div>
             <div class="score">
               <div class="point">5.0</div>
               <i class="bi bi-star-fill"></i>
@@ -349,7 +367,27 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+       <% } else{ %>
+      <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
+        <div class="tm-box">
+          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/liked-vi.png" alt="Custom Liked VI" /></a>
+          <div class="tm-box-content">
+            <div class="tm-box-title"><%- element.companyInformation.companyName %><span key="likedText">Diyaliz Merkezi</span></div>
+            <div class="score">
+              <div class="point">5.0</div>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+        <% } %> 
+      <% }) %>
+
+      <!-- <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
         <div class="tm-box">
           <img src="../user/img/custom/liked-ii.png" alt="Custom Liked II" />
           <div class="tm-box-content">
@@ -364,8 +402,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+      </div> -->
+      <!-- <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
         <div class="tm-box">
           <img src="../user/img/custom/liked-iii.png" alt="Custom Liked III" />
           <div class="tm-box-content">
@@ -380,8 +418,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
+      </div> -->
+      <!-- <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
         <div class="tm-box">
           <img src="../user/img/custom/liked-vi.png" alt="Custom Liked VI" />
           <div class="tm-box-content">
@@ -444,7 +482,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -483,17 +521,17 @@
           <div class="circle-content m-2">
             <img src="../user/img/icons/language.png" width="100%" alt="Icon Language" />
             <div class="clinic-number">10+</div>
-                <div class="clinic-prop">Dil</div>
+            <div class="clinic-prop">Dil</div>
           </div>
           <div class="circle-content m-2">
             <img src="../user/img/icons/hospital.png" width="100%" alt="Icon Hospital" />
             <div class="clinic-number">4000+</div>
-                <div class="clinic-prop">Klinik</div>
+            <div class="clinic-prop">Klinik</div>
           </div>
           <div class="circle-content m-2">
             <img src="../user/img/icons/hospital-2.png" width="100%" alt="Icon Hospital 2" />
             <div class="clinic-number">8+</div>
-                <div class="clinic-prop">STK</div>
+            <div class="clinic-prop">STK</div>
           </div>
         </div>
       </div>

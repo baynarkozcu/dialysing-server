@@ -27,13 +27,19 @@ class HomeController {
     const user = req.user;
     const blogs = await BlogService.indexTop({}, 4).sort({ createdAt: -1 });
 
+    const tatilMerkezleri = await DialysisCenterService.indexTop({},6);
+    const onerilenMerkezler = await DialysisCenterService.indexTop({},5);
+    const begenilenMerkezler = await DialysisCenterService.indexTop({},7);
+
     const country = await DialysisCenterService.groupBy("$address.country");
     const cities = await DialysisCenterService.groupBy("$address.country", "$address.city");
 
-    console.log("Cities : ", cities);
-    console.log("Country : ", country[0]._id.country);
+    console.log("Deneme", tatilMerkezleri);
 
-    res.render("user/pages/index", { layout: "user/layouts/index", user, seoSettings, blogs, country: country[0]._id.country, cities });
+    // console.log("Cities : ", cities);
+    // console.log("Country : ", country[0]._id.country);
+
+    res.render("user/pages/index", { layout: "user/layouts/index", user, seoSettings, blogs, country: country[0]._id.country, cities, tatilMerkezleri, onerilenMerkezler, begenilenMerkezler });
   }
 
   async clinicMain(req, res, next) {

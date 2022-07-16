@@ -463,10 +463,6 @@ p {
   font-style: normal;
   font-weight: normal;
 }
-/*Navbar*/
-/* .logo {
-  font-size: 28px;
-} */
 .logo span {
   color: #19a2f2;
 }
@@ -479,11 +475,6 @@ p {
 .navbar .navbar-nav {
   align-items: center;
 }
-
-/* .navbar .nav-item {
-  margin: 0 0.5rem;
-} */
-
 .navbar .nav-item.center {
   display: flex;
   align-items: center;
@@ -496,26 +487,18 @@ p {
 .navbar a {
   color: #ffffff;
 }
-
-/* .navbar-brand {
-  font-weight: 600;
-} */
-
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(238, 80, 87, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
-
 .navbar-toggler {
   border-color: #19a2f2;
   cursor: pointer;
 }
-
 .nav-item a.btn-second,
 .nav-item a.btn-third {
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
 }
-
 .tm-top-bar {
   width: 100%;
   transition: all 0.2s ease-in-out;
@@ -525,49 +508,39 @@ p {
   align-items: center;
   background-color: #28353e;
 }
-
 .tm-top-bar.single {
   height: 80px;
   position: initial;
   display: flex;
   align-items: center;
 }
-
 .tm-top-bar.mixed {
   position: absolute;
   background-color: transparent;
 }
-
 .location {
   margin-left: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .location img {
   margin-right: 0.25rem;
 }
-
 .tm-top-bar.active {
   height: 79px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
-
 .tm-top-bar.active .navbar-expand-lg .navbar-nav .nav-link {
   padding: 30px 35px;
 }
 .tm-top-bar-bg {
   height: 119px;
 }
-/* .tm-section {
-  min-height: 515px;
-} */
 .tm-section-pad {
   padding-top: 80px;
   padding-bottom: 80px;
 }
-
 .tm-section-gradient {
   background: rgb(245, 249, 252);
   background: linear-gradient(
@@ -577,7 +550,6 @@ p {
     rgba(245, 249, 252, 0.5) 100%
   );
 }
-
 .tm-bg-img {
   display: -webkit-box;
   display: -webkit-flex;
@@ -593,7 +565,6 @@ p {
   justify-content: center;
   height: 700px;
 }
-
 .tm-background {
   background-image: url(../img/custom/header.png);
   background-position: center center;
@@ -603,18 +574,15 @@ p {
 .tm-background .tm-top-bar {
   background: unset;
 }
-
 .tm-bg-img.min {
   height: 600px;
 }
-
 .tm-bg-img .profile {
   display: flex;
   justify-content: space-between;
   align-items: end;
   height: 500px;
 }
-
 .tm-bg-img .profile .tm-header-title {
   display: flex;
   height: 100%;
@@ -1399,47 +1367,30 @@ select.form-control {
   margin-right: auto;
   font-size: 0.75rem;
 }
-
-/* .tm-sidebar-title {
-  font-size: 1.3rem;
-  margin-bottom: 5px;
-} */
-
-/* .tm-sidebar-item-title {
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  margin-bottom: 0;
-} */
-
 .tm-recommended-item .tm-bg-gray {
   transition: all 0.3s ease;
 }
 .tm-recommended-item:hover .tm-bg-gray {
   background: #ddd;
 }
-
 .tm-recommended-item h4 {
   color: black;
   transition: all 0.3s ease;
 }
-
 .tm-recommended-item:hover h4 {
   color: #19a2f2;
 }
 .tm-media {
   align-items: stretch;
 }
-
 .tm-media,
 .tm-media-1 {
   margin-bottom: 15px;
 }
-
 .tm-media:last-child,
 .tm-media-1:last-child {
   margin-bottom: 0;
 }
-
 .tm-media-body,
 .tm-media-body-1 {
   display: -webkit-box;
@@ -1452,7 +1403,6 @@ select.form-control {
   align-items: center;
   padding-left: 25px;
 }
-
 .tm-media-body-v-center {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1469,7 +1419,6 @@ select.form-control {
   justify-content: center;
   align-items: flex-start;
 }
-
 .overlay {
   position: absolute;
   top: 0;
@@ -1482,19 +1431,16 @@ select.form-control {
   align-items: center;
   justify-content: center;
 }
-
 #google-map {
   height: 479px;
   width: 100%;
 }
-
 .contact-form .form-control {
   background-color: #f4f4f4;
   border: none;
   font-size: 0.8rem;
   font-weight: 300;
 }
-
 .clearfix:after {
   content: " "; /* Older browser do not support empty content */
   visibility: hidden;
@@ -1508,11 +1454,9 @@ select.form-control {
   align-items: center;
   width: 100%;
 }
-
 .quote-content {
   height: 350px;
 }
-
 .quote-content .inner-content {
   padding-left: 6rem;
   padding-top: 3.5rem;
@@ -1578,7 +1522,7 @@ textarea#message.form-control {
 .alert-primary {
   font-size: 12px !important;
 }
-/*kişiselbilgiler*/
+/*personal information*/
 input#name-surname.form-control {
   font-size: 14px;
   padding: 15px;
@@ -1717,7 +1661,7 @@ input#center-name.form-control {
   font-family: "Montserrat", sans-serif;
   color: #28353e7e;
 }
-/*kişiselbilgiler*/
+/*personal information*/
 .clinic-form-text {
   color: rgba(0, 0, 0, 0.5);
   font-family: "Poppins", sans-serif;

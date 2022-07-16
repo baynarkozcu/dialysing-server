@@ -27,43 +27,6 @@
         </div>
       </div>
       <% } %> <% } %> <% } %> <% }) %>
-
-      <!-- <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-        <div class="tm-box card">
-          <img src="../user/img/custom/istanbul-avrupa.png" alt="Custom Istanbul Avrupa" />
-          <div class="tm-box-content">
-            <div class="tm-box-title"><a href="./clinic/clinic-list.html">İstanbul - Avrupa</a></div>
-            <div class="tm-box-text">280 <span key="dialysCenter">Diyaliz Merkezi</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-        <div class="tm-box card">
-          <img src="../user/img/custom/istanbul-anadolu.png" alt="Custom Istanbul Anadolu" />
-          <div class="tm-box-content">
-            <div class="tm-box-title"><a href="./clinic/clinic-list.html">İstanbul - Anadolu</a></div>
-            <div class="tm-box-text">243 <span key="dialysCenter">Diyaliz Merkezi</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-        <div class="tm-box card">
-          <img src="../user/img/custom/bursa.png" alt="Custom Bursa" />
-          <div class="tm-box-content">
-            <div class="tm-box-title"><a href="#">Bursa</a></div>
-            <div class="tm-box-text">223 <span key="dialysCenter">Diyaliz Merkezi</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-        <div class="tm-box card">
-          <img src="../user/img/custom/ankara.png" alt="Custom Ankara" />
-          <div class="tm-box-content">
-            <div class="tm-box-title"><a href="#">Kocaeli</a></div>
-            <div class="tm-box-text">212 <span key="dialysCenter">Diyaliz Merkezi</span></div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 </div>
@@ -97,39 +60,12 @@
         </div>
       </div>
       <% } %> <% }) %>
-      <!-- <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-        <div class="tm-box">
-          <a href="./articles/diyalizde-beslenme.html"><img src="../user/img/custom/dialysis-ii.png" alt="Dialysis II" /></a>
-          <div class="tm-box-content">
-            <div key="articleSubTitle2" class="tm-box-title">Diyalizde Beslenme</div>
-            <div key="articlesSubText2" class="tm-box-text">Faucibus sit libero in bibendum nunc neque, eu eleifend ac quam auctor non ultricies massa</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-        <div class="tm-box">
-          <a href="./articles/böbrek-nakli.html"><img src="../user/img/custom/dialysis-iii.png" alt="Dialysis III" /></a>
-          <div class="tm-box-content">
-            <div key="articleSubTitle3" class="tm-box-title">Böbrek Nakli</div>
-            <div key="articlesSubText3" class="tm-box-text">Morbi elit vitae pharetra, nam placerat senectus libero non integer senectus nulla molestie ullamcorper massa ante massa vitae congue urna, adipiscing nisl</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-        <div class="tm-box">
-          <a href="./articles/istanbulda-en-iyi-diyaliz-merkezleri.html"><img src="../user/img/custom/dialysis-iv.png" alt="Dialysis IV" /></a>
-          <div class="tm-box-content">
-            <div key="articleSubTitle4" class="tm-box-title">İstanbulda ki En İyi 5 Diyaliz Merkezi</div>
-            <div key="articlesSubText4" class="tm-box-text">A est sed nunc, et sagittis, velit scelerisque posuere suspendisse orci hendrerit non sed nascetur ut nunc id blandit at felis, aliquam volutpat nunc arcu ut diam mattis tristique penatibus lobortis scelerisque scelerisque mi orci</div>
-          </div>
-        </div>
-      </div> -->
       <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
         <div class="tm-box">
           <a href="/gfr-calculator"><img src="../user/img/custom/dialysis-v.png" alt="Dialysis V" /></a>
           <div class="tm-box-content">
             <div key="articleSubTitle5" class="tm-box-title">GFR Hesaplama</div>
-            <div key="articlesSubText5" class="tm-box-text">Glomerüler filtrasyon hızı (GFR), böbreklerin ne kadar iyi performans gösterdiğini değerlendirmek için kullanılan bir testtir. </div>
+            <div key="articlesSubText5" class="tm-box-text">Glomerüler filtrasyon hızı (GFR), böbreklerin ne kadar iyi performans gösterdiğini değerlendirmek için kullanılan bir testtir.</div>
           </div>
         </div>
       </div>
@@ -142,60 +78,27 @@
   <div class="container">
     <div key="favoriteTitle" class="tm-section-title">Favori Tatil Diyalizi Seyahat Noktalarını Keşfedin</div>
     <div class="row">
+      <% tatilMerkezleri.forEach((element, index) => { %> <% if (index <4) { %>
       <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
         <div class="tm-box">
-          <img src="../user/img/custom/antalya-iii.png" alt="Custom Antalya III" />
+          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/antalya-iii.png" alt="Custom Antalya III" /></a>
           <div class="tm-box-content">
-            <div class="tm-box-title">Antalya</div>
+            <div class="tm-box-title"><%- element.companyInformation.companyName  %> </div>
             <div key="favoriteSubTitle1" class="tm-box-text">Akdenizin Mavi İncisi</div>
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
-        <div class="tm-box">
-          <img src="../user/img/custom/bodrum-iii.png" alt="Custom Bodrum III" />
-          <div class="tm-box-content">
-            <div class="tm-box-title">Bodrum</div>
-            <div key="favoriteSubTitle2" class="tm-box-text">Maviye Açılan Yolculuk</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
-        <div class="tm-box">
-          <img src="../user/img/custom/kusadasi-iii.png" alt="Custom Kusadasi III" />
-          <div class="tm-box-content">
-            <div class="tm-box-title">Kuşadası</div>
-            <div key="favoriteSubTitle3" class="tm-box-text">Sahil Boyu Huzur</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
-        <div class="tm-box">
-          <img src="../user/img/custom/fethiye-iii.png" alt="Custom Fethiye III" />
-          <div class="tm-box-content">
-            <div class="tm-box-title">Fethiye</div>
-            <div key="favoriteSubTitle4" class="tm-box-text">Dillere Destan Güzellikler</div>
-          </div>
-        </div>
-      </div>
+      <% }else{ %>
       <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
         <div class="tm-box">
-          <img src="../user/img/custom/izmir-iii.png" alt="Izmir III" />
+          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/izmir-iii.png" alt="Izmir III" /></a>
           <div class="tm-box-content">
-            <div class="tm-box-title">İzmir</div>
+            <div class="tm-box-title"><%- element.companyInformation.companyName  %></div>
             <div key="favoriteSubTitle5" class="tm-box-text">Egenin İncisi</div>
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-        <div class="tm-box">
-          <img src="../user/img/custom/mugla-iii.png" alt="Mugla III" />
-          <div class="tm-box-content">
-            <div class="tm-box-title">Muğla</div>
-            <div key="favoriteSubTitle6" class="tm-box-text">Denizin ve Güneşin Tadı</div>
-          </div>
-        </div>
-      </div>
+      <% } %> <% }) %>
     </div>
   </div>
 </div>
@@ -208,19 +111,21 @@
     </div>
 
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-4 row-cols-lg-5 g-3 mb-3">
-      
+      <% onerilenMerkezler.forEach(element => { %>
       <div class="col col-five">
         <div class="card">
           <div class="position-relative">
-            <a href="./clinic/clinic.html"><img src="../user/img/custom/center-i.png" class="image-fluid card-img-top" width="100%" height="300" alt="Custom Ankara" /></a>
+            <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/center-i.png" class="image-fluid card-img-top" width="100%" height="300" alt="Custom Ankara" /></a>
             <div class="position-absolute bottom-0 start-0 px-2">
-              <div class="tm-box-title p-2">Türkmed <span key="likedText">Diyaliz Merkezi</span></div> 
+              <div class="tm-box-title p-2"><%- element.companyInformation.companyName  %> <span key="likedText">Diyaliz Merkezi</span></div> 
             </div>
           </div>
         </div>
       </div>
+      <% }) %>
 
-      <div class="col col-five">
+
+      <!-- <div class="col col-five">
         <div class="card">
           <div class="position-relative">
             <img src="../user/img/custom/center-ii.png" class="image-fluid card-img-top" width="100%" height="300" alt="Custom Ankara" />
@@ -262,7 +167,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -328,11 +233,13 @@
   <div class="container">
     <div class="tm-section-title" key="likedTitle">Beğenilen Diyaliz Merkezleri</div>
     <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+      <% begenilenMerkezler.forEach((element, index) => { %>
+       <% if (index < 3) { %>
+              <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
         <div class="tm-box">
-          <img src="../user/img/custom/liked-i.png" alt="Custom Liked I" />
+          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/liked-i.png" alt="Custom Liked I" /></a>
           <div class="tm-box-content">
-            <div class="tm-box-title">Milas <span key="likedText">Diyaliz Merkezi</span></div>
+            <div class="tm-box-title"><%- element.companyInformation.companyName %><span key="likedText">Diyaliz Merkezi</span></div>
             <div class="score">
               <div class="point">5.0</div>
               <i class="bi bi-star-fill"></i>
@@ -344,43 +251,12 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-        <div class="tm-box">
-          <img src="../user/img/custom/liked-ii.png" alt="Custom Liked II" />
-          <div class="tm-box-content">
-            <div class="tm-box-title">Keçiören <span key="likedText">Diyaliz Merkezi</span></div>
-            <div class="score">
-              <div class="point">5.0</div>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-        <div class="tm-box">
-          <img src="../user/img/custom/liked-iii.png" alt="Custom Liked III" />
-          <div class="tm-box-content">
-            <div class="tm-box-title">Ankara <span key="likedText">Diyaliz Merkezi</span></div>
-            <div class="score">
-              <div class="point">5.0</div>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+       <% } else{ %>
       <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
         <div class="tm-box">
-          <img src="../user/img/custom/liked-vi.png" alt="Custom Liked VI" />
+          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/liked-vi.png" alt="Custom Liked VI" /></a>
           <div class="tm-box-content">
-            <div class="tm-box-title">Türkmed <span key="likedText">Diyaliz Merkezi</span></div>
+            <div class="tm-box-title"><%- element.companyInformation.companyName %><span key="likedText">Diyaliz Merkezi</span></div>
             <div class="score">
               <div class="point">5.0</div>
               <i class="bi bi-star-fill"></i>
@@ -392,54 +268,8 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
-        <div class="tm-box">
-          <img src="../user/img/custom/liked-v.png" alt="Custom Liked V" />
-          <div class="tm-box-content">
-            <div class="tm-box-title">Sultanbeyli <span key="likedText">Diyaliz Merkezi</span></div>
-            <div class="score">
-              <div class="point">5.0</div>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
-        <div class="tm-box">
-          <img src="../user/img/custom/liked-vi.png" alt="Custom Liked VI" />
-          <div class="tm-box-content">
-            <div class="tm-box-title">Bodrum <span key="likedText">Diyaliz Merkezi</span></div>
-            <div class="score">
-              <div class="point">5.0</div>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
-        <div class="tm-box">
-          <img src="../user/img/custom/liked-vii.png" alt="Custom Liked VII" />
-          <div class="tm-box-content">
-            <div class="tm-box-title">Karşıyaka <span key="likedText">Diyaliz Merkezi</span></div>
-            <div class="score">
-              <div class="point">5.0</div>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+        <% } %> 
+      <% }) %>
     </div>
   </div>
 </div>
@@ -478,17 +308,17 @@
           <div class="circle-content m-2">
             <img src="../user/img/icons/language.png" width="100%" alt="Icon Language" />
             <div class="clinic-number">10+</div>
-                <div class="clinic-prop">Dil</div>
+            <div class="clinic-prop">Dil</div>
           </div>
           <div class="circle-content m-2">
             <img src="../user/img/icons/hospital.png" width="100%" alt="Icon Hospital" />
             <div class="clinic-number">4000+</div>
-                <div class="clinic-prop">Klinik</div>
+            <div class="clinic-prop">Klinik</div>
           </div>
           <div class="circle-content m-2">
             <img src="../user/img/icons/hospital-2.png" width="100%" alt="Icon Hospital 2" />
             <div class="clinic-number">8+</div>
-                <div class="clinic-prop">STK</div>
+            <div class="clinic-prop">STK</div>
           </div>
         </div>
       </div>

@@ -19,19 +19,27 @@ const HtmlMessage = require("../scripts/utils/htmlMessages");
 const jwt = require("jsonwebtoken");
 const mailer = require("nodemailer");
 
+const axios = require("axios").default;
+
 class HomeController {
   async index(req, res, next) {
     const seoSettings = await SeoSettings.find({ page: "HomePage" });
     const user = req.user;
     const blogs = await BlogService.indexTop({}, 4).sort({ createdAt: -1 });
 
+    const tatilMerkezleri = await DialysisCenterService.indexTop({},6);
+    const onerilenMerkezler = await DialysisCenterService.indexTop({},5);
+    const begenilenMerkezler = await DialysisCenterService.indexTop({},7);
+
     const country = await DialysisCenterService.groupBy("$address.country");
     const cities = await DialysisCenterService.groupBy("$address.country", "$address.city");
 
-    console.log("Cities : ", cities);
-    console.log("Country : ", country[0]._id.country);
+    console.log("Deneme", tatilMerkezleri);
 
-    res.render("user/pages/index", { layout: "user/layouts/index", user, seoSettings, blogs, country: country[0]._id.country, cities });
+    // console.log("Cities : ", cities);
+    // console.log("Country : ", country[0]._id.country);
+
+    res.render("user/pages/index", { layout: "user/layouts/index", user, seoSettings, blogs, country: country[0]._id.country, cities, tatilMerkezleri, onerilenMerkezler, begenilenMerkezler });
   }
 
   async clinicMain(req, res, next) {
@@ -73,39 +81,52 @@ class HomeController {
     // res.send(true);
     const center = DialysisCenterService.findById(req.body.center);
     try {
-      let transporter = mailer.createTransport({
-        service: "gmail",
-        host: "smtp.google.com",
-        port: 587,
-        secure: true,
-        auth: {
-          user: process.env.GMAIL_USER,
-          pass: process.env.GMAIL_PASSWORD,
-        },
-      });
-      await transporter.sendMail(
-        {
-          from: "@Dialysing <info@dialysing.com",
-          to: center.contactInformation.email,
-          subject: "Randevu Talebiniz Bulunmaktadır",
-          text: "dialysing.com üzerinden gelen online randevu talebiniz bulunmaktadır. Randevunuzu onaylamak için aşağıdaki linki tıklayınız. \n\n" + "https://dialysing.com/",
-        },
-        async (error) => {
-          if (error) {
-            console.log("Send Mail Error: " + error);
-            await Errors.create({
-              type: "email",
-              message: "Email Gönderilirken Hata Oluştu. :" + error,
-            });
-          } else {
-            await Errors.create({
-              type: "email",
-              message: "Email Gönderildi.",
-            });
-          }
-          transporter.close();
-        }
-      );
+      // let transporter = mailer.createTransport({
+      //   service: "gmail",
+      //   host: "smtp.google.com",
+      //   port: 587,
+      //   secure: true,
+      //   auth: {
+      //     user: process.env.GMAIL_USER,
+      //     pass: process.env.GMAIL_PASSWORD,
+      //   },
+      // });
+      // await transporter.sendMail(
+      //   {
+      //     from: "@Dialysing <info@dialysing.com",
+      //     to: center.contactInformation.email,
+      //     subject: "Randevu Talebiniz Bulunmaktadır",
+      //     text: "dialysing.com üzerinden gelen online randevu talebiniz bulunmaktadır. Randevunuzu onaylamak için aşağıdaki linki tıklayınız. \n\n" + "https://dialysing.com/",
+      //   },
+      //   async (error) => {
+      //     if (error) {
+      //       console.log("Send Mail Error: " + error);
+      //       await Errors.create({
+      //         type: "email",
+      //         message: "Email Gönderilirken Hata Oluştu. :" + error,
+      //       });
+      //     } else {
+      //       await Errors.create({
+      //         type: "email",
+      //         message: "Email Gönderildi.",
+      //       });
+      //     }
+      //     transporter.close();
+      //   }
+      // );
+      axios
+        .get(encodeURI("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + center.contactInformation.email + "&konu=Mail Onay&mesaj=Mail Gönderildi."))
+        .then(function (response) {
+          // handle success
+          console.log(response);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+        .then(function () {
+          // always executed
+        });
       res.send(true);
     } catch (err) {
       res.send(err);
@@ -192,39 +213,52 @@ class HomeController {
           console.log(err);
         });
     } else {
-      let transporter = mailer.createTransport({
-        service: "gmail",
-        host: "smtp.google.com",
-        port: 587,
-        secure: true,
-        auth: {
-          user: process.env.GMAIL_USER,
-          pass: process.env.GMAIL_PASSWORD,
-        },
-      });
-      await transporter.sendMail(
-        {
-          from: "@Dialysing <info@dialysing.com",
-          to: data.email,
-          subject: "Randevu Talebiniz Bulunmaktadır",
-          text: "dialysing.com üzerinden gelen online randevu talebiniz bulunmaktadır. Randevunuzu onaylamak için aşağıdaki linki tıklayınız. \n\n" + "https://dialysing.com/",
-        },
-        async (error) => {
-          if (error) {
-            console.log("Send Mail Error: " + error);
-            await Errors.create({
-              type: "email",
-              message: "Email Gönderilirken Hata Oluştu. :" + error,
-            });
-          } else {
-            await Errors.create({
-              type: "email",
-              message: "Email Gönderildi.",
-            });
-          }
-          transporter.close();
-        }
-      );
+      axios
+        .get(encodeURI("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + center.contactInformation.email + "&konu=Mail Onay&mesaj=dialysing.com üzerinden gelen online randevu talebiniz bulunmaktadır. Randevunuzu onaylamak için aşağıdaki linki tıklayınız."))
+        .then(function (response) {
+          // handle success
+          console.log(response);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+        .then(function () {
+          // always executed
+        });
+      // let transporter = mailer.createTransport({
+      //   service: "gmail",
+      //   host: "smtp.google.com",
+      //   port: 587,
+      //   secure: true,
+      //   auth: {
+      //     user: process.env.GMAIL_USER,
+      //     pass: process.env.GMAIL_PASSWORD,
+      //   },
+      // });
+      // await transporter.sendMail(
+      //   {
+      //     from: "@Dialysing <info@dialysing.com",
+      //     to: data.email,
+      //     subject: "Randevu Talebiniz Bulunmaktadır",
+      //     text: "dialysing.com üzerinden gelen online randevu talebiniz bulunmaktadır. Randevunuzu onaylamak için aşağıdaki linki tıklayınız. \n\n" + "https://dialysing.com/",
+      //   },
+      //   async (error) => {
+      //     if (error) {
+      //       console.log("Send Mail Error: " + error);
+      //       await Errors.create({
+      //         type: "email",
+      //         message: "Email Gönderilirken Hata Oluştu. :" + error,
+      //       });
+      //     } else {
+      //       await Errors.create({
+      //         type: "email",
+      //         message: "Email Gönderildi.",
+      //       });
+      //     }
+      //     transporter.close();
+      //   }
+      // );
     }
   }
 
@@ -440,41 +474,56 @@ class HomeController {
           process.env.CONFIRM_SECRET,
           { expiresIn: "1d" }
         );
-
         const verifyURL = process.env.MAIL_VERIFY_URL + "user/verify?token=" + token;
-        let transporter = mailer.createTransport({
-          service: "gmail",
-          host: "smtp.google.com",
-          port: 587,
-          secure: true,
-          auth: {
-            user: process.env.GMAIL_USER,
-            pass: process.env.GMAIL_PASSWORD,
-          },
-        });
-        await transporter.sendMail(
-          {
-            from: "@Dialysing <info@dialysing.com",
-            to: data.email,
-            subject: "Emailinizi Onaylayınız.",
-            text: "Emailinizi Onaylamak için Linke Tıklayın " + verifyURL,
-          },
-          async (error) => {
-            if (error) {
-              console.log("Send Mail Error: " + error);
-              await Errors.create({
-                type: "email",
-                message: "Email Gönderilirken Hata Oluştu. :" + error,
-              });
-            } else {
-              await Errors.create({
-                type: "email",
-                message: "Email Gönderildi.",
-              });
-            }
-            transporter.close();
-          }
-        );
+        
+        axios
+          .get(encodeURI("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + data.email + "&konu=Mail Onay&mesaj=Emailinizi Onaylamak için Linke Tıklayın " + verifyURL))
+          .then(function (response) {
+            // handle success
+            console.log(response.status);
+          })
+          .catch(function (error) {
+            // handle error
+            console.log(error);
+          })
+          .then(function () {
+            // always executed
+          });
+
+        // const verifyURL = process.env.MAIL_VERIFY_URL + "user/verify?token=" + token;
+        // let transporter = mailer.createTransport({
+        //   service: "gmail",
+        //   host: "smtp.google.com",
+        //   port: 587,
+        //   secure: true,
+        //   auth: {
+        //     user: process.env.GMAIL_USER,
+        //     pass: process.env.GMAIL_PASSWORD,
+        //   },
+        // });
+        // await transporter.sendMail(
+        //   {
+        //     from: "@Dialysing <info@dialysing.com",
+        //     to: data.email,
+        //     subject: "Emailinizi Onaylayınız.",
+        //     text: "Emailinizi Onaylamak için Linke Tıklayın " + verifyURL,
+        //   },
+        //   async (error) => {
+        //     if (error) {
+        //       console.log("Send Mail Error: " + error);
+        //       await Errors.create({
+        //         type: "email",
+        //         message: "Email Gönderilirken Hata Oluştu. :" + error,
+        //       });
+        //     } else {
+        //       await Errors.create({
+        //         type: "email",
+        //         message: "Email Gönderildi.",
+        //       });
+        //     }
+        //     transporter.close();
+        //   }
+        // );
         return res.render("user/pages/verify", {
           layout: "user/layouts/clinic-main",
           email: data.email,

@@ -42,7 +42,7 @@
       <% blogs.forEach((blog, index)=> { %> <% if (index < 3) { %>
       <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
         <div class="tm-box">
-          <a href="#"> <img src="../user/img/custom/dialysis-i.png" alt="Dialysis I" /></a>
+          <a href="#"> <img src="https://dialysing.com/uploads/blog-images/<%- blog.image  %>" alt="Dialysis I" /></a>
           <div class="tm-box-content">
             <div key="articleSubTitle1" class="tm-box-title"><%- blog.title %></div>
             <div key="articlesSubText1" class="tm-box-text"><%- blog.content.substring(0,58) %></div>
@@ -52,7 +52,7 @@
       <% } else { %>
       <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
         <div class="tm-box">
-          <a href="#"> <img src="../user/img/custom/dialysis-i.png" alt="Dialysis I" /></a>
+          <a href="#"> <img src="https://dialysing.com/uploads/blog-images/<%- blog.image  %>" alt="Dialysis I" /></a>
           <div class="tm-box-content">
             <div key="articleSubTitle1" class="tm-box-title"><%- blog.title %></div>
             <div key="articlesSubText1" class="tm-box-text"><%- blog.content.substring(0,58) %></div>
@@ -81,7 +81,7 @@
       <% tatilMerkezleri.forEach((element, index) => { %> <% if (index <4) { %>
       <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
         <div class="tm-box">
-          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/antalya-iii.png" alt="Custom Antalya III" /></a>
+          <a href="./clinic/<%- element._id %>"><img src="<%- element.companyInformation.photo[0] %>" alt="Custom Antalya III" /></a>
           <div class="tm-box-content">
             <div class="tm-box-title"><%- element.companyInformation.companyName  %> </div>
             <div key="favoriteSubTitle1" class="tm-box-text">Akdenizin Mavi İncisi</div>
@@ -91,7 +91,7 @@
       <% }else{ %>
       <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
         <div class="tm-box">
-          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/izmir-iii.png" alt="Izmir III" /></a>
+          <a href="./clinic/<%- element._id %>"><img src="<%- element.companyInformation.photo[0] %>" alt="Izmir III" /></a>
           <div class="tm-box-content">
             <div class="tm-box-title"><%- element.companyInformation.companyName  %></div>
             <div key="favoriteSubTitle5" class="tm-box-text">Egenin İncisi</div>
@@ -115,7 +115,7 @@
       <div class="col col-five">
         <div class="card">
           <div class="position-relative">
-            <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/center-i.png" class="image-fluid card-img-top" width="100%" height="300" alt="Custom Ankara" /></a>
+            <a href="./clinic/<%- element._id %>"><img src="<%- element.companyInformation.photo[0] %>" class="image-fluid card-img-top" width="100%" height="300" alt="Custom Ankara" /></a>
             <div class="position-absolute bottom-0 start-0 px-2">
               <div class="tm-box-title p-2"><%- element.companyInformation.companyName  %></div> 
             </div>
@@ -192,7 +192,7 @@
        <% if (index < 3) { %>
               <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
         <div class="tm-box">
-          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/liked-i.png" alt="Custom Liked I" /></a>
+          <a href="./clinic/<%- element._id %>"><img src="<%- element.companyInformation.photo[0] %>" alt="Custom Liked I" /></a>
           <div class="tm-box-content">
             <div class="tm-box-title"><%- element.companyInformation.companyName %></div>
             <div class="score">
@@ -209,7 +209,7 @@
        <% } else{ %>
       <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
         <div class="tm-box">
-          <a href="./clinic/<%- element._id %>"><img src="../user/img/custom/liked-vi.png" alt="Custom Liked VI" /></a>
+          <a href="./clinic/<%- element._id %>"><img src="<%- element.companyInformation.photo[0] %>" alt="Custom Liked VI" /></a>
           <div class="tm-box-content">
             <div class="tm-box-title"><%- element.companyInformation.companyName %></div>
             <div class="score">

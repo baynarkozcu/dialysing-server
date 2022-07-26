@@ -224,34 +224,30 @@
             <div class="clinic-center-main-content">
               <div class="clinic-center-box-content">
                 <div class="clinic-center-info">
-                  <div class="text">2015 Yılından Beri Hizmet Vermekte</div>
+                  <div class="text"><%- element.createdAt.getFullYear(); %> Yılından Beri Dialysing.com da Hizmet Vermekte</div>
                   <div class="title"><%- element.companyInformation.companyName %></div>
                   <div class="tm-display-flex">
-                    <div class="text">Arama yaptığınız konumdan 5 km uzaklıkta.</div>
+                    <!-- <div class="text">Arama yaptığınız konumdan 5 km uzaklıkta.</div> -->
                     <div class="span-text"> Öne Çıkan Merkez</div>
                   </div>
                 </div>
-                <div class="clinic-center-points">
+                <!-- <div class="clinic-center-points">
                   <div class="clinic-center-point">
                     <div class="point">
-                      <div class="title">Çok İyi</div>
+                      <div class="title">Çok İyi</div> -->
                       <!-- <div class="text">2500 inceleme</div> -->
-                    </div>
+                    <!-- </div>
                     <div class="circle">9.8</div>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="clinic-center-box-content2">
                 <div class="services">
                   <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                      <div class="span-text">Kahvaltı Hizmeti</div>
-                      <div class="span-text">Yemek Hizmeti</div>
-                      <div class="span-text">Banka Anlaşmalı Merkez</div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                      <div class="span-text">Ücretsiz Wifi</div>
-                      <div class="span-text">Tekerlekli Sandalyeye Uygun</div>
+                    <div class="col-sm-12 col-md-12">
+                      <% element.services.inSessionService.forEach(service => { %>
+                       <div class="span-text"><%- service %> </div>
+                      <% }) %>
                     </div>
                   </div>
                 </div>

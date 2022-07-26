@@ -449,7 +449,6 @@ class HomeController {
 
   async register(req, res, next) {
     console.log("Body :", req.body);
-    console.log("Cookies :", req.cookies);
     const enterPassword = req.body.password;
     if (req.errors) {
       const htmlMessage = new HtmlMessage(req.errors, "danger");
@@ -489,41 +488,6 @@ class HomeController {
           .then(function () {
             // always executed
           });
-
-        // const verifyURL = process.env.MAIL_VERIFY_URL + "user/verify?token=" + token;
-        // let transporter = mailer.createTransport({
-        //   service: "gmail",
-        //   host: "smtp.google.com",
-        //   port: 587,
-        //   secure: true,
-        //   auth: {
-        //     user: process.env.GMAIL_USER,
-        //     pass: process.env.GMAIL_PASSWORD,
-        //   },
-        // });
-        // await transporter.sendMail(
-        //   {
-        //     from: "@Dialysing <info@dialysing.com",
-        //     to: data.email,
-        //     subject: "Emailinizi Onaylayınız.",
-        //     text: "Emailinizi Onaylamak için Linke Tıklayın " + verifyURL,
-        //   },
-        //   async (error) => {
-        //     if (error) {
-        //       console.log("Send Mail Error: " + error);
-        //       await Errors.create({
-        //         type: "email",
-        //         message: "Email Gönderilirken Hata Oluştu. :" + error,
-        //       });
-        //     } else {
-        //       await Errors.create({
-        //         type: "email",
-        //         message: "Email Gönderildi.",
-        //       });
-        //     }
-        //     transporter.close();
-        //   }
-        // );
         return res.render("user/pages/verify", {
           layout: "user/layouts/clinic-main",
           email: data.email,

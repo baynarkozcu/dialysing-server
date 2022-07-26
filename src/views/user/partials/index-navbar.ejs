@@ -96,8 +96,8 @@
                       <div class="dropdown-menu dropdown-menu-right bg-dark navbar-dropdown mt-0 text-white"
                         aria-labelledby="UserDropdown">
                         <div class="dropdown-header">
-                          <p class="text-white mb-0">Busra Ceval</p>
-                          <p class="fw-light text-muted text-white">ceval2772@gmail.com</p>
+                          <p class="text-white mb-0"><%- user.nameSurname  %> </p>
+                          <p class="fw-light text-muted text-white"><%- user.email %> </p>
                           <a class="userProfile text-white" href="/user">Profil</a>
                         </div>
                       </div>
@@ -105,7 +105,7 @@
                     <% } %>
                     <li class="nav-item buttons m-1">
                     <% if (user) { %>
-                     <button href="/logout" class="btn btn-logout">Çıkış Yap</button>
+                     <a href="/logout" class="btn btn-logout">Çıkış Yap</a>
                     <% } %> 
                     <% if (!user) { %>
                       <button type="button" key="login" class="btn btn-login" data-bs-toggle="modal" data-bs-target="#loginModal"> Giriş Yap </button>

@@ -87,7 +87,12 @@ input:checked + .tm-slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-
+.city-list {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px; 
+}
 /* The container */
 .radio .container {
   display: block;

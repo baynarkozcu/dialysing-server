@@ -9,8 +9,8 @@
 
 <div class="tm-main-content" id="register">
   <%- include("../partials/top-navbar-dark") %>
-  
-<!-- <% if (locals.validationErrors != null) { %> <%- include('../partials/error-message') %> <% } %> -->
+
+  <!-- <% if (locals.validationErrors != null) { %> <%- include('../partials/error-message') %> <% } %> -->
 
   <div id="section-i" class="tm-p tm-pt-20 tm-pb-20">
     <div class="container">
@@ -34,10 +34,8 @@
           <div class="card-register px-0 pt-4 pb-0 mt-3 mb-3">
             <div class="title">Kayıt Ol</div>
             <div class="sub-menu">Zaten üye misiniz? <a href="" type="button" key="login" data-bs-toggle="modal" data-bs-target="#loginModal">Giriş Yapın</a></div>
-            <form class="tm-form-wide" action="/register" method="POST"> 
-              <div class="error-handling">
-                <% if (locals.validationErrors != null) { %> <%- include('../partials/error-message') %> <% } %>
-                </div>
+            <form id="register-form" class="tm-form-wide" action="/register" method="POST">
+              <div class="error-handling"><% if (locals.validationErrors != null) { %> <%- include('../partials/error-message') %> <% } %></div>
               <div class="form-group">
                 <label for="name">Adınız Soyadınız</label>
                 <input type="text" class="form-control" id="nameSurname" name="nameSurname" value="<%- typeof nameSurname != 'undefined' ? nameSurname : '' %>" placeholder="Adınız Soyadınız" />
@@ -45,15 +43,20 @@
               <div class="form-group">
                 <label for="birthdate">Doğum Tarihiniz</label>
                 <input type="date" class="form-control" id="birthDate" name="birthDate" value="<%- typeof birthDate != 'undefined' ? birthDate : '' %>" placeholder="Doğum Tarihiniz" />
-              </div> 
+              </div>
               <div class="form-group">
                 <label for="email">Email Adresiniz</label>
                 <input type="email" class="form-control" id="email" name="email" value="<%- typeof email != 'undefined' ? email : '' %>" placeholder="Email Adresiniz" />
               </div>
               <div class="form-group password">
                 <label for="login-password">Şifrenizi Giriniz</label>
-                <input type="password" class="form-control password" id="password" name="password" value="<%- typeof password != 'undefined' ? password : '' %>" placeholder="Şifreniz" />
+                <input id="password" type="password" class="form-control password" id="password" name="password" value="<%- typeof password != 'undefined' ? password : '' %>" placeholder="Şifreniz" />
                 <img id="register-degistir" src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
+              </div>
+              <div class="form-group password">
+                <label key="password" for="login-password">Tekrardan Şifrenizi Giriniz</label>
+                <input id="re-password" type="password" class="form-control password" placeholder="Tekrar Şifreniz" />
+                <img id="degistir" src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
               </div>
               <div class="form-group">
                 <label for="tel">Telefon Numaranız</label>
@@ -70,9 +73,8 @@
                 </div>
               </div>
               <div class="tm-button-next left">
-                <button type="submit" class="btn-second">Sonraki Adım</button>
+                <button type="button" class="btn-second" onclick="deneme()">Sonraki Adım</button>
               </div>
- 
             </form>
           </div>
         </div>
@@ -81,46 +83,49 @@
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form class="tm-form" action="/login" method="POST">
+        <div key="login" class="form-title text-center">Giriş Yap</div>
+        <div class="form-group">
+          <label key="emailAddress" for="login-email">Email Adresi</label>
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email Adresiniz" />
+        </div>
 
-              <!-- Modal -->
-              <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false"
-              tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header"> 
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <form class="tm-form" action="/login" method="POST">
-                    <div key="login" class="form-title text-center" >Giriş Yap</div>
-                    <div class="form-group">
-                      <label key="emailAddress" for="login-email">Email Adresi</label>
-                      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email Adresiniz" />
-                    </div>
-                    
-                    <div class="form-group password">
-                      <label key="password" for="login-password">Şifrenizi Giriniz</label>
-                       <input type="password" class="form-control password" name="password" placeholder="Şifreniz" />
-                      <img id="degistir" src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
-                     </div>
-                     
-                     <!-- <div class="form-group password">
-                      <label key="password" for="login-password">Şifrenizi Giriniz</label>
-                       <input type="password" class="form-control password" name="password" placeholder="Şifreniz" />
-                      <img id="degistir" src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
-                     </div> -->
-                     
-                    <div class="links">
-                      <div class="form-group not-border checkbox">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                        <label class="form-check-label" key="rememberMe" for="flexCheckChecked">Beni Hatırla </label>
-                      </div>
-                      <a key="passwordFind" href="#">Şifremi Unuttum</a>
-                    </div>
-                    <button type="submit" key="login" class="btn btn-second">Giriş Yap</button>
-                    <div key="accountInformation" class="link">Hesabınız ile birlikte,<a href="#"> Şartlar ve Koşullar ve Gizlilik Politikası & Kişisel Verilerin İşlenmesine</a> onay verilir.</div>
-                  </form> 
-                </div>
-              </div>
-            </div>
-            
+        <div class="form-group password">
+          <label key="password" for="login-password">Şifrenizi Giriniz</label>
+          <input type="password" class="form-control password" name="password" placeholder="Şifreniz" />
+          <img id="degistir" src="../user/img/clinic/svg/show-password.svg" alt="Icon Arrow" />
+        </div>
+
+        <div class="links">
+          <div class="form-group not-border checkbox">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+            <label class="form-check-label" key="rememberMe" for="flexCheckChecked">Beni Hatırla </label>
+          </div>
+          <a key="passwordFind" href="#">Şifremi Unuttum</a>
+        </div>
+        <button type="submit" key="login" class="btn btn-second">Giriş Yap</button>
+        <div key="accountInformation" class="link">Hesabınız ile birlikte,<a href="#"> Şartlar ve Koşullar ve Gizlilik Politikası & Kişisel Verilerin İşlenmesine</a> onay verilir.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  function  deneme() {
+    if($('#password').val() == $('#re-password').val()){
+        $('#register-form').submit();
+    }else{
+      alert("Şifre şifre tekrar aynı olmalıdır..");
+    }
+  }
+</script>
+
 <%- include("../partials/footer") %>

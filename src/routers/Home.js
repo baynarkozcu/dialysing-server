@@ -42,5 +42,4 @@ module.exports = router;
 
 
 //TODO Sıralama Tuşları
-//TODO Register RePassword Kontrolu
 //TODO Aktivasyon Mail İçeriği

@@ -974,7 +974,7 @@
 
     $.post("/clinic/request-appointment", talep, function (data, status) {
       if (status == "success") {
-        alert("Randevu Talebiniz Alınmıştır.");
+        alert(data);
       } else {
         alert("Mesaj Gönderim Sırasında Hata Oluştu. Lütfen Daha Sonra Tekrar Deneyiniz..");
       }

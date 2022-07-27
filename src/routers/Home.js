@@ -39,3 +39,8 @@ router.post("/login", currentUser, validate(loginValidator), Controller.login);
 router.get("/logout", authenticate, Controller.logout);
 
 module.exports = router;
+
+
+//TODO Sıralama Tuşları
+//TODO Register RePassword Kontrolu
+//TODO Aktivasyon Mail İçeriği

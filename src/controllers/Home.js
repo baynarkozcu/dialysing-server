@@ -445,7 +445,7 @@ class HomeController {
         const verifyURL = process.env.MAIL_VERIFY_URL + "user/verify?token=" + token;
 
         axios
-          .get(encodeURI("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + data.email + "&konu=Mail Onay&mesaj=Emailinizi Onaylamak için Linke Tıklayın " + verifyURL))
+          .get(encodeURI("https://2api.top/mail/83cd8a0923e6d388e091073427b3a8e0.dia?alici=" + data.email + "&konu=Dialysing.com&mesaj=Merhaba, Üyeliğinizi tamamlamak için sadece bir adımınız kaldı. Aşağıdaki aktivasyon linkine tıklayın ve Tatil diyalizinizi hemen planlamaya başlayın." + verifyURL))
           .then(function (response) {
             // handle success
             console.log(response.status);

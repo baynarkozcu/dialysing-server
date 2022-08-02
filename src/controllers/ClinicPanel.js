@@ -49,6 +49,7 @@ class ClinicPanelController {
   }
 
   login(req, res, next) {
+    console.log("Dewneme: ", req.body)
     req.flash("email", req.body.email);
     req.flash("password", req.body.password);
     if (req.errors) {
@@ -58,7 +59,6 @@ class ClinicPanelController {
     } else {
       UserService.find({ email: req.body.email, isAdmin: true })
         .then((user) => {
-          console.log(user);
           if (user) {
             passport.authenticate("local", {
               successRedirect: "/panel",
@@ -66,6 +66,7 @@ class ClinicPanelController {
               failureFlash: true,
             })(req, res, next);
           } else {
+            console.log("User is not found");
             res.redirect("/panel/login");
           }
         })

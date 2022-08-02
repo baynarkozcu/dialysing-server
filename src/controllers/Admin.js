@@ -15,20 +15,12 @@ class AdminController {
   }
 
   login(req, res) {
-    Admin.find({ email: req.body.email })
+    Admin.find({ email: req.body.email, password: req.body.password })
       .then((user) => {
         if (!user) {
-          console.log("Email Bulunamadı...");
           res.render("admin/pages/login", { layout: "admin/layouts/auth" });
         } else {
-          if (req.body.password === hashToPassword(user.password)) {
-            console.log("Giriş Başarılı...", user);
-            //TODO DEGİŞTİRİLECEK....
-            res.redirect("/admin/confirm-clinic");
-          } else {
-            console.log("Şifre Yanlış...");
-            res.render("admin/pages/login", { layout: "admin/layouts/auth" });
-          }
+          res.redirect("/admin/confirm-clinic");
         }
       })
       .catch((error) => {

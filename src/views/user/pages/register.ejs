@@ -42,7 +42,7 @@
               </div>
               <div class="form-group">
                 <label for="birthdate">Doğum Tarihiniz</label>
-                <input type="date" class="form-control" id="birthDate" name="birthDate" value="<%- typeof birthDate != 'undefined' ? birthDate : '' %>" placeholder="Doğum Tarihiniz" />
+                <input type="date" class="form-control" id="birthDate" name="birthDate" min="1900-01-01" value="<%- typeof birthDate != 'undefined' ? birthDate : '' %>" placeholder="Doğum Tarihiniz" />
               </div>
               <div class="form-group">
                 <label for="email">Email Adresiniz</label>
